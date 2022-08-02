@@ -36,6 +36,15 @@
     a:hover {
       text-decoration: underline;
     }
+    .article-img {
+      object-fit: cover;
+      width: 345px;
+      height: 260px;
+    }
+    .col-sm-5 {
+      padding-left: 0;
+      padding-right: 0;
+    }
     #logo {
       width: 100%;
       margin: 10px auto 10px auto;
@@ -55,8 +64,9 @@
       margin: 0 !important;
     }
     .news-row {
-      background-color: lightgrey;
+      background-color: #f2f2f2;
       margin: 10px 5% auto 5% !important;
+      box-shadow: 0px -30px 67px grey;
     }
     h1 {
       font-size: 50px;
@@ -147,90 +157,91 @@
     }
     @media only screen and (min-width: 1176px) {
       }
-      @media only screen and (max-width: 1175px) {
-        }
-        @media only screen and (max-width: 1060px) {
-        }
-          @media only screen and (max-width: 900px) {
-            #resources-hover {
-              display: none;
-              position: fixed;
-              background-color: white;
-              padding: 15px 10px 10px 10px;
-              margin: -75px 0 0 -60px;
-              border-top: 1px lightsteelblue;
-            }
-            #membership-hover {
-              display: none;
-              position: fixed;
-              background-color: white;
-              padding: 15px 10px 10px 10px;
-              margin: -75px 0 0 10px;
-              border-top: 1px lightsteelblue;
-            }
-          }
-        @media only screen and (max-width: 850px) {
-            #heading {
-              margin: auto 20px auto 20px !important;
-            }
-            .col-sm-2 h3 {
-              font-size: 14px;
-            }
-            #logo {
-              margin: 30px auto 10px auto
-            }
-          }
-      @media only screen and (max-width: 768px) {
-          #split {
-            display: inline;
-          }
-          .col-xs-8 {
-            margin: auto auto 15px;
-            width: auto;
-          }
+    @media only screen and (max-width: 1175px) {
+      }
+    @media only screen and (max-width: 1060px) {
+    }
+    @media only screen and (max-width: 900px) {
+      #resources-hover {
+        display: none;
+        position: fixed;
+        background-color: white;
+        padding: 15px 10px 10px 10px;
+        margin: -75px 0 0 -60px;
+        border-top: 1px lightsteelblue;
+      }
+      #membership-hover {
+        display: none;
+        position: fixed;
+        background-color: white;
+        padding: 15px 10px 10px 10px;
+        margin: -75px 0 0 10px;
+        border-top: 1px lightsteelblue;
+      }
+      }
+      @media only screen and (max-width: 850px) {
           #heading {
-            display: flex;
-          }
-          #logo {
-            width: 45%;
-          }
-          #about-hover {
-            display: none;
-            position: fixed;
-            background-color: white;
-            padding: 15px 10px 10px 10px;
-            margin: -75px 0 0 -10px;
-            border-top: 1px lightsteelblue;
-          }
-          #membership-hover {
-            display: none;
-            position: fixed;
-            background-color: white;
-            padding: 15px 10px 10px 10px;
-            margin: -70px 0 0 -15px;
-          }
-          #news-hover {
-            display: none;
-            position: fixed;
-            background-color: white;
-            padding: 15px 10px 10px 10px;
-            margin: -75px 0 0 0px;
-            border-top: 1px lightsteelblue;
-          }
-        }
-        @media only screen and (max-width: 620px) {
-          #logo {
-            display: none;
+            margin: auto 20px auto 20px !important;
           }
           .col-sm-2 h3 {
-            font-size: 12px;
+            font-size: 14px;
           }
+          #logo {
+            margin: 30px auto 10px auto
           }
-          @media only screen and (max-width: 510px) {
-            }
+        }
+    @media only screen and (max-width: 768px) {
+        #split {
+          display: inline;
+        }
+        .col-xs-8 {
+          margin: auto auto 15px;
+          width: auto;
+        }
+        #heading {
+          display: flex;
+        }
+        #logo {
+          width: 45%;
+        }
+        #about-hover {
+          display: none;
+          position: fixed;
+          background-color: white;
+          padding: 15px 10px 10px 10px;
+          margin: -75px 0 0 -10px;
+          border-top: 1px lightsteelblue;
+        }
+        #membership-hover {
+          display: none;
+          position: fixed;
+          background-color: white;
+          padding: 15px 10px 10px 10px;
+          margin: -70px 0 0 -15px;
+        }
+        #news-hover {
+          display: none;
+          position: fixed;
+          background-color: white;
+          padding: 15px 10px 10px 10px;
+          margin: -75px 0 0 0px;
+          border-top: 1px lightsteelblue;
+        }
+      }
+      @media only screen and (max-width: 620px) {
+        #logo {
+          display: none;
+        }
+        .col-sm-2 h3 {
+          font-size: 12px;
+        }
+        }
+        @media only screen and (max-width: 510px) {
+          }
   </style>
 
   <body>
+    <!--Heading Row-->
     <div class="contain-head">
       <div class="row" id="heading">
         <div class="col-sm-2">
@@ -317,15 +328,19 @@
       </div>
     </div>
 
+
+    <!--Content Split-->
     <div class="media-container">
       <h1>News & Media</h1>
 
       <div class="row news-row">
-        <div class="col-sm-3">
-
+        <div class="col-sm-5">
+          <img class="article-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/07/hurricane-andrew-facts.png" alt="">
         </div>
-        <div class="col-sm-9">
-
+        <div class="col-sm-7">
+          <h4>Forewarn - New Member Benefit</h4>
+          <p>This is sample text - This is what is going to be displayed on the page</p>
+          <button class="btn btn-primary" type="button" name="button">Read More</button>
         </div>
       </div>
     </div>

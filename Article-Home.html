@@ -33,12 +33,20 @@
       background-color: white;
       box-shadow: 0px -30px 67px grey;
     }
+    #forewarn {
+      object-fit: contain;
+      margin: auto auto auto auto;
+    }
     a:hover {
       text-decoration: underline;
     }
+    h4 {
+      font-size: 28px;
+      font-weight: 700;
+    }
     .article-img {
       object-fit: cover;
-      width: 345px;
+      width: 430px;
       height: 260px;
     }
     .col-sm-5 {
@@ -53,6 +61,14 @@
       max-width: 1100px;
       margin: auto !important;
     }
+    #forewarn-back {
+      background-color: white;
+      width: 430px;
+      margin-right: 14px;
+    }
+    .subtitle {
+      font-size: 26px;
+    }
     .media-container {
       max-width: 1185px;
       margin: auto;
@@ -65,8 +81,14 @@
     }
     .news-row {
       background-color: #f2f2f2;
-      margin: 10px 5% auto 5% !important;
-      box-shadow: 0px -30px 67px grey;
+      margin: 10px 5% 10px 5% !important;
+      box-shadow: 0px 20px 29px -27px grey;
+    }
+    .btn {
+      border-radius: 0px;
+    }
+    .italics {
+      font-style: italic;
     }
     h1 {
       font-size: 50px;
@@ -81,7 +103,7 @@
     }
     .col-sm-2 h3 {
       margin: 72px auto;
-      text-align: end;
+      text-align: center;
       font-size: 18px;
     }
     .col-sm-2 h3:hover {
@@ -107,6 +129,7 @@
       padding: 0px 10px 10px 10px;
       margin: -75px 0 0 50px;
       border-top: 1rem solid lightsteelblue;
+      z-index: 999;
     }
     #about-hover p {
       font-size: 14px;
@@ -121,6 +144,7 @@
       padding: 15px 10px 10px 10px;
       margin: -75px 0 0 10px;
       border-top: 1rem solid lightsteelblue;
+      z-index: 999;
     }
     #resources-hover p {
       font-size: 14px;
@@ -133,8 +157,9 @@
       width: 120px;
       background-color: white;
       padding: 15px 10px 10px 10px;
-      margin: -75px 0 0 50px;
+      margin: -75px 0 0 18px;
       border-top: 1rem solid lightsteelblue;
+      z-index: 999;
     }
     #membership-hover p {
       font-size: 14px;
@@ -155,11 +180,24 @@
       margin: 15px 0 5px 0;
       font-weight: 500;
     }
-    @media only screen and (min-width: 1176px) {
+    @media only screen and (max-width: 1200px) {
+      #forewarn-back {
+        margin-right: 0 !important;
       }
-    @media only screen and (max-width: 1175px) {
       }
-    @media only screen and (max-width: 1060px) {
+    @media only screen and (max-width: 1165px) {
+      #forewarn-back {
+        width: 420px !important;
+      }
+      }
+    @media only screen and (max-width: 1145px) {
+      .article-img {
+        width: 370px;
+      }
+      #forwarn-back {
+        width: none;
+        margin: auto;
+      }
     }
     @media only screen and (max-width: 900px) {
       #resources-hover {
@@ -334,13 +372,48 @@
       <h1>News & Media</h1>
 
       <div class="row news-row">
-        <div class="col-sm-5">
-          <img class="article-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/07/hurricane-andrew-facts.png" alt="">
+        <div class="col-sm-5" id="forewarn-back">
+          <img class="article-img" id="forewarn" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/phone-e1593713701142-1.jpg" alt="">
         </div>
         <div class="col-sm-7">
-          <h4>Forewarn - New Member Benefit</h4>
+          <h4>Forewarn - Your Newest Lifesaving Member Benefit</h4>
+          <p class="italics">August 2nd, 2022</p>
           <p>This is sample text - This is what is going to be displayed on the page</p>
-          <button class="btn btn-primary" type="button" name="button">Read More</button>
+          <a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+      <div class="row news-row">
+        <div class="col-sm-5">
+          <img class="article-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/pexels-pixabay-70573.jpg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Hometown Heroes Program is Now LIVE!</h4>
+          <p class="subtitle">What is it & Who can apply?</p>
+          <p class="italics">July 20th, 2022</p>
+          <p>Starting on June 1st, 2022 - the Hometown Heroes downpayment assistance program was launched to help our local workers get into the housing they deserve.  Find out what this is and who you can recommend it to.</p>
+          <a href="https://www.bonitaesterorealtors.com/ber-news-hometown-heros-july202022/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+      <div class="row news-row">
+        <div class="col-sm-5">
+          <img class="article-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/06/Copy-of-Fishbowl-Friday-56ewqeqw.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Understanding Interior Design</h4>
+          <p class="subtitle">"How to Best Showcase a Property from an Expert"</p>
+          <p class="italics">July 4th, 2022</p>
+          <a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+      <div class="row news-row">
+        <div class="col-sm-5">
+          <img class="article-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/06/Untitled-design-1.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Court Rules: Licensee Emails Do Not Create a Contract</h4>
+          <p class="italics">June 20th, 2022</p>
+          <p>This is sample text - This is what is going to be displayed on the page</p>
+          <a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
         </div>
       </div>
     </div>

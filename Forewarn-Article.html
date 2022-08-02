@@ -104,134 +104,176 @@
 
 
   <!--Heading CSS-->
-  <style media="screen">
-    a {
-      color: black;
-    }
-    .contain-head {
-      width: 100%;
-      background-color: white;
-      box-shadow: 0px -30px 67px grey;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    #logo {
-      width: 100%;
-      margin: 10px auto 10px auto;
-    }
-    #heading {
-      max-width: 1100px;
-      margin: auto !important;
-    }
-    .head-image {
-      width: 100%;
-    }
-    .row {
-      margin: 0 !important;
-    }
-    h1 {
-      font-size: 64px;
-      margin: auto;
-    }
-    body {
-      width: 100%;
-      align-items: center;
-      color: #2f3034;
-    }
-    .col-sm-2 h3 {
-      margin: 72px auto;
-      text-align: center;
-      font-size: 18px;
-    }
-    .col-sm-2 h3:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-    .col-sm-1 h3 {
-      margin: 60px auto;
-      text-align: center;
-    }
-    .col-sm-3 h3 {
-      margin: 60px auto;
-      text-align: center;
-    }
-    #text {
-      padding: 0;
-    }
-    #about-hover {
-      display: none;
-      position: absolute;
-      width: 150px;
-      background-color: white;
-      padding: 0px 10px 10px 10px;
-      margin: -75px 0 0 50px;
-      border-top: 1rem solid lightsteelblue;
-      z-index: 999;
-    }
-    #about-hover p {
-      font-size: 14px;
-      margin: 15px 0 5px 0;
-      font-weight: 500;
-    }
-    #resources-hover {
-      display: none;
-      position: absolute;
-      width: 150px;
-      background-color: white;
-      padding: 15px 10px 10px 10px;
-      margin: -75px 0 0 10px;
-      border-top: 1rem solid lightsteelblue;
-      z-index: 999;
-    }
-    #resources-hover p {
-      font-size: 14px;
-      margin: 15px 0 5px 0;
-      font-weight: 500;
-    }
-    #membership-hover {
-      display: none;
-      position: absolute;
-      width: 120px;
-      background-color: white;
-      padding: 15px 10px 10px 10px;
-      margin: -75px 0 0 18px;
-      border-top: 1rem solid lightsteelblue;
-      z-index: 999;
-    }
-    #membership-hover p {
-      font-size: 14px;
-      margin: 15px 0 5px 0;
-      font-weight: 500;
-    }
-    #news-hover {
-      display: none;
-      position: absolute;
-      width: 200px;
-      background-color: white;
-      padding: 0 10px 10px 10px;
-      margin: -75px 0 0 -5px;
-      border-top: 1rem solid lightsteelblue;
-      z-index: 999;
-    }
-    #news-hover p {
-      font-size: 14px;
-      margin: 15px 0 5px 0;
-      font-weight: 500;
-    }
-    @media only screen and (min-width: 1176px) {
-      }
-      @media only screen and (max-width: 1175px) {
-        }
-        @media only screen and (max-width: 1060px) {
-        }
-          @media only screen and (max-width: 900px) {
-            #resources-hover {
+        <style media="screen">
+          a {
+            color: black;
+          }
+          .contain-head {
+            width: 100%;
+            background-color: white;
+            box-shadow: 0px -30px 67px grey;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+          #logo {
+            width: 100%;
+            margin: 10px auto 10px auto;
+          }
+          #heading {
+            max-width: 1100px;
+            margin: auto !important;
+          }
+          .head-image {
+            width: 100%;
+          }
+          .row {
+            margin: 0 !important;
+          }
+          h1 {
+            font-size: 64px;
+            margin: auto;
+          }
+          body {
+            width: 100%;
+            align-items: center;
+            color: #2f3034;
+          }
+          .col-sm-2 h3 {
+            margin: 72px auto;
+            text-align: center;
+            font-size: 18px;
+          }
+          .col-sm-2 h3:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+          .col-sm-1 h3 {
+            margin: 60px auto;
+            text-align: center;
+          }
+          .col-sm-3 h3 {
+            margin: 60px auto;
+            text-align: center;
+          }
+          #text {
+            padding: 0;
+          }
+          #about-hover {
+            display: none;
+            position: absolute;
+            width: 150px;
+            background-color: white;
+            padding: 0px 10px 10px 10px;
+            margin: -75px 0 0 50px;
+            border-top: 1rem solid lightsteelblue;
+            z-index: 999;
+          }
+          #about-hover p {
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+            font-weight: 500;
+          }
+          #resources-hover {
+            display: none;
+            position: absolute;
+            width: 150px;
+            background-color: white;
+            padding: 15px 10px 10px 10px;
+            margin: -75px 0 0 10px;
+            border-top: 1rem solid lightsteelblue;
+            z-index: 999;
+          }
+          #resources-hover p {
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+            font-weight: 500;
+          }
+          #membership-hover {
+            display: none;
+            position: absolute;
+            width: 120px;
+            background-color: white;
+            padding: 15px 10px 10px 10px;
+            margin: -75px 0 0 18px;
+            border-top: 1rem solid lightsteelblue;
+            z-index: 999;
+          }
+          #membership-hover p {
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+            font-weight: 500;
+          }
+          #news-hover {
+            display: none;
+            position: absolute;
+            width: 200px;
+            background-color: white;
+            padding: 0 10px 10px 10px;
+            margin: -75px 0 0 -5px;
+            border-top: 1rem solid lightsteelblue;
+            z-index: 999;
+          }
+          #news-hover p {
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+            font-weight: 500;
+          }
+          @media only screen and (min-width: 1176px) {
+            }
+          @media only screen and (max-width: 1175px) {
+            }
+          @media only screen and (max-width: 1060px) {
+          }
+            @media only screen and (max-width: 900px) {
+              #resources-hover {
+                display: none;
+                position: fixed;
+                background-color: white;
+                padding: 15px 10px 10px 10px;
+                margin: -75px 0 0 -60px;
+                border-top: 1px lightsteelblue;
+              }
+              #membership-hover {
+                display: none;
+                position: fixed;
+                background-color: white;
+                padding: 15px 10px 10px 10px;
+                margin: -75px 0 0 10px;
+                border-top: 1px lightsteelblue;
+              }
+            }
+          @media only screen and (max-width: 850px) {
+              #heading {
+                margin: auto 20px auto 20px !important;
+              }
+              .col-sm-2 h3 {
+                font-size: 14px;
+              }
+              #logo {
+                margin: 30px auto 10px auto
+              }
+            }
+        @media only screen and (max-width: 768px) {
+            #split {
+              display: inline;
+            }
+            .col-xs-8 {
+              margin: auto auto 15px;
+              width: auto;
+            }
+            #heading {
+              display: flex;
+            }
+            #logo {
+              width: 45%;
+            }
+            #about-hover {
               display: none;
               position: fixed;
               background-color: white;
               padding: 15px 10px 10px 10px;
-              margin: -75px 0 0 -60px;
+              margin: -75px 0 0 -10px;
               border-top: 1px lightsteelblue;
             }
             #membership-hover {
@@ -239,70 +281,28 @@
               position: fixed;
               background-color: white;
               padding: 15px 10px 10px 10px;
-              margin: -75px 0 0 10px;
+              margin: -70px 0 0 -15px;
+            }
+            #news-hover {
+              display: none;
+              position: fixed;
+              background-color: white;
+              padding: 15px 10px 10px 10px;
+              margin: -75px 0 0 0px;
               border-top: 1px lightsteelblue;
             }
           }
-        @media only screen and (max-width: 850px) {
-            #heading {
-              margin: auto 20px auto 20px !important;
+          @media only screen and (max-width: 620px) {
+            #logo {
+              display: none;
             }
             .col-sm-2 h3 {
-              font-size: 14px;
+              font-size: 12px;
             }
-            #logo {
-              margin: 30px auto 10px auto
             }
-          }
-      @media only screen and (max-width: 768px) {
-          #split {
-            display: inline;
-          }
-          .col-xs-8 {
-            margin: auto auto 15px;
-            width: auto;
-          }
-          #heading {
-            display: flex;
-          }
-          #logo {
-            width: 45%;
-          }
-          #about-hover {
-            display: none;
-            position: fixed;
-            background-color: white;
-            padding: 15px 10px 10px 10px;
-            margin: -75px 0 0 -10px;
-            border-top: 1px lightsteelblue;
-          }
-          #membership-hover {
-            display: none;
-            position: fixed;
-            background-color: white;
-            padding: 15px 10px 10px 10px;
-            margin: -70px 0 0 -15px;
-          }
-          #news-hover {
-            display: none;
-            position: fixed;
-            background-color: white;
-            padding: 15px 10px 10px 10px;
-            margin: -75px 0 0 0px;
-            border-top: 1px lightsteelblue;
-          }
-        }
-        @media only screen and (max-width: 620px) {
-          #logo {
-            display: none;
-          }
-          .col-sm-2 h3 {
-            font-size: 12px;
-          }
-          }
-          @media only screen and (max-width: 510px) {
-            }
-  </style>
+            @media only screen and (max-width: 510px) {
+              }
+        </style>
 
   <body>
     <div class="contain-head">

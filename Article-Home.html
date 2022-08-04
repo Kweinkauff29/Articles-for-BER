@@ -68,6 +68,13 @@
     }
     .subtitle {
       font-size: 26px;
+      margin: 0;
+    }
+    .col-sm-7 h4 {
+      margin: 10px auto 0 auto;
+    }
+    .col-sm-7 p {
+      font-size: 12px;
     }
     .media-container {
       max-width: 1185px;
@@ -187,7 +194,7 @@
       }
     @media only screen and (max-width: 1165px) {
       #forewarn-back {
-        width: 420px !important;
+        width: auto !important;
       }
       }
     @media only screen and (max-width: 1145px) {
@@ -197,6 +204,37 @@
       #forwarn-back {
         width: none;
         margin: auto;
+      }
+    }
+
+    @media only screen and (max-width: 980px) {
+      .col-sm-7 {
+        padding-left: 25px;
+      }
+    }
+    @media only screen and (max-width: 940px) {
+      .col-sm-7 {
+        padding-left: 35px;
+      }
+    }
+    @media only screen and (max-width: 910px) {
+      .col-sm-7 {
+        padding-left: 50px;
+      }
+    }
+    @media only screen and (max-width: 880px) {
+      .col-sm-7 {
+        padding-left: 70px;
+      }
+    }
+    @media only screen and (max-width: 830px) {
+      .col-sm-7 {
+        padding-left: 85px;
+      }
+    }
+    @media only screen and (max-width: 780px) {
+      .col-sm-7 {
+        padding-left: 100px;
       }
     }
     @media only screen and (max-width: 900px) {
@@ -229,6 +267,24 @@
           }
         }
     @media only screen and (max-width: 768px) {
+        .article-img {
+          width: -webkit-fill-available !important;
+          margin: auto !important;
+          display: flex !important;
+          color: black !important;
+        }
+        .col-sm-5 {
+          background-color: dimgrey;
+        }
+        .col-sm-7 {
+          padding-left: 15px;
+          padding-right: 15px;
+          margin: auto auto 10px auto;
+          text-align: center;
+        }
+        .btn {
+          width: 100% !important;
+        }
         #split {
           display: inline;
         }
@@ -270,6 +326,9 @@
         #logo {
           display: none;
         }
+        #logo-contain {
+          display: none;
+        }
         .col-sm-2 h3 {
           font-size: 12px;
         }
@@ -282,7 +341,7 @@
     <!--Heading Row-->
     <div class="contain-head">
       <div class="row" id="heading">
-        <div class="col-sm-2">
+        <div class="col-sm-2" id="logo-contain">
             <a href="https://www.bonitaesterorealtors.com/"><img id="logo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/04/Untitled-design-3.png" alt=""></a>
         </div>
         <div class="col-sm-2">
@@ -372,13 +431,13 @@
       <h1>News & Media</h1>
 
       <div class="row news-row">
-        <div class="col-sm-5" id="forewarn-back">
+        <div class="col-sm-5">
           <img class="article-img" id="forewarn" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/phone-e1593713701142-1.jpg" alt="">
         </div>
         <div class="col-sm-7">
           <h4>Forewarn - Your Newest Lifesaving Member Benefit</h4>
           <p class="italics">August 2nd, 2022</p>
-          <p>This is sample text - This is what is going to be displayed on the page</p>
+          <p>With over 6% of Realtors having fallen victim to a violent crime while on the job, we are making sure you know who you are working with.  Find out more about the app and how it can help you stay safe.</p>
           <a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
         </div>
       </div>
@@ -402,6 +461,7 @@
           <h4>Understanding Interior Design</h4>
           <p class="subtitle">"How to Best Showcase a Property from an Expert"</p>
           <p class="italics">July 4th, 2022</p>
+          <p>As the market becomes more balenced for buyers and sellers, we know that it will only become more important to stage and showcase a home properly.  Read about how you can properly stage you or your clients home.</p>
           <a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
         </div>
       </div>
@@ -412,7 +472,7 @@
         <div class="col-sm-7">
           <h4>Court Rules: Licensee Emails Do Not Create a Contract</h4>
           <p class="italics">June 20th, 2022</p>
-          <p>This is sample text - This is what is going to be displayed on the page</p>
+          <p>It's been a prominent point of discussion in recent years.  What makes a executable contract? Well thanks to a recent court ruling, we now understand this concept a little bit more.</p>
           <a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
         </div>
       </div>

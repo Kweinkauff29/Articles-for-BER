@@ -31,6 +31,23 @@
       margin: 12px auto -20px;
       font-family: 'Oswald', sans-serif;
     }
+    .vc_column_container>.vc_column-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .spacer {
+      width: 10px;
+    }
+    #choices {
+      display: flex;
+      margin: auto;
+    }
+    .box {
+      border: 1px dimgrey;
+      border-style: solid;
+      height: 150px;
+      box-shadow: 0px 0px 5px grey;
+    }
     .more {
       margin: auto;
       max-width: 1100px;
@@ -46,6 +63,11 @@
       background-color: #337ab7;
       width: 100%;
       max-height: 300px;
+    }
+    .info-head{
+      font-size: 24px !important;
+      text-align: center;
+      margin: auto auto 30px auto;
     }
     #ned-bio {
       font-size: 14px;
@@ -73,6 +95,10 @@
       margin: auto;
       width: auto;
       max-height: 450px;
+    }
+    .info-button {
+      margin: 30px auto;
+      width: 100%;
     }
     #ned-name {
       font-size: 24px;
@@ -113,6 +139,14 @@
       .Ned-Q2-Article h1 {
         font-size: 46px;
       }
+      }
+      @media only screen and (max-width: 767px) {
+        #choices {
+          display: contents;
+        }
+        .box {
+          height: auto;
+        }
       }
   </style>
 
@@ -433,43 +467,41 @@ Forewarn is an easy/quick-to-use tool to help you understand who you are working
             <img id="ned-img" class="col-sm-4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/phone-e1593713701142-1.jpg" alt="Ned Hale">
           </div>
       </div>
-      In addition to our residents, someone moving from another state can also be considered a first-time homebuyer in Florida as long as they plan on making this purchase their primary residence.
+      <h4 style="font-weight: 700 !important;">Getting Started with FOREWARN </h4>
+      Forewarn is now available for all Bonita Springs-Estero Realtors Primary and Secondary members.  Signing up is easy.  Click on the "Claim my account" button below, enter your email and set your password.  Within seconds, you will be prompted to log into the service and you are on your way to verifying your clients.
+      More Information.
       <br>
-      <br>
-      If you or someone you know is eligible - here is what you/they need to do to apply:
-      <br>
-      <br>
-      <ul>
-        <li>
-           Connect with a participating loan officer (More then 240+ as of July 2022 - Expect this to grow exponentially)
-        </li>
-        <li>
-          Make sure the applicant has a credit score of at least 640.
-        </li>
-        <li>
-          The applicant must provide a certification of one of the eligible occupations.
-        </li>
-        <li>
-          The applicant must meet the income threshold for the county.
-        </li>
-      </ul>
-      If you are looking to learn more about the program, the Florida Realtors have released a packet explaining all you need to know and a list of eligible participants: <a href="https://acrobat.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A19e5aae0-02e6-4237-87bb-5bf9c77e7f0a#pageNum=24" target="_blank" style="color: blue;"> HERE </a>
-      <br>
-      <br>
-      More Information <i>(provided by Florida Realtors®)</i>: <a href="https://www.floridarealtors.org/news-media/news-articles/2022/05/hometown-hero-program-starts-june-1" target="_blank" style="color: blue;"> HERE </a>
-      <br>
-      <br>
-      Keep an eye out as this program will become more common in your transactions and be sure to attend our training so you can help your client if they are eligible.
+      Stay tuned for more information and educational opportunities with FOREWARN.
+      <h2>More Information:</h2>
+      <div class="row" id="choices">
+
+        <div class="col-sm-3 box">
+          <h1 class="info-head">Claim My Account:</h1>
+          <a href="https://app.forewarn.com/setuppassword" target="_blank"><button type="button" class="btn btn-danger info-button" name="button">Click Here</button></a>
+        </div>
+        <div class="col-sm-1 spacer">
+
+        </div>
+        <div class="col-sm-4 box">
+          <h1 class="info-head">Download the App:</h1>
+          <div class="row" style="display: contents; margin: auto;">
+            <a href="https://apps.apple.com/us/app/forewarn/id1275626154" target="_blank"><button type="button" class="btn btn-danger info-button" name="button">IOS</button></a>
+            <a href="https://play.google.com/store/apps/details?id=com.Forewarn.ForewarnApp" target="_blank"><button type="button" class="btn btn-danger info-button" style="margin-top: -30px;" name="button">Andriod</button></a>
+          </div>
+        </div>
+        <div class="col-sm-1 spacer">
+
+        </div>
+        <div class="col-sm-3 box">
+          <h1 class="info-head">More information on Forewarn:</h1>
+          <a href="https://www.forewarn.com/our-solutions/" target="_blank"><button type="button" class="btn btn-danger info-button" name="button">Click Here</button></a>
+        </div>
       </div>
+    </div>
     <div class="more">
       <hr>
       <h2>More Real Estate News</h2>
-      <ul>
-        <li><a href="https://www.bonitaesterorealtors.com/ber-news/">"Licensee Emails Do Not Create a Contract"<a></li>
-        <li><a href="https://www.bonitaesterorealtors.com/ber-news-interior-design/">Understanding Interior Design: "How to Best Showcase a Property from an Expert"<a></li>
-        <li><a href="https://www.bonitaesterorealtors.com/ber-news-hometown-heros-july202022/">Hometown Heroes Program is Now LIVE! What is it & Who can apply?<a></li>
-
-      </ul>
+      <a href="https://www.bonitaesterorealtors.com/ber-news-home/" style="text-decoration: underline;">Click Here</a>
     </div>
   </body>
 

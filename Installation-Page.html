@@ -287,6 +287,15 @@
             z-index: 999;
           }
 
+          @keyframes fadein {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
           #Start {
             position: absolute;
             margin: auto;
@@ -294,6 +303,7 @@
             width: 100%;
             display: grid;
             top: 45%;
+            animation: fadein linear 2s;
           }
 
           #Start:hover {
@@ -313,6 +323,7 @@
             border-top: 5px solid black;
             animation: linegrow linear .3s;
             animation-fill-mode: forwards;
+            transform: translateY(-40px);
           }
 
           #main-underline:hover {
@@ -320,7 +331,7 @@
           }
 
           #start-text {
-            margin: auto auto -40px auto;
+            margin: auto;
           }
 
           #start-text:hover {
@@ -556,10 +567,12 @@
 
           function underline() {
             document.getElementById("main-underline").style.display = "inherit";
+            document.getElementById("Start").style.pointer = "cursor";
           }
 
           function underlineOut() {
             document.getElementById("main-underline").style.display = "none";
+            document.getElementById("Start").style.pointer = "cursor";
           }
 
 
@@ -567,7 +580,7 @@
       </div>
     </div>
 
-    <div id="Start" onmouseover="underline()" onmouseout="underlineOut()" >
+    <div id="Start" onmouseover="underline()" onmouseout="underlineOut()" onclick="moveForward()">
       <h1 id="start-text">2022 in Review <span>&#10145;</span></h1>
       <br>
       <hr id="main-underline" style="display: none;">

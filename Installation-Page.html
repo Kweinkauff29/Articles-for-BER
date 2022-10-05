@@ -482,7 +482,7 @@
         }
 
         #title1 {
-          margin: -191px auto;
+          margin: 120px auto 90px auto;
           color: white;
           font-size: 55px;
           opacity: .6;
@@ -504,6 +504,15 @@
         }
 
         /* Information about the timeline */
+        #info1 {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          position: absolute;
+          z-index: 5;
+          margin: -368px auto;
+        }
+
         .info {
         display: flex;
         flex-direction: column;
@@ -517,7 +526,7 @@
         }
 
         /* Timeline dot  */
-        .title::before {
+        .title:before {
         content: "";
         position: absolute;
         width: 10px;
@@ -532,10 +541,34 @@
           width: 100%;
           height: 370px;
           object-fit: cover;
+          position: relative;
+        }
+        #jan-break:hover {
+          height: 450px;
+          animation: grow 1s linear;
+        }
+        #jan-break:onmouseout {
+          height: 370px;
+          animation: shrink 1s linear;
+        }
+        @keyframes grow {
+          0% {
+            transform: scale(1.0);
+          100% {
+            transform: scale(1.2);
+          }
+        }
+        @keyframes shrink {
+          0% {
+            height: 450px;
+          }
+          100% {
+            height: 370px;
+          }
         }
         </style>
 
-  <body>
+  <body onscroll="sizeChanger()">
     <div class="contain-head" style="display: none;">
       <div class="row" id="heading">
         <div class="col-sm-2">
@@ -563,6 +596,7 @@
             about.style.display="none";
           }
         </script>
+
         <div class="col-sm-2">
           <h3  onmouseover="memdrop()" onmouseout="removemem()">Membership</h3>
           <div id="membership-hover" onmouseover="memdrop()" onmouseout="removemem()">
@@ -654,16 +688,18 @@
             document.getElementById("timeline").style.display = "table";
           }
 
+/*
           function grow1() {
             document.getElementById("title1").style.margin = "120px auto";
-            document.getElementById("jan-break").style.height = "430px";
+            document.getElementById("jan-break").style ="transform: scale(1.2);"
           }
 
           function shrink1() {
             document.getElementById("title1").style.margin = "90px auto";
-            document.getElementById("jan-break").style.height = "370px";
-          }
+            document.getElementById("jan-break").style ="transform: scale(1.0);"
 
+                    }
+*/
         </script>
       </div>
     </div>
@@ -675,8 +711,8 @@
     </div>
 
     <div id="timeline">
-        <div class="card" id="card1" onmouseover="grow1()" onmouseout="shrink1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-          <div class="info">
+        <div class="card" id="card1"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+          <div id="info1">
             <h3 id="title1">January Membership Breakfast</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           </div>
@@ -725,6 +761,22 @@
         </div>
 
 </div>
+
+      <script type="text/javascript">
+
+      function sizeChanger() {
+          if (window.scrollY < 200) {
+            document.getElementById("title1").style.margin = "120px auto";
+            document.getElementById("jan-break").style ="transform: scale(1.2);"
+          }
+
+          else if (window.scrollY > 201) {
+            document.getElementById("title1").style.margin = "90px auto";
+            document.getElementById("jan-break").style ="transform: scale(1.0);"
+          }
+        }
+
+      </script>
 
   </body>
 

@@ -22,6 +22,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
   </head>
 
   <style media="screen">
@@ -461,6 +464,77 @@
               }
         </style>
 
+        <style media="screen">
+        /**timeline css**/
+
+                :root {
+        --primary-color: #fff; /* try #212121 also for dark mode */
+        --background-color: #212121;
+        --font: sans-serif;
+        }
+
+
+        /* Timeline Container */
+        #timeline {
+          display: none;
+          background: var(--primary-color);
+          animation: fadein linear .5s;
+        }
+
+        #title1 {
+          margin: -191px auto;
+          color: white;
+          font-size: 55px;
+          opacity: .6;
+          font-family: 'Oswald', sans-serif;
+        }
+
+        /* Outer Layer with the timeline border */
+        .outer {
+        border-left: 2px solid #333;
+        }
+
+        /* Card container */
+        .card {
+        position: relative;
+        background: #333;
+        color: gray;
+        border-radius: 8px;
+        width: 100%;
+        }
+
+        /* Information about the timeline */
+        .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        }
+
+        /* Title of the card */
+        .title {
+        color: orangered;
+        position: relative;
+        }
+
+        /* Timeline dot  */
+        .title::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 999px;
+        left: -39px;
+        border: 3px solid orangered;
+        }
+
+        #jan-break {
+          width: 100%;
+          height: 370px;
+          object-fit: cover;
+        }
+        </style>
+
   <body>
     <div class="contain-head" style="display: none;">
       <div class="row" id="heading">
@@ -576,9 +650,19 @@
           }
 
           function moveForward() {
-
+            document.getElementById("Start").style.display = "none";
+            document.getElementById("timeline").style.display = "table";
           }
 
+          function grow1() {
+            document.getElementById("title1").style.margin = "120px auto";
+            document.getElementById("jan-break").style.height = "430px";
+          }
+
+          function shrink1() {
+            document.getElementById("title1").style.margin = "90px auto";
+            document.getElementById("jan-break").style.height = "370px";
+          }
 
         </script>
       </div>
@@ -589,6 +673,58 @@
       <br>
       <hr id="main-underline" style="display: none;">
     </div>
+
+    <div id="timeline">
+        <div class="card" id="card1" onmouseover="grow1()" onmouseout="shrink1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+          <div class="info">
+            <h3 id="title1">January Membership Breakfast</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 4</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3 class="title">Title 5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </div>
+
+</div>
 
   </body>
 

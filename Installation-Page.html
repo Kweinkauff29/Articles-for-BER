@@ -78,6 +78,7 @@
     }
     .vc_column_container {
       height: auto;
+      min-height: 500px;
     }
     #ned-bio {
       font-size: 14px;
@@ -330,6 +331,7 @@
             animation: linegrow linear .3s;
             animation-fill-mode: forwards;
             transform: translateY(-40px);
+            margin: 15px auto;
           }
 
           #main-underline:hover {
@@ -486,7 +488,7 @@
         }
 
         #title1 {
-          margin: 120px auto 90px auto;
+          margin: 120px auto 50px auto;
           color: white;
           font-size: 55px;
           opacity: .6;
@@ -497,7 +499,7 @@
           margin: 120px auto 90px auto;
           color: white;
           font-size: 55px;
-          opacity: .6;
+          opacity: 1;
           font-family: 'Oswald', sans-serif;
         }
 
@@ -528,9 +530,9 @@
           display: flex;
           flex-direction: column;
           gap: 10px;
-          position: absolute;
+          position: fixed;
           z-index: 5;
-          margin: -368px auto;
+          margin: -35px auto;
           width: 100%;
         }
 
@@ -538,9 +540,9 @@
           display: flex;
           flex-direction: column;
           gap: 10px;
-          position: absolute;
+          position: fixed;
           z-index: 5;
-          margin: -368px auto;
+          margin: -90px auto;
           width: 100%;
         }
 
@@ -570,19 +572,23 @@
 
         #jan-break {
           width: 100%;
-          height: 300px;
+          object-position: 0px -70px;
+          height: 260px;
           transform: scale(1.3);
           object-fit: cover;
-          position: relative;
+          position: fixed;
           animation: shrink paused 4s;
+          z-index: 5;
         }
 
         #jan-break2 {
           width: 100%;
-          height: 300px;
+          height: 260px;
           object-fit: cover;
-          position: relative;
+          position: fixed;
           animation: shrink paused 4s;
+          opacity: .2;
+          z-index: 5;
         }
 
         @keyframes grow {
@@ -607,8 +613,8 @@
 
 
         function sizeChanger() {
-            if (window.scrollY < 120) {
-              document.getElementById("title1").style.margin = "120px auto";
+            if (window.scrollY < 90) {
+              document.getElementById("title1").style.margin = "120px auto 50px auto";
               document.getElementById("jan-break").style.animationName ="grow";
               document.getElementById("jan-break").style.animationDuration ="1s";
               document.getElementById("jan-break").style.animationIterationCount ="1";
@@ -623,7 +629,7 @@
               document.getElementById("card2").style.height = "200px";
             }
 
-            else if (window.scrollY > 121) {
+            else if (window.scrollY > 91) {
               document.getElementById("title1").style.margin = "90px auto";
               //document.getElementById("jan-break").style ="transform: scale(1.0);"
               document.getElementById("jan-break").style.animationName ="shrink";
@@ -636,6 +642,8 @@
               document.getElementById("jan-break2").style.animationIterationCount ="infinite";
               document.getElementById("jan-break2").style.animationPlayState ="running";
               document.getElementById("jan-break2").style ="transform: scale(1.3);"
+              document.getElementById("jan-break").style.opacity =".1";
+              document.getElementById("jan-break2").style.opacity ="1";
               setTimeout(function() {
                 console.log("wait 4 secs")
               }, 4000);
@@ -746,8 +754,13 @@
             })
           }
 
+          let webHeight = document.body.offsetHeight;
+          console.log(webHeight);
+
           function loadImg() {
+
             const img = loadImage("https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/Copy-of-Affiliate-Spotlight-5.gif");
+            document.getElementById("vc_column_container").style.height = webHeight;
           }
 
           window.onload=loadImg();

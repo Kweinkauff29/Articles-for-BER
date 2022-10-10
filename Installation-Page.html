@@ -495,7 +495,7 @@
           font-family: 'Oswald', sans-serif;
         }
 
-        #title2 {
+        #title2, #title3, #title4, #title5, #title6, #title7, #title8, #title9 {
           margin: 120px auto 90px auto;
           color: white;
           font-size: 55px;
@@ -510,19 +510,71 @@
 
         /* Card container */
         .card {
-        position: relative;
         background: #333;
         color: gray;
-        border-radius: 8px;
         width: 100%;
+        contain: content;
         }
 
         #card1 {
           height: 300px;
         }
 
+        @media only screen and (max-width: 600px) {
+          #card1 {
+            height: 200px;
+            width: 1000px;
+            position: fixed;
+            z-index: 1;
+          }
+          #card2 {
+            height: 200px;
+            width: 1000px;
+            position: fixed;
+            margin: 300px auto;
+            z-index: 1;
+          }
+          #title1 {
+            margin: -645px auto 50px auto;
+          }
+        }
+
+        #card1:hover {
+          cursor: pointer;
+        }
+
         #card2 {
           height: 200px;
+          margin: 300px auto;
+        }
+
+        #card3 {
+          margin: 600px auto;
+          z-index: 3;
+        }
+
+        #card4 {
+          margin: 900px auto;
+        }
+
+        #card5 {
+          margin: 1200px auto;
+        }
+
+        #card6 {
+          margin: 1500px auto;
+        }
+
+        #card7 {
+          margin: 1800px auto;
+        }
+
+        #card8 {
+          margin: 2100px auto;
+        }
+
+        #card2:hover, #card3:hover, #card4:hover, #card5:hover, #card6:hover, #card7:hover, #card8:hover, #card9:hover {
+          cursor: pointer;
         }
 
         /* Information about the timeline */
@@ -532,11 +584,11 @@
           gap: 10px;
           position: fixed;
           z-index: 5;
-          margin: -35px auto;
+          margin: -1100px auto;
           width: 100%;
         }
 
-        #info2 {
+        #info2, #info3, #info4, #info5, #info6, #info7, #info8, #info9  {
           display: flex;
           flex-direction: column;
           gap: 10px;
@@ -570,19 +622,48 @@
         border: 3px solid orangered;
         }
 
+        @keyframes lefttoright {
+          0% {
+            object-position: -100px -70px;
+            transform: scale(1.3);
+          }
+          100% {
+            object-position: 100px -70px;
+            transform: scale(1.3);
+          }
+        }
+
+        @keyframes righttoleft {
+          0% {
+            object-position: 100px -290px;
+            transform: scale(1.3);
+          }
+          100% {
+            object-position: -100px -290px;
+            transform: scale(1.3);
+          }
+        }
+
         #jan-break {
-          width: 100%;
           object-position: 0px -70px;
-          height: 260px;
-          transform: scale(1.3);
-          object-fit: cover;
-          position: fixed;
-          animation: shrink paused 4s;
+          transform: scale(1);
           z-index: 5;
+          animation: lefttoright 10s infinite;
+          animation-play-state: paused;
         }
 
         #jan-break2 {
+          object-position: 0px -70px;
+          transform: scale(1);
+          width: 2000px;
+          z-index: 5;
+          animation: righttoleft 10s infinite paused;
+          opacity: .2;
+        }
+
+        #jan-break3, #jan-break4, #jan-break5, #jan-break6, #jan-break7, #jan-break8, #jan-break9 {
           width: 100%;
+          object-position: 0px -70px;
           height: 260px;
           object-fit: cover;
           position: fixed;
@@ -599,47 +680,33 @@
           }
         }
 
-        @keyframes shrink {
-          0% {
-            transform: scale(1.3);
-          }
-          100% {
-            transform: scale(1.0);
-          }
-        }
+
         </style>
 
         <script type="text/javascript">
 
-
         function sizeChanger() {
+
             if (window.scrollY < 90) {
               document.getElementById("title1").style.margin = "120px auto 50px auto";
-              document.getElementById("jan-break").style.animationName ="grow";
-              document.getElementById("jan-break").style.animationDuration ="1s";
-              document.getElementById("jan-break").style.animationIterationCount ="1";
-              document.getElementById("jan-break").style.animationPlayState ="running";
+              document.getElementById("title2").style.opacity = "1";
+              animplay();
               document.getElementById("jan-break").style ="transform: scale(1.3);"
-              document.getElementById("jan-break2").style.animationName ="shrink";
-              document.getElementById("jan-break2").style.animationDuration ="1s";
-              document.getElementById("jan-break2").style.animationIterationCount ="1";
-              document.getElementById("jan-break2").style.animationPlayState ="running";
+              document.getElementById("jan-break2").style.animationPlayState = "running";
               document.getElementById("jan-break2").style ="transform: scale(1.0);"
               document.getElementById("card1").style.height = "300px";
               document.getElementById("card2").style.height = "200px";
+              document.getElementById("jan-break").style.animationPlayState = "running";
             }
 
             else if (window.scrollY > 91) {
               document.getElementById("title1").style.margin = "90px auto";
+              document.getElementById("title1").style.opacity = "1";
+              document.getElementById("title2").style.opacity = ".6";
               //document.getElementById("jan-break").style ="transform: scale(1.0);"
-              document.getElementById("jan-break").style.animationName ="shrink";
-              document.getElementById("jan-break").style.animationDuration ="1s";
-              document.getElementById("jan-break").style.animationIterationCount ="1";
-              document.getElementById("jan-break").style.animationPlayState ="running";
-              document.getElementById("jan-break").style ="transform: scale(1.0);"
-              document.getElementById("jan-break2").style.animationName ="grow";
-              document.getElementById("jan-break2").style.animationDuration ="1s";
-              document.getElementById("jan-break2").style.animationIterationCount ="infinite";
+              animpause();
+              document.getElementById("jan-break").style.animationPlayState = "paused";
+              document.getElementById("jan-break").style = "transform: scale(1.0);"
               document.getElementById("jan-break2").style.animationPlayState ="running";
               document.getElementById("jan-break2").style ="transform: scale(1.3);"
               document.getElementById("jan-break").style.opacity =".1";
@@ -649,6 +716,7 @@
               }, 4000);
               document.getElementById("card1").style.height = "200px";
               document.getElementById("card2").style.height = "300px";
+              document.getElementById("jan-break2").style.animationPlayState = "running";
             }
 
           }
@@ -674,48 +742,7 @@
             <a href="https://members.bonitaesterorealtors.com/affiliatedirectory"><p>Affiliate Directory</p></a>
           </div>
         </div>
-        <script type="text/javascript">
-          var about = document.getElementById("about-hover");
-          function aboutdrop() {
-            about.style.display="inline";
-          }
-          function removeabout() {
-            about.style.display="none";
-          }
-        </script>
 
-        <div class="col-sm-2">
-          <h3  onmouseover="memdrop()" onmouseout="removemem()">Membership</h3>
-          <div id="membership-hover" onmouseover="memdrop()" onmouseout="removemem()">
-            <a href="https://www.bonitaesterorealtors.com/join-bser/"><p>Join BER</p></a>
-            <a href="https://bonitaspringsesterorealtorsfl.growthzoneapp.com/ap/Form/Fill/rJD9lS4P"><p>Join A Commitee</p></a>
-          </div>
-        </div>
-        <script type="text/javascript">
-          var membership = document.getElementById("membership-hover");
-          function memdrop() {
-            membership.style.display="inline";
-          }
-          function removemem() {
-            membership.style.display="none";
-          }
-        </script>
-        <div class="col-sm-2">
-          <h3 onmouseover="newsdrop()" onmouseout="removenews()">News & Events</h3>
-          <div onmouseover="newsdrop()" onmouseout="removenews()" id="news-hover">
-            <a href="https://members.bonitaesterorealtors.com/bercalendar"><p>Event Calendar</p></a>
-            <a href="https://www.bonitaesterorealtors.com/ber-news/"><p>BER News</p></a>
-          </div>
-        </div>
-        <script type="text/javascript">
-          var news = document.getElementById("news-hover");
-          function newsdrop() {
-            news.style.display="inline";
-          }
-          function removenews() {
-            news.style.display="none";
-          }
-        </script>
         <div class="col-sm-2">
             <a href="https://www.bonitaesterorealtors.com/continuing-education-2/"><h3>Education</h3></a>
         </div>
@@ -732,13 +759,6 @@
             </div>
         </div>
         <script type="text/javascript">
-          var resources = document.getElementById("resources-hover");
-          function resourcesdrop() {
-            resources.style.display="inline";
-          }
-          function removeresources() {
-            resources.style.display="none";
-          }
 
           const loadImage = path => {
             return new Promise((resolve, reject) => {
@@ -760,7 +780,6 @@
           function loadImg() {
 
             const img = loadImage("https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/Copy-of-Affiliate-Spotlight-5.gif");
-            document.getElementById("vc_column_container").style.height = webHeight;
           }
 
           window.onload=loadImg();
@@ -778,6 +797,23 @@
           function moveForward() {
             document.getElementById("Start").style.display = "none";
             document.getElementById("timeline").style.display = "table";
+            document.getElementById("jan-break").style.animationPlayState = "running";
+          }
+
+          function move1() {
+            window.scrollTo(0, 0);
+          }
+
+          function move2() {
+            window.scrollTo(0, 120);
+          }
+
+          function animplay() {
+            document.getElementById("jan-break").style.animationPlayState = "running";
+          }
+
+          function animpause() {
+            document.getElementById("jan-break").style.animationPlayState = "pause";
           }
 
 /*
@@ -803,60 +839,61 @@
     </div>
 
     <div id="timeline">
-        <div class="card" id="card1"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+        <div class="card" id="card1" onclick="move1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
           <div id="info1">
             <h3 id="title1">January Membership Breakfast</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           </div>
         </div>
-        <div class="card" id="card2"><img id="jan-break2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-          <div id="info2">
-            <h3 id="title2">January Membership Breakfast</h3>
+    <div class="card" id="card2" onclick="move2()"><img id="jan-break2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n.jpeg">
+      <div id="info2">
+        <h3 id="title2">2021 Sales Excellence Awards</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+    </div>
+    <div class="card" id="card3"><img id="jan-break3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+      <div id="info3">
+        <h3 id="title3">January Membership Breakfast</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+    </div>
+        <div class="card" id="card4"><img id="jan-break4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+          <div id="info4">
+            <h3 id="title4">January Membership Breakfast</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           </div>
         </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 2</h3>
+    <div class="card" id="card5"><img id="jan-break5" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+      <div id="info5">
+        <h3 id="title5">January Membership Breakfast</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+    </div>
+    <div class="card" id="card6"><img id="jan-break6" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+      <div id="info6">
+        <h3 id="title6">January Membership Breakfast</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+    </div>
+        <div class="card" id="card7"><img id="jan-break7" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+          <div id="info7">
+            <h3 id="title7">January Membership Breakfast</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
           </div>
         </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 4</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 5</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 5</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 5</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="info">
-            <h3 class="title">Title 5</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
+    <div class="card" id="card8"><img id="jan-break8" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+      <div id="info8">
+        <h3 id="title8">January Membership Breakfast</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+    </div>
+    <div class="card" id="card9"><img id="jan-break9" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+      <div id="info9">
+        <h3 id="title9">January Membership Breakfast</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
+    </div>
+
 
 </div>
 

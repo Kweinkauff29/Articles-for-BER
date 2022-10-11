@@ -522,14 +522,43 @@
 
         @media only screen and (max-width: 600px) {
           #card1 {
-            height: 200px;
-            width: 1000px;
+            height: 300px;
+            width: 100% !important;
             position: fixed;
             z-index: 1;
           }
+
+          #jan-break {
+            z-index: 5;
+            scale: 1.6;
+            animation: lefttorightsmall 10s infinite;
+            animation-play-state: paused;
+            translate: 0px 138px;
+          }
+
+          #jan-break2 {
+            object-position: 0px -70px;
+            transform: scale(1);
+            z-index: 5;
+            scale: 1.6;
+            width: auto !important;
+            translate: 0px 100px;
+            animation: righttoleftsmall 10s infinite paused;
+            opacity: .2;
+          }
+
+          #info1 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 5;
+            width: 100%;
+            translate: 0px -625px;
+          }
+
           #card2 {
             height: 200px;
-            width: 1000px;
+            width: 100% !important;
             position: fixed;
             margin: 300px auto;
             z-index: 1;
@@ -537,6 +566,29 @@
           #title1 {
             margin: -645px auto 50px auto;
           }
+
+          @keyframes righttoleftsmall {
+            0% {
+              object-position: 100px -340px;
+              transform: scale(1.3);
+            }
+            100% {
+              object-position: -600px -340px;
+              transform: scale(1.3);
+            }
+          }
+
+          @keyframes lefttorightsmall {
+            0% {
+              object-position: -100px -45px;
+              transform: scale(1.3);
+            }
+            100% {
+              object-position: 100px -45px;
+              transform: scale(1.3);
+            }
+          }
+
         }
 
         #card1:hover {
@@ -635,11 +687,11 @@
 
         @keyframes righttoleft {
           0% {
-            object-position: 100px -290px;
+            object-position: 100px -70px;
             transform: scale(1.3);
           }
           100% {
-            object-position: -100px -290px;
+            object-position: -100px -70px;
             transform: scale(1.3);
           }
         }
@@ -648,6 +700,7 @@
           object-position: 0px -70px;
           transform: scale(1);
           z-index: 5;
+          width: 100%;
           animation: lefttoright 10s infinite;
           animation-play-state: paused;
         }
@@ -655,8 +708,8 @@
         #jan-break2 {
           object-position: 0px -70px;
           transform: scale(1);
-          width: 2000px;
           z-index: 5;
+          width: 100%;
           animation: righttoleft 10s infinite paused;
           opacity: .2;
         }
@@ -692,10 +745,11 @@
               document.getElementById("title2").style.opacity = "1";
               animplay();
               document.getElementById("jan-break").style ="transform: scale(1.3);"
-              document.getElementById("jan-break2").style.animationPlayState = "running";
               document.getElementById("jan-break2").style ="transform: scale(1.0);"
               document.getElementById("card1").style.height = "300px";
               document.getElementById("card2").style.height = "200px";
+              document.getElementById("card2").style.margin = "300px auto";
+              document.getElementById("jan-break2").style.animationPlayState = "paused";
               document.getElementById("jan-break").style.animationPlayState = "running";
             }
 
@@ -705,9 +759,9 @@
               document.getElementById("title2").style.opacity = ".6";
               //document.getElementById("jan-break").style ="transform: scale(1.0);"
               animpause();
-              document.getElementById("jan-break").style.animationPlayState = "paused";
+              document.getElementById("jan-break").style.animationPlayState = "paused !important";
               document.getElementById("jan-break").style = "transform: scale(1.0);"
-              document.getElementById("jan-break2").style.animationPlayState ="running";
+              document.getElementById("jan-break2").style.animationPlayState ="running !important";
               document.getElementById("jan-break2").style ="transform: scale(1.3);"
               document.getElementById("jan-break").style.opacity =".1";
               document.getElementById("jan-break2").style.opacity ="1";
@@ -716,6 +770,8 @@
               }, 4000);
               document.getElementById("card1").style.height = "200px";
               document.getElementById("card2").style.height = "300px";
+              document.getElementById("card2").style.margin = "200px auto";
+              document.getElementById("jan-break").style.animationPlayState = "paused";
               document.getElementById("jan-break2").style.animationPlayState = "running";
             }
 
@@ -839,7 +895,7 @@
     </div>
 
     <div id="timeline">
-        <div class="card" id="card1" onclick="move1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+        <div class="card" id="card1" onclick="move1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg">
           <div id="info1">
             <h3 id="title1">January Membership Breakfast</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>

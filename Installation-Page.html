@@ -556,30 +556,33 @@
 
   <script type="text/javascript">
 
-  let janArray = ["https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n-1.jpeg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/09/Copy-of-Affiliate-Spotlight-5-1.png"];
-  let count = 0;
-  let change1 = function change1() {
-    let arrayCount = janArray.length;
-    let funcCount = janArray.length - 1;
-    if (count == funcCount) {
-      count = 0;
-      console.log("this");
-    }
-    else {
-      count++;
-      console.log("that");
-    }
-    console.log(count);
-    document.getElementById("jan-break").src = janArray[count];
-    document.getElementById("jan-break").style.animationPlayState = "running";
-    console.log("running");
-  }
-  let int1 = setInterval(change1, 9300);
 
+  function picChanger() {
+    sizeChanger();
+    let janArray = ["https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n-1.jpeg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/09/Copy-of-Affiliate-Spotlight-5-1.png"];
+    let count = 0;
+
+    let change1 = function change1() {
+      let arrayCount = janArray.length;
+      let funcCount = janArray.length - 1;
+      if (count == funcCount) {
+        count = 0;
+        console.log("this");
+      }
+      else {
+        count++;
+        console.log("that");
+      }
+      console.log(count);
+      document.getElementById("jan-break").src = janArray[count];
+      console.log("running");
+      stop();
+    }
+    let int1 = setInterval(change1, 10000);
+  }
 
   function sizeChanger() {
     let count = 0;
-    let int1;
 
       if (window.scrollY < 90) {
         document.getElementById("title1").style.margin = "120px auto 50px auto";
@@ -597,7 +600,7 @@
         document.getElementById("jan-break2").style.animationPlayState = "paused";
         document.getElementById("jan-break3").style.animationPlayState = "paused";
         document.getElementById("jan-break").style.animationPlayState = "running";
-      }
+        }
 
       else if (window.scrollY > 91 && window.scrollY < 300) {
         document.getElementById("title1").style.margin = "90px auto";
@@ -617,6 +620,7 @@
         document.getElementById("jan-break").style.animationPlayState = "paused";
         document.getElementById("jan-break3").style.animationPlayState = "paused";
         document.getElementById("jan-break2").style.animationPlayState = "running";
+        clearInterval(int1);
         clearInterval(int1);
       }
 
@@ -641,13 +645,11 @@
       }
 
       else {console.log("nothing");}
-
-      clearInterval(int1);
     }
 
   </script>
 
-  <body onscroll="sizeChanger()" onload="sizeChanger()">
+  <body onload="picChanger()" onscroll="sizeChanger()">
     <div class="contain-head" style="display: none;">
       <div class="row" id="heading">
         <script type="text/javascript">
@@ -670,7 +672,6 @@
           console.log(webHeight);
 
 
-          window.onload=sizeChanger();
 
           function underline() {
             document.getElementById("main-underline").style.display = "inherit";

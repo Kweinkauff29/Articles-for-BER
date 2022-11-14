@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Hometown Heroes - Now Live!</title>
+    <title>2022 In Review</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,20 +128,6 @@
       }
     }
 
-    #Start {
-      position: absolute;
-      margin: auto;
-      align-items: center;
-      width: 100%;
-      display: grid;
-      top: 45%;
-      animation: fadein linear 2s;
-    }
-
-    #Start:hover {
-      pointer: cursor;
-    }
-
     @keyframes linegrow {
       0% {
         width: 0%;
@@ -187,7 +173,7 @@
 
     /* Timeline Container */
     #timeline {
-      display: none;
+      display: table;
       background: var(--primary-color);
       animation: fadein linear .5s;
       width: 100%;
@@ -397,7 +383,7 @@
       #jan-break {
         z-index: 5;
         scale: 1.6;
-        animation: lefttorightsmall 10s infinite;
+        animation: lefttorightsmall 10s linear infinite;
         animation-play-state: paused;
         translate: 0px 138px;
       }
@@ -408,7 +394,7 @@
         z-index: 5;
         scale: 1.6;
         width: auto !important;
-        animation: righttoleftsmall 10s infinite paused;
+        animation: righttoleftsmall 10s linear infinite paused;
         opacity: .2;
       }
 
@@ -418,7 +404,7 @@
         z-index: 5;
         scale: 1.6;
         width: auto !important;
-        animation: lefttorightsmall 10s infinite paused;
+        animation: lefttorightsmall 10s linear infinite paused;
         opacity: .2;
       }
 
@@ -512,9 +498,88 @@
 
   </style>
 
+  <div id="timeline">
+      <div class="card" id="card1" onclick="move1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg">
+        <div id="info1">
+          <h3 id="title1">January Membership Breakfast</h3>
+          <p> January 14th, 2022</p>
+        </div>
+      </div>
+  <div class="card" id="card2" onclick="move2()"><img id="jan-break2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n.jpeg">
+    <div id="info2">
+      <h3 id="title2">2021 Sales Excellence Awards</h3>
+      <p>February 25th, 2022</p>
+    </div>
+  </div>
+  <div class="card" id="card3"><img id="jan-break3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <div id="info3">
+      <h3 id="title3">January Membership Breakfast</h3>
+    </div>
+  </div>
+      <div class="card" id="card4"><img id="jan-break4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+        <div id="info4">
+          <h3 id="title4">January Membership Breakfast</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+  <div class="card" id="card5"><img id="jan-break5" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <div id="info5">
+      <h3 id="title5">January Membership Breakfast</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+  </div>
+  <div class="card" id="card6"><img id="jan-break6" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <div id="info6">
+      <h3 id="title6">January Membership Breakfast</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+  </div>
+      <div class="card" id="card7"><img id="jan-break7" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+        <div id="info7">
+          <h3 id="title7">January Membership Breakfast</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+  <div class="card" id="card8"><img id="jan-break8" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <div id="info8">
+      <h3 id="title8">January Membership Breakfast</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+  </div>
+  <div class="card" id="card9"><img id="jan-break9" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <div id="info9">
+      <h3 id="title9">January Membership Breakfast</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+  </div>
+
+
   <script type="text/javascript">
 
+  let janArray = ["https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n-1.jpeg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/09/Copy-of-Affiliate-Spotlight-5-1.png"];
+  let count = 0;
+  let change1 = function change1() {
+    let arrayCount = janArray.length;
+    let funcCount = janArray.length - 1;
+    if (count == funcCount) {
+      count = 0;
+      console.log("this");
+    }
+    else {
+      count++;
+      console.log("that");
+    }
+    console.log(count);
+    document.getElementById("jan-break").src = janArray[count];
+    document.getElementById("jan-break").style.animationPlayState = "running";
+    console.log("running");
+  }
+  let int1 = setInterval(change1, 9300);
+
+
   function sizeChanger() {
+    let count = 0;
+    let int1;
 
       if (window.scrollY < 90) {
         document.getElementById("title1").style.margin = "120px auto 50px auto";
@@ -552,6 +617,7 @@
         document.getElementById("jan-break").style.animationPlayState = "paused";
         document.getElementById("jan-break3").style.animationPlayState = "paused";
         document.getElementById("jan-break2").style.animationPlayState = "running";
+        clearInterval(int1);
       }
 
       else if (window.scrollY > 301) {
@@ -574,45 +640,16 @@
         document.getElementById("jan-break3").style.animationPlayState = "running";
       }
 
+      else {console.log("nothing");}
+
+      clearInterval(int1);
     }
 
   </script>
 
-  <body onscroll="sizeChanger()">
+  <body onscroll="sizeChanger()" onload="sizeChanger()">
     <div class="contain-head" style="display: none;">
       <div class="row" id="heading">
-        <div class="col-sm-2">
-            <a href="https://www.bonitaesterorealtors.com/"><img id="logo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/04/Untitled-design-3.png" alt=""></a>
-        </div>
-        <div class="col-sm-2">
-          <h3 onmouseover="aboutdrop()" onmouseout="removeabout()">About</h3>
-          <div id="about-hover" onmouseover="aboutdrop()" onmouseout="removeabout()">
-            <a href="https://www.bonitaesterorealtors.com/about/"><p>About BER</p></a>
-            <a href="https://www.bonitaesterorealtors.com/golden-b-e-a-r-awards-3/"><p>BER Sales Excellence Awards</p></a>
-            <a href="https://www.bonitaesterorealtors.com/2022-bod-and-past-pres/"><p>2022 Board of Directors</p></a>
-            <a href="https://www.bonitaesterorealtors.com/home-foundation/"><p>BER Home Foundation</p></a>
-            <a href="http://bonitaspringsesterorealtorsfl.growthzoneapp.com/realtordirectory/Find?term=&advFilter=eyJDdXN0b21GaWVsZFZhbHVlcyI6W10sIkNvdW50cmllcyI6W10sIlN0YXRlcyI6W10sIkNpdGllcyI6W10sIlBvc3RhbENvZGVzIjpbXSwiQ2F0ZWdvcnlWYWx1ZXMiOltdLCJSYWRpdXMiOiIwIn0%3D"><p>Realtor Directory</p></a>
-            <a href="http://bonitaspringsesterorealtorsfl.growthzoneapp.com/brokerdirectory/Find?term=&advFilter=eyJDdXN0b21GaWVsZFZhbHVlcyI6W10sIkNvdW50cmllcyI6W10sIlN0YXRlcyI6W10sIkNpdGllcyI6W10sIlBvc3RhbENvZGVzIjpbXSwiQ2F0ZWdvcnlWYWx1ZXMiOltdLCJSYWRpdXMiOiIwIn0%3D"><p>Broker Directory</p></a>
-            <a href="https://www.bonitaesterorealtors.com/simplyrets-listings/"><p>Property Search</p></a>
-            <a href="https://members.bonitaesterorealtors.com/affiliatedirectory"><p>Affiliate Directory</p></a>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-            <a href="https://www.bonitaesterorealtors.com/continuing-education-2/"><h3>Education</h3></a>
-        </div>
-        <div class="col-sm-2">
-            <h3 onmouseover="resourcesdrop()" onmouseout="removeresources()">Resources</h3>
-            <div onmouseover="resourcesdrop()" onmouseout="removeresources()" id="resources-hover">
-              <a href="https://www.bonitaesterorealtors.com/mls-test-page/"><p>MLS Tips & Recordings</p></a>
-              <a href="https://www.bonitaesterorealtors.com/reminehelppage/"><p>Remine Pro Help</p></a>
-              <a href="https://www.bonitaesterorealtors.com/rpac/"><p>RPAC</p></a>
-              <a href="https://www.bonitaesterorealtors.com/our-commitment-to-diversity/"><p>Diversity Page</p></a>
-              <a href="https://www.bonitaesterorealtors.com/florida-realtors-2/"><p>Florida Realtors</p></a>
-              <a href="https://www.bonitaesterorealtors.com/market-reports-2/"><p>Market Reports</p></a>
-              <a href="https://www.bonitaesterorealtors.com/wp-content/uploads/2021/04/2021-MLS-Rules-Regs.pdf"><p>MLS Rules & Regulations</p></a>
-            </div>
-        </div>
         <script type="text/javascript">
 
           const loadImage = path => {
@@ -632,12 +669,8 @@
           let webHeight = document.body.offsetHeight;
           console.log(webHeight);
 
-          function loadImg() {
 
-            const img = loadImage("https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/Copy-of-Affiliate-Spotlight-5.gif");
-          }
-
-          window.onload=loadImg();
+          window.onload=sizeChanger();
 
           function underline() {
             document.getElementById("main-underline").style.display = "inherit";
@@ -683,70 +716,6 @@
       </div>
     </div>
 
-    <div id="Start" onmouseover="underline()" onmouseout="underlineOut()" onclick="moveForward()">
-      <h1 id="start-text">2022 in Review <span>&#10145;</span></h1>
-      <br>
-      <hr id="main-underline" style="display: none;">
-    </div>
-
-    <div id="timeline">
-        <div class="card" id="card1" onclick="move1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg">
-          <div id="info1">
-            <h3 id="title1">January Membership Breakfast</h3>
-            <p> January 14th, 2022</p>
-          </div>
-        </div>
-    <div class="card" id="card2" onclick="move2()"><img id="jan-break2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n.jpeg">
-      <div id="info2">
-        <h3 id="title2">2021 Sales Excellence Awards</h3>
-        <p>February 25th, 2022</p>
-      </div>
-    </div>
-    <div class="card" id="card3"><img id="jan-break3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-      <div id="info3">
-        <h3 id="title3">January Membership Breakfast</h3>
-      </div>
-    </div>
-        <div class="card" id="card4"><img id="jan-break4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-          <div id="info4">
-            <h3 id="title4">January Membership Breakfast</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-    <div class="card" id="card5"><img id="jan-break5" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-      <div id="info5">
-        <h3 id="title5">January Membership Breakfast</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="card" id="card6"><img id="jan-break6" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-      <div id="info6">
-        <h3 id="title6">January Membership Breakfast</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-        <div class="card" id="card7"><img id="jan-break7" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-          <div id="info7">
-            <h3 id="title7">January Membership Breakfast</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          </div>
-        </div>
-    <div class="card" id="card8"><img id="jan-break8" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-      <div id="info8">
-        <h3 id="title8">January Membership Breakfast</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="card" id="card9"><img id="jan-break9" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-      <div id="info9">
-        <h3 id="title9">January Membership Breakfast</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-
-
-</div>
-
-  </body>
+</body>
 
 </html>

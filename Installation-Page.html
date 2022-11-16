@@ -331,6 +331,20 @@
       animation-play-state: paused;
     }
 
+    #jan-break-, #jan-break-- {
+      transform: scale(1);
+      z-index: 5;
+      width: 100%;
+      animation: lefttoright 10s infinite;
+      animation-play-state: paused;
+      display: inherit;
+      animation-play-state: running;
+      scale: 1.6;
+      width: auto;
+      object-position: 0px -70px;
+      translate: 0px 130px;
+    }
+
     #jan-break2 {
       object-position: 0px -70px;
       transform: scale(1);
@@ -499,7 +513,10 @@
   </style>
 
   <div id="timeline">
-      <div class="card" id="card1" onclick="move1()"><img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg">
+      <div class="card" id="card1" onclick="move1()">
+        <img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg">
+        <img id="jan-break-" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/272049761_5418849168128775_7690026699029155921_n.jpg">
+        <img id="jan-break--" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/272105782_5418849181462107_4458925670235375182_n.jpg">
         <div id="info1">
           <h3 id="title1">January Membership Breakfast</h3>
           <p> January 14th, 2022</p>
@@ -565,16 +582,39 @@
     let change1 = function change1() {
       let arrayCount = janArray.length;
       let funcCount = janArray.length - 1;
-      if (count == funcCount) {
-        count = 0;
+      if (count == 0 && window.scrollY < 90) {
+        count = 1;
+        document.getElementById("jan-break--").style.display = "none";
+        document.getElementById("jan-break").style.display = "none";
+        document.getElementById("jan-break-").style.display = "inherit";
+        document.getElementById("jan-break-").style.animationPlayState = "running";
         console.log("this");
       }
-      else {
-        count++;
+      else if (count == 1 && window.scrollY < 90) {
+        count = 2;
+        document.getElementById("jan-break--").style.display = "inherit";
+        document.getElementById("jan-break--").style.animationPlayState = "running";
+        document.getElementById("jan-break").style.display = "none";
+        document.getElementById("jan-break-").style.display = "none";
         console.log("that");
       }
+      else if (count == 2 && window.scrollY < 90) {
+        count = 0;
+        document.getElementById("jan-break--").style.display = "none";
+        document.getElementById("jan-break").style.animationPlayState = "running";
+        document.getElementById("jan-break").style.display = "inherit";
+        document.getElementById("jan-break-").style.display = "none";
+        console.log("that");
+      }
+      else if (window.scrollY > 90) {
+        document.getElementById("jan-break").style.animationPlayState = "none";
+        document.getElementById("jan-break").style.animationPlayState = "none";
+        document.getElementById("jan-break").style.animationPlayState = "none";
+      }
+      else {
+        console.log("error");
+      }
       console.log(count);
-      document.getElementById("jan-break").src = janArray[count];
       console.log("running");
       stop();
     }

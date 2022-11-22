@@ -1,4 +1,5 @@
 //TODO Page 3
+  //May, TWAO, JULY MB, Sept
 //ADD photos and animation
 //ADD additional moments
 //Add Membership numbers
@@ -501,6 +502,20 @@
     }
 
     #twao {
+      transform: scale(1);
+      z-index: 5;
+      width: 100%;
+      animation: lefttoright 10s infinite;
+      display: inherit;
+      animation-play-state: paused;
+      scale: 1.6;
+      width: auto;
+      object-position: 0px -70px;
+      translate: 0px 140px;
+      opacity: 1;
+    }
+
+    #twao1, #twao2, #twao3, #twao4 {
       transform: scale(1);
       z-index: 5;
       width: 100%;
@@ -1275,7 +1290,6 @@
         count2 = 0;
         count3 = 0;
         count4 = 0;
-
       }
 
       else if (window.scrollY > 701 && window.scrollY < 900) {
@@ -1315,6 +1329,11 @@
         document.getElementById("card8").style.margin = "600px auto"
         document.getElementById("maybreak").style.opacity ="1";
         document.getElementById("twao").style.opacity =".1";
+        document.getElementById("twao").style.display = "inherit";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
         document.getElementById("julybreak").style.opacity =".1";
         document.getElementById("septbreak").style.opacity =".1";
         }
@@ -1336,8 +1355,9 @@
           document.getElementById("card6").style.margin = "150px auto"
           document.getElementById("card7").style.margin = "450px auto"
           document.getElementById("card8").style.margin = "600px auto"
-          document.getElementById("maybreak").style.opacity ="1";
-          document.getElementById("twao").style.opacity =".1";
+          document.getElementById("twao").style.display = "inherit";
+          document.getElementById("maybreak").style.opacity =".1";
+          document.getElementById("twao").style.opacity ="1";
           document.getElementById("julybreak").style.opacity =".1";
           document.getElementById("septbreak").style.opacity =".1";
           }
@@ -1353,6 +1373,9 @@
     let count = 0;
     let count2 = 0;
     let count3 = 0;
+    let count4 = 0;
+    let count5 = 0;
+
 
 
     let change1 = function change1() {
@@ -1697,10 +1720,73 @@
       stop();
     }
 
+
+    //Together we are one animations
+    let change5 = function change5() {
+
+      if (count5 == 0 && window.scrollY > 901 && window.scrollY < 1100) {
+        count5 = 1;
+        document.getElementById("twao").style.display = "inherit";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao").style.animationPlayState = "running";
+        console.log("this");
+      }
+      else if (count5 == 1 && window.scrollY > 901 && window.scrollY < 1100) {
+        count5 = 2;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "inherit";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao1").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count5 == 2 && window.scrollY > 901 && window.scrollY < 1100) {
+        count5 = 3;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "inherit";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao2").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count5 == 3 && window.scrollY > 901 && window.scrollY < 1100) {
+        count5 = 4;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "inherit";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao3").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count5 == 4 && window.scrollY > 901 && window.scrollY < 1100) {
+        count5 = 0;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "inherit";
+        document.getElementById("twao4").style.animationPlayState = "running";
+        console.log("end");
+      }
+      else {
+        console.log("error");
+      }
+      console.log(count5, "<= count5");
+      console.log("running5");
+      stop();
+    }
+
     let int1 = setInterval(change1, 8000);
     let int2 = setInterval(change2, 8000);
     let int3 = setInterval(change3, 8000);
     let int4 = setInterval(change4, 8000);
+    let int5 = setInterval(change5, 8000);
 
 
   }

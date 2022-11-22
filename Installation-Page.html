@@ -180,11 +180,10 @@
     }
 
     #title1 {
-      margin: 120px auto 50px auto;
+      margin: -125px auto -10px 0px;
       color: white;
       font-size: 40px;
       line-height: 4.8rem;
-      opacity: .6;
       font-family: 'Oswald', sans-serif;
     }
 
@@ -301,6 +300,10 @@
     border: 3px solid orangered;
     }
 
+    .card p{
+      color: white;
+    }
+
     @keyframes lefttoright {
       0% {
         object-position: -100px -45px;
@@ -402,6 +405,21 @@
       width: auto;
       object-position: 0px -70px;
       translate: 0px 130px;
+      opacity: .1;
+    }
+
+    #pfap, #pfap1, #pfap2, #pfap3, #pfap4, #pfap5, #pfap6 {
+      transform: scale(1);
+      z-index: 5;
+      width: 100%;
+      animation: lefttoright 10s infinite;
+      animation-play-state: paused;
+      display: inherit;
+      animation-play-state: running;
+      scale: 1.6;
+      width: auto;
+      object-position: 0px -70px;
+      translate: 0px 160px;
       opacity: .1;
     }
 
@@ -547,18 +565,18 @@
       }
 
       #title1 {
-        margin: -130px auto -10px auto !important;
+        margin: -125px auto -10px 0px;
       }
 
       #title2 {
-        margin: -140px auto -10px auto !important;
+        margin: -145px auto -10px 0px;
       }
 
       #title3 {
-        margin: -120px auto -10px auto !important;
+        margin: -145px auto -10px 0px;
       }
       #title4 {
-        margin: -120px auto -10px auto !important;
+        margin: -120px auto -10px auto;
       }
 
 
@@ -595,7 +613,11 @@
       color: white;
       /* margin: auto auto 0px auto; */
       top: 45%;
-      width: 150px;
+      background-color: darkgrey;
+      border-radius: 20px 20px 20px 20px;
+      width: auto;
+      padding-right: 10px;
+      padding-left: 10px;
       left: 75%;
       display: flex;
       transform: rotate(270deg);
@@ -605,13 +627,13 @@
 
   </style>
 
-  <body onload="picChanger()" onscroll="sizeChanger()">
+  <body onscroll="sizeChanger()">
 
   <div id="timeline">
     <div id="scroll-icon">
         <h4>< Scroll ></h4>
     </div>
-      <div class="card" id="card1" onclick="move1()">
+      <div class="card" id="card1">
         <img id="jan-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg">
         <img id="jan-break-" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/272049761_5418849168128775_7690026699029155921_n.jpg">
         <img id="jan-break--" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/272105782_5418849181462107_4458925670235375182_n.jpg">
@@ -621,7 +643,7 @@
           <p> January 14th, 2022</p>
         </div>
       </div>
-  <div class="card" id="card2" onclick="move2()">
+  <div class="card" id="card2">
     <img id="sea-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274756082_5556370611043296_7535293233522380463_n.jpg">
     <img id="sea-break-" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274808708_5556370764376614_5071097208397559546_n.jpg">
     <img id="sea-break--" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274854134_5556370277709996_3825382437099979036_n.jpg">
@@ -635,49 +657,384 @@
       <p>February 25th, 2022</p>
     </div>
   </div>
-  <div class="card" id="card3"><img id="jan-break3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+  <div class="card" id="card3">
+    <img id="pfap" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275728544_5593257224021301_8658892873735761088_n.jpg">
+    <img id="pfap1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275700016_5593257090687981_7054810022922300046_n.jpg">
+    <img id="pfap2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275681326_5593256790688011_9031533572993028969_n.jpg">
+    <img id="pfap3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275669086_5593256507354706_9130926662818002613_n.jpg">
+    <img id="pfap4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275659006_5593257010687989_8800839607824395139_n.jpg">
+    <img id="pfap5" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275655997_5593256330688057_4522931082632116735_n.jpg">
+    <img id="pfap6" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275634921_5593256260688064_6994196878034099559_n.jpg">
     <div id="info3">
-      <h3 id="title3">January Membership Breakfast</h3>
-      <p>February 25th, 2022</p>
+      <h3 id="title3">Putting For A Purpose</h3>
+      <p>March 9th, 2022</p>
     </div>
   </div>
       <div class="card" id="card4"><img id="jan-break4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
         <div id="info4">
-          <h3 id="title4">January Membership Breakfast</h3>
-          <p>February 25th, 2022</p></div>
+          <h3 id="title4">District 5 Bowling Tournament</h3>
+          <p>April 23rd, 2022</p></div>
       </div>
   <div class="card" id="card5"><img id="jan-break5" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
     <div id="info5">
-      <h3 id="title5">January Membership Breakfast</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <h3 id="title5">May Membership Breakfast</h3>
+      <p>May 20th, 2022</p>
     </div>
   </div>
   <div class="card" id="card6"><img id="jan-break6" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
     <div id="info6">
-      <h3 id="title6">January Membership Breakfast</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <h3 id="title6">Together We "R" One - A Celebration of Diversity</h3>
+      <p>June 14th, 2022</p>
     </div>
   </div>
       <div class="card" id="card7"><img id="jan-break7" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
         <div id="info7">
-          <h3 id="title7">January Membership Breakfast</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <h3 id="title7">July Membership Breakfast</h3>
+          <p>July 22nd, 2022</p>
         </div>
       </div>
   <div class="card" id="card8"><img id="jan-break8" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
     <div id="info8">
-      <h3 id="title8">January Membership Breakfast</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-    </div>
-  </div>
-  <div class="card" id="card9"><img id="jan-break9" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
-    <div id="info9">
-      <h3 id="title9">January Membership Breakfast</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <h3 id="title8">September Membership Breakfast</h3>
+      <p>September 16th, 2022</p>
     </div>
   </div>
 
-  <script type="text/javascript">å
+  <!--honerable mentions:
+  BER Open house
+  YPN MIXER
+  Realtor at the Rink
+  Bingo & Brews for beds
+  Poker Run
+  5th of July Beach Cleanup
+  BER Social
+  Bowling for Beds
+  -->
+
+    <div class="contain-head" style="display: none;">
+      <div class="row" id="heading">
+        <script type="text/javascript">
+
+          const loadImage = path => {
+            return new Promise((resolve, reject) => {
+              const img = new Image()
+              img.crossOrigin = 'Anonymous' // to avoid CORS if used with Canvas
+              img.src = path
+              img.onload = () => {
+                resolve(img)
+              }
+              img.onerror = e => {
+                reject(e)
+              }
+            })
+          }
+
+          let webHeight = document.body.offsetHeight;
+          console.log(webHeight);
+
+
+
+          function underline() {
+            document.getElementById("main-underline").style.display = "inherit";
+            document.getElementById("Start").style.pointer = "cursor";
+          }
+
+          function underlineOut() {
+            document.getElementById("main-underline").style.display = "none";
+            document.getElementById("Start").style.pointer = "cursor";
+          }
+
+          function moveForward() {
+            document.getElementById("Start").style.display = "none";
+            document.getElementById("timeline").style.display = "table";
+            document.getElementById("jan-break").style.animationPlayState = "running";
+          }
+
+          function move1() {
+            window.scrollTo(0, 0);
+          }
+
+          function move2() {
+            window.scrollTo(0, 120);
+          }
+
+          function move3() {
+            window.scrollTo(0, 220);
+          }
+
+/*
+          function grow1() {
+            document.getElementById("title1").style.margin = "120px auto";
+            document.getElementById("jan-break").style ="transform: scale(1.2);"
+          }
+
+          function shrink1() {
+            document.getElementById("title1").style.margin = "90px auto";
+            document.getElementById("jan-break").style ="transform: scale(1.0);"
+
+                    }
+*/
+        </script>
+      </div>
+    </div>
+
+</body>
+
+  <script type="text/javascript">
+
+
+  function sizeChanger() {
+    let count = 0;
+
+      if (window.scrollY < 90) {
+        document.getElementById("title1").style.margin = "67px auto -10px 0px";
+        document.getElementById("title1").style.fontSize = "24px";
+        document.getElementById("title2").style.opacity = "1";
+        document.getElementById("title2").style.margin = "-145px auto -10px 0px";
+        document.getElementById("title2").style.fontSize = "40px";
+        document.getElementById("title3").style.opacity = "1";
+        document.getElementById("title3").style.margin = "-145px auto -10px 0px";
+        document.getElementById("title3").style.fontSize = "40px";
+        document.getElementById("jan-break").style.opacity ="1";
+        document.getElementById("sea-break").style.opacity =".1";
+        document.getElementById("sea-break-").style.opacity =".1";
+        document.getElementById("sea-break--").style.opacity =".1";
+        document.getElementById("sea-break---").style.opacity =".1";
+        document.getElementById("sea-break----").style.opacity =".1";
+        document.getElementById("sea-break-----").style.opacity =".1";
+        document.getElementById("sea-break------").style.opacity =".1";
+        document.getElementById("pfap").style.opacity =".1";
+        document.getElementById("jan-break4").style.opacity =".1";
+        document.getElementById("sea-break--").style.display = "none";
+        document.getElementById("sea-break").style.display = "inherit";
+        document.getElementById("sea-break-").style.display = "none";
+        document.getElementById("sea-break---").style.display = "none";
+        document.getElementById("sea-break----").style.display = "none";
+        document.getElementById("sea-break-----").style.display = "none";
+        document.getElementById("sea-break------").style.display = "none";
+        document.getElementById("card1").style.height = "300px";
+        document.getElementById("card2").style.height = "150px";
+        document.getElementById("card3").style.height = "150px";
+        document.getElementById("card2").style.margin = "300px auto";
+        document.getElementById("card3").style.margin = "450px auto";
+        document.getElementById("card4").style.margin = "600px auto";
+        document.getElementById("sea-break").style.animationPlayState = "paused";
+        document.getElementById("sea-break-").style.animationPlayState = "paused";
+        document.getElementById("sea-break--").style.animationPlayState = "paused";
+        document.getElementById("sea-break---").style.animationPlayState = "paused";
+        document.getElementById("sea-break----").style.animationPlayState = "paused";
+        document.getElementById("sea-break-----").style.animationPlayState = "paused";
+        document.getElementById("sea-break-------").style.animationPlayState = "paused";
+        document.getElementById("pfap").style.animationPlayState = "paused";
+        document.getElementById("pfap1").style.animationPlayState = "paused";
+        document.getElementById("pfap2").style.animationPlayState = "paused";
+        document.getElementById("pfap3").style.animationPlayState = "paused";
+        document.getElementById("pfap4").style.animationPlayState = "paused";
+        document.getElementById("pfap5").style.animationPlayState = "paused";
+        document.getElementById("pfap6").style.animationPlayState = "paused";
+        document.getElementById("pfap").style.display = "inherit";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("jan-break4").style.animationPlayState = "paused";
+        document.getElementById("jan-break").style.animationPlayState = "running";
+        count = 0;
+        count2 = 0;
+        count3 = 0;
+        }
+
+      else if (window.scrollY > 91 && window.scrollY < 300) {
+        document.getElementById("jan-break---").style.display = "none";
+        document.getElementById("title1").style.margin = "-125px auto -10px 0px";
+        document.getElementById("title1").style.fontSize = "40px";
+        document.getElementById("title2").style.opacity = "1";
+        document.getElementById("title2").style.margin = "60px auto -10px 0px";
+        document.getElementById("title2").style.fontSize = "24px";
+        document.getElementById("title3").style.opacity = "1";
+        document.getElementById("title3").style.margin = "-145px auto -10px 0px";
+        document.getElementById("title3").style.fontSize = "40px";
+        document.getElementById("jan-break").style.display = "inherit";
+        document.getElementById("jan-break-").style.display = "none";
+        document.getElementById("jan-break---").style.display = "none";
+        document.getElementById("sea-break").style.display = "inherit";
+        document.getElementById("sea-break").style = "transform: scale(1.3)";
+        document.getElementById("jan-break").style.opacity =".1";
+        document.getElementById("pfap").style.opacity =".1";
+        document.getElementById("jan-break4").style.opacity =".1";
+        document.getElementById("sea-break").style.opacity ="1";
+        document.getElementById("sea-break-").style.opacity ="1";
+        document.getElementById("sea-break--").style.opacity ="1";
+        document.getElementById("sea-break---").style.opacity ="1";
+        document.getElementById("sea-break----").style.opacity ="1";
+        document.getElementById("sea-break-----").style.opacity ="1";
+        document.getElementById("sea-break------").style.opacity ="1";
+        document.getElementById("sea-break-------").style.opacity ="1";
+        document.getElementById("card1").style.height = "150px";
+        document.getElementById("card2").style.height = "300px";
+        document.getElementById("card3").style.height = "150px";
+        document.getElementById("card2").style.margin = "150px auto";
+        document.getElementById("card3").style.margin = "450px auto";
+        document.getElementById("card4").style.margin = "600px auto";
+        document.getElementById("jan-break").style.animationPlayState = "paused";
+        document.getElementById("jan-break4").style.animationPlayState = "paused";
+        document.getElementById("pfap").style.animationPlayState = "paused";
+        document.getElementById("sea-break").style.animationPlayState = "running";
+        count = 0;
+        count2 = 0;
+        count3 = 0;
+      }
+
+      else if (window.scrollY > 301 && window.scrollY < 500) {
+        document.getElementById("title1").style.margin = "-125px auto -10px 0px";
+        document.getElementById("title1").style.fontSize = "40px";
+        document.getElementById("title2").style.fontSize = "40px";
+        document.getElementById("title2").style.margin = "-145px auto -10px 0px";
+        document.getElementById("title2").style.opacity = "1";
+        document.getElementById("title4").style.opacity = "1";
+        document.getElementById("title3").style.margin = "60px auto -10px 0px";
+        document.getElementById("title3").style.fontSize = "24px";
+        document.getElementById("sea-break-").style.opacity =".1";
+        document.getElementById("sea-break--").style.opacity =".1";
+        document.getElementById("sea-break---").style.opacity =".1";
+        document.getElementById("sea-break----").style.opacity =".1";
+        document.getElementById("sea-break-----").style.opacity =".1";
+        document.getElementById("sea-break------").style.opacity =".1";
+        document.getElementById("jan-break--").style.display = "none";
+        document.getElementById("jan-break").style.display = "inherit";
+        document.getElementById("jan-break-").style.display = "none";
+        document.getElementById("jan-break---").style.display = "none";
+        document.getElementById("sea-break--").style.display = "none";
+        document.getElementById("sea-break").style.display = "inherit";
+        document.getElementById("sea-break-").style.display = "none";
+        document.getElementById("sea-break---").style.display = "none";
+        document.getElementById("sea-break----").style.display = "none";
+        document.getElementById("sea-break-----").style.display = "none";
+        document.getElementById("sea-break------").style.display = "none";
+        document.getElementById("pfap").style.animationPlayState = "running";
+        document.getElementById("pfap").style.display = "inherit";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("jan-break").style.opacity =".1";
+        document.getElementById("sea-break").style.opacity =".1";
+        document.getElementById("pfap").style.opacity ="1";
+        document.getElementById("pfap1").style.opacity ="1";
+        document.getElementById("pfap2").style.opacity ="1";
+        document.getElementById("pfap3").style.opacity ="1";
+        document.getElementById("pfap4").style.opacity ="1";
+        document.getElementById("pfap5").style.opacity ="1";
+        document.getElementById("pfap6").style.opacity ="1";
+        document.getElementById("jan-break4").style.opacity =".1";
+        document.getElementById("card1").style.height = "150px";
+        document.getElementById("card2").style.height = "150px";
+        document.getElementById("card3").style.height = "300px";
+        document.getElementById("card4").style.height = "150px";
+        document.getElementById("card2").style.margin = "150px auto";
+        document.getElementById("card3").style.margin = "300px auto";
+        document.getElementById("card4").style.margin = "600px auto";
+        document.getElementById("jan-break").style.animationPlayState = "paused";
+        document.getElementById("sea-break").style.animationPlayState = "paused";
+        document.getElementById("jan-break4").style.animationPlayState = "running";
+        document.getElementById("jan-break").style.animationPlayState = "none";
+        document.getElementById("jan-break-").style.animationPlayState = "none";
+        document.getElementById("jan-break--").style.animationPlayState = "none";
+        document.getElementById("jan-break---").style.animationPlayState = "none";
+        document.getElementById("sea-break").style.animationPlayState = "paused";
+        document.getElementById("sea-break-").style.animationPlayState = "paused";
+        document.getElementById("sea-break--").style.animationPlayState = "paused";
+        document.getElementById("sea-break---").style.animationPlayState = "paused";
+        document.getElementById("sea-break----").style.animationPlayState = "paused";
+        document.getElementById("sea-break-----").style.animationPlayState = "paused";
+        document.getElementById("sea-break-------").style.animationPlayState = "paused";
+        document.getElementById("jan-break--").style.display = "none";
+        document.getElementById("jan-break").style.display = "inherit";
+        document.getElementById("jan-break-").style.display = "none";
+        count = 0;
+        count2 = 0;
+        count3 = 0;
+      }
+
+      else if (window.scrollY > 501 && window.scrollY < 800) {
+        document.getElementById("title1").style.margin = "-125px auto -10px 0px";
+        document.getElementById("title1").style.fontSize = "40px";
+        document.getElementById("title2").style.opacity = "1";
+        document.getElementById("title2").style.fontSize = "40px";
+        document.getElementById("title2").style.margin = "-145px auto -10px 0px";
+        document.getElementById("title3").style.opacity = "1";
+        document.getElementById("title3").style.margin = "-145px auto -10px 0px";
+        document.getElementById("title3").style.fontSize = "40px";
+        document.getElementById("sea-break").style.opacity =".1";
+        document.getElementById("sea-break-").style.opacity =".1";
+        document.getElementById("sea-break--").style.opacity =".1";
+        document.getElementById("sea-break---").style.opacity =".1";
+        document.getElementById("sea-break----").style.opacity =".1";
+        document.getElementById("sea-break-----").style.opacity =".1";
+        document.getElementById("sea-break------").style.opacity =".1";
+        document.getElementById("jan-break--").style.display = "none";
+        document.getElementById("jan-break").style.display = "inherit";
+        document.getElementById("jan-break-").style.display = "none";
+        document.getElementById("jan-break---").style.display = "none";
+        document.getElementById("sea-break--").style.display = "none";
+        document.getElementById("sea-break").style.display = "inherit";
+        document.getElementById("sea-break-").style.display = "none";
+        document.getElementById("sea-break---").style.display = "none";
+        document.getElementById("sea-break----").style.display = "none";
+        document.getElementById("sea-break-----").style.display = "none";
+        document.getElementById("sea-break------").style.display = "none";
+        document.getElementById("jan-break").style.opacity =".1";
+        document.getElementById("sea-break").style.opacity =".1";
+        document.getElementById("pfap").style.opacity =".1";
+        document.getElementById("jan-break4").style.opacity ="1";
+        document.getElementById("card1").style.height = "150px";
+        document.getElementById("card2").style.height = "150px";
+        document.getElementById("card3").style.height = "150px";
+        document.getElementById("card4").style.height = "300px";
+        document.getElementById("card2").style.margin = "150px auto";
+        document.getElementById("card3").style.margin = "300px auto";
+        document.getElementById("card4").style.margin = "450px auto";
+        document.getElementById("jan-break").style.animationPlayState = "paused";
+        document.getElementById("sea-break").style.animationPlayState = "paused";
+        document.getElementById("pfap").style.animationPlayState = "paused";
+        document.getElementById("pfap1").style.animationPlayState = "paused";
+        document.getElementById("pfap2").style.animationPlayState = "paused";
+        document.getElementById("pfap3").style.animationPlayState = "paused";
+        document.getElementById("pfap4").style.animationPlayState = "paused";
+        document.getElementById("pfap5").style.animationPlayState = "paused";
+        document.getElementById("pfap6").style.animationPlayState = "paused";
+        document.getElementById("pfap").style.display = "inherit";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("jan-break4").style.animationPlayState = "running";
+        document.getElementById("jan-break").style.animationPlayState = "none";
+        document.getElementById("jan-break-").style.animationPlayState = "none";
+        document.getElementById("jan-break--").style.animationPlayState = "none";
+        document.getElementById("jan-break---").style.animationPlayState = "none";
+        document.getElementById("sea-break").style.animationPlayState = "paused";
+        document.getElementById("sea-break-").style.animationPlayState = "paused";
+        document.getElementById("sea-break--").style.animationPlayState = "paused";
+        document.getElementById("sea-break---").style.animationPlayState = "paused";
+        document.getElementById("sea-break----").style.animationPlayState = "paused";
+        document.getElementById("sea-break-----").style.animationPlayState = "paused";
+        document.getElementById("sea-break-------").style.animationPlayState = "paused";
+        document.getElementById("jan-break--").style.display = "none";
+        document.getElementById("jan-break").style.display = "inherit";
+        document.getElementById("jan-break-").style.display = "none";
+        count = 0;
+        count2 = 0;
+        count3 = 0;
+      }
+
+      else {console.log("nothing");}
+    }
 
 
   function picChanger() {
@@ -685,6 +1042,8 @@
     let janArray = ["https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272089769_10216697677072657_2144536465904619755_n.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/274808708_5556370764376614_5071097208397559546_n-1.jpeg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/09/Copy-of-Affiliate-Spotlight-5-1.png"];
     let count = 0;
     let count2 = 0;
+    let count3 = 0;
+
 
     let change1 = function change1() {
       if (count == 0 && window.scrollY < 90) {
@@ -855,279 +1214,111 @@
       console.log("running2");
       stop();
     }
+
+    //Putting for a purpose slider changer
+    let change3 = function change3() {
+
+      if (count3 == 0 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 1;
+        document.getElementById("pfap").style.display = "inherit";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("pfap").style.animationPlayState = "running";
+        console.log("this");
+      }
+      else if (count3 == 1 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 2;
+        document.getElementById("pfap").style.display = "none";
+        document.getElementById("pfap1").style.display = "inherit";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("pfap1").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count3 == 2 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 3;
+        document.getElementById("pfap").style.display = "none";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "inherit";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("pfap2").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count3 == 3 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 4;
+        document.getElementById("pfap").style.display = "none";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "inherit";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("pfap3").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count3 == 4 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 5;
+        document.getElementById("pfap").style.display = "none";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "inherit";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("pfap4").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count3 == 5 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 6;
+        document.getElementById("pfap").style.display = "none";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "inherit";
+        document.getElementById("pfap6").style.display = "none";
+        document.getElementById("pfap5").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count3 == 6 && window.scrollY > 301 && window.scrollY < 500) {
+        count3 = 0;
+        document.getElementById("pfap").style.display = "none";
+        document.getElementById("pfap1").style.display = "none";
+        document.getElementById("pfap2").style.display = "none";
+        document.getElementById("pfap3").style.display = "none";
+        document.getElementById("pfap4").style.display = "none";
+        document.getElementById("pfap5").style.display = "none";
+        document.getElementById("pfap6").style.display = "inherit";
+        document.getElementById("pfap6").style.animationPlayState = "running";
+        console.log("end");
+      }
+      else {
+        console.log("error");
+      }
+      console.log(count3, "<= count3");
+      console.log("running3");
+      stop();
+    }
+
     let int1 = setInterval(change1, 10000);
     let int2 = setInterval(change2, 8000);
+    let int3 = setInterval(change3, 8000);
+
   }
 
-  function sizeChanger() {
-    let count = 0;
-
-      if (window.scrollY < 90) {
-        document.getElementById("title1").style.margin = "120px auto 50px auto";
-        document.getElementById("title1").style.opacity = ".1";
-        document.getElementById("title2").style.opacity = "1";
-        document.getElementById("title3").style.opacity = "1";
-        document.getElementById("jan-break").style.opacity ="1";
-        document.getElementById("sea-break").style.opacity =".1";
-        document.getElementById("sea-break-").style.opacity =".1";
-        document.getElementById("sea-break--").style.opacity =".1";
-        document.getElementById("sea-break---").style.opacity =".1";
-        document.getElementById("sea-break----").style.opacity =".1";
-        document.getElementById("sea-break-----").style.opacity =".1";
-        document.getElementById("sea-break------").style.opacity =".1";
-        document.getElementById("jan-break3").style.opacity =".1";
-        document.getElementById("jan-break4").style.opacity =".1";
-        document.getElementById("sea-break--").style.display = "none";
-        document.getElementById("sea-break").style.display = "inherit";
-        document.getElementById("sea-break-").style.display = "none";
-        document.getElementById("sea-break---").style.display = "none";
-        document.getElementById("sea-break----").style.display = "none";
-        document.getElementById("sea-break-----").style.display = "none";
-        document.getElementById("sea-break------").style.display = "none";
-        document.getElementById("card1").style.height = "300px";
-        document.getElementById("card2").style.height = "150px";
-        document.getElementById("card3").style.height = "150px";
-        document.getElementById("card2").style.margin = "300px auto";
-        document.getElementById("card3").style.margin = "450px auto";
-        document.getElementById("card4").style.margin = "600px auto";
-        document.getElementById("sea-break").style.animationPlayState = "paused";
-        document.getElementById("sea-break-").style.animationPlayState = "paused";
-        document.getElementById("sea-break--").style.animationPlayState = "paused";
-        document.getElementById("sea-break---").style.animationPlayState = "paused";
-        document.getElementById("sea-break----").style.animationPlayState = "paused";
-        document.getElementById("sea-break-----").style.animationPlayState = "paused";
-        document.getElementById("sea-break-------").style.animationPlayState = "paused";
-        document.getElementById("jan-break3").style.animationPlayState = "paused";
-        document.getElementById("jan-break4").style.animationPlayState = "paused";
-        document.getElementById("jan-break").style.animationPlayState = "running";
-        count2 = 0;
-        }
-
-      else if (window.scrollY > 91 && window.scrollY < 300) {
-        document.getElementById("jan-break---").style.display = "none";
-        document.getElementById("title1").style.margin = "90px auto";
-        document.getElementById("title1").style.opacity = "1";
-        document.getElementById("title2").style.opacity = ".2";
-        document.getElementById("title3").style.opacity = "1";
-        document.getElementById("jan-break--").style.display = "none";
-        document.getElementById("jan-break").style.display = "inherit";
-        document.getElementById("jan-break-").style.display = "none";
-        document.getElementById("jan-break---").style.display = "none";
-        document.getElementById("sea-break").style.display = "inherit";
-        document.getElementById("sea-break").style = "transform: scale(1.3)";
-        document.getElementById("jan-break").style.opacity =".1";
-        document.getElementById("jan-break3").style.opacity =".1";
-        document.getElementById("jan-break4").style.opacity =".1";
-        document.getElementById("sea-break").style.opacity ="1";
-        document.getElementById("sea-break-").style.opacity ="1";
-        document.getElementById("sea-break--").style.opacity ="1";
-        document.getElementById("sea-break---").style.opacity ="1";
-        document.getElementById("sea-break----").style.opacity ="1";
-        document.getElementById("sea-break-----").style.opacity ="1";
-        document.getElementById("sea-break------").style.opacity ="1";
-        document.getElementById("sea-break-------").style.opacity ="1";
-        document.getElementById("card1").style.height = "150px";
-        document.getElementById("card2").style.height = "300px";
-        document.getElementById("card3").style.height = "150px";
-        document.getElementById("card2").style.margin = "150px auto";
-        document.getElementById("card3").style.margin = "450px auto";
-        document.getElementById("card4").style.margin = "600px auto";
-        document.getElementById("jan-break").style.animationPlayState = "paused";
-        document.getElementById("jan-break4").style.animationPlayState = "paused";
-        document.getElementById("jan-break3").style.animationPlayState = "paused";
-        document.getElementById("sea-break").style.animationPlayState = "running";
-        clearInterval(int1);
-        count = 0;
-        clearInterval(int2);
-      }
-
-      else if (window.scrollY > 301 && window.scrollY < 500) {
-        document.getElementById("title1").style.margin = "90px auto";
-        document.getElementById("title1").style.opacity = "1";
-        document.getElementById("title2").style.opacity = "1";
-        document.getElementById("title4").style.opacity = "1";
-        document.getElementById("title3").style.opacity = ".1";
-        document.getElementById("sea-break").style.opacity =".1";
-        document.getElementById("sea-break-").style.opacity =".1";
-        document.getElementById("sea-break--").style.opacity =".1";
-        document.getElementById("sea-break---").style.opacity =".1";
-        document.getElementById("sea-break----").style.opacity =".1";
-        document.getElementById("sea-break-----").style.opacity =".1";
-        document.getElementById("sea-break------").style.opacity =".1";
-        document.getElementById("jan-break--").style.display = "none";
-        document.getElementById("jan-break").style.display = "inherit";
-        document.getElementById("jan-break-").style.display = "none";
-        document.getElementById("jan-break---").style.display = "none";
-        document.getElementById("sea-break--").style.display = "none";
-        document.getElementById("sea-break").style.display = "inherit";
-        document.getElementById("sea-break-").style.display = "none";
-        document.getElementById("sea-break---").style.display = "none";
-        document.getElementById("sea-break----").style.display = "none";
-        document.getElementById("sea-break-----").style.display = "none";
-        document.getElementById("sea-break------").style.display = "none";
-        document.getElementById("jan-break").style.opacity =".1";
-        document.getElementById("sea-break").style.opacity =".1";
-        document.getElementById("jan-break3").style.opacity ="1";
-        document.getElementById("jan-break4").style.opacity =".1";
-        document.getElementById("card1").style.height = "150px";
-        document.getElementById("card2").style.height = "150px";
-        document.getElementById("card3").style.height = "300px";
-        document.getElementById("card4").style.height = "150px";
-        document.getElementById("card2").style.margin = "150px auto";
-        document.getElementById("card3").style.margin = "300px auto";
-        document.getElementById("card4").style.margin = "600px auto";
-        document.getElementById("jan-break").style.animationPlayState = "paused";
-        document.getElementById("sea-break").style.animationPlayState = "paused";
-        document.getElementById("jan-break3").style.animationPlayState = "paused";
-        document.getElementById("jan-break4").style.animationPlayState = "running";
-        document.getElementById("jan-break").style.animationPlayState = "none";
-        document.getElementById("jan-break-").style.animationPlayState = "none";
-        document.getElementById("jan-break--").style.animationPlayState = "none";
-        document.getElementById("jan-break---").style.animationPlayState = "none";
-        document.getElementById("sea-break").style.animationPlayState = "paused";
-        document.getElementById("sea-break-").style.animationPlayState = "paused";
-        document.getElementById("sea-break--").style.animationPlayState = "paused";
-        document.getElementById("sea-break---").style.animationPlayState = "paused";
-        document.getElementById("sea-break----").style.animationPlayState = "paused";
-        document.getElementById("sea-break-----").style.animationPlayState = "paused";
-        document.getElementById("sea-break-------").style.animationPlayState = "paused";
-        document.getElementById("jan-break--").style.display = "none";
-        document.getElementById("jan-break").style.display = "inherit";
-        document.getElementById("jan-break-").style.display = "none";
-        count = 0;
-        count2 = 0;
-      }
-
-      else if (window.scrollY > 501 && window.scrollY < 800) {
-        document.getElementById("title1").style.margin = "90px auto";
-        document.getElementById("title1").style.opacity = "1";
-        document.getElementById("title2").style.opacity = "1";
-        document.getElementById("title3").style.opacity = "1";
-        document.getElementById("title4").style.opacity = ".1";
-        document.getElementById("sea-break").style.opacity =".1";
-        document.getElementById("sea-break-").style.opacity =".1";
-        document.getElementById("sea-break--").style.opacity =".1";
-        document.getElementById("sea-break---").style.opacity =".1";
-        document.getElementById("sea-break----").style.opacity =".1";
-        document.getElementById("sea-break-----").style.opacity =".1";
-        document.getElementById("sea-break------").style.opacity =".1";
-        document.getElementById("jan-break--").style.display = "none";
-        document.getElementById("jan-break").style.display = "inherit";
-        document.getElementById("jan-break-").style.display = "none";
-        document.getElementById("jan-break---").style.display = "none";
-        document.getElementById("sea-break--").style.display = "none";
-        document.getElementById("sea-break").style.display = "inherit";
-        document.getElementById("sea-break-").style.display = "none";
-        document.getElementById("sea-break---").style.display = "none";
-        document.getElementById("sea-break----").style.display = "none";
-        document.getElementById("sea-break-----").style.display = "none";
-        document.getElementById("sea-break------").style.display = "none";
-        document.getElementById("jan-break").style.opacity =".1";
-        document.getElementById("sea-break").style.opacity =".1";
-        document.getElementById("jan-break3").style.opacity =".1";
-        document.getElementById("jan-break4").style.opacity ="1";
-        document.getElementById("card1").style.height = "150px";
-        document.getElementById("card2").style.height = "150px";
-        document.getElementById("card3").style.height = "150px";
-        document.getElementById("card4").style.height = "300px";
-        document.getElementById("card2").style.margin = "150px auto";
-        document.getElementById("card3").style.margin = "300px auto";
-        document.getElementById("card4").style.margin = "450px auto";
-        document.getElementById("jan-break").style.animationPlayState = "paused";
-        document.getElementById("sea-break").style.animationPlayState = "paused";
-        document.getElementById("jan-break3").style.animationPlayState = "paused";
-        document.getElementById("jan-break4").style.animationPlayState = "running";
-        document.getElementById("jan-break").style.animationPlayState = "none";
-        document.getElementById("jan-break-").style.animationPlayState = "none";
-        document.getElementById("jan-break--").style.animationPlayState = "none";
-        document.getElementById("jan-break---").style.animationPlayState = "none";
-        document.getElementById("sea-break").style.animationPlayState = "paused";
-        document.getElementById("sea-break-").style.animationPlayState = "paused";
-        document.getElementById("sea-break--").style.animationPlayState = "paused";
-        document.getElementById("sea-break---").style.animationPlayState = "paused";
-        document.getElementById("sea-break----").style.animationPlayState = "paused";
-        document.getElementById("sea-break-----").style.animationPlayState = "paused";
-        document.getElementById("sea-break-------").style.animationPlayState = "paused";
-        document.getElementById("sea-break---------").style.animationPlayState = "paused";
-        document.getElementById("jan-break--").style.display = "none";
-        document.getElementById("jan-break").style.display = "inherit";
-        document.getElementById("jan-break-").style.display = "none";
-        count = 0;
-        count2 = 0;
-      }
-
-      else {console.log("nothing");}
-    }
+  window.onload=picChanger();
 
   </script>
 
-    <div class="contain-head" style="display: none;">
-      <div class="row" id="heading">
-        <script type="text/javascript">
-
-          const loadImage = path => {
-            return new Promise((resolve, reject) => {
-              const img = new Image()
-              img.crossOrigin = 'Anonymous' // to avoid CORS if used with Canvas
-              img.src = path
-              img.onload = () => {
-                resolve(img)
-              }
-              img.onerror = e => {
-                reject(e)
-              }
-            })
-          }
-
-          let webHeight = document.body.offsetHeight;
-          console.log(webHeight);
-
-
-
-          function underline() {
-            document.getElementById("main-underline").style.display = "inherit";
-            document.getElementById("Start").style.pointer = "cursor";
-          }
-
-          function underlineOut() {
-            document.getElementById("main-underline").style.display = "none";
-            document.getElementById("Start").style.pointer = "cursor";
-          }
-
-          function moveForward() {
-            document.getElementById("Start").style.display = "none";
-            document.getElementById("timeline").style.display = "table";
-            document.getElementById("jan-break").style.animationPlayState = "running";
-          }
-
-          function move1() {
-            window.scrollTo(0, 0);
-          }
-
-          function move2() {
-            window.scrollTo(0, 120);
-          }
-
-          function move3() {
-            window.scrollTo(0, 220);
-          }
-
-/*
-          function grow1() {
-            document.getElementById("title1").style.margin = "120px auto";
-            document.getElementById("jan-break").style ="transform: scale(1.2);"
-          }
-
-          function shrink1() {
-            document.getElementById("title1").style.margin = "90px auto";
-            document.getElementById("jan-break").style ="transform: scale(1.0);"
-
-                    }
-*/
-        </script>
-      </div>
-    </div>
-
-</body>
 
 </html>

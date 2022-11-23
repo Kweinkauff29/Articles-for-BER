@@ -1,9 +1,12 @@
+
+<!--
 //TODO Page 3
   //May, TWAO, JULY MB, Sept
 //ADD photos and animation
 //ADD additional moments
 //Add Membership numbers
 //ADD additonal ads
+-->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -501,6 +504,20 @@
       opacity: .1;
     }
 
+    #maybreak1, #maybreak2, #maybreak3, #maybreak4 {
+      transform: scale(1);
+      z-index: 5;
+      width: 100%;
+      animation: righttoleft 10s infinite;
+      display: inherit;
+      animation-play-state: running;
+      scale: 1.6;
+      width: auto;
+      object-position: 0px -70px;
+      translate: 0px 140px;
+      opacity: .1;
+    }
+
     #twao {
       transform: scale(1);
       z-index: 5;
@@ -851,7 +868,7 @@
   </div>
 
   <div id="ndn">
-    <img id="ndn-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/2022-Installation-Program-5-x-8-in-scaled.jpg" alt="">
+    <img rel="preload" id="ndn-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/2022-Installation-Program-5-x-8-in-scaled.jpg" alt="">
   </div>
 
   <div class="arrow-down">
@@ -860,7 +877,11 @@
 </div>
 
   <div class="card" id="card5" style="display: none;">
-    <img id="maybreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <img id="maybreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283694565_5801489869864701_4601652710916901387_n.jpg">
+    <img id="maybreak1" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283658929_5801489329864755_3883086875824560183_n.jpg">
+    <img id="maybreak2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283792261_5801489439864744_6847139435647749842_n.jpg">
+    <img id="maybreak3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283891125_5801489569864731_6404121607679489809_n.jpg">
+    <img id="maybreak4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283963290_5801489189864769_6482837820026028056_n.jpg">
     <div id="info5">
       <h3 id="title5">May Membership Breakfast</h3>
       <p>May 20th, 2022</p>
@@ -1328,12 +1349,26 @@
         document.getElementById("card7").style.margin = "450px auto"
         document.getElementById("card8").style.margin = "600px auto"
         document.getElementById("maybreak").style.opacity ="1";
+        document.getElementById("maybreak1").style.opacity ="1";
+        document.getElementById("maybreak2").style.opacity ="1";
+        document.getElementById("maybreak3").style.opacity ="1";
+        document.getElementById("maybreak4").style.opacity ="1";
         document.getElementById("twao").style.opacity =".1";
         document.getElementById("twao").style.display = "inherit";
         document.getElementById("twao1").style.display = "none";
         document.getElementById("twao2").style.display = "none";
         document.getElementById("twao3").style.display = "none";
         document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao").style.animationPlayState = "paused";
+        document.getElementById("twao1").style.animationPlayState = "paused";
+        document.getElementById("twao2").style.animationPlayState = "paused";
+        document.getElementById("twao3").style.animationPlayState = "paused";
+        document.getElementById("twao4").style.animationPlayState = "paused";
+        document.getElementById("maybreak").style.animationPlayState = "running";
+        document.getElementById("maybreak1").style.animationPlayState = "running";
+        document.getElementById("maybreak2").style.animationPlayState = "running";
+        document.getElementById("maybreak3").style.animationPlayState = "running";
+        document.getElementById("maybreak4").style.animationPlayState = "running";
         document.getElementById("julybreak").style.opacity =".1";
         document.getElementById("septbreak").style.opacity =".1";
         }
@@ -1356,6 +1391,23 @@
           document.getElementById("card7").style.margin = "450px auto"
           document.getElementById("card8").style.margin = "600px auto"
           document.getElementById("twao").style.display = "inherit";
+          document.getElementById("twao").style.opacity ="1";
+          document.getElementById("twao1").style.opacity ="1";
+          document.getElementById("twao2").style.opacity ="1";
+          document.getElementById("twao3").style.opacity ="1";
+          document.getElementById("twao4").style.opacity ="1";
+          document.getElementById("maybreak").style.opacity =".1";
+          document.getElementById("maybreak").style.display = "inherit";
+          document.getElementById("maybreak1").style.display = "none";
+          document.getElementById("maybreak2").style.display = "none";
+          document.getElementById("maybreak3").style.display = "none";
+          document.getElementById("maybreak4").style.display = "none";
+          document.getElementById("maybreak").style.animationPlayState = "paused";
+          document.getElementById("twao").style.animationPlayState = "running";
+          document.getElementById("twao1").style.animationPlayState = "running";
+          document.getElementById("twao2").style.animationPlayState = "running";
+          document.getElementById("twao3").style.animationPlayState = "running";
+          document.getElementById("twao4").style.animationPlayState = "running";
           document.getElementById("maybreak").style.opacity =".1";
           document.getElementById("twao").style.opacity ="1";
           document.getElementById("julybreak").style.opacity =".1";
@@ -1375,7 +1427,7 @@
     let count3 = 0;
     let count4 = 0;
     let count5 = 0;
-
+    let count6 = 0;
 
 
     let change1 = function change1() {
@@ -1720,11 +1772,70 @@
       stop();
     }
 
+    //May Membership Breakfast
+    let change6 = function change6() {
+
+      if (count6 == 0 && window.scrollY > 901 && window.scrollY < 1100) {
+        count6 = 1;
+        document.getElementById("maybreak").style.display = "inherit";
+        document.getElementById("maybreak1").style.display = "none";
+        document.getElementById("maybreak2").style.display = "none";
+        document.getElementById("maybreak3").style.display = "none";
+        document.getElementById("maybreak4").style.display = "none";
+        document.getElementById("maybreak").style.animationPlayState = "running";
+        console.log("this");
+      }
+      else if (count6 == 1 && window.scrollY > 901 && window.scrollY < 1100) {
+        count6 = 2;
+        document.getElementById("maybreak").style.display = "none";
+        document.getElementById("maybreak1").style.display = "inherit";
+        document.getElementById("maybreak2").style.display = "none";
+        document.getElementById("maybreak3").style.display = "none";
+        document.getElementById("maybreak4").style.display = "none";
+        document.getElementById("maybreak1").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count6 == 2 && window.scrollY > 901 && window.scrollY < 1100) {
+        count6 = 3;
+        document.getElementById("maybreak").style.display = "none";
+        document.getElementById("maybreak1").style.display = "none";
+        document.getElementById("maybreak2").style.display = "inherit";
+        document.getElementById("maybreak3").style.display = "none";
+        document.getElementById("maybreak4").style.display = "none";
+        document.getElementById("maybreak2").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count6 == 3 && window.scrollY > 901 && window.scrollY < 1100) {
+        count6 = 4;
+        document.getElementById("maybreak").style.display = "none";
+        document.getElementById("maybreak1").style.display = "none";
+        document.getElementById("maybreak2").style.display = "none";
+        document.getElementById("maybreak3").style.display = "inherit";
+        document.getElementById("maybreak4").style.display = "none";
+        document.getElementById("maybreak3").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count6 == 4 && window.scrollY > 901 && window.scrollY < 1100) {
+        count6 = 0;
+        document.getElementById("maybreak").style.display = "none";
+        document.getElementById("maybreak1").style.display = "none";
+        document.getElementById("maybreak2").style.display = "none";
+        document.getElementById("maybreak3").style.display = "none";
+        document.getElementById("maybreak4").style.display = "inherit";
+        document.getElementById("maybreak4").style.animationPlayState = "running";
+        console.log("end");
+      }
+      else {
+        console.log("error");
+      }
+      console.log(count6, "<= count6");
+      stop();
+    }
 
     //Together we are one animations
     let change5 = function change5() {
 
-      if (count5 == 0 && window.scrollY > 901 && window.scrollY < 1100) {
+      if (count5 == 0 && window.scrollY > 1101 && window.scrollY < 1300) {
         count5 = 1;
         document.getElementById("twao").style.display = "inherit";
         document.getElementById("twao1").style.display = "none";
@@ -1734,7 +1845,7 @@
         document.getElementById("twao").style.animationPlayState = "running";
         console.log("this");
       }
-      else if (count5 == 1 && window.scrollY > 901 && window.scrollY < 1100) {
+      else if (count5 == 1 && window.scrollY > 1101 && window.scrollY < 1300) {
         count5 = 2;
         document.getElementById("twao").style.display = "none";
         document.getElementById("twao1").style.display = "inherit";
@@ -1744,7 +1855,7 @@
         document.getElementById("twao1").style.animationPlayState = "running";
         console.log("that");
       }
-      else if (count5 == 2 && window.scrollY > 901 && window.scrollY < 1100) {
+      else if (count5 == 2 && window.scrollY > 1101 && window.scrollY < 1300) {
         count5 = 3;
         document.getElementById("twao").style.display = "none";
         document.getElementById("twao1").style.display = "none";
@@ -1754,7 +1865,7 @@
         document.getElementById("twao2").style.animationPlayState = "running";
         console.log("that");
       }
-      else if (count5 == 3 && window.scrollY > 901 && window.scrollY < 1100) {
+      else if (count5 == 3 && window.scrollY > 1101 && window.scrollY < 1300) {
         count5 = 4;
         document.getElementById("twao").style.display = "none";
         document.getElementById("twao1").style.display = "none";
@@ -1764,7 +1875,7 @@
         document.getElementById("twao3").style.animationPlayState = "running";
         console.log("that");
       }
-      else if (count5 == 4 && window.scrollY > 901 && window.scrollY < 1100) {
+      else if (count5 == 4 && window.scrollY > 1101 && window.scrollY < 1300) {
         count5 = 0;
         document.getElementById("twao").style.display = "none";
         document.getElementById("twao1").style.display = "none";
@@ -1778,7 +1889,6 @@
         console.log("error");
       }
       console.log(count5, "<= count5");
-      console.log("running5");
       stop();
     }
 
@@ -1787,9 +1897,10 @@
     let int3 = setInterval(change3, 8000);
     let int4 = setInterval(change4, 8000);
     let int5 = setInterval(change5, 8000);
-
+    let int6 = setInterval(change6, 8000);
 
   }
+
 
   window.onload=picChanger();
 

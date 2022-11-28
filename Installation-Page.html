@@ -560,6 +560,20 @@
       opacity: .1;
     }
 
+    #julybreak, #julybreak1, #julybreak2, #julybreak3, #julybreak4 {
+      transform: scale(1);
+      z-index: 5;
+      width: 100%;
+      animation: righttoleft 10s infinite;
+      display: inherit;
+      animation-play-state: paused;
+      scale: 1.6;
+      width: auto;
+      object-position: 0px -70px;
+      translate: 0px 140px;
+      opacity: .1;
+    }
+
     #septbreak {
       transform: scale(1);
       z-index: 5;
@@ -899,7 +913,11 @@
     </div>
   </div>
       <div class="card" id="card7" style="display: none;">
-        <img id="julybreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+        <img id="julybreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296113238_5988315457848807_6344846346108164682_n.jpg">
+        <img id="julybreak1" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296166955_5988315487848804_2373184675592926237_n.jpg">
+        <img id="julybreak2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296074168_5988315297848823_5883250288916461692_n.jpg">
+        <img id="julybreak3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/295942386_5988315917848761_5876973408442740876_n.jpg">
+        <img id="julybreak4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/295773283_5988315957848757_584952091499178329_n.jpg">
         <div id="info7">
           <h3 id="title7">July Membership Breakfast</h3>
           <p>July 22nd, 2022</p>
@@ -1371,6 +1389,9 @@
         document.getElementById("maybreak4").style.animationPlayState = "running";
         document.getElementById("julybreak").style.opacity =".1";
         document.getElementById("septbreak").style.opacity =".1";
+        count5 = 0;
+        count6 = 0;
+        count7 = 0;
         }
 
         else if (window.scrollY > 1101 && window.scrollY < 1300) {
@@ -1412,7 +1433,58 @@
           document.getElementById("twao").style.opacity ="1";
           document.getElementById("julybreak").style.opacity =".1";
           document.getElementById("septbreak").style.opacity =".1";
+          count5 = 0;
+          count6 = 0;
+          count7 = 0;
           }
+
+          else if (window.scrollY > 1301 && window.scrollY < 1500) {
+            document.getElementById("title5").style.margin = "80px auto -10px 0px";
+            document.getElementById("title5").style.fontSize = "24px";
+            document.getElementById("title6").style.margin = "-145px auto -10px 0px";
+            document.getElementById("title6").style.fontSize = "40px";
+            document.getElementById("title7").style.fontSize = "40px";
+            document.getElementById("title7").style.margin = "-145px auto -10px 0px";
+            document.getElementById("title8").style.margin = "-145px auto -10px 0px";
+            document.getElementById("title8").style.fontSize = "40px";
+            document.getElementById("card5").style.height = "150px";
+            document.getElementById("card6").style.height = "150px";
+            document.getElementById("card7").style.height = "300px";
+            document.getElementById("card8").style.height = "150px";
+            document.getElementById("card5").style.margin = "0px auto"
+            document.getElementById("card6").style.margin = "150px auto"
+            document.getElementById("card7").style.margin = "300px auto"
+            document.getElementById("card8").style.margin = "600px auto"
+            document.getElementById("julybreak").style.display = "inherit";
+            document.getElementById("julybreak1").style.display = "none";
+            document.getElementById("julybreak2").style.display = "none";
+            document.getElementById("julybreak3").style.display = "none";
+            document.getElementById("julybreak4").style.display = "none";
+            document.getElementById("julybreak").style.animationPlayState = "running";
+            document.getElementById("julybreak1").style.animationPlayState = "running";
+            document.getElementById("julybreak2").style.animationPlayState = "running";
+            document.getElementById("julybreak3").style.animationPlayState = "running";
+            document.getElementById("julybreak4").style.animationPlayState = "running";
+            document.getElementById("twao").style.display = "inherit";
+            document.getElementById("twao1").style.display = "none";
+            document.getElementById("twao2").style.display = "none";
+            document.getElementById("twao3").style.display = "none";
+            document.getElementById("twao4").style.display = "none";
+            document.getElementById("maybreak").style.opacity =".1";
+            document.getElementById("maybreak").style.animationPlayState = "paused";
+            document.getElementById("twao").style.animationPlayState = "paused";
+            document.getElementById("maybreak").style.opacity =".1";
+            document.getElementById("twao").style.opacity =".1";
+            document.getElementById("julybreak").style.opacity ="1";
+            document.getElementById("julybreak1").style.opacity ="1";
+            document.getElementById("julybreak2").style.opacity ="1";
+            document.getElementById("julybreak3").style.opacity ="1";
+            document.getElementById("julybreak4").style.opacity ="1";
+            document.getElementById("septbreak").style.opacity =".1";
+            count5 = 0;
+            count6 = 0;
+            count7 = 0;
+            }
 
 
       else {console.log("nothing");}
@@ -1428,6 +1500,8 @@
     let count4 = 0;
     let count5 = 0;
     let count6 = 0;
+    let count7 = 0;
+
 
 
     let change1 = function change1() {
@@ -1885,11 +1959,65 @@
         document.getElementById("twao4").style.animationPlayState = "running";
         console.log("end");
       }
+      //July Membership breakfast
+      let change6 = function change6() {
+
+        if (count6 == 0 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count6 = 1;
+          document.getElementById("julybreak").style.display = "inherit";
+          document.getElementById("julybreak1").style.display = "none";
+          document.getElementById("julybreak2").style.display = "none";
+          document.getElementById("julybreak3").style.display = "none";
+          document.getElementById("julybreak4").style.display = "none";
+          document.getElementById("julybreak").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count6 == 1 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count6 = 2;
+          document.getElementById("julybreak").style.display = "none";
+          document.getElementById("julybreak1").style.display = "inherit";
+          document.getElementById("julybreak2").style.display = "none";
+          document.getElementById("julybreak3").style.display = "none";
+          document.getElementById("julybreak4").style.display = "none";
+          document.getElementById("julybreak1").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count6 == 2 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count6 = 3;
+          document.getElementById("julybreak").style.display = "none";
+          document.getElementById("julybreak1").style.display = "none";
+          document.getElementById("julybreak2").style.display = "inherit";
+          document.getElementById("julybreak3").style.display = "none";
+          document.getElementById("julybreak4").style.display = "none";
+          document.getElementById("julybreak2").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count6 == 3 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count6 = 4;
+          document.getElementById("julybreak").style.display = "none";
+          document.getElementById("julybreak1").style.display = "none";
+          document.getElementById("julybreak2").style.display = "none";
+          document.getElementById("julybreak3").style.display = "inherit";
+          document.getElementById("julybreak4").style.display = "none";
+          document.getElementById("julybreak3").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count6 == 4 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count6 = 0;
+          document.getElementById("julybreak").style.display = "none";
+          document.getElementById("julybreak1").style.display = "none";
+          document.getElementById("julybreak2").style.display = "none";
+          document.getElementById("julybreak3").style.display = "none";
+          document.getElementById("julybreak4").style.display = "inherit";
+          document.getElementById("julybreak4").style.animationPlayState = "running";
+          console.log("this");
+        }
       else {
         console.log("error");
       }
-      console.log(count5, "<= count5");
+      console.log(count6, "<= count6");
       stop();
+    }
     }
 
     let int1 = setInterval(change1, 8000);
@@ -1898,6 +2026,7 @@
     let int4 = setInterval(change4, 8000);
     let int5 = setInterval(change5, 8000);
     let int6 = setInterval(change6, 8000);
+    let int7 = setInterval(change7, 8000);
 
   }
 

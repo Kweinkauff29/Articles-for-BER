@@ -59,7 +59,7 @@
       width: 100%;
       align-items: center;
       color: #2f3034;
-      height: 2000px;
+      height: 3000px;
     }
 
     .vc_column_container {
@@ -1846,6 +1846,60 @@
       stop();
     }
 
+    //Together we are one animations
+    let change5 = function change5() {
+
+      if (count5 == 0 && window.scrollY > 1101 && window.scrollY < 1300) {
+        count5 = 1;
+        document.getElementById("twao").style.display = "inherit";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao").style.animationPlayState = "running";
+        console.log("this");
+      }
+      else if (count5 == 1 && window.scrollY > 1101 && window.scrollY < 1300) {
+        count5 = 2;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "inherit";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao1").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count5 == 2 && window.scrollY > 1101 && window.scrollY < 1300) {
+        count5 = 3;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "inherit";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao2").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count5 == 3 && window.scrollY > 1101 && window.scrollY < 1300) {
+        count5 = 4;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "inherit";
+        document.getElementById("twao4").style.display = "none";
+        document.getElementById("twao3").style.animationPlayState = "running";
+        console.log("that");
+      }
+      else if (count5 == 4 && window.scrollY > 1101 && window.scrollY < 1300) {
+        count5 = 0;
+        document.getElementById("twao").style.display = "none";
+        document.getElementById("twao1").style.display = "none";
+        document.getElementById("twao2").style.display = "none";
+        document.getElementById("twao3").style.display = "none";
+        document.getElementById("twao4").style.display = "inherit";
+        document.getElementById("twao4").style.animationPlayState = "running";
+        console.log("end");
+      }
+
     //May Membership Breakfast
     let change6 = function change6() {
 
@@ -1906,64 +1960,11 @@
       stop();
     }
 
-    //Together we are one animations
-    let change5 = function change5() {
-
-      if (count5 == 0 && window.scrollY > 1101 && window.scrollY < 1300) {
-        count5 = 1;
-        document.getElementById("twao").style.display = "inherit";
-        document.getElementById("twao1").style.display = "none";
-        document.getElementById("twao2").style.display = "none";
-        document.getElementById("twao3").style.display = "none";
-        document.getElementById("twao4").style.display = "none";
-        document.getElementById("twao").style.animationPlayState = "running";
-        console.log("this");
-      }
-      else if (count5 == 1 && window.scrollY > 1101 && window.scrollY < 1300) {
-        count5 = 2;
-        document.getElementById("twao").style.display = "none";
-        document.getElementById("twao1").style.display = "inherit";
-        document.getElementById("twao2").style.display = "none";
-        document.getElementById("twao3").style.display = "none";
-        document.getElementById("twao4").style.display = "none";
-        document.getElementById("twao1").style.animationPlayState = "running";
-        console.log("that");
-      }
-      else if (count5 == 2 && window.scrollY > 1101 && window.scrollY < 1300) {
-        count5 = 3;
-        document.getElementById("twao").style.display = "none";
-        document.getElementById("twao1").style.display = "none";
-        document.getElementById("twao2").style.display = "inherit";
-        document.getElementById("twao3").style.display = "none";
-        document.getElementById("twao4").style.display = "none";
-        document.getElementById("twao2").style.animationPlayState = "running";
-        console.log("that");
-      }
-      else if (count5 == 3 && window.scrollY > 1101 && window.scrollY < 1300) {
-        count5 = 4;
-        document.getElementById("twao").style.display = "none";
-        document.getElementById("twao1").style.display = "none";
-        document.getElementById("twao2").style.display = "none";
-        document.getElementById("twao3").style.display = "inherit";
-        document.getElementById("twao4").style.display = "none";
-        document.getElementById("twao3").style.animationPlayState = "running";
-        console.log("that");
-      }
-      else if (count5 == 4 && window.scrollY > 1101 && window.scrollY < 1300) {
-        count5 = 0;
-        document.getElementById("twao").style.display = "none";
-        document.getElementById("twao1").style.display = "none";
-        document.getElementById("twao2").style.display = "none";
-        document.getElementById("twao3").style.display = "none";
-        document.getElementById("twao4").style.display = "inherit";
-        document.getElementById("twao4").style.animationPlayState = "running";
-        console.log("end");
-      }
       //July Membership breakfast
-      let change6 = function change6() {
+      let change7 = function change7() {
 
-        if (count6 == 0 && window.scrollY > 1301 && window.scrollY < 1500) {
-          count6 = 1;
+        if (count7 == 0 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count7 = 1;
           document.getElementById("julybreak").style.display = "inherit";
           document.getElementById("julybreak1").style.display = "none";
           document.getElementById("julybreak2").style.display = "none";
@@ -1972,8 +1973,8 @@
           document.getElementById("julybreak").style.animationPlayState = "running";
           console.log("this");
         }
-        else if (count6 == 1 && window.scrollY > 1301 && window.scrollY < 1500) {
-          count6 = 2;
+        else if (count7 == 1 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count7 = 2;
           document.getElementById("julybreak").style.display = "none";
           document.getElementById("julybreak1").style.display = "inherit";
           document.getElementById("julybreak2").style.display = "none";
@@ -1982,8 +1983,8 @@
           document.getElementById("julybreak1").style.animationPlayState = "running";
           console.log("this");
         }
-        else if (count6 == 2 && window.scrollY > 1301 && window.scrollY < 1500) {
-          count6 = 3;
+        else if (count7 == 2 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count7 = 3;
           document.getElementById("julybreak").style.display = "none";
           document.getElementById("julybreak1").style.display = "none";
           document.getElementById("julybreak2").style.display = "inherit";
@@ -1992,8 +1993,8 @@
           document.getElementById("julybreak2").style.animationPlayState = "running";
           console.log("this");
         }
-        else if (count6 == 3 && window.scrollY > 1301 && window.scrollY < 1500) {
-          count6 = 4;
+        else if (count7 == 3 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count7 = 4;
           document.getElementById("julybreak").style.display = "none";
           document.getElementById("julybreak1").style.display = "none";
           document.getElementById("julybreak2").style.display = "none";
@@ -2002,8 +2003,8 @@
           document.getElementById("julybreak3").style.animationPlayState = "running";
           console.log("this");
         }
-        else if (count6 == 4 && window.scrollY > 1301 && window.scrollY < 1500) {
-          count6 = 0;
+        else if (count7 == 4 && window.scrollY > 1301 && window.scrollY < 1500) {
+          count7 = 0;
           document.getElementById("julybreak").style.display = "none";
           document.getElementById("julybreak1").style.display = "none";
           document.getElementById("julybreak2").style.display = "none";
@@ -2015,9 +2016,8 @@
       else {
         console.log("error");
       }
-      console.log(count6, "<= count6");
+      console.log(count7, "<= count7");
       stop();
-    }
     }
 
     let int1 = setInterval(change1, 8000);
@@ -2027,6 +2027,8 @@
     let int5 = setInterval(change5, 8000);
     let int6 = setInterval(change6, 8000);
     let int7 = setInterval(change7, 8000);
+
+  }
 
   }
 

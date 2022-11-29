@@ -1,8 +1,6 @@
 
 <!--
 //TODO Page 3
-  //May, TWAO, JULY MB, Sept
-//ADD photos and animation
 //ADD additional moments
 //Add Membership numbers
 //ADD additonal ads
@@ -581,6 +579,20 @@
       opacity: .1;
     }
 
+    h5 {
+      text-align: center;
+    }
+
+    .arrowright {
+      font-size: 60px;
+      margin: auto 0px auto 15px;
+    }
+
+    .arrowleft {
+      font-size: 60px;
+      margin: auto 15px auto 0px;
+    }
+
 
     @keyframes grow {
       0% {
@@ -629,6 +641,10 @@
         opacity: .2;
       }
 
+      #moreevents {
+        color: black;
+      }
+
       #jan-break4 {
         object-position: 0px -70px;
         transform: scale(1);
@@ -639,6 +655,11 @@
         opacity: .2;
       }
 
+      #additional {
+        display: flex;
+        position: fixed;
+      }
+
       #info1 {
         display: flex;
         flex-direction: column;
@@ -647,6 +668,20 @@
         width: 100%;
         margin: 490px auto 0px 20px;
         translate: 0px -625px;
+      }
+
+      #additonal {
+        display: flex;
+      }
+
+      .arrowright {
+        font-size: 60px;
+        margin: auto 0px auto 15px;
+      }
+
+      .arrowleft {
+        font-size: 60px;
+        margin: auto 15px auto 0px;
       }
 
       #info2 {
@@ -1344,7 +1379,23 @@
                   document.getElementById("card6").style.display = "none";
                   document.getElementById("card7").style.display = "none";
                   document.getElementById("card8").style.display = "none";
+                  document.getElementById("page4").style.display = "none";
                   document.getElementById("page3").style.display = "block";
+                  document.getElementById("scroll-icon").style.opacity = ".3";
+                }
+
+                //Change to Page 3
+                else if (window.scrollY > 2001 && window.scrollY < 2300) {
+                  document.getElementById("card1").style.display = "none";
+                  document.getElementById("card2").style.display = "none";
+                  document.getElementById("card3").style.display = "none";
+                  document.getElementById("card4").style.display = "none";
+                  document.getElementById("card5").style.display = "none";
+                  document.getElementById("card6").style.display = "none";
+                  document.getElementById("card7").style.display = "none";
+                  document.getElementById("card8").style.display = "none";
+                  document.getElementById("page3").style.display = "none";
+                  document.getElementById("page4").style.display = "block";
                   document.getElementById("scroll-icon").style.opacity = ".3";
                 }
 
@@ -1489,15 +1540,209 @@
     </div>
   </div>
 
+  <div id="page4" style="display: none;">
+
+    <h1 id="moreevents">More Events from 2022!</h1>
+
+
+    <div id="additional" class="row">
+      <div class="arrowleft" onclick="back()">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </div>
+
+        <div class="contentrow">
+          <div id="0">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/284948891_5829504783729876_1662765996587508513_n.jpg" alt="">
+            <h5>BER Open House - June 1st</h5>
+          </div>
+          <div id="1" style="display: none;">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Screenshot-2022-11-29-at-5.55.27-PM.png" alt="">
+            <h5>YPN Mixer - May 25th</h5>
+          </div>
+          <div id="2" style="display: none;">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/280292346_5752127004800988_3965937521560838619_n.jpg" alt="">
+            <h5>Place in the Sun - BER Goes to the UK!</h5>
+          </div>
+          <div id="3" style="display: none;">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Screenshot-2022-11-29-at-6.03.04-PM.png" alt="">
+            <h5>Poker Run - Good Nights for Neighbors</h5>
+          </div>
+          <div id="4" style="display: none;">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/306603454_10226672775264639_1265652929304230947_n.jpg" alt="">
+            <h5>Bingos and Brews for Beds</h5>
+          </div>
+          <div id="5" style="display: none;">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Screenshot-2022-11-29-at-6.05.52-PM-1.png" alt="">
+            <h5>July 5th Beach Cleanup</h5>
+          </div>
+        </div>
+
+        <div class="arrowright" onclick="forward()">
+          <i class="fa fa-caret-right" aria-hidden="true"></i>
+        </div>
+
+      </div>
+
+      <script type="text/javascript">
+        var num = 0;
+
+        async function back() {
+          if (num == 0) {
+            document.getElementById("0").style.display = "contents";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num = 5;
+            return num;
+          }
+          else if (num == 1) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "contents";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num--;
+            return num;
+          }
+
+          else if (num == 2) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "contents";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num--;
+            return num;
+          }
+
+          else if (num = 3) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "contents";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num--;
+            return num;
+          }
+
+          else if (num = 4) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "contents";
+            document.getElementById("5").style.display = "none";
+            num--;
+            return num;
+          }
+
+          else if (num = 5) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "contents";
+            num--;
+            return num;
+          }
+
+          else {
+            console.log("doesn't work");
+          }
+          return num;
+        }
+
+        async function forward() {
+          if (num == 0) {
+            document.getElementById("0").style.display = "contents";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num++;
+            return num;
+            }
+
+          else if (num == 1) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "contents";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num++;
+            return num;
+          }
+
+          else if (num == 2) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "contents";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num++;
+            return num;
+          }
+
+          else if (num == 3) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "contents";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num++;
+            return num;
+          }
+
+          else if (num = 4) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "contents";
+            document.getElementById("5").style.display = "none";
+            num++;
+            return num;
+          }
+
+          else if (num = 5) {
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "contents";
+            num++;
+            return num;
+          }
+
+          else {
+            console.log("doesn't work");
+          }
+          return num;
+        }
+      </script>
+
+    </div>
+
+
   <!--honerable mentions:
-  BER Open house
-  YPN MIXER
   Realtor at the Rink
-  Bingo & Brews for beds
-  Poker Run
   5th of July Beach Cleanup
   BER Social
   Bowling for Beds
+
+
+  ADD ACCOMPLISHMENTS
   -->
 
     <div class="contain-head" style="display: none;">

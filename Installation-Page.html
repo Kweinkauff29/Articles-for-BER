@@ -391,7 +391,7 @@
       opacity: .1;
     }
 
-    #sea-break-, #sea-break--, #sea-break--- {
+    #sea-break-, #sea-break--, #sea-break---, #sea-break---- {
       transform: scale(1);
       z-index: 5;
       width: 100%;
@@ -403,21 +403,6 @@
       width: auto;
       object-position: 0px -70px;
       translate: 0px 130px;
-      opacity: .1;
-    }
-
-    #sea-break---- {
-      transform: scale(1);
-      z-index: 5;
-      width: 100%;
-      animation: righttoleft 10s infinite;
-      animation-play-state: paused;
-      display: inherit;
-      animation-play-state: running;
-      scale: 1.7;
-      width: auto;
-      object-position: 0px -70px;
-      translate: 0px 100px;
       opacity: .1;
     }
 
@@ -457,6 +442,14 @@
       animation: fadein 1s;
     }
 
+    #pm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 200px auto;
+      position: fixed;
+    }
+
     #dv, #dv1, #dv2, #dv3, #dv4, #dv5, #dv6 {
       transform: scale(1);
       z-index: 5;
@@ -468,7 +461,7 @@
       scale: 1.6;
       width: auto;
       object-position: 0px -70px;
-      translate: 0px 160px;
+      translate: 0px 140px;
       opacity: .1;
     }
 
@@ -574,7 +567,7 @@
       opacity: .1;
     }
 
-    #septbreak {
+    #septbreak, #septbreak1, #septbreak2, #septbreak3, #septbreak4 {
       transform: scale(1);
       z-index: 5;
       width: 100%;
@@ -756,10 +749,11 @@
         margin: -125px auto -10px 0px;
       }
       #title5 {
-        margin: -120px auto -10px auto;
+        margin: -145px auto -10px auto;
       }
       #title6 {
-        margin: -125px auto -10px 0px;
+        margin: -165px auto -10px 0px;
+        line-height: 1;
       }
       #title7 {
         margin: -120px auto -10px auto;
@@ -850,6 +844,7 @@
           document.getElementById("sea-break-----").style.display = "none";
           document.getElementById("sea-break------").style.display = "none";
           document.getElementById("dv").style.display = "inherit";
+          document.getElementById("scroll-icon").style.opacity = "1";
           document.getElementById("dv").style.animationPlayState = "none";
           document.getElementById("dv1").style.display = "none";
           document.getElementById("dv2").style.display = "none";
@@ -898,6 +893,7 @@
           document.getElementById("title1").style.margin = "-125px auto -10px 0px";
           document.getElementById("title1").style.fontSize = "40px";
           document.getElementById("title2").style.opacity = "1";
+          document.getElementById("scroll-icon").style.opacity = ".3";
           document.getElementById("title2").style.margin = "60px auto -10px 0px";
           document.getElementById("title2").style.fontSize = "24px";
           document.getElementById("title3").style.opacity = "1";
@@ -960,6 +956,7 @@
           document.getElementById("title2").style.margin = "-145px auto -10px 0px";
           document.getElementById("title2").style.opacity = "1";
           document.getElementById("title4").style.opacity = "1";
+          document.getElementById("scroll-icon").style.opacity = ".3";
           document.getElementById("title3").style.margin = "60px auto -10px 0px";
           document.getElementById("title3").style.fontSize = "24px";
           document.getElementById("title4").style.margin = "-125px auto -10px 0px";
@@ -1050,6 +1047,7 @@
           document.getElementById("title1").style.fontSize = "40px";
           document.getElementById("title2").style.opacity = "1";
           document.getElementById("title2").style.fontSize = "40px";
+          document.getElementById("scroll-icon").style.opacity = "1";
           document.getElementById("title2").style.margin = "-145px auto -10px 0px";
           document.getElementById("title3").style.opacity = "1";
           document.getElementById("title3").style.margin = "-145px auto -10px 0px";
@@ -1134,6 +1132,7 @@
           document.getElementById("card7").style.display = "none";
           document.getElementById("card8").style.display = "none";
           document.getElementById("page2").style.display = "block";
+          document.getElementById("scroll-icon").style.opacity = ".3";
         }
 
         //May Membership Breakfast
@@ -1143,14 +1142,15 @@
           document.getElementById("card6").style.display = "inherit";
           document.getElementById("card7").style.display = "inherit";
           document.getElementById("card8").style.display = "inherit";
-          document.getElementById("title5").style.margin = "30px auto -10px 0px";
+          document.getElementById("title5").style.margin = "70px auto -10px 0px";
           document.getElementById("title5").style.fontSize = "24px";
-          document.getElementById("title6").style.margin = "-175px auto -10px 0px";
+          document.getElementById("title6").style.margin = "-145px auto -10px 0px";
           document.getElementById("title6").style.fontSize = "40px";
           document.getElementById("title7").style.fontSize = "40px";
-          document.getElementById("title7").style.margin = "-145px auto -10px 0px";
-          document.getElementById("title8").style.margin = "-145px auto -10px 0px";
+          document.getElementById("title7").style.margin = "-125px auto -10px 0px";
+          document.getElementById("title8").style.margin = "-125px auto -10px 0px";
           document.getElementById("title8").style.fontSize = "40px";
+          document.getElementById("scroll-icon").style.opacity = "1";
           document.getElementById("card5").style.height = "300px";
           document.getElementById("card6").style.height = "150px";
           document.getElementById("card7").style.height = "150px";
@@ -1182,17 +1182,18 @@
 
           //Together we are one
           else if (window.scrollY > 1101 && window.scrollY < 1300) {
-            document.getElementById("title5").style.margin = "-145px auto -10px 0px";
+            document.getElementById("title5").style.margin = "-125px auto -10px 0px";
             document.getElementById("title5").style.fontSize = "40px";
-            document.getElementById("title6").style.margin = "-30px auto -10px 0px";
+            document.getElementById("title6").style.margin = "70px auto -10px 0px";
             document.getElementById("title6").style.fontSize = "24px";
             document.getElementById("title7").style.fontSize = "40px";
-            document.getElementById("title7").style.margin = "-145px auto -10px 0px";
-            document.getElementById("title8").style.margin = "-145px auto -10px 0px";
+            document.getElementById("title7").style.margin = "-125px auto -10px 0px";
+            document.getElementById("title8").style.margin = "-125px auto -10px 0px";
             document.getElementById("title8").style.fontSize = "40px";
             document.getElementById("card5").style.height = "150px";
             document.getElementById("card6").style.height = "300px";
             document.getElementById("card7").style.height = "150px";
+            document.getElementById("scroll-icon").style.opacity = ".3";
             document.getElementById("card8").style.height = "150px";
             document.getElementById("card5").style.margin = "0px auto";
             document.getElementById("card6").style.margin = "150px auto";
@@ -1220,22 +1221,29 @@
             document.getElementById("twao").style.opacity ="1";
             document.getElementById("julybreak").style.opacity =".1";
             document.getElementById("septbreak").style.opacity =".1";
+            document.getElementById("julybreak").style.display = "inherit";
+            document.getElementById("julybreak1").style.display = "none";
+            document.getElementById("julybreak2").style.display = "none";
+            document.getElementById("julybreak3").style.display = "none";
+            document.getElementById("julybreak4").style.display = "none";
+            document.getElementById("julybreak").style.animationPlayState = "paused";
             }
 
             //July Membership Breakfast
             else if (window.scrollY > 1301 && window.scrollY < 1500) {
-              document.getElementById("title5").style.margin = "80px auto -10px 0px";
-              document.getElementById("title5").style.fontSize = "24px";
-              document.getElementById("title6").style.margin = "-145px auto -10px 0px";
+              document.getElementById("title5").style.margin = "-125px auto -10px 0px";
+              document.getElementById("title5").style.fontSize = "40px";
+              document.getElementById("title6").style.margin = "-125px auto -10px 0px";
               document.getElementById("title6").style.fontSize = "40px";
-              document.getElementById("title7").style.fontSize = "40px";
-              document.getElementById("title7").style.margin = "-145px auto -10px 0px";
-              document.getElementById("title8").style.margin = "-145px auto -10px 0px";
+              document.getElementById("title7").style.fontSize = "24px";
+              document.getElementById("title7").style.margin = "70px auto -10px 0px";
+              document.getElementById("title8").style.margin = "-125px auto -10px 0px";
               document.getElementById("title8").style.fontSize = "40px";
               document.getElementById("card5").style.height = "150px";
               document.getElementById("card6").style.height = "150px";
               document.getElementById("card7").style.height = "300px";
               document.getElementById("card8").style.height = "150px";
+              document.getElementById("scroll-icon").style.opacity = ".3";
               document.getElementById("card5").style.margin = "0px auto";
               document.getElementById("card6").style.margin = "150px auto";
               document.getElementById("card7").style.margin = "300px auto";
@@ -1245,6 +1253,11 @@
               document.getElementById("julybreak2").style.display = "none";
               document.getElementById("julybreak3").style.display = "none";
               document.getElementById("julybreak4").style.display = "none";
+              document.getElementById("septbreak").style.display = "inherit";
+              document.getElementById("septbreak1").style.display = "none";
+              document.getElementById("septbreak2").style.display = "none";
+              document.getElementById("septbreak3").style.display = "none";
+              document.getElementById("septbreak4").style.display = "none";
               document.getElementById("julybreak").style.animationPlayState = "running";
               document.getElementById("julybreak1").style.animationPlayState = "running";
               document.getElementById("julybreak2").style.animationPlayState = "running";
@@ -1257,6 +1270,7 @@
               document.getElementById("twao4").style.display = "none";
               document.getElementById("maybreak").style.opacity =".1";
               document.getElementById("maybreak").style.animationPlayState = "paused";
+              document.getElementById("septbreak").style.animationPlayState = "paused";
               document.getElementById("twao").style.animationPlayState = "paused";
               document.getElementById("maybreak").style.opacity =".1";
               document.getElementById("twao").style.opacity =".1";
@@ -1266,7 +1280,73 @@
               document.getElementById("julybreak3").style.opacity ="1";
               document.getElementById("julybreak4").style.opacity ="1";
               document.getElementById("septbreak").style.opacity =".1";
+              document.getElementById("page3").style.display = "none";
               }
+
+              //September Membership Breakfast
+              else if (window.scrollY > 1501 && window.scrollY < 1700) {
+                document.getElementById("title5").style.margin = "-125px auto -10px 0px";
+                document.getElementById("title5").style.fontSize = "40px";
+                document.getElementById("title6").style.margin = "-125px auto -10px 0px";
+                document.getElementById("title6").style.fontSize = "40px";
+                document.getElementById("title7").style.fontSize = "40px";
+                document.getElementById("title7").style.margin = "-115px auto -10px 0px";
+                document.getElementById("title8").style.margin = "70px auto -10px 0px";
+                document.getElementById("title8").style.fontSize = "24px";
+                document.getElementById("card5").style.height = "150px";
+                document.getElementById("card6").style.height = "150px";
+                document.getElementById("card7").style.height = "150px";
+                document.getElementById("card8").style.height = "300px";
+                document.getElementById("scroll-icon").style.opacity = ".3";
+                document.getElementById("card5").style.margin = "0px auto";
+                document.getElementById("card6").style.margin = "150px auto";
+                document.getElementById("card7").style.margin = "300px auto";
+                document.getElementById("card8").style.margin = "450px auto";
+                document.getElementById("julybreak").style.display = "inherit";
+                document.getElementById("julybreak1").style.display = "none";
+                document.getElementById("julybreak2").style.display = "none";
+                document.getElementById("julybreak3").style.display = "none";
+                document.getElementById("julybreak4").style.display = "none";
+                document.getElementById("julybreak").style.animationPlayState = "paused";
+                document.getElementById("twao").style.display = "inherit";
+                document.getElementById("maybreak").style.opacity =".1";
+                document.getElementById("maybreak").style.animationPlayState = "paused";
+                document.getElementById("twao").style.animationPlayState = "paused";
+                document.getElementById("maybreak").style.opacity =".1";
+                document.getElementById("twao").style.opacity =".1";
+                document.getElementById("septbreak").style.animationPlayState = "running";
+                document.getElementById("julybreak").style.opacity =".1";
+                document.getElementById("septbreak").style.opacity ="1";
+                document.getElementById("septbreak1").style.opacity ="1";
+                document.getElementById("septbreak2").style.opacity ="1";
+                document.getElementById("septbreak3").style.opacity ="1";
+                document.getElementById("septbreak4").style.opacity ="1";
+                document.getElementById("page3").style.display = "none";
+                document.getElementById("card1").style.display = "inherit";
+                document.getElementById("card2").style.display = "inherit";
+                document.getElementById("card3").style.display = "inherit";
+                document.getElementById("card4").style.display = "inherit";
+                document.getElementById("card5").style.display = "inherit";
+                document.getElementById("card6").style.display = "inherit";
+                document.getElementById("card7").style.display = "inherit";
+                document.getElementById("card8").style.display = "inherit";
+                document.getElementById("scroll-icon").style.opacity = "1";
+                }
+
+
+                //Change to Page 3
+                else if (window.scrollY > 1701 && window.scrollY < 2000) {
+                  document.getElementById("card1").style.display = "none";
+                  document.getElementById("card2").style.display = "none";
+                  document.getElementById("card3").style.display = "none";
+                  document.getElementById("card4").style.display = "none";
+                  document.getElementById("card5").style.display = "none";
+                  document.getElementById("card6").style.display = "none";
+                  document.getElementById("card7").style.display = "none";
+                  document.getElementById("card8").style.display = "none";
+                  document.getElementById("page3").style.display = "block";
+                  document.getElementById("scroll-icon").style.opacity = ".3";
+                }
 
 
         else {
@@ -1294,11 +1374,11 @@
         </div>
       </div>
   <div class="card" id="card2">
-    <img id="sea-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274756082_5556370611043296_7535293233522380463_n.jpg">
+    <img id="sea-break" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Untitled-design-2.jpg">
     <img id="sea-break-" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274808708_5556370764376614_5071097208397559546_n.jpg">
     <img id="sea-break--" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274854134_5556370277709996_3825382437099979036_n.jpg">
     <img id="sea-break---" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274868910_5556370801043277_5451278218332777832_n.jpg">
-    <img id="sea-break----" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274976681_5564847283528962_162699449207761722_n-e1668800830345.jpg">
+    <img id="sea-break----" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Untitled-design-1.png">
     <img id="sea-break-----" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/274999617_5564825726864451_8425555113702691692_n.jpg">
     <img id="sea-break------" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275006740_5564823833531307_4619332143354711762_n.jpg">
     <img id="sea-break-------" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/275015606_5564826393531051_1905218302516362458_n.jpg">
@@ -1324,12 +1404,12 @@
 
 
   <div class="card" id="card4">
-    <img id="dv" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/279279263_10217051613440845_4880837625936060985_n.jpg">
-    <img id="dv1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/279293341_10217051598440470_6794604392398909455_n.jpg">
-    <img id="dv2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/279339579_10217051604440620_1405215037402219258_n.jpg">
-    <img id="dv3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/279352621_10217051608560723_212858005349101873_n.jpg">
-    <img id="dv4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/279355329_10217051607600699_7087876851147473338_n.jpg">
-    <img id="dv5" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/279361910_10217051614320867_2275262796642863196_n.jpg">
+    <img id="dv" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/1.jpg">
+    <img id="dv1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/2.jpg">
+    <img id="dv2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/3.jpg">
+    <img id="dv3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/4.jpg">
+    <img id="dv4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/5.jpg">
+    <img id="dv5" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/6.jpg">
     <div id="info4">
       <h3 id="title4">District 5 Bowling Tournament</h3>
       <p>April 23rd, 2022</p></div>
@@ -1352,21 +1432,21 @@
 
   <div class="card" id="card5" style="display: none;">
     <img id="maybreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283694565_5801489869864701_4601652710916901387_n.jpg">
-    <img id="maybreak1" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283658929_5801489329864755_3883086875824560183_n.jpg">
-    <img id="maybreak2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283792261_5801489439864744_6847139435647749842_n.jpg">
-    <img id="maybreak3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283891125_5801489569864731_6404121607679489809_n.jpg">
-    <img id="maybreak4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/283963290_5801489189864769_6482837820026028056_n.jpg">
+    <img id="maybreak1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/1-1.jpg">
+    <img id="maybreak2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/2-1.jpg">
+    <img id="maybreak3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/3-1.jpg">
+    <img id="maybreak4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/4-1.jpg">
     <div id="info5">
       <h3 id="title5">May Membership Breakfast</h3>
       <p>May 20th, 2022</p>
     </div>
   </div>
   <div class="card" id="card6" style="display: none;">
-    <img id="twao" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6565-2-copy.png">
-    <img id="twao1" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6563-2-copy.png">
-    <img id="twao2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6560-2-copy.png">
-    <img id="twao3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6558-copy.png">
-    <img id="twao4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6566-copy.png">
+    <img id="twao" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/1-2-scaled.jpg">
+    <img id="twao1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6563-2-copy-2-1-scaled.jpg">
+    <img id="twao2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/2-2-scaled.jpg">
+    <img id="twao3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6558-copy-2-1-scaled.jpg">
+    <img id="twao4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IMG_6566-copy-2-1-scaled.jpg">
     <div id="info6">
       <h3 id="title6">Together We "R" One - A Celebration of Diversity</h3>
       <p>June 14th, 2022</p>
@@ -1374,20 +1454,38 @@
   </div>
       <div class="card" id="card7" style="display: none;">
         <img id="julybreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296113238_5988315457848807_6344846346108164682_n.jpg">
-        <img id="julybreak1" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296166955_5988315487848804_2373184675592926237_n.jpg">
-        <img id="julybreak2" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296074168_5988315297848823_5883250288916461692_n.jpg">
-        <img id="julybreak3" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/295942386_5988315917848761_5876973408442740876_n.jpg">
-        <img id="julybreak4" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/295773283_5988315957848757_584952091499178329_n.jpg">
+        <img id="julybreak1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/296166955_5988315487848804_2373184675592926237_n.jpg">
+        <img id="julybreak2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Untitled-design-3.jpg">
+        <img id="julybreak3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/295942386_5988315917848761_5876973408442740876_n.jpg">
+        <img id="julybreak4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/295773283_5988315957848757_584952091499178329_n.jpg">
         <div id="info7">
           <h3 id="title7">July Membership Breakfast</h3>
           <p>July 22nd, 2022</p>
         </div>
       </div>
   <div class="card" id="card8" style="display: none;">
-    <img id="septbreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/272066210_5418849074795451_7319375459640877723_n.jpeg">
+    <img id="septbreak" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/307463862_6154277634585921_4943005551023137575_n.jpg">
+    <img id="septbreak1" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/307211016_6154282527918765_4505003511320035216_n.jpg">
+    <img id="septbreak2" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/307174206_6154282231252128_4188779071131128713_n.jpg">
+    <img id="septbreak3" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/307101993_6154283511252000_5716796524154413274_n.jpg">
+    <img id="septbreak4" style="display: none;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/307951285_6154278384585846_9193469925200641152_n.jpg">
     <div id="info8">
       <h3 id="title8">September Membership Breakfast</h3>
       <p>September 16th, 2022</p>
+    </div>
+  </div>
+
+  <div id="page3" style="display: none;">
+    <div class="arrow-up">
+      <i class="fa fa-caret-up" aria-hidden="true"></i>
+    </div>
+
+    <div id="pm">
+      <img rel="preload" id="pm-img" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Fort-Myers-Ad-scaled.jpg" alt="">
+    </div>
+
+    <div class="arrow-down">
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
   </div>
 
@@ -1452,19 +1550,6 @@
           function move3() {
             window.scrollTo(0, 220);
           }
-
-/*
-          function grow1() {
-            document.getElementById("title1").style.margin = "120px auto";
-            document.getElementById("jan-break").style ="transform: scale(1.2);"
-          }
-
-          function shrink1() {
-            document.getElementById("title1").style.margin = "90px auto";
-            document.getElementById("jan-break").style ="transform: scale(1.0);"
-
-                    }
-*/
         </script>
       </div>
     </div>
@@ -1480,6 +1565,7 @@
       let count5 = 0;
       let count6 = 0;
       let count7 = 0;
+      let count8 = 0;
       sizeChanger();
 
 
@@ -2000,6 +2086,66 @@
         stop();
       }
 
+      //Seot Membership breakfast
+      let change8 = function change8() {
+
+        if (count8 == 0 && window.scrollY > 1501 && window.scrollY < 1700) {
+          count8 = 1;
+          document.getElementById("septbreak").style.display = "inherit";
+          document.getElementById("septbreak1").style.display = "none";
+          document.getElementById("septbreak2").style.display = "none";
+          document.getElementById("septbreak3").style.display = "none";
+          document.getElementById("septbreak4").style.display = "none";
+          document.getElementById("septbreak").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count8 == 1 && window.scrollY > 1501 && window.scrollY < 1700) {
+          count8 = 2;
+          document.getElementById("septbreak").style.display = "none";
+          document.getElementById("septbreak1").style.display = "inherit";
+          document.getElementById("septbreak2").style.display = "none";
+          document.getElementById("septbreak3").style.display = "none";
+          document.getElementById("septbreak4").style.display = "none";
+          document.getElementById("septbreak1").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count8 == 2 && window.scrollY > 1501 && window.scrollY < 1700) {
+          count8 = 3;
+          document.getElementById("septbreak").style.display = "none";
+          document.getElementById("septbreak1").style.display = "none";
+          document.getElementById("septbreak2").style.display = "inherit";
+          document.getElementById("septbreak3").style.display = "none";
+          document.getElementById("septbreak4").style.display = "none";
+          document.getElementById("septbreak2").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count8 == 3 && window.scrollY > 1501 && window.scrollY < 1700) {
+          count8 = 4;
+          document.getElementById("septbreak").style.display = "none";
+          document.getElementById("septbreak1").style.display = "none";
+          document.getElementById("septbreak2").style.display = "none";
+          document.getElementById("septbreak3").style.display = "inherit";
+          document.getElementById("septbreak4").style.display = "none";
+          document.getElementById("septbreak3").style.animationPlayState = "running";
+          console.log("this");
+        }
+        else if (count8 == 4 && window.scrollY > 1501 && window.scrollY < 1700) {
+          count8 = 0;
+          document.getElementById("septbreak").style.display = "none";
+          document.getElementById("septbreak1").style.display = "none";
+          document.getElementById("septbreak2").style.display = "none";
+          document.getElementById("septbreak3").style.display = "none";
+          document.getElementById("septbreak4").style.display = "inherit";
+          document.getElementById("septbreak4").style.animationPlayState = "running";
+          console.log("this");
+        }
+      else {
+        console.log("error");
+      }
+      console.log(count8, "<= count8");
+      stop();
+    }
+
       let int1 = setInterval(change1, 8000);
       let int2 = setInterval(change2, 8000);
       let int3 = setInterval(change3, 8000);
@@ -2007,6 +2153,7 @@
       let int5 = setInterval(change5, 8000);
       let int6 = setInterval(change6, 8000);
       let int7 = setInterval(change7, 8000);
+      let int8 = setInterval(change8, 8000);
 
     }
 

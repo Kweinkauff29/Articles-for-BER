@@ -585,12 +585,12 @@
 
     .arrowright {
       font-size: 60px;
-      margin: auto 0px auto 15px;
+      margin: auto 10px auto 10px;
     }
 
     .arrowleft {
       font-size: 60px;
-      margin: auto 15px auto 0px;
+      margin: auto 10px auto 10px;
     }
 
 
@@ -643,6 +643,11 @@
 
       #moreevents {
         color: black;
+        position: fixed;
+        margin: 0px auto 40px auto;
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
       }
 
       #jan-break4 {
@@ -658,6 +663,7 @@
       #additional {
         display: flex;
         position: fixed;
+        margin: 60px auto !important;
       }
 
       #info1 {
@@ -676,12 +682,12 @@
 
       .arrowright {
         font-size: 60px;
-        margin: auto 0px auto 15px;
+        margin: auto 10px auto 15px;
       }
 
       .arrowleft {
         font-size: 60px;
-        margin: auto 15px auto 0px;
+        margin: auto 10px auto 10px;
       }
 
       #info2 {
@@ -1721,7 +1727,7 @@
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "none";
             document.getElementById("5").style.display = "contents";
-            num++;
+            num = 0;
             return num;
           }
 

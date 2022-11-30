@@ -751,6 +751,14 @@
         z-index: 1;
       }
 
+      #accomplishments {
+        background-color: #3d4a9a;
+        display: flex;
+        position: fixed;
+        height: 260px;
+        margin: 500px auto !important;
+      }
+
       #card6 {
         height: 150px;
         width: 100% !important;
@@ -1589,23 +1597,67 @@
 
       </div>
 
+      <hr>
+      <hr>
+
+      <h1 style="color: white;
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+        margin: 465px auto;
+        background-color: #3d4a9a;
+        height: 43px;
+        position: fixed;">Big Accomlishments:</h1>
+
+
+      <div id="accomplishments">
+        <div class="arrowleft" onclick="back2()" style="color: white;">
+          <i class="fa fa-caret-left" aria-hidden="true"></i>
+        </div>
+
+        <div id="a0">
+          <h5 style="color: white; font-size: 24px;">Leadership Academy Raised 27k+ for:</h5>
+          <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/GNFN-Logo.jpg" alt="">
+        </div>
+
+        <div id="a1">
+          <h5 style="color: white; font-size: 24px;">276</h5>
+          <h5 style="color: white; font-size: 40px;">New Realtors</h5>
+        </div>
+
+        <div id="a2">
+          <h5 style="color: white; font-size: 24px;">68</h5>
+          <h5 style="color: white; font-size: 40px;">New Affiliates</h5>
+        </div>
+
+        <div id="a3">
+          <h5 style="color: white; font-size: 24px;">162</h5>
+          <h5 style="color: white; font-size: 40px;">Total Classes</h5>
+        </div>
+
+        <div class="arrowright" onclick="forward2()" style="color: white;">
+          <i class="fa fa-caret-right" aria-hidden="true"></i>
+        </div>
+
+      </div>
+
       <script type="text/javascript">
         var num = 0;
 
         async function back() {
           if (num == 0) {
-            document.getElementById("0").style.display = "contents";
+            document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "none";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "none";
-            document.getElementById("5").style.display = "none";
+            document.getElementById("5").style.display = "contents";
             num = 5;
             return num;
           }
           else if (num == 1) {
-            document.getElementById("0").style.display = "none";
-            document.getElementById("1").style.display = "contents";
+            document.getElementById("0").style.display = "contents";
+            document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "none";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "none";
@@ -1616,6 +1668,17 @@
 
           else if (num == 2) {
             document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "contents";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            num--;
+            return num;
+          }
+
+          else if (num == 3) {
+            document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "contents";
             document.getElementById("3").style.display = "none";
@@ -1625,7 +1688,7 @@
             return num;
           }
 
-          else if (num = 3) {
+          else if (num == 4) {
             document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "none";
@@ -1636,24 +1699,13 @@
             return num;
           }
 
-          else if (num = 4) {
+          else if (num == 5) {
             document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "none";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "contents";
             document.getElementById("5").style.display = "none";
-            num--;
-            return num;
-          }
-
-          else if (num = 5) {
-            document.getElementById("0").style.display = "none";
-            document.getElementById("1").style.display = "none";
-            document.getElementById("2").style.display = "none";
-            document.getElementById("3").style.display = "none";
-            document.getElementById("4").style.display = "none";
-            document.getElementById("5").style.display = "contents";
             num--;
             return num;
           }
@@ -1666,8 +1718,8 @@
 
         async function forward() {
           if (num == 0) {
-            document.getElementById("0").style.display = "contents";
-            document.getElementById("1").style.display = "none";
+            document.getElementById("0").style.display = "none";
+            document.getElementById("1").style.display = "contents";
             document.getElementById("2").style.display = "none";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "none";
@@ -1678,8 +1730,8 @@
 
           else if (num == 1) {
             document.getElementById("0").style.display = "none";
-            document.getElementById("1").style.display = "contents";
-            document.getElementById("2").style.display = "none";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "contents";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "none";
             document.getElementById("5").style.display = "none";
@@ -1690,8 +1742,8 @@
           else if (num == 2) {
             document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
-            document.getElementById("2").style.display = "contents";
-            document.getElementById("3").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "contents";
             document.getElementById("4").style.display = "none";
             document.getElementById("5").style.display = "none";
             num++;
@@ -1702,17 +1754,6 @@
             document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "none";
-            document.getElementById("3").style.display = "contents";
-            document.getElementById("4").style.display = "none";
-            document.getElementById("5").style.display = "none";
-            num++;
-            return num;
-          }
-
-          else if (num = 4) {
-            document.getElementById("0").style.display = "none";
-            document.getElementById("1").style.display = "none";
-            document.getElementById("2").style.display = "none";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "contents";
             document.getElementById("5").style.display = "none";
@@ -1720,13 +1761,24 @@
             return num;
           }
 
-          else if (num = 5) {
+          else if (num == 4) {
             document.getElementById("0").style.display = "none";
             document.getElementById("1").style.display = "none";
             document.getElementById("2").style.display = "none";
             document.getElementById("3").style.display = "none";
             document.getElementById("4").style.display = "none";
             document.getElementById("5").style.display = "contents";
+            num++;
+            return num;
+          }
+
+          else if (num == 5) {
+            document.getElementById("0").style.display = "contents";
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("5").style.display = "none";
             num = 0;
             return num;
           }

@@ -755,8 +755,10 @@
         background-color: #3d4a9a;
         display: flex;
         position: fixed;
-        height: 260px;
-        margin: 500px auto !important;
+        height: 300px;
+        width: 100%;
+        justify-content: center;
+        margin: 465px auto !important;
       }
 
       #card6 {
@@ -1566,7 +1568,7 @@
 
         <div class="contentrow">
           <div id="0">
-            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/284948891_5829504783729876_1662765996587508513_n.jpg" alt="">
+            <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/284948891_5829504783729876_1662765996587508513_n-1-1.jpg" alt="">
             <h5>BER Open House - June 1st</h5>
           </div>
           <div id="1" style="display: none;">
@@ -1604,14 +1606,14 @@
         font-size: 30px;
         width: 100%;
         text-align: center;
-        margin: 465px auto;
+        margin: 430px auto;
         background-color: #3d4a9a;
         height: 43px;
-        position: fixed;">Big Accomlishments:</h1>
+        position: fixed;">2022 Accomlishments:</h1>
 
 
       <div id="accomplishments">
-        <div class="arrowleft" onclick="back2()" style="color: white;">
+        <div class="arrowleft" onclick="back2()" style="color: white; font-size: 100px;">
           <i class="fa fa-caret-left" aria-hidden="true"></i>
         </div>
 
@@ -1620,26 +1622,38 @@
           <img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/GNFN-Logo.jpg" alt="">
         </div>
 
-        <div id="a1">
-          <h5 style="color: white; font-size: 24px;">276</h5>
+        <div id="a1" style="display: none;">
+          <h5 style="color: white; font-size: 100px;">276</h5>
           <h5 style="color: white; font-size: 40px;">New Realtors</h5>
         </div>
 
-        <div id="a2">
-          <h5 style="color: white; font-size: 24px;">68</h5>
+        <div id="a2" style="display: none;">
+          <h5 style="color: white; font-size: 100px;">68</h5>
           <h5 style="color: white; font-size: 40px;">New Affiliates</h5>
         </div>
 
-        <div id="a3">
-          <h5 style="color: white; font-size: 24px;">162</h5>
+        <div id="a3" style="display: none;">
+          <h5 style="color: white; font-size: 100px;">162</h5>
           <h5 style="color: white; font-size: 40px;">Total Classes</h5>
         </div>
 
-        <div class="arrowright" onclick="forward2()" style="color: white;">
+        <div id="a4" style="display: none;">
+          <h5 style="color: white; font-size: 100px;">162</h5>
+          <h5 style="color: white; font-size: 40px;">Total Classes</h5>
+        </div>
+
+        <div id="a5" style="display: none;">
+          <h5 style="color: white; font-size: 100px;">162</h5>
+          <h5 style="color: white; font-size: 40px;">Total Classes</h5>
+        </div>
+
+        <div class="arrowright" onclick="forward2()" style="color: white; font-size: 100px;">
           <i class="fa fa-caret-right" aria-hidden="true"></i>
         </div>
 
       </div>
+
+
 
       <script type="text/javascript">
         var num = 0;
@@ -1773,12 +1787,12 @@
           }
 
           else if (num == 5) {
-            document.getElementById("0").style.display = "contents";
-            document.getElementById("1").style.display = "none";
-            document.getElementById("2").style.display = "none";
-            document.getElementById("3").style.display = "none";
-            document.getElementById("4").style.display = "none";
-            document.getElementById("5").style.display = "none";
+            document.getElementById("a0").style.display = "contents";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
             num = 0;
             return num;
           }
@@ -1787,6 +1801,153 @@
             console.log("doesn't work");
           }
           return num;
+        }
+
+        var num2 = 0;
+
+        async function back2() {
+          if (num2 == 0) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "inline";
+            num2 = 5;
+            return num2;
+          }
+          else if (num2 == 1) {
+            document.getElementById("a0").style.display = "inline";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2--;
+            return num2;
+          }
+
+          else if (num2 == 2) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "inline";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2--;
+            return num2;
+          }
+
+          else if (num2 == 3) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "inline";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2--;
+            return num2;
+          }
+
+          else if (num2 == 4) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "inline";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2--;
+            return num2;
+          }
+
+          else if (num2 == 5) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "inline";
+            document.getElementById("a5").style.display = "none";
+            num2--;
+            return num2;
+          }
+
+          else {
+            console.log("doesn't work2");
+          }
+          return num2;
+        }
+
+        async function forward2() {
+          if (num2 == 0) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "inline";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2++;
+            return num2;
+            }
+
+          else if (num2 == 1) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "inline";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2++;
+            return num2;
+          }
+
+          else if (num2 == 2) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "inline";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2++;
+            return num2;
+          }
+
+          else if (num2 == 3) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "inline";
+            document.getElementById("a5").style.display = "none";
+            num2++;
+            return num2;
+          }
+
+          else if (num2 == 4) {
+            document.getElementById("a0").style.display = "none";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "inline";
+            num2++;
+            return num2;
+          }
+
+          else if (num2 == 5) {
+            document.getElementById("a0").style.display = "inline";
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            document.getElementById("a4").style.display = "none";
+            document.getElementById("a5").style.display = "none";
+            num2 = 0;
+            return num2;
+          }
+
+          else {
+            console.log("doesn't work2");
+          }
+          return num2;
         }
       </script>
 

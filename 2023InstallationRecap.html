@@ -69,19 +69,38 @@
       background-color: white;
     }
     @keyframes goright {
-      from {
+      0% {
         transform: translateX(0px);
       }
-      to {
-        transform: translateX(200px);
+      70% {
+        transform: translateX(100px);
+      }
+      100% {
+        transform: translateX(0px);
       }
     }
     @keyframes goright2 {
       from {
-        transform: translateX(200px);
+        transform: translateX(-200px);
       }
       to {
-        transform: translateX(400px);
+        transform: translateX(0px);
+      }
+    }
+    @keyframes goright3 {
+      from {
+        transform: translateX(-400px);
+      }
+      to {
+        transform: translateX(-200px);
+      }
+    }
+    @keyframes goright4 {
+      from {
+        transform: translateX(-600px);
+      }
+      to {
+        transform: translateX(-400px);
       }
     }
     @keyframes goleft {
@@ -94,10 +113,29 @@
     }
     @keyframes goleft2 {
       from {
-        transform: translateX(400px);
+        transform: translateX(-200px);
       }
       to {
-        transform: translateX(200px);
+        transform: translateX(-400px);
+      }
+    }
+    @keyframes goleft3 {
+      from {
+        transform: translateX(-400px);
+      }
+      to {
+        transform: translateX(-600px);
+      }
+    }
+    @keyframes goleft4 {
+      0%{
+        transform: translateX(-600px);
+      }
+      70% {
+        transform: translateX(-700px);
+      }
+      100%{
+        transform: translateX(-600px);
       }
     }
     .arrowright:hover {
@@ -821,41 +859,73 @@
       </div>
       <script type="text/javascript">
         let count = 1;
-        let temp = 10;
+        let temp = 0;
+        let temptest = 0;
         let move = 200;
+
         function forward() {
           if (count == 1) {
-            document.querySelector('.winnerselect').style.animation = "goleft 1s linear";
-            while (temp > -200) {
-              temp - 10;
-              console.log(temp);
-              document.querySelector('.winnerselect').style = "transform: translateX(" + temp + "px)";
-            }
+            document.querySelector('.winnerselect').style.animation = "goleft .5s linear";
             count = 2;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-200px)";}, 500);
           }
           else if (count == 2) {
-            document.querySelector('.winnerselect').style.animation = "goright2 1s linear";
-            document.querySelector('.winnerselect').style = "transform: translateX(-400px)";
-            count = 2;
+            document.querySelector('.winnerselect').style.animation = "goleft2 .5s linear";
+            count = 3;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-400px)";}, 500);
           }
+          else if (count == 3) {
+            count = 4;
+            document.querySelector('.winnerselect').style.animation = "goleft3 .5s linear";
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-600px)";}, 500);
+          }
+          else if (count == 4) {
+            document.querySelector('.winnerselect').style.animation = "goleft4 .7s linear";
+            count = 4;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-600px)";}, 700);
+          }
+
           else {
-            console.log("end");
-            count = 2;
+            document.querySelector('.winnerselect').style.animationPlayState = "paused";
+            console.log("end", count);
+            count = 4;
           }
+          console.log("end",count);
         }
         function backward() {
           if (count == 1) {
-            document.querySelector('.winnerselect').style.animation = "goleft 1s linear";
+            document.querySelector('.winnerselect').style.animation = "goright .7s linear";
             count = 1;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(0px)";}, 700);
           }
           else if (count == 2) {
-            document.querySelector('.winnerselect').style.animation = "goleft2 1s linear";
+            document.querySelector('.winnerselect').style.animation = "goright2 .5s linear";
             count = 1;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(0px)";}, 500);
+          }
+          else if (count == 3) {
+            document.querySelector('.winnerselect').style.animation = "goright3 .5s linear";
+            count = 2;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-200px)";}, 500);
+          }
+          else if (count == 4) {
+            document.querySelector('.winnerselect').style.animation = "goright4 .5s linear";
+            count = 3;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-400px)";}, 500);
           }
           else {
-            console.log("end");
+            console.log("end",count);
             count = 1;
           }
+          console.log("end",count);
         }
       </script>
       <br>

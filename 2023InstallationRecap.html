@@ -754,7 +754,7 @@
       <br>
       <!--<h2>What is it & Who can apply?</h2>-->
       <p><i>December 1st, 2022</i></p>
-      The Installation Banquet is BER's yearly event dedicated to installing our next years leadership while celebrating the outstanding Realtors and Affiliates that have gone above and beyond in the current year through the "Of the Year" Awards.  In case you missed it, here is a recap of everyone who was installaed and all the well deserved award winners and graduates of the night.
+The Annual Installation Banquet is BER's most cherished event, celebrating the induction of our new leadership for the upcoming year and honoring the outstanding Realtors and Affiliates who have gone above and beyond in the current year through the "Of the Year" Awards. In case you weren't able to attend, here is a recap of the night's festivities, including the newly installed leaders and all the well-deserved award winners and graduates.
       <br>
       <br>
       <h4 style="font-weight: 700 !important;">2023 Board of Directors</h4>
@@ -987,56 +987,109 @@
       let hr3 = document.getElementById("hr3");
       let hr4 = document.getElementById("hr4");
 
+  function ROTY() {
+    if (selector > 1) {
+      wade.style.animationName = "exitleft";
+      wade.style.animationPlayState = "running";
 
-      function ROTY() {
-        if (selector > 1) {
-          wade.style.animationName = "exitleft";
-          wade.style.animationPlayState = "running";
+      console.log("exitleft");
+    }
+    else {
+      console.log("error");
+    }
+    hr1.style.display = "block";
+    hr2.style.display = "none";
+    hr3.style.display = "none";
+    hr4.style.display = "none";
+    wade.style.display = "flex";
+    wade2.style.display = "none";
+    wade3.style.display = "none";
+    wade4.style.display = "none";
+    selector = 1;
+  }
 
-          console.log("exitleft");
-        }
-        else {
-          console.log("error");
-        }
-        hr1.style.display = "block";
-        hr2.style.display = "none";
-        hr3.style.display = "none";
-        hr4.style.display = "none";
-        wade.style.display = "flex";
-        wade2.style.display = "none";
-        wade3.style.display = "none";
-        wade4.style.display = "none";
-        selector = 1;
-      }
+  function ROTY2() {
+    if (selector > 2) {
+      wade2.style.animationName = "exitleft";
+      wade2.style.animationPlayState = "running";
 
-      function ROTY2() {
-        if (selector > 2) {
-          console.log("exitleft");
-          wade2.style.animationName = "exitleft";
-          wade2.style.animationPlayState = "running";
+      console.log("exitleft");
+    }
+    else if (selector < 2) {
+      wade2.style.animationName = "exitright";
+      wade2.style.animationPlayState = "running";
 
-        }
-        else if (selector < 2) {
-          wade2.style.animationName = "exitright";
-          wade2.style.animationPlayState = "running";
+      console.log("exitright");
+    }
+    else {
+      console.log("error");
+    }
+    hr1.style.display = "none";
+    hr2.style.display = "block";
+    hr3.style.display = "none";
+    hr4.style.display = "none";
+    wade.style.display = "none";
+    wade2.style.display = "flex";
+    wade3.style.display = "none";
+    wade4.style.display = "none";
+    selector = 2;
+  }
 
-          console.log("exitright");
-        }
-        else {
-          console.log("error");
-        }
-        hr1.style.display = "none";
-        hr2.style.display = "block";
-        hr3.style.display = "none";
-        hr4.style.display = "none";
-        wade.style.display = "none";
-        wade2.style.display = "flex";
-        wade3.style.display = "none";
-        wade4.style.display = "none";
-        selector = 2;
-      }
+  function ROTY3() {
+    if (selector > 3) {
+      wade3.style.animationName = "exitleft";
+      wade3.style.animationPlayState = "running";
 
-      </script>
+      console.log("exitleft");
+    }
+    else if (selector < 3) {
+      wade3.style.animationName = "exitright";
+      wade3.style.animationPlayState = "running";
+
+      console.log("exitright");
+    }
+    else {
+      console.log("error");
+    }
+    hr1.style.display = "none";
+    hr2.style.display = "none";
+    hr3.style.display = "block";
+    hr4.style.display = "none";
+    wade.style.display = "none";
+    wade2.style.display = "none";
+    wade3.style.display = "flex";
+    wade4.style.display = "none";
+    selector = 3;
+  }
+
+  function ROTY4() {
+    if (selector > 4) {
+      wade4.style.animationName = "exitleft";
+      wade4.style.animationPlayState = "running";
+
+      console.log("exitleft");
+    }
+    else if (selector < 4) {
+      wade4.style.animationName = "exitright";
+      wade4.style.animationPlayState = "running";
+
+      console.log("exitright");
+    }
+    else {
+      console.log("error");
+    }
+    hr1.style.display = "none";
+    hr2.style.display = "none";
+    hr3.style.display = "none";
+    hr4.style.display = "block";
+    wade.style.display = "none";
+    wade2.style.display = "none";
+    wade3.style.display = "none";
+    wade4.style.display = "flex";
+    selector = 4;
+  }
+
+</script>
 
       <br>
       Whether you’re <a href="https://www.homelight.com/blog/buyer-documents-needed-to-buy-a-house/" target="_blank" style="color: blue;">looking to buy </a> or <a href="https://orchard.com/blog/posts/documents-required-to-sell-your-house" target="_blank" style="color: blue;">sell a property</a>, there is a colossal amount of paperwork that needs to be prepared, signed, and authorized before you can make a listing or go through with an offer. This includes (but is not limited to) proof of identity, information about the deed, maintenance records, and more. Knowing what you need is key to organization. Here are a few items from high on the priority list.

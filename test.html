@@ -1,0 +1,21 @@
+<script>
+
+// Create a function to send an email
+function sendEmail(email) {
+    // Create a link to send the email
+    var link = "mailto:kevin@bonitaesterorealtors.com"
+        + "?cc=" + email
+        + "&subject=" + escape("Email from JavaScript App")
+        + "&body=" + escape("This email was sent from a JavaScript App!");
+
+    // Open the link
+    window.location.href = link;
+}
+
+// Ask the user for their email
+var email = prompt("Please enter your email address:");
+
+// Send the email
+sendEmail(email);
+
+</script>

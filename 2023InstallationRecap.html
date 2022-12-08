@@ -33,12 +33,12 @@
       font-family: 'Oswald', sans-serif;
       font-size: 58px;
     }
-    #commrow h3 {
+    .commrow h3 {
       color: white;
       font-size: 3rem;
       font-family: 'Oswald';
     }
-    #commrow h4 {
+    .commrow h4 {
       color: white;
       font-size: 2rem;
     }
@@ -47,7 +47,7 @@
       justify-content: end;
       margin: 0 40px 0 40px;
       align-items: baseline;
-      width: 286%;
+      width: 220%;
     }
     .arrowleft {
       margin: 5px 10px 0 -1000px;
@@ -216,7 +216,7 @@
       color: grey;
     }
     .winnerpick h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .bodcol {
       justify-content: center;
@@ -479,6 +479,7 @@
       display: flex;
       margin-top: 65px;
     }
+
     @media only screen and (max-width: 1150px) {
       .Ned-Q2-Article {
         margin: 30px 5% auto 5% !important;
@@ -490,6 +491,47 @@
         font-size: 46px;
       }
       }
+
+      @media (max-width: 1000px) {
+        .commrow {
+          display: flex;
+        }
+        .commrow h4 {
+          font-size: 1rem;
+        }
+      }
+      @media (max-width: 850px) {
+        .wininfo p{
+          font-size: 1.4rem;
+        }
+        .arrowright {
+          margin: -62px 0 0 auto;
+        }
+        .winnerselect {
+          width: 319%;
+        }
+        .divcol h2 {
+          font-size: 1.3rem;
+        }
+        .bodcol h2 {
+          font-size: 2rem;
+        }
+        .bodcol h3 {
+          font-size: 1rem;
+        }
+        .commrow h3 {
+          font-size: 2rem;
+        }
+        .commrow h4 {
+          font-size: 1.4rem;
+        }
+        .goldrow {
+          display: block !important;
+        }
+        #gold {
+          width: 100% !important;
+        }
+      }
       @media only screen and (max-width: 767px) {
         #choices {
           display: contents;
@@ -498,6 +540,17 @@
           height: auto;
         }
       }
+
+      @media (max-width: 500px) {
+        .contain-head {
+          display: none;
+        }
+        .winphoto {
+          display: none;
+        }
+      }
+
+
   </style>
 
 
@@ -875,6 +928,18 @@
       <p><i>December 1st, 2022</i></p>
 The Annual Installation Banquet is BER's most cherished event, celebrating the induction of our new leadership for the upcoming year and honoring the outstanding Realtors and Affiliates who have gone above and beyond in the current year through the "Of the Year" Awards. In case you weren't able to attend, here is a recap of the night's festivities, including the newly installed leaders and all the well-deserved award winners and graduates.
       <br>
+      <br>
+      We would like to extend our sincerest thanks and appreciation to Juana Watkins, the Vice President of Law and Policy & General Counsel of Florida REALTORS®, and Mike McGraw, the 2022 President-elect of Florida Realtors, for speaking at our Installation Banquet.
+
+Your presence is greatly appreciated and your words of wisdom and encouragement are invaluable. Your contribution to the event was immeasurable and we thank you for taking time to join us for this special occasion.
+      <br>
+      <br>
+      We would also like to take a moment to thank Hunter Habib, 2022 President of BER, for his incredible leadership this year. Under his direction, BER has achieved great success and we are proud to have broken through so many barriers!
+      <br>
+      <br>
+We are also honored to have installed our 2023 Board of Directors and Committee Chairs and can't wait to see what they bring to the table. We are excited to see what the future holds for BER and look forward to an even more successful year with Angie Parker at the helm.
+      <br>
+      <br>
       <hr style="border: 1px solid #ccc;" />
       <h4 style="font-weight: 700 !important;">2023 Board of Directors</h4>
       <h5 style="font-weight: 700 !important;">Executive Committee</h5>
@@ -944,8 +1009,8 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
       <hr style="border: 1px solid #ccc;" />
       <h4 style="font-weight: 700 !important;">2023 Committee Chairs</h4>
 
-      <div class="row" id="commrow" style="background-color:#f7c336; padding:0;">
-      <div class="col-md-4" style="padding:0; border: white 5px solid;">
+      <div class="row commrow" style=" padding:0; justify-content: center;">
+      <div class="col-md-4" style="padding:0; background-color:#f7c336; border: white 5px solid;">
         <div class="row" >
           <div class="col-md-6">
             <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-14-1-e1668450166315.png" alt="photo" />
@@ -957,7 +1022,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
           </div>
         </div>
       </div>
-      <div class="col-md-4" style="padding:0; border: white 5px solid;">
+      <div class="col-md-4" style="padding:0; background-color:#f7c336; border: white 5px solid;">
         <div class="row" >
           <div class="col-md-6">
             <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-16-e1668450198280.png" alt="photo" />
@@ -969,7 +1034,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
           </div>
         </div>
       </div>
-      <div class="col-md-4" style="padding:0; border: white 5px solid;">
+      <div class="col-md-4" style="padding:0; background-color:#f7c336; border: white 5px solid;">
         <div class="row" >
           <div class="col-md-6">
             <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2019/03/Allan-Hase.jpg" alt="photo" />
@@ -983,8 +1048,8 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
       </div>
     </div>
 
-    <div class="row" id="commrow" style="background-color:#f7c336; padding:0;">
-    <div class="col-md-4" style="padding:0; border: white 5px solid;">
+    <div class="row commrow" style=" padding:0; justify-content: center;">
+    <div class="col-md-4" style="padding:0; background-color:#f7c336; border: white 5px solid;">
       <div class="row">
         <div class="col-md-6">
           <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-24.png" alt="photo" />
@@ -996,7 +1061,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
         </div>
       </div>
     </div>
-    <div class="col-md-4" style="padding:0; border: white 5px solid;">
+    <div class="col-md-4" style="padding:0; background-color:#f7c336; border: white 5px solid;">
       <div class="row" >
         <div class="col-md-6">
           <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-19.png" alt="photo" />
@@ -1008,7 +1073,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
         </div>
       </div>
     </div>
-    <div class="col-md-4" style="padding:0; border: white 5px solid;">
+    <div class="col-md-4" style="padding:0; background-color:#f7c336; border: white 5px solid;">
       <div class="row">
         <div class="col-md-6">
           <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-17-e1668450134671.png" alt="photo" />
@@ -1022,8 +1087,8 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
     </div>
   </div>
 
-  <div class="row" id="commrow" style="background-color:#f7c336; padding:0;">
-  <div class="col-md-4" style="padding:0;">
+  <div class="row commrow" style="padding:0; justify-content: center;">
+  <div class="col-md-4" style="padding:0; background-color:#f7c336;">
     <div class="row" style="border: white 5px solid;">
       <div class="col-md-6">
         <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-14-1-e1668450166315.png" alt="photo" />
@@ -1035,7 +1100,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
       </div>
     </div>
   </div>
-  <div class="col-md-4" style="padding:0;">
+  <div class="col-md-4" style="padding:0; background-color:#f7c336;">
     <div class="row" style="border: white 5px solid;">
       <div class="col-md-6">
         <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-16-e1668450198280.png" alt="photo" />
@@ -1047,7 +1112,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
       </div>
     </div>
   </div>
-  <div class="col-md-4" style="padding:0;">
+  <div class="col-md-4" style="padding:0;background-color:#f7c336;">
     <div class="row" style="border: white 5px solid;">
       <div class="col-md-6">
         <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2019/03/Allan-Hase.jpg" alt="photo" />
@@ -1237,7 +1302,7 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
               <h3>REALTOR of the YEAR</h3>
               <hr style="margin-top: 0px;">
               <p>
-                This year's Realtor of the Year award goes to John Smith for his unwavering commitment to his clients and the real estate industry. His professionalism and dedication to providing exceptional service to all of his clients has made him stand out as an exemplary real estate professional. He is a model of excellence and a true asset to the real estate industry. Congratulations John!</p>
+                This year's Realtor of the Year award goes to Wade Abed for his unwavering commitment to his clients and the real estate industry. His professionalism and dedication to providing exceptional service to all of his clients has made him stand out as an exemplary real estate professional. He is a model of excellence and a true asset to the real estate industry. Congratulations Wade!</p>
             </div>
           </div>
           <div class="row winner" id="awardwinner2" style="display: none;" value="2">
@@ -1320,17 +1385,6 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
             <h3>David Hengel Educator of the Year Award</h3>
             <hr style="margin-top: 0px;">
             <p>This year, the David Hengel Educator of the Year Award goes to Dena Wilcoxen for her outstanding dedication to educating realtors over the past year. Dena has gone above and beyond to ensure that the realtors she works with are always learning and growing, and her presentation on “Professionalism” is a testament to her commitment to the education of professionals in her field. Dena is an inspiring example of a rising realtor educator and a pillar of our industry. We are proud to recognize Dena Wilcoxen, Past President, for her hard work and dedication, and congratulate her on this prestigious award.</p>
-          </div>
-        </div>
-        <div class="row winner" id="awardwinner8" style="display: none;" value="8">
-          <div class="col winphoto">
-            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3078-scaled-e1670514997778.jpg" alt="">
-          </div>
-          <div class="col wininfo">
-            <h2>Jonathan Van Heukelom</h2>
-            <h3>Breakthrough Agent of the Year</h3>
-            <hr style="margin-top: 0px;">
-            <p>We are proud to present Jonathan Van Heukelom with the Breakthrough Agent of the Year award for his tremendous strides in the real estate industry over the past year. His client-first approach, dedication to hard work, and attention to detail, along with the incredible impact he and his wife Kristin have made in the lives of their clients, make him a true standout among his peers. We wish Jonathan and Kristin continued success in all their future endeavors. Congratulations Jonathan!</p>
           </div>
         </div>
         <div class="row winner" id="awardwinner8" style="display: none;" value="8">
@@ -1489,7 +1543,7 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
             if (selector > 3) {
               wade3.style.animationName = "exitleft";
               wade3.style.animationPlayState = "running";
-
+              backward(count = 2);
               console.log("exitleft");
             }
             else if (selector < 3) {
@@ -1530,13 +1584,13 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
             if (selector > 4) {
               wade4.style.animationName = "exitleft";
               wade4.style.animationPlayState = "running";
-
+              backward(count = 2);
               console.log("exitleft");
             }
             else if (selector < 4) {
               wade4.style.animationName = "exitright";
               wade4.style.animationPlayState = "running";
-
+              forward(count = 1);
               console.log("exitright");
             }
             else {
@@ -1571,13 +1625,13 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         if (selector > 5) {
           wade5.style.animationName = "exitleft";
           wade5.style.animationPlayState = "running";
-
+          backward(count = 3);
           console.log("exitleft");
         }
         else if (selector < 5) {
           wade5.style.animationName = "exitright";
           wade5.style.animationPlayState = "running";
-
+          forward(count = 2);
           console.log("exitright");
         }
         else {
@@ -1612,13 +1666,13 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         if (selector > 6) {
           wade6.style.animationName = "exitleft";
           wade6.style.animationPlayState = "running";
-
+          backward(count = 4);
           console.log("exitleft");
         }
         else if (selector < 6) {
           wade6.style.animationName = "exitright";
           wade6.style.animationPlayState = "running";
-
+          forward(count = 2);
           console.log("exitright");
         }
         else {
@@ -1653,13 +1707,12 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         if (selector > 7) {
           wade7.style.animationName = "exitleft";
           wade7.style.animationPlayState = "running";
-
           console.log("exitleft");
         }
         else if (selector < 7) {
           wade7.style.animationName = "exitright";
           wade7.style.animationPlayState = "running";
-
+          forward(count = 3);
           console.log("exitright");
         }
         else {
@@ -1694,13 +1747,13 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         if (selector > 8) {
           wade8.style.animationName = "exitleft";
           wade8.style.animationPlayState = "running";
-
+          backward(count = 6);
           console.log("exitleft");
         }
         else if (selector < 8) {
           wade8.style.animationName = "exitright";
           wade8.style.animationPlayState = "running";
-
+          forward(count = 4);
           console.log("exitright");
         }
         else {
@@ -1741,7 +1794,7 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         else if (selector < 9) {
           wade9.style.animationName = "exitright";
           wade9.style.animationPlayState = "running";
-
+          forward(count = 5);
           console.log("exitright");
         }
         else {
@@ -1782,7 +1835,7 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         else if (selector < 10) {
           wade10.style.animationName = "exitright";
           wade10.style.animationPlayState = "running";
-
+          forward(count = 6);
           console.log("exitright");
         }
         else {
@@ -1853,6 +1906,7 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         wade10.style.display = "none";
         wade11.style.display = "flex";
         selector = 11;
+
       }
 
     </script>
@@ -1875,13 +1929,13 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
         <div class="col-md-6" style="background-color: #323232; text-align: center; padding: 40px; height: 350px;">
           <h3 style="color: #FFFFFF; font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 5rem;">Founding Sponsor</h3>
           <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
-          <a href="#"><img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/site-masthead-logo-dark@2x-1-copy-2.png" style="max-width: 100%; background-color: #FFFFFF;"  alt="Founding Sponsor Logo" /></a>
+          <a href="https://www.naplesnews.com/" target="_blank"><img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/site-masthead-logo-dark@2x-1-copy-2.png" style="max-width: 100%; background-color: #FFFFFF;"  alt="Founding Sponsor Logo" /></a>
         </div>
         <div class="col-md-6" style="background-color: #A0D2FF; text-align: center; padding: 40px; height: 350px;">
           <h3 style="color: #FFFFFF; font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 5rem;">Diamond Sponsor</h3>
           <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
 
-          <a href="#"><img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Premium-Logo_3-e1670444765224.png" style="max-width: 80%; background-color: #FFFFFF;"  alt="Diamond Sponsor Logo" /></a>
+          <a href="https://www.premiummortgage.com/" target="_blank"><img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Premium-Logo_3-e1670444765224.png" style="max-width: 80%; background-color: #FFFFFF;"  alt="Diamond Sponsor Logo" /></a>
         </div>
       </div>
 
@@ -1891,7 +1945,7 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
           <div class="row" style="background-color: silver;width: 100%;text-align: center;padding: 10px;">
             <h3 style="font-family: Roboto; font-size: 4rem; color: white;">Platinum Sponsor</h3>
             <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
-            <a href="#"><img style="max-width: 100%;margin: 54px 0 52px auto;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IBERIABANK_Corporation_First_Horizon.jpg"/></a>
+            <a href="https://www.firsthorizon.com/" target="_blank"><img style="max-width: 100%;margin: 54px 0 52px auto;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IBERIABANK_Corporation_First_Horizon.jpg"/></a>
           </div>
           <div class="row" style="background-color: darkgrey;width: 100%;text-align: center;padding: 10px;">
             <h3 style="font-family: Roboto; font-size: 4rem; color: white;">Silver Sponsors</h3>
@@ -1903,38 +1957,38 @@ The RPAC Broker Cup is a prestigious award that recognizes the office who is the
             <a href="#"><h4 style="font-family: Roboto; font-size: 2rem; color: white;">Family Business Guidance Group</h4></a>
           </div>
         </div>
-        <div class="col" style="background-color: gold;width: 50%;text-align: center;padding: 10px;">
+        <div class="col" style="background-color: gold; width: 50%;text-align: center;padding: 10px;">
           <h3 style="font-family: Roboto; font-size: 3rem; color: white;">Gold Sponsors</h3>
           <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
-          <div style="display: flex; align-items: center;">
-            <div style="width: 50%;text-align: center;padding: 10px;">
+          <div class="goldrow" style="display: flex; align-items: center;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white; " src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/wwmr.jpeg"/></a>
             </div>
-            <div style="width: 50%;text-align: center;padding: 10px;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/state-insurance-usa.jpeg"/></a>
             </div>
           </div>
-          <div style="display: flex; align-items: center;">
-            <div style="width: 50%;text-align: center;padding: 10px;">
+          <div class="goldrow" style="display: flex; align-items: center;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/buckeye-lending-solutions-e1669056408717.jpeg"/></a>
             </div>
-            <div style="width: 50%;text-align: center;padding: 10px;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/dr-horton.png"/></a>
             </div>
           </div>
-          <div style="display: flex; align-items: center;">
-            <div style="width: 50%;text-align: center;padding: 10px;">
+          <div class="goldrow" style="display: flex; align-items: center;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/housemaster.png"/></a>
             </div>
-            <div style="width: 50%;text-align: center;padding: 10px;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/hugues-e1669055994288.jpeg"/></a>
             </div>
           </div>
-          <div style="display: flex; align-items: center;">
-            <div style="width: 50%;text-align: center;padding: 10px;">
+          <div class="goldrow" style="display: flex; align-items: center;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-23.png"/></a>
             </div>
-            <div style="width: 50%;text-align: center;padding: 10px;">
+            <div id="gold" style="width: 50%;text-align: center;padding: 10px;">
               <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/joe-the-home-pro.png"/></a>
             </div>
           </div>

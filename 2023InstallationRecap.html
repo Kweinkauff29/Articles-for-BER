@@ -47,7 +47,7 @@
       justify-content: end;
       margin: 0 40px 0 40px;
       align-items: baseline;
-      width: 135%;
+      width: 286%;
     }
     .arrowleft {
       margin: 5px 10px 0 -1000px;
@@ -89,62 +89,112 @@
       }
     }
     @keyframes goright2 {
-      from {
-        transform: translateX(-200px);
+        from {
+          transform: translateX(-350px);
+        }
+        to {
+          transform: translateX(0px);
+        }
       }
-      to {
-        transform: translateX(0px);
+      @keyframes goright3 {
+        from {
+          transform: translateX(-700px);
+        }
+        to {
+          transform: translateX(-350px);
+        }
       }
-    }
-    @keyframes goright3 {
-      from {
-        transform: translateX(-400px);
+      @keyframes goright4 {
+        from {
+          transform: translateX(-1050px);
+        }
+        to {
+          transform: translateX(-700px);
+        }
       }
-      to {
-        transform: translateX(-200px);
+      @keyframes goright5 {
+        from {
+          transform: translateX(-1400px);
+        }
+        to {
+          transform: translateX(-1050px);
+        }
       }
-    }
-    @keyframes goright4 {
-      from {
-        transform: translateX(-600px);
+
+      @keyframes goright6 {
+        from {
+          transform: translateX(-1750px);
+        }
+        to {
+          transform: translateX(-1400px);
+        }
       }
-      to {
-        transform: translateX(-400px);
+
+      @keyframes goright7 {
+        from {
+          transform: translateX(-2100px);
+        }
+        to {
+          transform: translateX(-1750px);
+        }
       }
-    }
     @keyframes goleft {
       from {
         transform: translateX(0px);
       }
       to {
-        transform: translateX(-200px);
+        transform: translateX(-350px);
       }
     }
     @keyframes goleft2 {
       from {
-        transform: translateX(-200px);
+        transform: translateX(-350px);
       }
       to {
-        transform: translateX(-400px);
+        transform: translateX(-700px);
       }
     }
     @keyframes goleft3 {
       from {
-        transform: translateX(-400px);
+        transform: translateX(-700px);
       }
       to {
-        transform: translateX(-600px);
+        transform: translateX(-1050px);
       }
     }
     @keyframes goleft4 {
+      from {
+        transform: translateX(-1050px);
+      }
+      to {
+        transform: translateX(-1400px);
+      }
+    }
+    @keyframes goleft5 {
+      from {
+        transform: translateX(-1400px);
+      }
+      to {
+        transform: translateX(-1750px);
+      }
+    }
+    @keyframes goleft6 {
+      from {
+        transform: translateX(-1750px);
+      }
+      to {
+        transform: translateX(-2150px);
+      }
+    }
+    @keyframes goleft7 {
       0%{
-        transform: translateX(-600px);
+        transform: translateX(-2150px);
       }
       70% {
-        transform: translateX(-700px);
+        transform: translateX(-2250px);
       }
       100%{
-        transform: translateX(-600px);
+        transform: translateX(-2150px);
       }
     }
     .arrowright:hover {
@@ -209,7 +259,7 @@
       margin: 5px 0 5px 0;
       font-family: 'Oswald';
     }
-    #hr1, #hr2, #hr3, #hr4 {
+    #hr1, #hr2, #hr3, #hr4, #hr5, #hr6, #hr7, #hr8, #hr9, #hr10, #hr11 {
       border: 5px solid #f7c336;
       animation: grow .3s linear;
       margin: 0;
@@ -225,10 +275,13 @@
         transform: scaleX(1);
       }
     }
-    #awardwinner1, #awardwinner2, #awardwinner3, #awardwinner4 {
+    #awardwinner1, #awardwinner2, #awardwinner3, #awardwinner4, #awardwinner5, #awardwinner6, #awardwinner7, #awardwinner8, #awardwinner9, #awardwinner10, #awardwinner11 {
       animation: exitleft linear infinite;
       animation-iteration-count: 1;
       animation-duration: .7s;
+    }
+    #awardwinner4 h2 {
+      text-align: center;
     }
     .bodcol h3 {
       text-align: center;
@@ -278,6 +331,9 @@
     }
     .wininfo h2 {
       font-size: 4rem;
+    }
+    .wininfo {
+      font-size: 1.8rem;
     }
     .box {
       border: 1px dimgrey;
@@ -354,7 +410,7 @@
       width: 300px;
     }
     .otyatitles {
-      width: 1500px;
+      width: 2500px;
       object-fit: contain;
       overflow: hidden;
       display: contents;
@@ -1019,24 +1075,44 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
             <hr id="hr1">
           </div>
           <div class="col winnerpick" id="ROTY" onclick="ROTY2()">
-            <h2>REALTOR OF THE YEAR</h2>
+            <h2>RPAC Broker Cup</h2>
             <hr style="display: none;" id="hr2">
           </div>
           <div class="col winnerpick" id="ROTY" onclick="ROTY3()">
-            <h2>REALTOR OF THE YEAR</h2>
+            <h2>Global Diversity Achievement Award</h2>
             <hr style="display: none;" id="hr3">
           </div>
           <div class="col winnerpick" id="ROTY" onclick="ROTY4()">
-            <h2>REALTOR OF THE YEAR</h2>
+            <h2>YPN 4 Under 40</h2>
             <hr style="display: none;" id="hr4">
           </div>
-          <div class="col winnerpick" id="ROTY" onclick="ROTY4()">
-            <h2>REALTOR OF THE YEAR</h2>
-            <hr style="display: none;" id="hr4">
+          <div class="col winnerpick" id="ROTY" onclick="ROTY5()">
+            <h2>Pat Lord Community Service Award</h2>
+            <hr style="display: none;" id="hr5">
           </div>
-          <div class="col winnerpick" id="ROTY" onclick="ROTY4()">
-            <h2>REALTOR OF THE YEAR</h2>
-            <hr style="display: none;" id="hr4">
+          <div class="col winnerpick" id="ROTY" onclick="ROTY6()">
+            <h2>Roger Brunswick Advocate Award</h2>
+            <hr style="display: none;" id="hr6">
+          </div>
+          <div class="col winnerpick" id="ROTY" onclick="ROTY7()">
+            <h2>David Hengel Educator of the Year Award</h2>
+            <hr style="display: none;" id="hr7">
+          </div>
+          <div class="col winnerpick" id="ROTY" onclick="ROTY8()">
+            <h2>Breakthrough Agent of the Year</h2>
+            <hr style="display: none;" id="hr8">
+          </div>
+          <div class="col winnerpick" id="ROTY" onclick="ROTY9()">
+            <h2>Committee Member of the Year</h2>
+            <hr style="display: none;" id="hr9">
+          </div>
+          <div class="col winnerpick" id="ROTY" onclick="ROTY10()">
+            <h2>Affiliate of the Year</h2>
+            <hr style="display: none;" id="hr10">
+          </div>
+          <div class="col winnerpick" id="ROTY" onclick="ROTY11()">
+            <h2>Affiliate Company of the Year</h2>
+            <hr style="display: none;" id="hr11">
           </div>
         </div>
       </div>
@@ -1054,31 +1130,49 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
             document.querySelector('.winnerselect').style.animation = "goleft .5s linear";
             count = 2;
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(-200px)";}, 500);
+            document.querySelector('.winnerselect').style = "transform: translateX(-350px)";}, 500);
           }
           else if (count == 2) {
             document.querySelector('.winnerselect').style.animation = "goleft2 .5s linear";
             count = 3;
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(-400px)";}, 500);
+            document.querySelector('.winnerselect').style = "transform: translateX(-700px)";}, 500);
           }
           else if (count == 3) {
             count = 4;
             document.querySelector('.winnerselect').style.animation = "goleft3 .5s linear";
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(-600px)";}, 500);
+            document.querySelector('.winnerselect').style = "transform: translateX(-1050px)";}, 500);
           }
           else if (count == 4) {
             document.querySelector('.winnerselect').style.animation = "goleft4 .7s linear";
-            count = 4;
+            count = 5;
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(-600px)";}, 700);
+            document.querySelector('.winnerselect').style = "transform: translateX(-1400px)";}, 700);
+          }
+          else if (count == 5) {
+            document.querySelector('.winnerselect').style.animation = "goleft5 .5s linear";
+            count = 6;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-1750px)";}, 500);
+          }
+          else if (count == 6) {
+            document.querySelector('.winnerselect').style.animation = "goleft6 .5s linear";
+            count = 7;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-2150px)";}, 500);
+          }
+          else if (count == 7) {
+            document.querySelector('.winnerselect').style.animation = "goleft7 .5s linear";
+            count = 7;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-2150px)";}, 500);
           }
 
           else {
             document.querySelector('.winnerselect').style.animationPlayState = "paused";
             console.log("end", count);
-            count = 4;
+            count = 7;
           }
           console.log("end",count);
         }
@@ -1093,19 +1187,37 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
             document.querySelector('.winnerselect').style.animation = "goright2 .5s linear";
             count = 1;
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(0px)";}, 500);
+            document.querySelector('.winnerselect').style = "transform: translateX(-0px)";}, 500);
           }
           else if (count == 3) {
             document.querySelector('.winnerselect').style.animation = "goright3 .5s linear";
             count = 2;
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(-200px)";}, 500);
+            document.querySelector('.winnerselect').style = "transform: translateX(-350px)";}, 500);
           }
           else if (count == 4) {
             document.querySelector('.winnerselect').style.animation = "goright4 .5s linear";
             count = 3;
             setTimeout(function () {
-            document.querySelector('.winnerselect').style = "transform: translateX(-400px)";}, 500);
+            document.querySelector('.winnerselect').style = "transform: translateX(-700px)";}, 500);
+          }
+          else if (count == 5) {
+            document.querySelector('.winnerselect').style.animation = "goright5 .5s linear";
+            count = 4;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-1050px)";}, 500);
+          }
+          else if (count == 6) {
+            document.querySelector('.winnerselect').style.animation = "goright6 .5s linear";
+            count = 5;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-1400px)";}, 500);
+          }
+          else if (count == 7) {
+            document.querySelector('.winnerselect').style.animation = "goright7 .5s linear";
+            count = 6;
+            setTimeout(function () {
+            document.querySelector('.winnerselect').style = "transform: translateX(-1750px)";}, 500);
           }
           else {
             console.log("end",count);
@@ -1123,159 +1235,627 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
             <div class="col wininfo">
               <h2>Wade Abed</h2>
               <h3>REALTOR of the YEAR</h3>
-              <hr>
-              <p>This is where the text goes, If i had the text to put here this is where I would put it.  Yes, this is text.  A lot of words in one place.</p>
+              <hr style="margin-top: 0px;">
+              <p>
+                This year's Realtor of the Year award goes to John Smith for his unwavering commitment to his clients and the real estate industry. His professionalism and dedication to providing exceptional service to all of his clients has made him stand out as an exemplary real estate professional. He is a model of excellence and a true asset to the real estate industry. Congratulations John!</p>
             </div>
           </div>
           <div class="row winner" id="awardwinner2" style="display: none;" value="2">
             <div class="col winphoto">
-              <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3063-scaled-e1670350893976.jpg" alt="">
+              <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3064-scaled-e1670512506851.jpg" alt="">
             </div>
             <div class="col wininfo">
-              <h2>Mark Ledbetter</h2>
-              <h3>REALTOR of the YEAR</h3>
-              <hr>
-              <p>This is where the text goes, If i had the text to put here this is where I would put it.  Yes, this is text.  A lot of words in one place.</p>
+              <h2>Local Real Estate</h2>
+              <h3>RPAC Broker Cup</h3>
+              <hr style="margin-top: 0px;">
+              <p>
+The RPAC Broker Cup is a prestigious award that recognizes the office who is the most engaged with political issues in the real estate industry. The award is a testament to the hard work and dedication of Local Real Estate, Co. and serves to honor their commitment to professionalism and home ownership. We are proud to congratulate them for their exceptional efforts and for achieving this distinguished recognition.</p>
             </div>
           </div>
           <div class="row winner" id="awardwinner3" style="display: none;" value="3">
             <div class="col winphoto">
-              <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3084-scaled-e1670345826645.jpg" alt="">
+              <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3066-scaled-e1670512480237.jpg" alt="">
             </div>
             <div class="col wininfo">
-              <h2>Wade Abed</h2>
-              <h3>REALTOR of the YEAR</h3>
-              <hr>
-              <p>This is where the text goes, If i had the text to put here this is where I would put it.  Yes, this is text.  A lot of words in one place.</p>
+              <h2>Ursula Weinkauff</h2>
+              <h3>Global Diversity Achievement Award</h3>
+              <hr style="margin-top: 0px;">
+              <p>Ursula Weinkauff is the proud recipient of the Global Diversity Achievement Award. This award recognizes her efforts in establishing a strong global presence in the real estate industry through her dedication and hard work. Her commitment to diversity and inclusion has helped her to create meaningful relationships both in the local and international communities. Ursula is a true trailblazer and leader in the real estate industry.</p>
             </div>
           </div>
           <div class="row winner" id="awardwinner4" style="display: none;" value="4">
-            <div class="col winphoto">
-              <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3084-scaled-e1670345826645.jpg" alt="">
-            </div>
-            <div class="col wininfo">
-              <h2>Wade Abed</h2>
-              <h3>REALTOR of the YEAR</h3>
-              <hr>
-              <p>This is where the text goes, If i had the text to put here this is where I would put it.  Yes, this is text.  A lot of words in one place.</p>
-            </div>
+            <h3 style="text-align: center; font-size: 6rem;">YPN 4 Under 40</h3>
+            <hr style="margin-top: 0px;">
+            <div class="row" style="display: flex;">
+              <div class="col winphoto">
+                <img class="photo" style="max-width: 100%; max-height: 232px; object-fit: cover;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3067-scaled-e1670512811493.jpg" alt="">
+                <h2>Eddie Burnham</h2>
+              </div>
+              <div class="col winphoto">
+                <img class="photo" style="max-width: 100%; max-height: 232px; object-fit: cover;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3069-scaled-e1670512844827.jpg" alt="">
+                <h2>John Bolen</h2>
+              </div>
+              <div class="col winphoto">
+                <img class="photo" style="max-width: 100%; max-height: 232px; object-fit: cover;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3068-scaled-e1670512877695.jpg" alt="">
+                <h2>Jake Comisar</h2>
+              </div>
+              <div class="col winphoto">
+                <img class="photo" style="max-width: 100%; max-height: 232px; object-fit: cover;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3070-scaled-e1670512934960.jpg" alt="">
+                <h2>My Mai</h2>
+              </div>
           </div>
+          <br>
+          <div class="row">
+            <p style="text-align: center;">The Young Professionals Network 4 under 40 award is a prestigious honor given to the four up and coming real estate professionals who are expected to be the next face of local real estate. This year's recipients are Eddie Burnham, Jake Comisar, My Mai, and John Bolen. These four individuals have already achieved a great deal in their careers and are well-deserving of this recognition. Congratulations to the Young Professionals Network 4 under 40!</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner5" style="display: none;" value="5">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3071-scaled-e1670514370175.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Andy Lynch</h2>
+            <h3>Pat Lord Community Service Award</h3>
+            <hr style="margin-top: 0px;">
+            <p>We are proud to announce that Andy Lynch is the recipient of the Pat Lord Community Service Award. He has proven to be an incredible asset to the community during the aftermath of Hurricane Ian, selflessly donating his time, energy and resources to help the community rebuild and recover. He is an active member of the local community and is involved in a variety of charitable organizations. We are proud to recognize Andy's commitment to service and to the community, and congratulate him on this well-deserved award.</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner6" style="display: none;" value="6">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3072-scaled-e1670514696381.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Jeanne Drath</h2>
+            <h3>Roger Brunswick Advocate Award</h3>
+            <hr style="margin-top: 0px;">
+            <p>Jeanne Drath is the proud recipient of the Roger Brunswick Advocate Award for exemplifying the spirit of advocacy and being a leader in the real estate industry. She has been involved with the Bonita Estero Realtors for many years and is passionate about the cause. This award is dedicated to the late Roger Brunswick who was a leader in the movement to make the real estate industry more inclusive and accessible. Jeanne is an embodiment of Roger's spirit and is honored to receive this award. Congratulations to Jeanne for this well-deserved award.</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner7" style="display: none;" value="7">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3078-scaled-e1670514997778.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Dena Wilcoxen</h2>
+            <h3>David Hengel Educator of the Year Award</h3>
+            <hr style="margin-top: 0px;">
+            <p>This year, the David Hengel Educator of the Year Award goes to Dena Wilcoxen for her outstanding dedication to educating realtors over the past year. Dena has gone above and beyond to ensure that the realtors she works with are always learning and growing, and her presentation on “Professionalism” is a testament to her commitment to the education of professionals in her field. Dena is an inspiring example of a rising realtor educator and a pillar of our industry. We are proud to recognize Dena Wilcoxen, Past President, for her hard work and dedication, and congratulate her on this prestigious award.</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner8" style="display: none;" value="8">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3078-scaled-e1670514997778.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Jonathan Van Heukelom</h2>
+            <h3>Breakthrough Agent of the Year</h3>
+            <hr style="margin-top: 0px;">
+            <p>We are proud to present Jonathan Van Heukelom with the Breakthrough Agent of the Year award for his tremendous strides in the real estate industry over the past year. His client-first approach, dedication to hard work, and attention to detail, along with the incredible impact he and his wife Kristin have made in the lives of their clients, make him a true standout among his peers. We wish Jonathan and Kristin continued success in all their future endeavors. Congratulations Jonathan!</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner8" style="display: none;" value="8">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3079-scaled-e1670515627845.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Jonathan Van Heukelom</h2>
+            <h3>Breakthrough Agent of the Year</h3>
+            <hr style="margin-top: 0px;">
+            <p>We are proud to present Jonathan Van Heukelom with the Breakthrough Agent of the Year award for his tremendous strides in the real estate industry over the past year. His client-first approach, dedication to hard work, and attention to detail, along with the incredible impact he and his wife Kristin have made in the lives of their clients, make him a true standout among his peers. We wish Jonathan and Kristin continued success in all their future endeavors. Congratulations Jonathan!</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner9" style="display: none;" value="9">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3080-scaled-e1670517221661.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Ellen Boyce</h2>
+            <h3>Committee Member of the Year</h3>
+            <hr style="margin-top: 0px;">
+            <p>Ellen Boyce is a truly remarkable BER Committee Member of the Year for 2022 and deserves this award. She has been an exemplary champion for our committees throughout the entire year, donating her time and effort to every meeting, event and assignment. Her enthusiasm and commitment to our committee's success have been unwavering, and her contribution to its success cannot be understated. Ellen's dedication and dedication to our organization has been an asset to our team and has made an invaluable contribution to its success.</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner10" style="display: none;" value="10">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3081-scaled-e1670517291320.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Adam Dalton</h2>
+            <h3>Affiliate of the Year</h3>
+            <hr style="margin-top: 0px;">
+            <p>Adam Dalton is the deserving recipient of the Affiliate Member of the Year Award for 2022. His enthusiasm and dedication to BER have been inspiring and invaluable to the success of our organization. Adam has served as a mentor, resource and organizer for our members and his commitment to helping others is admirable. We thank him for his commitment and are proud to recognize him as our Affiliate Member of the Year for 2022.</p>
+          </div>
+        </div>
+        <div class="row winner" id="awardwinner11" style="display: none;" value="11">
+          <div class="col winphoto">
+            <img class="photo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3088-scaled-e1670517826268.jpg" alt="">
+          </div>
+          <div class="col wininfo">
+            <h2>Lane Insurance Group</h2>
+            <h3>Affiliate Company of the Year</h3>
+            <hr style="margin-top: 0px;">
+            <p>We are pleased to honor Lane Insurance Group as the Affiliate Company of the Year for 2022. Jason Lane from Lane Insurance Group was always the first to provide us with information and education regarding challenging changes in the mortgage industry. He quickly became a trusted source of knowledge, and his expertise helped our members remain informed and make wise decisions throughout the year. At every turn, Lane Insurance Group has been a reliable partner and resource. Their dedication and commitment to BER and our members throughout the year is admirable and has earned them this well-deserved award. We congratulate Lane Insurance Group on this fantastic recognition.</p>
+          </div>
+        </div>
       </div>
 
       <script type="text/javascript">
-      let selector = 1;
-      let wade = document.getElementById("awardwinner1");
-      let wade2 = document.getElementById("awardwinner2");
-      let wade3 = document.getElementById("awardwinner3");
-      let wade4 = document.getElementById("awardwinner4");
-      let hr1 = document.getElementById("hr1");
-      let hr2 = document.getElementById("hr2");
-      let hr3 = document.getElementById("hr3");
-      let hr4 = document.getElementById("hr4");
+          let selector = 1;
+          let wade = document.getElementById("awardwinner1");
+          let wade2 = document.getElementById("awardwinner2");
+          let wade3 = document.getElementById("awardwinner3");
+          let wade4 = document.getElementById("awardwinner4");
+          let wade5 = document.getElementById("awardwinner5");
+          let wade6 = document.getElementById("awardwinner6");
+          let wade7 = document.getElementById("awardwinner7");
+          let wade8 = document.getElementById("awardwinner8");
+          let wade9 = document.getElementById("awardwinner9");
+          let wade10 = document.getElementById("awardwinner10");
+          let wade11 = document.getElementById("awardwinner11");
+          let hr1 = document.getElementById("hr1");
+          let hr2 = document.getElementById("hr2");
+          let hr3 = document.getElementById("hr3");
+          let hr4 = document.getElementById("hr4");
+          let hr5 = document.getElementById("hr5");
+          let hr6 = document.getElementById("hr6");
+          let hr7 = document.getElementById("hr7");
+          let hr8 = document.getElementById("hr8");
+          let hr9 = document.getElementById("hr9");
+          let hr10 = document.getElementById("hr10");
+          let hr11 = document.getElementById("hr11");
 
-  function ROTY() {
-    if (selector > 1) {
-      wade.style.animationName = "exitleft";
-      wade.style.animationPlayState = "running";
+    function ROTY() {
+            if (selector > 1) {
+              wade.style.animationName = "exitleft";
+              wade.style.animationPlayState = "running";
 
-      console.log("exitleft");
-    }
-    else {
-      console.log("error");
-    }
-    hr1.style.display = "block";
-    hr2.style.display = "none";
-    hr3.style.display = "none";
-    hr4.style.display = "none";
-    wade.style.display = "flex";
-    wade2.style.display = "none";
-    wade3.style.display = "none";
-    wade4.style.display = "none";
-    selector = 1;
-  }
+              console.log("exitleft");
+            }
+            else if (selector === 1) {
+              console.log("error");
+            }
+            hr1.style.display = "block";
+            hr2.style.display = "none";
+            hr3.style.display = "none";
+            hr4.style.display = "none";
+            hr5.style.display = "none";
+            hr1.style.display = "block";
+            hr2.style.display = "none";
+            hr3.style.display = "none";
+            hr4.style.display = "none";
+            hr5.style.display = "none";
+    		    hr6.style.display = "none";
+            hr7.style.display = "none";
+            hr8.style.display = "none";
+            hr9.style.display = "none";
+            hr10.style.display = "none";
+            hr11.style.display = "none";
+            wade.style.display = "flex";
+             wade2.style.display = "none";
+             wade3.style.display = "none";
+             wade4.style.display = "none";
+             wade5.style.display = "none";
+             wade6.style.display = "none";
+             wade7.style.display = "none";
+             wade8.style.display = "none";
+             wade9.style.display = "none";
+             wade10.style.display = "none";
+             wade11.style.display = "none";
+            selector = 1;
+          }
 
-  function ROTY2() {
-    if (selector > 2) {
-      wade2.style.animationName = "exitleft";
-      wade2.style.animationPlayState = "running";
+          function ROTY2() {
+            if (selector > 2) {
+              wade2.style.animationName = "exitleft";
+              wade2.style.animationPlayState = "running";
 
-      console.log("exitleft");
-    }
-    else if (selector < 2) {
-      wade2.style.animationName = "exitright";
-      wade2.style.animationPlayState = "running";
+              console.log("exitleft");
+            }
+            else if (selector < 2) {
+              wade2.style.animationName = "exitright";
+              wade2.style.animationPlayState = "running";
 
-      console.log("exitright");
-    }
-    else {
-      console.log("error");
-    }
-    hr1.style.display = "none";
-    hr2.style.display = "block";
-    hr3.style.display = "none";
-    hr4.style.display = "none";
-    wade.style.display = "none";
-    wade2.style.display = "flex";
-    wade3.style.display = "none";
-    wade4.style.display = "none";
-    selector = 2;
-  }
+              console.log("exitright");
+            }
+            else {
+              console.log("error");
+            }
+            hr1.style.display = "none";
+            hr2.style.display = "block";
+            hr3.style.display = "none";
+            hr4.style.display = "none";
+            hr5.style.display = "none";
+    		    hr6.style.display = "none";
+            hr7.style.display = "none";
+            hr8.style.display = "none";
+            hr9.style.display = "none";
+            hr10.style.display = "none";
+            hr11.style.display = "none";
+            wade.style.display = "none";
+            wade2.style.display = "flex";
+            wade3.style.display = "none";
+            wade4.style.display = "none";
+            wade5.style.display = "none";
+    		wade6.style.display = "none";
+             wade7.style.display = "none";
+             wade8.style.display = "none";
+             wade9.style.display = "none";
+             wade10.style.display = "none";
+             wade11.style.display = "none";
+            selector = 2;
+          }
 
-  function ROTY3() {
-    if (selector > 3) {
-      wade3.style.animationName = "exitleft";
-      wade3.style.animationPlayState = "running";
+          function ROTY3() {
+            if (selector > 3) {
+              wade3.style.animationName = "exitleft";
+              wade3.style.animationPlayState = "running";
 
-      console.log("exitleft");
-    }
-    else if (selector < 3) {
-      wade3.style.animationName = "exitright";
-      wade3.style.animationPlayState = "running";
+              console.log("exitleft");
+            }
+            else if (selector < 3) {
+              wade3.style.animationName = "exitright";
+              wade3.style.animationPlayState = "running";
 
-      console.log("exitright");
-    }
-    else {
-      console.log("error");
-    }
-    hr1.style.display = "none";
-    hr2.style.display = "none";
-    hr3.style.display = "block";
-    hr4.style.display = "none";
-    wade.style.display = "none";
-    wade2.style.display = "none";
-    wade3.style.display = "flex";
-    wade4.style.display = "none";
-    selector = 3;
-  }
+              console.log("exitright");
+            }
+            else {
+              console.log("error");
+            }
+            hr1.style.display = "none";
+            hr2.style.display = "none";
+            hr3.style.display = "block";
+            hr4.style.display = "none";
+            hr5.style.display = "none";
+    		    hr6.style.display = "none";
+            hr7.style.display = "none";
+            hr8.style.display = "none";
+            hr9.style.display = "none";
+            hr10.style.display = "none";
+            hr11.style.display = "none";
+            wade.style.display = "none";
+            wade2.style.display = "none";
+            wade3.style.display = "flex";
+            wade4.style.display = "none";
+            wade5.style.display = "none";
+    		wade6.style.display = "none";
+             wade7.style.display = "none";
+             wade8.style.display = "none";
+             wade9.style.display = "none";
+             wade10.style.display = "none";
+             wade11.style.display = "none";
+            selector = 3;
+          }
 
-  function ROTY4() {
-    if (selector > 4) {
-      wade4.style.animationName = "exitleft";
-      wade4.style.animationPlayState = "running";
+          function ROTY4() {
+            if (selector > 4) {
+              wade4.style.animationName = "exitleft";
+              wade4.style.animationPlayState = "running";
 
-      console.log("exitleft");
-    }
-    else if (selector < 4) {
-      wade4.style.animationName = "exitright";
-      wade4.style.animationPlayState = "running";
+              console.log("exitleft");
+            }
+            else if (selector < 4) {
+              wade4.style.animationName = "exitright";
+              wade4.style.animationPlayState = "running";
 
-      console.log("exitright");
-    }
-    else {
-      console.log("error");
-    }
-    hr1.style.display = "none";
-    hr2.style.display = "none";
-    hr3.style.display = "none";
-    hr4.style.display = "block";
-    wade.style.display = "none";
-    wade2.style.display = "none";
-    wade3.style.display = "none";
-    wade4.style.display = "flex";
-    selector = 4;
-  }
+              console.log("exitright");
+            }
+            else {
+              console.log("error");
+            }
+            hr1.style.display = "none";
+            hr2.style.display = "none";
+            hr3.style.display = "none";
+            hr4.style.display = "block";
+            hr5.style.display = "none";
+    		    hr6.style.display = "none";
+            hr7.style.display = "none";
+            hr8.style.display = "none";
+            hr9.style.display = "none";
+            hr10.style.display = "none";
+            hr11.style.display = "none";
+            wade.style.display = "none";
+            wade2.style.display = "none";
+            wade3.style.display = "none";
+            wade4.style.display = "block";
+            wade5.style.display = "none";
+    		      wade6.style.display = "none";
+             wade7.style.display = "none";
+             wade8.style.display = "none";
+             wade9.style.display = "none";
+             wade10.style.display = "none";
+             wade11.style.display = "none";
+            selector = 4;
+      }
 
-</script>
+      function ROTY5() {
+        if (selector > 5) {
+          wade5.style.animationName = "exitleft";
+          wade5.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 5) {
+          wade5.style.animationName = "exitright";
+          wade5.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "block";
+        hr6.style.display = "none";
+        hr7.style.display = "none";
+        hr8.style.display = "none";
+        hr9.style.display = "none";
+        hr10.style.display = "none";
+        hr11.style.display = "none";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "flex";
+          wade6.style.display = "none";
+         wade7.style.display = "none";
+         wade8.style.display = "none";
+         wade9.style.display = "none";
+         wade10.style.display = "none";
+         wade11.style.display = "none";
+        selector = 5;
+      }
+
+      function ROTY6() {
+        if (selector > 6) {
+          wade6.style.animationName = "exitleft";
+          wade6.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 6) {
+          wade6.style.animationName = "exitright";
+          wade6.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "none";
+        hr6.style.display = "block";
+        hr7.style.display = "none";
+        hr8.style.display = "none";
+        hr9.style.display = "none";
+        hr10.style.display = "none";
+        hr11.style.display = "none";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "none";
+          wade6.style.display = "flex";
+         wade7.style.display = "none";
+         wade8.style.display = "none";
+         wade9.style.display = "none";
+         wade10.style.display = "none";
+         wade11.style.display = "none";
+        selector = 6;
+      }
+
+      function ROTY7() {
+        if (selector > 7) {
+          wade7.style.animationName = "exitleft";
+          wade7.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 7) {
+          wade7.style.animationName = "exitright";
+          wade7.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "none";
+        hr6.style.display = "none";
+        hr7.style.display = "block";
+        hr8.style.display = "none";
+        hr9.style.display = "none";
+        hr10.style.display = "none";
+        hr11.style.display = "none";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "none";
+          wade6.style.display = "none";
+         wade7.style.display = "flex";
+         wade8.style.display = "none";
+         wade9.style.display = "none";
+         wade10.style.display = "none";
+         wade11.style.display = "none";
+        selector = 7;
+      }
+
+      function ROTY8() {
+        if (selector > 8) {
+          wade8.style.animationName = "exitleft";
+          wade8.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 8) {
+          wade8.style.animationName = "exitright";
+          wade8.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "none";
+        hr6.style.display = "none";
+        hr7.style.display = "none";
+        hr8.style.display = "block";
+        hr9.style.display = "none";
+        hr10.style.display = "none";
+        hr11.style.display = "none";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "none";
+        wade6.style.display = "none";
+        wade7.style.display = "none";
+        wade8.style.display = "flex";
+        wade9.style.display = "none";
+        wade10.style.display = "none";
+        wade11.style.display = "none";
+        selector = 8;
+      }
+
+      function ROTY9() {
+        if (selector > 9) {
+          wade9.style.animationName = "exitleft";
+          wade9.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 9) {
+          wade9.style.animationName = "exitright";
+          wade9.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "none";
+        hr6.style.display = "none";
+        hr7.style.display = "none";
+        hr8.style.display = "none";
+        hr9.style.display = "block";
+        hr10.style.display = "none";
+        hr11.style.display = "none";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "none";
+        wade6.style.display = "none";
+        wade7.style.display = "none";
+        wade8.style.display = "none";
+        wade9.style.display = "flex";
+        wade10.style.display = "none";
+        wade11.style.display = "none";
+        selector = 9;
+      }
+
+      function ROTY10() {
+        if (selector > 10) {
+          wade10.style.animationName = "exitleft";
+          wade10.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 10) {
+          wade10.style.animationName = "exitright";
+          wade10.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "none";
+        hr6.style.display = "none";
+        hr7.style.display = "none";
+        hr8.style.display = "none";
+        hr9.style.display = "none";
+        hr10.style.display = "block";
+        hr11.style.display = "none";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "none";
+        wade5.style.display = "none";
+        wade6.style.display = "none";
+        wade7.style.display = "none";
+        wade8.style.display = "none";
+        wade9.style.display = "none";
+        wade10.style.display = "flex";
+        wade11.style.display = "none";
+        selector = 10;
+      }
+
+      function ROTY11() {
+        if (selector > 11) {
+          wade11.style.animationName = "exitleft";
+          wade11.style.animationPlayState = "running";
+
+          console.log("exitleft");
+        }
+        else if (selector < 11) {
+          wade11.style.animationName = "exitright";
+          wade11.style.animationPlayState = "running";
+
+          console.log("exitright");
+        }
+        else {
+          console.log("error");
+        }
+        hr1.style.display = "none";
+        hr2.style.display = "none";
+        hr3.style.display = "none";
+        hr4.style.display = "none";
+        hr5.style.display = "none";
+        hr6.style.display = "none";
+        hr7.style.display = "none";
+        hr8.style.display = "none";
+        hr9.style.display = "none";
+        hr10.style.display = "none";
+        hr11.style.display = "block";
+        wade.style.display = "none";
+        wade2.style.display = "none";
+        wade3.style.display = "none";
+        wade4.style.display = "none";
+        wade5.style.display = "none";
+        wade6.style.display = "none";
+        wade7.style.display = "none";
+        wade8.style.display = "none";
+        wade9.style.display = "none";
+        wade10.style.display = "none";
+        wade11.style.display = "flex";
+        selector = 11;
+      }
+
+    </script>
 
       <hr style="border: 1px solid #ccc;" />
 

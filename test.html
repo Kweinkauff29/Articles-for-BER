@@ -1,21 +1,60 @@
-<script>
-
-// Create a function to send an email
-function sendEmail(email) {
-    // Create a link to send the email
-    var link = "mailto:kevin@bonitaesterorealtors.com"
-        + "?cc=" + email
-        + "&subject=" + escape("Email from JavaScript App")
-        + "&body=" + escape("This email was sent from a JavaScript App!");
-
-    // Open the link
-    window.location.href = link;
-}
-
-// Ask the user for their email
-var email = prompt("Please enter your email address:");
-
-// Send the email
-sendEmail(email);
-
-</script>
+<html>
+<head>
+    <title>Hamburger Icon</title>
+    <style>
+        #hamburger {
+            width: 25px;
+            height: 25px;
+            background-color: #000;
+            position: relative;
+            cursor: pointer;
+        }
+        #hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: all 0.3s ease;
+        }
+        #hamburger span:nth-child(1) {
+            top: 10%;
+        }
+        #hamburger span:nth-child(2) {
+            top: 50%;
+        }
+        #hamburger span:nth-child(3) {
+            top: 90%;
+        }
+        #hamburger.open span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 50%;
+            left: 10%;
+        }
+        #hamburger.open span:nth-child(2) {
+            width: 0%;
+            opacity: 0;
+        }
+        #hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 50%;
+            right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function(){
+            this.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

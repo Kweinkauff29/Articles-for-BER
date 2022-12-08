@@ -33,6 +33,15 @@
       font-family: 'Oswald', sans-serif;
       font-size: 58px;
     }
+    #commrow h3 {
+      color: white;
+      font-size: 3rem;
+      font-family: 'Oswald';
+    }
+    #commrow h4 {
+      color: white;
+      font-size: 2rem;
+    }
     .winnerselect {
       display: flex;
       justify-content: end;
@@ -175,9 +184,23 @@
       display: flex;
       width: -webkit-fill-available;
       max-width: 1100px;
-      background-color: #f7c336;
+      background-image: linear-gradient(to bottom, #FFFFFF, #F7C336 160%);
       padding: 10px 20px 10px 20px;
       border-radius: 15px;
+      animation-name: fadeInLeft;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     .bodcol h2 {
       text-align: center;
@@ -188,7 +211,7 @@
     }
     #hr1, #hr2, #hr3, #hr4 {
       border: 5px solid #f7c336;
-      animation: grow 1s linear;
+      animation: grow .3s linear;
       margin: 0;
     }
     #hr2, #hr3, #hr4 {
@@ -226,8 +249,13 @@
     .dirrow {
       display: flex;
       width: -webkit-fill-available;
+      border-radius: 15px;
+      background-image: linear-gradient(to bottom, #FFFFFF, #46aae1 325%)
       max-width: 1100px;
       align-items: end;
+      animation-name: fadeInLeft;
+      animation-duration: 1s;
+      animation-fill-mode: both;
     }
     .dirpic {
       object-fit: contain;
@@ -384,6 +412,8 @@
     }
     .head-image {
       width: 100%;
+      max-height: 400px;
+      object-fit: cover;
     }
     .Ned-Q2-Article {
       margin: 30px auto;
@@ -750,13 +780,46 @@
 
     <div class="Ned-Q2-Article">
       <img class="head-image" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/inst-banner-1-scaled.jpg" alt="contract-image">
+
+      <script type="text/javascript">
+        //Image picChanger
+        //Create an array of images
+        let images = ["https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/inst-banner-1-scaled.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_2991-scaled-e1670446639965.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_3062-scaled.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_2945-scaled-e1670446738263.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_2974-scaled-e1670446704624.jpg", "https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/DSC_2949-scaled-e1670446818890.jpg"];
+
+        //Create a counter to keep track of the current image
+        let currentImage = 0;
+
+        //Set a timer to change the image every 8 seconds
+        let imageInterval = setInterval(changeImage, 8000);
+
+        //Create a function to change the image
+        function changeImage(){
+          //Apply a fade out animation to the current image
+          $(`.head-image`).animate({opacity: 0}, 500);
+
+          //Increase the counter
+          currentImage++;
+
+          //Check if the counter has reached the end of the array, if it has reset it to 0
+          if (currentImage === images.length) {
+            currentImage = 0;
+          }
+
+          //Change the source of the image
+          $(`.head-image`).attr("src", images[currentImage]);
+
+          //Apply a fade in animation to the new image
+          $(`.head-image`).animate({opacity: 1}, 500);
+        }
+      </script>
+
       <h1 style="font-weight: 200;">2023 Installation Banquet</h1>
       <br>
       <!--<h2>What is it & Who can apply?</h2>-->
       <p><i>December 1st, 2022</i></p>
 The Annual Installation Banquet is BER's most cherished event, celebrating the induction of our new leadership for the upcoming year and honoring the outstanding Realtors and Affiliates who have gone above and beyond in the current year through the "Of the Year" Awards. In case you weren't able to attend, here is a recap of the night's festivities, including the newly installed leaders and all the well-deserved award winners and graduates.
       <br>
-      <br>
+      <hr style="border: 1px solid #ccc;" />
       <h4 style="font-weight: 700 !important;">2023 Board of Directors</h4>
       <h5 style="font-weight: 700 !important;">Executive Committee</h5>
       <div class="row bodrow">
@@ -822,6 +885,129 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
           </div>
         </div>
       <br>
+      <hr style="border: 1px solid #ccc;" />
+      <h4 style="font-weight: 700 !important;">2023 Committee Chairs</h4>
+
+      <div class="row" id="commrow" style="background-color:#f7c336; padding:0;">
+      <div class="col-md-4" style="padding:0; border: white 5px solid;">
+        <div class="row" >
+          <div class="col-md-6">
+            <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-14-1-e1668450166315.png" alt="photo" />
+          </div>
+          <div class="col-md-6">
+            <h3>John Bolen</h3>
+            <hr style="color:white; margin: -5px 0 10px 0;">
+            <h4>Profesional Development</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="padding:0; border: white 5px solid;">
+        <div class="row" >
+          <div class="col-md-6">
+            <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-16-e1668450198280.png" alt="photo" />
+          </div>
+          <div class="col-md-6">
+            <h3>Ellen Boyce</h3>
+            <hr style="color:white; margin: -5px 0 10px 0;">
+            <h4>Leadership Academy</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="padding:0; border: white 5px solid;">
+        <div class="row" >
+          <div class="col-md-6">
+            <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2019/03/Allan-Hase.jpg" alt="photo" />
+          </div>
+          <div class="col-md-6">
+            <h3>Allan Hase</h3>
+            <hr style="color:white; margin: -5px 0 10px 0;">
+            <h4>Grievance</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="commrow" style="background-color:#f7c336; padding:0;">
+    <div class="col-md-4" style="padding:0; border: white 5px solid;">
+      <div class="row">
+        <div class="col-md-6">
+          <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-24.png" alt="photo" />
+        </div>
+        <div class="col-md-6">
+          <h3>Wendy Hertel</h3>
+          <hr style="color:white; margin: -5px 0 10px 0;">
+          <h4>Events</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" style="padding:0; border: white 5px solid;">
+      <div class="row" >
+        <div class="col-md-6">
+          <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-19.png" alt="photo" />
+        </div>
+        <div class="col-md-6">
+          <h3>Holly Marth</h3>
+          <hr style="color:white; margin: -5px 0 10px 0;">
+          <h4>Realtor Review</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" style="padding:0; border: white 5px solid;">
+      <div class="row">
+        <div class="col-md-6">
+          <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-17-e1668450134671.png" alt="photo" />
+        </div>
+        <div class="col-md-6">
+          <h3>Larissa Mares</h3>
+          <hr style="color:white; margin: -5px 0 10px 0;">
+          <h4>YPN</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="commrow" style="background-color:#f7c336; padding:0;">
+  <div class="col-md-4" style="padding:0;">
+    <div class="row" style="border: white 5px solid;">
+      <div class="col-md-6">
+        <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-14-1-e1668450166315.png" alt="photo" />
+      </div>
+      <div class="col-md-6">
+        <h3>John Bolen</h3>
+        <hr style="color:white; margin: -5px 0 10px 0;">
+        <h4>Profesional Development</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" style="padding:0;">
+    <div class="row" style="border: white 5px solid;">
+      <div class="col-md-6">
+        <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-16-e1668450198280.png" alt="photo" />
+      </div>
+      <div class="col-md-6">
+        <h3>Ellen Boyce</h3>
+        <hr style="color:white; margin: -5px 0 10px 0;">
+        <h4>Leadership Academy</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" style="padding:0;">
+    <div class="row" style="border: white 5px solid;">
+      <div class="col-md-6">
+        <img style="max-width: 100%; max-height: 150px;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2019/03/Allan-Hase.jpg" alt="photo" />
+      </div>
+      <div class="col-md-6">
+        <h3>Allan Hase</h3>
+        <hr style="color:white; margin: -5px 0 10px 0;">
+        <h4>Grievance Commitee</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <hr style="border: 1px solid #ccc;" />
       <h4 style="font-weight: 700 !important;">"Of the Year" Award Winners 2022</h4>
       <div class="arrowleft" onclick="backward()">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -1091,28 +1277,90 @@ The Annual Installation Banquet is BER's most cherished event, celebrating the i
 
 </script>
 
+      <hr style="border: 1px solid #ccc;" />
+
       <br>
-      Whether you’re <a href="https://www.homelight.com/blog/buyer-documents-needed-to-buy-a-house/" target="_blank" style="color: blue;">looking to buy </a> or <a href="https://orchard.com/blog/posts/documents-required-to-sell-your-house" target="_blank" style="color: blue;">sell a property</a>, there is a colossal amount of paperwork that needs to be prepared, signed, and authorized before you can make a listing or go through with an offer. This includes (but is not limited to) proof of identity, information about the deed, maintenance records, and more. Knowing what you need is key to organization. Here are a few items from high on the priority list.
+      <h4 style="font-weight: 700 !important;">Installation Program</h4>
+      <div style="background-color: #000000;">
+        <iframe width="400px" height="775px" src="https://www.bonitaesterorealtors.com/2023-installation/" style="margin: 0 auto; display: block; background-color: #000000;"></iframe>
+      </div>
+
       <br>
-      <br>
-      <ul>
-        <li><p style="font-weight: 700;"> Shared freehold documentation:</p> If your home retains a <a href="https://www.homeviews.com/blog/what-does-share-of-freehold-mean" target="_blank" style="color: blue;">share of the freehold</a>, you may need to provide documentation pertaining to its structure. The same is true if your home is a leasehold - you will be required to produce a copy of the lease and fill in a seller’s information form.</li>
-        <br>
-        <li><p style="font-weight: 700;">Property title deeds:</p> Amongst the most essential documents when selling a property are the <a href="https://www.atlanticbay.com/knowledge-center/whats-the-difference-between-a-title-and-a-deed/" target="_blank" style="color: blue;">title deeds</a> that prove you own it. These are likely kept by the solicitor you used when you first purchased the home/applied for a mortgage. If the property has been in possession since before 1990 (when the law first came into effect) you may need to contact your mortgage provider directly instead.</li>
-        <br>
-        <li><p style="font-weight: 700;">Mortgage offer:</p> A copy of your <a href="https://www.bankrate.com/uk/mortgages/how-long-does-a-mortgage-offer-last/" target="_blank" style="color: blue;">mortgage offer</a> and evidence of other funds will be required to purchase the property. This will prove that you are in the correct financial position to carry through with the deal.</li>
-        <br>
-      </ul>
-      The above are just a few of the many documents you will likely need when selling a property. <a href="https://www.homelight.com/blog/documents-needed-to-sell-house/" target="_blank" style="color: blue;">See more examples here.</a>
-      <br>
-      <br>
-      <h4 style="font-weight: 700 !important;">Organizing</h4>
-      Securing the right documents is one thing; organizing them is another nuisance entirely. It’s often worth converting your paperwork into a digital format and sending these to a handheld device, like an iPad, or even downloading a scanning app on your device. After that, <a href="https://www.adobe.com/acrobat/online/merge-pdf.html" target="_blank" style="color: blue;">you can quickly merge PDF files online</a>, thereby making it/them easier to locate, navigate and sign.
-      <br>
-      <br>
-      Property transitions are rarely straightforward. However, if you take advantage of the many resources available to you, you can keep one step ahead of the paperwork, which will greatly reduce your stress and workload.
-      <br>
-      <br>
+      <hr style="border: 1px solid #ccc;" />
+
+      <h4 style="font-weight: 700 !important;">Installation Sponsors</h4>
+
+
+      <div class="row">
+        <div class="col-md-6" style="background-color: #323232; text-align: center; padding: 40px; height: 350px;">
+          <h3 style="color: #FFFFFF; font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 5rem;">Founding Sponsor</h3>
+          <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
+          <a href="#"><img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/site-masthead-logo-dark@2x-1-copy-2.png" style="max-width: 100%; background-color: #FFFFFF;"  alt="Founding Sponsor Logo" /></a>
+        </div>
+        <div class="col-md-6" style="background-color: #A0D2FF; text-align: center; padding: 40px; height: 350px;">
+          <h3 style="color: #FFFFFF; font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 5rem;">Diamond Sponsor</h3>
+          <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
+
+          <a href="#"><img src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/Premium-Logo_3-e1670444765224.png" style="max-width: 80%; background-color: #FFFFFF;"  alt="Diamond Sponsor Logo" /></a>
+        </div>
+      </div>
+
+
+      <div style="display: flex;" class="row">
+        <div class="col">
+          <div class="row" style="background-color: silver;width: 100%;text-align: center;padding: 10px;">
+            <h3 style="font-family: Roboto; font-size: 4rem; color: white;">Platinum Sponsor</h3>
+            <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
+            <a href="#"><img style="max-width: 100%;margin: 54px 0 52px auto;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/IBERIABANK_Corporation_First_Horizon.jpg"/></a>
+          </div>
+          <div class="row" style="background-color: darkgrey;width: 100%;text-align: center;padding: 10px;">
+            <h3 style="font-family: Roboto; font-size: 4rem; color: white;">Silver Sponsors</h3>
+            <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
+            <a href="#"><h4 style="font-family: Roboto; font-size: 2rem; color: white;">Moore Lending Group</h4></a>
+            <a href="#"><h4 style="font-family: Roboto; font-size: 2rem; color: white;">Benchmark Mortgage</h4></a>
+            <a href="#"><h4 style="font-family: Roboto; font-size: 2rem; color: white;">Cross Country Mortgage</h4></a>
+            <a href="#"><h4 style="font-family: Roboto; font-size: 2rem; color: white;">Cutco - Tyler Kaplan</h4></a>
+            <a href="#"><h4 style="font-family: Roboto; font-size: 2rem; color: white;">Family Business Guidance Group</h4></a>
+          </div>
+        </div>
+        <div class="col" style="background-color: gold;width: 50%;text-align: center;padding: 10px;">
+          <h3 style="font-family: Roboto; font-size: 3rem; color: white;">Gold Sponsors</h3>
+          <hr style="border: 2px solid #FFFFFF; border-radius: 5px;">
+          <div style="display: flex; align-items: center;">
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white; " src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/wwmr.jpeg"/></a>
+            </div>
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/state-insurance-usa.jpeg"/></a>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/buckeye-lending-solutions-e1669056408717.jpeg"/></a>
+            </div>
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/dr-horton.png"/></a>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/housemaster.png"/></a>
+            </div>
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/hugues-e1669055994288.jpeg"/></a>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/image-23.png"/></a>
+            </div>
+            <div style="width: 50%;text-align: center;padding: 10px;">
+              <a href="#"><img style="max-width: 100%;background-color: white;" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/joe-the-home-pro.png"/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
     <div class="more">

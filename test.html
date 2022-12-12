@@ -1,7 +1,57 @@
-<button onclick="myFunction()">Click me</button>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
-<script>
-function myFunction() {
-  location.href = "http://www.google.com";
-}
+
+
+
+<script type="text/javascript">
+
+  function dbprSearch() {
+    // Store the input values for the URL and search term
+    let url = "https://www.myfloridalicense.com/wl11.asp?mode=1&SID=&brd=&typ=";
+    let searchTerm = "3360322";
+
+    // Fetch the webpage from the URL
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        // Parse the fetched webpage as an HTML document
+        let parser = new DOMParser();
+        let html = parser.parseFromString(text, "text/html");
+
+        // Input the search term into the search field
+        let searchField = html.querySelector("LicNbr");
+        searchField.value = searchTerm;
+
+        // Click the search button
+        let searchButton = html.querySelector("Search1");
+        searchButton.click();
+
+        // Wait for the search results to load
+        setTimeout(() => {
+          // Get the search results from the webpage
+          let searchResults = html.querySelectorAll(".search-result");
+
+          // Print the search results to the console
+          searchResults.forEach(result => {
+            console.log(result.innerText);
+          });
+        }, 1000);
+      });
+
+    }
+
 </script>
+
+<button type="button" name="button" onclick="dbprSearch()">DBPR search</button>
+
+<h1></h1>
+
+
+</body>
+</html>

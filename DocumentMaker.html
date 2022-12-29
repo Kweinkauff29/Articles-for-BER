@@ -1,0 +1,287 @@
+
+
+    <div class="article-maker" style="margin-top: 100px;">
+      <h1>Document Title</h1>
+      <input type="text" name="" value="" id="title">
+
+      <h1>Sub Title</h1>
+      <input type="text" name="" value="" id="subTitle">
+
+      <h1>Article Photo</h1>
+      <input type="text" name="" value="" id="articlePhoto">
+
+      <h1>Author:</h1>
+      <input type="text" name="" value="" id="author">
+
+      <h1>Date:</h1>
+      <input type="text" name="" value="" id="date">
+
+      <h1>Article Header:</h1>
+      <input type="text" name="" value="" id="header">
+
+      <h1>text</h1>
+      <input type="text" name="" value="" id="text">
+
+      <br>
+      <br>
+
+
+      <button id="add-input-button1">Add Header</button>
+      <div id="input-container1"></div>
+
+      <button id="add-input-button2">Add text</button>
+      <div id="input-container2"></div>
+
+      <button id="add-input-button3">Add Header</button>
+      <div id="input-container3"></div>
+
+      <button id="add-input-button4">Add text</button>
+      <div id="input-container4"></div>
+
+      <button id="add-input-button5">Add Header</button>
+      <div id="input-container5"></div>
+
+      <button id="add-input-button6">Add text</button>
+      <div id="input-container6"></div>
+
+      <script>
+      // Get a reference to the button and the input container
+      const addInputButton1 = document.getElementById('add-input-button1');
+      const inputContainer1 = document.getElementById('input-container1');
+      const addInputButton2 = document.getElementById('add-input-button2');
+      const inputContainer2 = document.getElementById('input-container2');
+      const addInputButton3 = document.getElementById('add-input-button3');
+      const inputContainer3 = document.getElementById('input-container3');
+      const addInputButton4 = document.getElementById('add-input-button4');
+      const inputContainer4 = document.getElementById('input-container4');
+      const addInputButton5 = document.getElementById('add-input-button5');
+      const inputContainer5 = document.getElementById('input-container5');
+      const addInputButton6 = document.getElementById('add-input-button6');
+      const inputContainer6 = document.getElementById('input-container6');
+
+      // Add an event listener to the button that inserts a new input element when clicked
+      addInputButton1.addEventListener('click', () => {
+        // Create a new input element
+        const input1 = document.createElement('input');
+
+        // Set its attributes
+        input1.type = 'text';
+        input1.name = 'new-input';
+        input1.placeholder = 'Enter a value';
+        input1.id = "input1";
+
+        // Append the input to the container
+        inputContainer1.appendChild(input1);
+      });
+      // Add an event listener to the button that inserts a new input element when clicked
+      addInputButton2.addEventListener('click', () => {
+        // Create a new input element
+        const input2 = document.createElement('input');
+
+        // Set its attributes
+        input2.type = 'text';
+        input2.name = 'new-input';
+        input2.placeholder = 'Enter a value';
+        input2.id = "input2";
+
+
+        // Append the input to the container
+        inputContainer2.appendChild(input2);
+      });
+      // Add an event listener to the button that inserts a new input element when clicked
+      addInputButton3.addEventListener('click', () => {
+        // Create a new input element
+        const input3 = document.createElement('input');
+
+        // Set its attributes
+        input3.type = 'text';
+        input3.name = 'new-input';
+        input3.placeholder = 'Enter a value';
+        input3.id = "input3";
+
+
+        // Append the input to the container
+        inputContainer3.appendChild(input3);
+      });
+      // Add an event listener to the button that inserts a new input element when clicked
+      addInputButton4.addEventListener('click', () => {
+        // Create a new input element
+        const input4 = document.createElement('input');
+
+        // Set its attributes
+        input4.type = 'text';
+        input4.name = 'new-input';
+        input4.placeholder = 'Enter a value';
+        input4.id = "input4";
+
+
+        // Append the input to the container
+        inputContainer4.appendChild(input4);
+      });
+      // Add an event listener to the button that inserts a new input element when clicked
+      addInputButton5.addEventListener('click', () => {
+        // Create a new input element
+        const input5 = document.createElement('input');
+
+        // Set its attributes
+        input5.type = 'text';
+        input5.name = 'new-input';
+        input5.placeholder = 'Enter a value';
+        input5.id = "input5";
+
+
+        // Append the input to the container
+        inputContainer5.appendChild(input5);
+      });
+      // Add an event listener to the button that inserts a new input element when clicked
+      addInputButton6.addEventListener('click', () => {
+        // Create a new input element
+        const input6 = document.createElement('input');
+
+        // Set its attributes
+        input6.type = 'text';
+        input6.name = 'new-input';
+        input6.placeholder = 'Enter a value';
+        input6.id = "input6";
+
+
+        // Append the input to the container
+        inputContainer6.appendChild(input6);
+      });
+    </script>
+
+
+    </div>
+
+
+
+
+    <div class="code-box">
+      <pre>
+        <code id="code">
+        </code>
+      </pre>
+      <button class="copy-button">Copy</button>
+      <button type="button" name="button" id="paste" onclick="pushText()">update code</button>
+    </div>
+
+    <style>
+      .code-box {
+        position: relative;
+      }
+
+      .copy-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    </style>
+
+    <script>
+
+      let docTitle = document.getElementById('title');
+      let subTitle = document.getElementById('subTitle');
+      let photo = document.getElementById('articlePhoto');
+      let author = document.getElementById('author');
+      let date = document.getElementById('date');
+      let header = document.getElementById('header');
+      let text = document.getElementById('text');
+      let header = document.getElementById('input1');
+      let text = document.getElementById('input2');
+      let header = document.getElementById('input3');
+      let text = document.getElementById('input4');
+      let header = document.getElementById('input5');
+      let text = document.getElementById('input6');
+
+
+
+
+
+
+
+      // Get a reference to the code element and the copy button
+      const code = document.getElementById('code');
+      const copyButton = document.querySelector('.copy-button');
+
+      function pushText() {
+        code.textContent = `
+        <div class="Ned-Q2-Article">
+          <img class="head-image" src="${photo.value}" alt="contract-image">
+          <h1 style="font-weight: 900; color: darkblue; ">${docTitle.value}</h1>
+          <h1 style="font-weight: 200;">${subTitle.value}</h1>
+          <br>
+          <p><i>${author.value}</i></p>
+          <br>
+          <p><i>${date.value}</i></p>
+          <br>
+          <br>
+          <h4 style="font-weight: 700 !important;">${header.value}</h4>
+          <br>
+          <br>
+          ${text.value}
+          `;
+      }
+
+      // Add an event listener to the button that copies the code to the clipboard
+      copyButton.addEventListener('click', () => {
+        // Select the text in the code element
+        code.select();
+
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+      });
+    </script>
+
+      <!--<p style="font-weight: 700; margin: -10px auto 10px 5px;"><i>by Diane Torrisi | Diane Torrisi Designs</i></p>-->
+        As the rental market in Southwest Florida continues accelerating, members of Bonita Springs-Estero Realtors can take advantage of a comprehensive suite to manage rentals efficiently. RentSpree, a free tool for BER members, lets you screen tenants instantly in just a few clicks and manages your entire rental process seamlessly.
+      <br>
+      <br>
+      When creating a lease listing within Matrix, you can generate a link to a secure online application that can be completed in minutes. Renters can access the application in different ways: directly via an ApplyLink™, or through an email or text message invitation. This integration saves time and costs, as there are no fees for using RentSpree – and the process can be kicked off without ever needing to leave Matrix.
+      <br>
+      <br>
+        The screening package provides crucial information on applicants, including a rental application, credit report, background check and eviction-related proceedings. Renters pay only a $38 fee to apply to your listing; once they initiate the screening process, you can track their progress every step of the way. Even better, credit reports through RentSpree only require a soft pull, with no damage to applicants’ scores. Applicants can use their reports to apply for free to other listings if they are denied to their first choice property.
+      <br>
+      <br>
+      <h4 style="font-weight: 700 !important;">How to Screen Tenants With RentSpree:</h4>
+      <div class="video-container">
+        <iframe width="760" height="415" src="https://www.youtube.com/embed/CMSegnMgzzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <br>
+      <br>
+      You can also purchase a Rent Estimate Report from RentSpree to assist in determining the optimum listing price for a rental. To get an even more detailed picture of an applicant, RentSpree PRO is also available to check references and income verification documents in one step. PRO is available for $9.99 a month, but you can experience a free month trial to familiarize yourself with its features.      <br>
+      <br>
+      Looking to market your rentals? RentSpree offers agent profiles and listing pages so you can advertise your personal brand and your rentals in one place. You can also leverage our rental client manager to track prospective renters and help maintain a relationship with them.      <br>
+      <br>
+      This rental tool is the most reviewed rental screening software on Google with a stellar 4.7 out of 5 rating based on 1,000+ reviews.  BER and RentSpree’s goal is to provide a user-friendly experience to agents, renters, property managers and landlords.
+      <br>
+      <br>
+      Opt in for screening the next time you add a rental into Matrix, or you can always learn more at <a href="http://rentspree.com/ber" style="color: blue;">http://rentspree.com/ber</a>.
+      <br>
+      <br>
+      <h4 style="font-weight: 700 !important;">What the Applicant Sees:</h4>
+      <div class="video-container">
+        <iframe width="760" height="415" src="https://www.youtube.com/embed/6SvP7dQ_lEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Get Started:</h2>
+      <div class="row" id="choices">
+
+        <div class="col-sm-3 box">
+          <h1 class="info-head">Create Your Free Account:</h1>
+          <a href="https://www.rentspree.com/partner/ber?utm_source=ber&utm_medium=article&utm_campaign=ber_article_aug22" target="_blank"><button type="button" class="btn info-button" name="button">Click Here</button></a>
+        </div>
+        <div class="col-sm-1 spacer">
+
+        </div>
+        <div class="col-sm-1 spacer">
+
+        </div>
+      </div>
+    </div>
+    <div class="more">
+      <hr>
+      <h2>More Real Estate News</h2>
+      <a href="https://www.bonitaesterorealtors.com/ber-news-home/" style="text-decoration: underline;">Click Here</a>
+    </div>
+  </body>
+
+</html>

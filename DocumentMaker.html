@@ -148,6 +148,54 @@
         // Append the input to the container
         inputContainer6.appendChild(input6);
       });
+
+      // Get a reference to the code element and the copy button
+      const code = document.getElementById('code');
+      const copyButton = document.querySelector('.copy-button');
+      let docTitle = document.getElementById('title');
+      let subTitle = document.getElementById('subTitle');
+      let photo = document.getElementById('articlePhoto');
+      let author = document.getElementById('author');
+      let date = document.getElementById('date');
+      let header = document.getElementById('header');
+      let text = document.getElementById('text');
+      let header = document.getElementById('input1');
+      let text = document.getElementById('input2');
+      let header = document.getElementById('input3');
+      let text = document.getElementById('input4');
+      let header = document.getElementById('input5');
+      let text = document.getElementById('input6');
+
+
+
+      // Add an event listener to the button that copies the code to the clipboard
+      copyButton.addEventListener('click', () => {
+        // Select the text in the code element
+        code.select();
+
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+      });
+
+
+      function pushText() {
+        code.textContent = `
+        <div class="Ned-Q2-Article">
+          <img class="head-image" src="${photo.value}" alt="contract-image">
+          <h1 style="font-weight: 900; color: darkblue; ">${docTitle.value}</h1>
+          <h1 style="font-weight: 200;">${subTitle.value}</h1>
+          <br>
+          <p><i>${author.value}</i></p>
+          <br>
+          <p><i>${date.value}</i></p>
+          <br>
+          <br>
+          <h4 style="font-weight: 700 !important;">${header.value}</h4>
+          <br>
+          <br>
+          ${text.value}
+          `;
+      }
     </script>
 
 
@@ -178,58 +226,6 @@
     </style>
 
     <script>
-
-      let docTitle = document.getElementById('title');
-      let subTitle = document.getElementById('subTitle');
-      let photo = document.getElementById('articlePhoto');
-      let author = document.getElementById('author');
-      let date = document.getElementById('date');
-      let header = document.getElementById('header');
-      let text = document.getElementById('text');
-      let header = document.getElementById('input1');
-      let text = document.getElementById('input2');
-      let header = document.getElementById('input3');
-      let text = document.getElementById('input4');
-      let header = document.getElementById('input5');
-      let text = document.getElementById('input6');
-
-
-
-
-
-
-
-      // Get a reference to the code element and the copy button
-      const code = document.getElementById('code');
-      const copyButton = document.querySelector('.copy-button');
-
-      function pushText() {
-        code.textContent = `
-        <div class="Ned-Q2-Article">
-          <img class="head-image" src="${photo.value}" alt="contract-image">
-          <h1 style="font-weight: 900; color: darkblue; ">${docTitle.value}</h1>
-          <h1 style="font-weight: 200;">${subTitle.value}</h1>
-          <br>
-          <p><i>${author.value}</i></p>
-          <br>
-          <p><i>${date.value}</i></p>
-          <br>
-          <br>
-          <h4 style="font-weight: 700 !important;">${header.value}</h4>
-          <br>
-          <br>
-          ${text.value}
-          `;
-      }
-
-      // Add an event listener to the button that copies the code to the clipboard
-      copyButton.addEventListener('click', () => {
-        // Select the text in the code element
-        code.select();
-
-        // Copy the selected text to the clipboard
-        document.execCommand('copy');
-      });
     </script>
 
       <!--<p style="font-weight: 700; margin: -10px auto 10px 5px;"><i>by Diane Torrisi | Diane Torrisi Designs</i></p>-->

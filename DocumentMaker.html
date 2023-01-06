@@ -1,3 +1,4 @@
+<html>
 
 
     <div class="article-maker" style="margin-top: 100px;">
@@ -44,7 +45,7 @@
       <button id="add-input-button6">Add text</button>
       <div id="input-container6"></div>
 
-      <script>
+    <script>
       // Get a reference to the button and the input container
       const addInputButton1 = document.getElementById('add-input-button1');
       const inputContainer1 = document.getElementById('input-container1');
@@ -149,8 +150,39 @@
         inputContainer6.appendChild(input6);
       });
 
+    </script>
+
+
+    </div>
+
+
+
+
+    <div class="code-box">
+      <pre>
+        <code id="codeHeader">
+        </code>
+        <code id="code">
+        </code>
+        <code id="code2">
+        </code>
+        <code id="code3">
+        </code>
+        <code id="code4">
+        </code>
+      </pre>
+      <button class="copy-button">Copy</button>
+      <button type="button" name="button" id="paste" onclick="pushText()">update code</button>
+    </div>
+
+    <script>
+
       // Get a reference to the code element and the copy button
+      const codeHeader = document.getElementById('codeHeader');
       const code = document.getElementById('code');
+      const code2 = document.getElementById('code2');
+      const code3 = document.getElementById('code3');
+      const code4 = document.getElementById('code4');
       const copyButton = document.querySelector('.copy-button');
       let docTitle = document.getElementById('title');
       let subTitle = document.getElementById('subTitle');
@@ -159,12 +191,12 @@
       let date = document.getElementById('date');
       let header = document.getElementById('header');
       let text = document.getElementById('text');
-      let header = document.getElementById('input1');
-      let text = document.getElementById('input2');
-      let header = document.getElementById('input3');
-      let text = document.getElementById('input4');
-      let header = document.getElementById('input5');
-      let text = document.getElementById('input6');
+      let header2 = document.getElementById('input1');
+      let text2 = document.getElementById('input2');
+      let header3 = document.getElementById('input3');
+      let text3 = document.getElementById('input4');
+      let header4 = document.getElementById('input5');
+      let text4 = document.getElementById('input6');
 
 
 
@@ -177,8 +209,396 @@
         document.execCommand('copy');
       });
 
+      function pushHead() {
+        codeHeader.textContent = `
+          
+          <style media="screen">
+        .Ned-Q2-Article h1{
+          margin: 12px auto -20px;
+          font-family: 'Oswald', sans-serif;
+          font-size: 58px;
+        }
+        .Ned-Q2-Article h1{
+          margin: 12px auto -20px;
+          font-family: 'Oswald', sans-serif;
+        }
+        .vc_column_container>.vc_column-inner {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        .spacer {
+          width: 10px;
+        }
+        #choices {
+          display: flex;
+          margin: auto;
+        }
+        .box {
+          border: 1px dimgrey;
+          border-style: solid;
+          height: 150px;
+          box-shadow: 0px 0px 5px grey;
+        }
+        .more {
+          margin: auto auto 100px auto;
+          max-width: 1100px;
+        }
+        body {
+          width: 100%;
+          align-items: center;
+          color: #2f3034;
+        }
+        #text {
+        }
+        #bio-divide {
+          background-color: #295581;
+          width: 100%;
+          display: inline-grid;
+          max-height: 420px;
+        }
+        .info-head{
+          font-size: 24px !important;
+          text-align: center;
+          margin: auto auto 30px auto;
+        }
+        #ned-bio {
+          font-size: 14px;
+          margin: 10px auto;
+          color: white;
+          text-align: center;
+        }
+        .col-sm-2 h3 {
+          margin: 72px auto;
+          text-align: end;
+          font-size: 18px;
+        }
+        .col-sm-2 h3:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        .col-sm-1 h3 {
+          margin: 60px auto;
+          text-align: center;
+        }
+        .col-sm-3 h3 {
+          margin: 60px auto;
+          text-align: center;
+        }
+        .video-container {
+          margin: auto;
+          display: flex;
+          background-color: #f2f2f2;
+        }
+        #ned-img {
+          margin: auto;
+          width: auto;
+          max-height: 240px;
+        }
+        .info-button {
+          margin: 30px auto;
+          width: 100%;
+          background-color: cadetblue;
+          border-color: #295581;
+          color: white;
+        }
+        .info-button:hover {
+          opacity: .5;
+          background-color: #295581;
+          border-color: #295581;
+          color: white;
+        }
+        .info-button:checked {
+          opacity: .5;
+          background-color: #295581;
+          border-color: #295581;
+          color: white;
+        }
+        #ned-name {
+          font-size: 32px;
+          font-weight: 800;
+          font-family:'Raleway', sans-serif;
+          text-align: center;
+        }
+        #split {
+        }
+        #text {
+          padding: 0;
+        }
+        #ned-name {
+          color: white;
+        }
+        #ned-text {
+          margin: -10px 5% 0px 5%;
+        }
+        .quote-imgs {
+          width: -webkit-fill-available;
+        }
+        #ned-text hr {
+          margin: -5px;
+        }
+        #heading {
+          max-width: 1100px;
+          margin: auto !important;
+        }
+        .head-image {
+          width: 100%;
+        }
+        .Ned-Q2-Article {
+          margin: 30px auto;
+          max-width: 1100px;
+        }
+        #bio-ned {
+          display: flex;
+          margin-top: 65px;
+        }
+        @media only screen and (max-width: 1150px) {
+          .Ned-Q2-Article {
+            margin: 30px 5% auto 5% !important;
+          }
+          .more {
+            margin: 30px 5% auto 5% !important;
+          }
+          .Ned-Q2-Article h1 {
+            font-size: 46px;
+          }
+          }
+          @media only screen and (max-width: 767px) {
+            #choices {
+              display: contents;
+            }
+            .box {
+              height: auto;
+            }
+          }
+      </style>
+      
+      <!--Heading CSS-->
+            <style media="screen">
+              a {
+                color: black;
+              }
+              .contain-head {
+                width: 100%;
+                background-color: white;
+                box-shadow: 0px -30px 67px grey;
+                margin: -32px auto 32px auto;
+                z-index: 999;
+                position: fixed;
+              }
+              a:hover {
+                text-decoration: underline;
+              }
+              #logo {
+                width: 100%;
+                margin: 10px auto 10px auto;
+              }
+              #heading {
+                max-width: 1100px;
+                margin: auto !important;
+              }
+              .head-image {
+                width: 100%;
+                margin-top: 140px;
+              }
+              .row {
+                margin: 0 !important;
+              }
+              h1 {
+                font-size: 64px;
+                margin: auto;
+              }
+              body {
+                width: 100%;
+                align-items: center;
+                color: #2f3034;
+              }
+              .col-sm-2 h3 {
+                margin: 72px auto;
+                text-align: center;
+                font-size: 18px;
+              }
+              .col-sm-2 h3:hover {
+                cursor: pointer;
+                text-decoration: underline;
+              }
+              .col-sm-1 h3 {
+                margin: 60px auto;
+                text-align: center;
+              }
+              .col-sm-3 h3 {
+                margin: 60px auto;
+                text-align: center;
+              }
+              #text {
+                padding: 0;
+              }
+              #about-hover {
+                display: none;
+                position: absolute;
+                width: 150px;
+                background-color: white;
+                padding: 0px 10px 10px 10px;
+                margin: -75px 0 0 50px;
+                border-top: 1rem solid lightsteelblue;
+                z-index: 999;
+              }
+              #about-hover p {
+                font-size: 14px;
+                margin: 15px 0 5px 0;
+                font-weight: 500;
+              }
+              #resources-hover {
+                display: none;
+                position: absolute;
+                width: 150px;
+                background-color: white;
+                padding: 15px 10px 10px 10px;
+                margin: -75px 0 0 10px;
+                border-top: 1rem solid lightsteelblue;
+                z-index: 999;
+              }
+              #resources-hover p {
+                font-size: 14px;
+                margin: 15px 0 5px 0;
+                font-weight: 500;
+              }
+              #membership-hover {
+                display: none;
+                position: absolute;
+                width: 120px;
+                background-color: white;
+                padding: 15px 10px 10px 10px;
+                margin: -75px 0 0 18px;
+                border-top: 1rem solid lightsteelblue;
+                z-index: 999;
+              }
+              #membership-hover p {
+                font-size: 14px;
+                margin: 15px 0 5px 0;
+                font-weight: 500;
+              }
+              #news-hover {
+                display: none;
+                position: absolute;
+                width: 200px;
+                background-color: white;
+                padding: 0 10px 10px 10px;
+                margin: -75px 0 0 -5px;
+                border-top: 1rem solid lightsteelblue;
+                z-index: 999;
+              }
+              #news-hover p {
+                font-size: 14px;
+                margin: 15px 0 5px 0;
+                font-weight: 500;
+              }
+              @media only screen and (min-width: 1176px) {
+                }
+              @media only screen and (max-width: 1175px) {
+                }
+              @media only screen and (max-width: 1060px) {
+                #bio-divide {
+                  max-height: 500px;
+                }
+              }
+                @media only screen and (max-width: 900px) {
+                  #resources-hover {
+                    display: none;
+                    position: fixed;
+                    background-color: white;
+                    padding: 15px 10px 10px 10px;
+                    margin: -75px 0 0 -60px;
+                    border-top: 1px lightsteelblue;
+                  }
+                  #membership-hover {
+                    display: none;
+                    position: fixed;
+                    background-color: white;
+                    padding: 15px 10px 10px 10px;
+                    margin: -75px 0 0 10px;
+                    border-top: 1px lightsteelblue;
+                  }
+                }
+              @media only screen and (max-width: 850px) {
+                  #heading {
+                    margin: auto 20px auto 20px !important;
+                  }
+                  .col-sm-2 h3 {
+                    font-size: 14px;
+                  }
+                  #logo {
+                    margin: 30px auto 10px auto
+                  }
+                }
+            @media only screen and (max-width: 767px) {
+                #split {
+                  display: inline;
+                }
+                .quote-imgs {
+                  margin: auto 15% auto 15%;
+                }
+                #bio-divide {
+                  display: flex;
+                }
+                .col-xs-8 {
+                  margin: auto auto 15px;
+                  width: auto;
+                }
+                #heading {
+                  display: flex;
+                }
+                #ned-name {
+                  margin-top: 15%;
+                }
+                #logo {
+                  width: 45%;
+                }
+                #about-hover {
+                  display: none;
+                  position: fixed;
+                  background-color: white;
+                  padding: 15px 10px 10px 10px;
+                  margin: -75px 0 0 -10px;
+                  border-top: 1px lightsteelblue;
+                }
+                #membership-hover {
+                  display: none;
+                  position: fixed;
+                  background-color: white;
+                  padding: 15px 10px 10px 10px;
+                  margin: -70px 0 0 -15px;
+                }
+                #news-hover {
+                  display: none;
+                  position: fixed;
+                  background-color: white;
+                  padding: 15px 10px 10px 10px;
+                  margin: -75px 0 0 0px;
+                  border-top: 1px lightsteelblue;
+                }
+              }
+              @media only screen and (max-width: 620px) {
+                #logo {
+                  display: none;
+                }
+                .col-sm-2 h3 {
+                  font-size: 12px;
+                }
+                }
+                @media only screen and (max-width: 560px) {
+                  #ned-name {
+                    font-size: 28px;
+                  }
+                  #ned-bio {
+                    font-size: 12px;
+                  }
+                  }
+            </style>`;
+          }
+
 
       function pushText() {
+        pushHead();
         code.textContent = `
         <div class="Ned-Q2-Article">
           <img class="head-image" src="${photo.value}" alt="contract-image">
@@ -195,23 +615,93 @@
           <br>
           ${text.value}
           `;
+          let header2 = document.getElementById('input1');
+          let text2 = document.getElementById('input2');
+          let header3 = document.getElementById('input3');
+          let text3 = document.getElementById('input4');
+          let header4 = document.getElementById('input5');
+          let text4 = document.getElementById('input6');
+          if (header2.value.length > 0) {
+            pushText2();
+          }
       }
+
+      function pushText2() {
+        code2.textContent = `
+          ${header2.value}
+          <br>
+          <br>
+          ${text2.value}
+          When creating a lease listing within Matrix, you can generate a link to a secure online application that can be completed in minutes. Renters can access the application in different ways: directly via an ApplyLink™, or through an email or text message invitation. This integration saves time and costs, as there are no fees for using RentSpree – and the process can be kicked off without ever needing to leave Matrix.
+          <br>
+          <br>
+            The screening package provides crucial information on applicants, including a rental application, credit report, background check and eviction-related proceedings. Renters pay only a $38 fee to apply to your listing; once they initiate the screening process, you can track their progress every step of the way. Even better, credit reports through RentSpree only require a soft pull, with no damage to applicants’ scores. Applicants can use their reports to apply for free to other listings if they are denied to their first choice property.
+          <br>
+          <br>
+          <h4 style="font-weight: 700 !important;">How to Screen Tenants With RentSpree:</h4>
+          <div class="video-container">
+            <iframe width="760" height="415" src="https://www.youtube.com/embed/CMSegnMgzzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>`;
+          let header2 = document.getElementById('input1');
+          let text2 = document.getElementById('input2');
+          let header3 = document.getElementById('input3');
+          let text3 = document.getElementById('input4');
+          let header4 = document.getElementById('input5');
+          let text4 = document.getElementById('input6');
+          if (header3.value.length > 0) {
+            pushText3();
+          }
+      }
+
+      function pushText3() {
+        code3.textContent = `
+          ${header3.value}
+          <br>
+          <br>
+          ${text3.value}
+          When creating a lease listing within Matrix, you can generate a link to a secure online application that can be completed in minutes. Renters can access the application in different ways: directly via an ApplyLink™, or through an email or text message invitation. This integration saves time and costs, as there are no fees for using RentSpree – and the process can be kicked off without ever needing to leave Matrix.
+          <br>
+          <br>
+            The screening package provides crucial information on applicants, including a rental application, credit report, background check and eviction-related proceedings. Renters pay only a $38 fee to apply to your listing; once they initiate the screening process, you can track their progress every step of the way. Even better, credit reports through RentSpree only require a soft pull, with no damage to applicants’ scores. Applicants can use their reports to apply for free to other listings if they are denied to their first choice property.
+          <br>
+          <br>
+          <h4 style="font-weight: 700 !important;">How to Screen Tenants With RentSpree:</h4>
+          <div class="video-container">
+            <iframe width="760" height="415" src="https://www.youtube.com/embed/CMSegnMgzzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>`;
+          let header2 = document.getElementById('input1');
+          let text2 = document.getElementById('input2');
+          let header3 = document.getElementById('input3');
+          let text3 = document.getElementById('input4');
+          let header4 = document.getElementById('input5');
+          let text4 = document.getElementById('input6');
+          if (header4.value.length > 0) {
+            pushText4();
+          }
+      }
+
+      function pushText4() {
+        code4.textContent = `
+          ${header4.value}
+          <br>
+          <br>
+          ${text4.value}
+          When creating a lease listing within Matrix, you can generate a link to a secure online application that can be completed in minutes. Renters can access the application in different ways: directly via an ApplyLink™, or through an email or text message invitation. This integration saves time and costs, as there are no fees for using RentSpree – and the process can be kicked off without ever needing to leave Matrix.
+          <br>
+          <br>
+            The screening package provides crucial information on applicants, including a rental application, credit report, background check and eviction-related proceedings. Renters pay only a $38 fee to apply to your listing; once they initiate the screening process, you can track their progress every step of the way. Even better, credit reports through RentSpree only require a soft pull, with no damage to applicants’ scores. Applicants can use their reports to apply for free to other listings if they are denied to their first choice property.
+          <br>
+          <br>
+          <h4 style="font-weight: 700 !important;">How to Screen Tenants With RentSpree:</h4>
+          <div class="video-container">
+            <iframe width="760" height="415" src="https://www.youtube.com/embed/CMSegnMgzzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>`;
+          // if (header4.value) {
+          //   pushText3();
+          // }
+      }
+
     </script>
-
-
-    </div>
-
-
-
-
-    <div class="code-box">
-      <pre>
-        <code id="code">
-        </code>
-      </pre>
-      <button class="copy-button">Copy</button>
-      <button type="button" name="button" id="paste" onclick="pushText()">update code</button>
-    </div>
 
     <style>
       .code-box {
@@ -224,9 +714,6 @@
         right: 0;
       }
     </style>
-
-    <script>
-    </script>
 
       <!--<p style="font-weight: 700; margin: -10px auto 10px 5px;"><i>by Diane Torrisi | Diane Torrisi Designs</i></p>-->
         As the rental market in Southwest Florida continues accelerating, members of Bonita Springs-Estero Realtors can take advantage of a comprehensive suite to manage rentals efficiently. RentSpree, a free tool for BER members, lets you screen tenants instantly in just a few clicks and manages your entire rental process seamlessly.

@@ -2,26 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Bonita Springs-Estero Realtors</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
   </head>
 
   <style media="screen">
@@ -32,6 +25,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px -30px 67px grey;
+    }
+    .btn {
+      border-radius: 40px;    
     }
     .vc_column_container>.vc_column-inner {
       padding-left: 0;
@@ -56,6 +52,7 @@
       object-fit: cover;
       width: 430px;
       height: 260px;
+      position: relative;
     }
     .col-sm-5 {
       padding-left: 0;
@@ -79,14 +76,14 @@
       margin: 0;
     }
     .col-sm-7 h4 {
-      margin: 10px auto 0 auto;
+      margin: 20px auto 10px auto;
     }
     .col-sm-7 p {
       font-size: 12px;
     }
     .media-container {
       max-width: 1185px;
-      margin: auto;
+      margin: 300px auto;
     }
     .head-image {
       width: 100%;
@@ -115,6 +112,7 @@
       width: 100%;
       align-items: center;
       color: #2f3034;
+      z-index: 1;
     }
     .col-sm-2 h3 {
       margin: 72px auto;
@@ -355,20 +353,478 @@
           }
   </style>
 
-  <body>
-    <!--Heading Row-->
-    <div class="contain-head">
-      <div class="row" id="heading">
-        <div class="col-sm-2" id="logo-contain">
-            <a href="https://www.bonitaesterorealtors.com/"><img id="logo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/04/Untitled-design-3.png" alt=""></a>
+    <!--Head CSS-->
+  <style media="screen">
+    a {
+      color: black;
+    }
+    p {
+      margin: 0;
+    }
+  
+  
+    #head-background, .contain-head {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px -30px 67px grey;
+      z-index: 999999;
+    }
+  
+    #head-background {
+      z-index: 997;
+      margin: 49px 0 -40px 0;
+      height: 130px;
+    }
+  
+    .important-links {
+      background-image: url("https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/Untitled-design-10.png");
+      background-size: cover;
+      margin: 60px 0 100px 0;
+    }
+  
+    #toprow {
+      margin: 0 5% !important;
+    }
+  
+    #welcome-text, .subtitle, .col-sm-7 p {
+      font-size: 14px;
+      margin: 0 auto 13px auto;
+    }
+  
+    #welcome-head {
+      font-family: Oswald, sans-serif;
+      font-size: 46px;
+    }
+  
+    #MLS, #MP, #Events, #Join {
+      height: 250px;
+      background-size: cover;
+      margin: -60px 0;
+      width: auto;
+    }
+  
+    #MLS, #Join {
+      border-radius: 15px 0 0 15px;
+    }
+  
+    #Join {
+      border-radius: 0 15px 15px 0;
+      color: #ffc235;
+    }
+  
+    #MLS:hover, #MP:hover, #Events:hover, #Join:hover {
+      font-size: 50px;
+      cursor: pointer;
+    }
+  
+    .res-img {
+      width: 80%;
+      height: auto;
+      border-radius: 15px;
+      margin: auto;
+    }
+  
+    #diamond, #platinum, #bronze {
+      width: 90%;
+    }
+  
+    #gold, #silver {
+      width: 50%;
+    }
+  
+    /* Styles for devices with a width of up to 600px */
+    @media only screen and (max-width: 600px) {
+      #diamond, #platinum, #gold, #silver, #bronze {
+        display: contents;
+      }
+    }
+  
+    #Jointext, #MLStext, #Eventtext {
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      padding: 10px 0;
+      line-height: 4rem;
+    }
+  
+    #Jointext {
+      color: #ffc235;
+      border: 2px solid #ffc235;
+      font-size: 40px;
+    }
+  
+    #MLStext {
+      color: white;
+      font-size: 40px;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+    }
+  
+    #Eventtext {
+      color: white;
+      font-size: 30px;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+    }
+  
+    #vid1, #vid2, #vid3, #vid4, #vid5 {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+      margin: 0 0 -21px 0;
+    }
+  
+    .welcome {
+      max-width: 1300px;
+      background-color: teal;
+      color: white;
+      padding: 50px;
+      margin: -225px auto auto;
+      border-radius: 20px;
+      text-align: center;
+    }
+  
+    .col-sm, .col-sm-6 {
+      margin: auto;
+    }
+  
+    .col-sm h3, h4 {
+      font-size: 20px;
+    }
+  
+    .col-sm-3 {
+      height: 300px;
+    }
+  
+    .vc_column_container>.vc_column-inner {
+      padding: 0;
+    }
+  
+    #forewarn, #MUA, #img1 {
+      object-fit: contain;
+      margin: auto;
+    }
+  
+    #img1 {
+      max-height: 500px;
+    }
+  
+    .article-img {
+      width: 430px;
+      height: 260px;
+      object-fit: cover;
+    }
+  
+    .video-contain {
+      width: 100%;
+      background-color: grey;
+      object-fit: contain;
+      margin: 260px 0 0 0;
+      position: relative;
+    }
+  
+    #display1, #display2, #display3, #display4, #display5 {
+      max-height: 600px;
+      display: flex;
+      margin: auto;
+    }
+  
+    #logo {
+      width: 130px;
+      margin: 10px auto;
+    }
+  
+    #MLSlogo {
+      width: 90%;
+      display: flex;
+      margin: 20px auto;
+    }
+  
+    #MPlogo {
+      width: 47%;
+      display: flex;
+      margin: 15px auto;
+    }
+  
+    @keyframes growlogo {
+      0% {
+        width: 90%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  
+    @keyframes growlogo3 {
+      0% {
+        width: 47%;
+      }
+      100% {
+        width: 55%;
+      }
+    }
+  
+    #MLSlogo:hover {
+      animation: growlogo 0.5s linear;
+      width: 100%;
+      opacity: 0.9;
+    }
+  
+    #MPlogo:hover {
+      animation: growlogo3 0.5s linear;
+      width: 55%;
+      opacity: 0.9;
+    }
+  
+    #heading {
+      max-width: 1100px;
+      margin: -1px auto;
+      display: flex;
+      z-index: 998;
+      background-color: white;
+    }
+  
+    .news-row {
+      background-color: #f2f2f2;
+      margin: 10px 5%;
+      box-shadow: 0px 20px 29px -27px grey;
+    }
+  
+    #abovehead {
+      background-image: linear-gradient(to right, #77d9d9, #02aae1);
+      z-index: 999;
+      position: fixed;
+      width: 100%;
+      margin: -0px 0;
+      padding: 8px;
+    }
+
+  
+    #toptext {
+      color: white;
+      text-align: center;
+      padding: 6px 0;
+    }
+  
+    .italics {
+      font-style: italic;
+    }
+  
+    #biglinks {
+      max-width: 1100px;
+      margin: auto;
+      height: 350px;
+    }
+  
+    h1 {
+      font-size: 50px;
+      margin: 10px 5%;
+      font-family: 'Righteous', cursive;
+      color: darkblue;
+    }
+  
+    .toplinks {
+      color: white;
+    }
+  
+    .toplinks:hover {
+      text-decoration: underline;
+      color: #0ca7a4;
+    }
+  
+    .br-mobile {
+      display: none;
+    }
+  
+    #about-hover, #resources-hover, #membership-hover, #news-hover, #membershiptools-hover {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: rgb(0 0 0 / 15%) 0px 1px 20px;
+      z-index: 999;
+      border-top: 1rem solid lightsteelblue;
+    }
+  
+    #about-hover, #resources-hover, #membership-hover, #news-hover {
+      padding: 10px;
+    }
+  
+    #membershiptools-hover {
+      padding: 20px 10px;
+      width: 230px;
+      margin: -10px auto;
+    }
+
+    #resources-hover {
+      width: 250px;
+    }
+  
+    #about-hover, #membership-hover {
+      width: 150px;
+      margin: -10px 0 0 0px;
+    }
+  
+    #membership-hover, #news-hover {
+      margin: -10px 11px 0 0px;
+    }
+
+    #about-hover p, #resources-hover p, #membership-hover p, #news-hover p, #membershiptools-hover p{
+      margin: 10px auto;
+      }
+  
+    @media only screen and (max-width: 1200px) {
+      .statsplus {
+        display: grid;
+      }
+  
+      .col-sm-4 {
+        display: inline-flex;
+        margin: auto;
+        width: 100%;
+      }
+  
+      .res-img {
+        width: auto;
+        height: 160px;
+        margin: auto 0 auto 10px;
+      }
+    }
+  
+    @media only screen and (max-width: 1130px) {
+      #Eventtext {
+        font-size: 24px;
+      }
+  
+      #MLStext {
+        font-size: 30px;
+      }
+    }
+  
+    @media only screen and (max-width: 1145px) {
+      .article-img {
+        width: 370px;
+      }
+    }
+  
+    @media only screen and (max-width: 960px) {
+      .col-sm h3 {
+        font-size: 16px;
+      }
+    }
+  
+    @media only screen and (max-width: 768px) {
+      #heading {
+        display: grid !important;
+        margin: -25px 0px 24px 20px !important;
+        width: 100%;
+      }
+  
+      #head-background {
+        height: 200px;
+        margin: 93px 0 -40px -20px;
+        width: 103%;
+        position: absolute;
+      }
+  
+      .video-contain {
+        margin: 110px 0 0 0;
+      }
+  
+      #biglinks {
+        height: 920px;
+      }
+  
+      #resrow {
+        display: block;
+      }
+  
+      .col-sm-7 {
+        padding-left: 100px;
+      }
+  
+      #about-hover, #resources-hover, #membership-hover, #news-hover {
+        display: none;
+      }
+  
+      .col-sm-8 {
+        display: none;
+      }
+  
+      .col-sm-4 {
+        display: none !important;
+      }
+  
+      .res-img {
+        margin: auto;
+        display: flex;
+        height: 230px;
+      }
+    }
+  
+    @media only screen and (max-width: 620px) {
+      #logo {
+        display: none;
+      }
+  
+      .col-sm-2 h3 {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+<body onscroll="scrollFunc()">
+  <!--Heading Row-->
+  <div class="contain-head">
+    <div id="abovehead">
+      <div class="row" id="toprow">
+        <div class="col-sm-6">
+          <p id="toptext"><i class="fa fa-phone"></i> Phone: <a href="tel:+12399926771" class="toplinks">(239) 992-6771</a> | <i class="fa fa-envelope"></i> Email: <a href="mailto:Support@BERealtors.org" class="toplinks">Support@BERealtors.org</a></p>
         </div>
         <div class="col-sm-2">
-          <h3 onmouseover="aboutdrop()" onmouseout="removeabout()">About</h3>
+
+        </div>
+        <div class="col-sm-4" id="socials">
+          <!-- Facebook -->
+                <a
+                  class="btn text-white btn-floating m-1"
+                  style="background-color: #ffffff;"
+                  href="https://www.facebook.com/groups/482719335711288"
+                  role="button" target="_blank"
+                  ><i class="fa fa-facebook"></i></a>
+
+
+                <!-- Youtube -->
+                <a
+                  class="btn text-white btn-floating m-1"
+                  style="background-color: #ffffff;"
+                  href="https://www.youtube.com/c/Bonitaesterorealtors"
+                  role="button" target="_blank"
+                  ><i class="fa fa-youtube"></i
+                ></a>
+
+                <!-- Instagram -->
+                <a
+                  class="btn text-white btn-floating m-1"
+                  style="background-color: #ffffff;" target="_blank"
+                  href="https://www.instagram.com/bonita_estero_realtors/"
+                  role="button"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+
+        </div>
+      </div>
+    </div>
+    <div id="head-background">
+      <div class="row" id="heading">
+        <div class="col-sm">
+          <h3 onmouseover="aboutdrop()" onmouseout="removeabout()" id="about">About <i class="fa fa-caret-down" aria-hidden="true"></i></h3>
           <div id="about-hover" onmouseover="aboutdrop()" onmouseout="removeabout()">
             <a href="https://www.bonitaesterorealtors.com/about/"><p>About BER</p></a>
-            <a href="https://www.bonitaesterorealtors.com/golden-b-e-a-r-awards-3/"><p>BER Sales Excellence Awards</p></a>
-            <a href="https://www.bonitaesterorealtors.com/2022-bod-and-past-pres/"><p>2022 Board of Directors</p></a>
+            <a href="https://www.bonitaesterorealtors.com/2023-sales-excellence-award-winners/"><p>BER Sales Excellence Awards</p></a>
+            <a href="https://www.bonitaesterorealtors.com/2022-bod-and-past-pres/"><p>2024 Board of Directors</p></a>
             <a href="https://www.bonitaesterorealtors.com/home-foundation/"><p>BER Home Foundation</p></a>
+            <a href="https://www.bonitaesterorealtors.com/leadership-academy/"><p>Leadership Academy</p></a>
             <a href="http://bonitaspringsesterorealtorsfl.growthzoneapp.com/realtordirectory/Find?term=&advFilter=eyJDdXN0b21GaWVsZFZhbHVlcyI6W10sIkNvdW50cmllcyI6W10sIlN0YXRlcyI6W10sIkNpdGllcyI6W10sIlBvc3RhbENvZGVzIjpbXSwiQ2F0ZWdvcnlWYWx1ZXMiOltdLCJSYWRpdXMiOiIwIn0%3D"><p>Realtor Directory</p></a>
             <a href="http://bonitaspringsesterorealtorsfl.growthzoneapp.com/brokerdirectory/Find?term=&advFilter=eyJDdXN0b21GaWVsZFZhbHVlcyI6W10sIkNvdW50cmllcyI6W10sIlN0YXRlcyI6W10sIkNpdGllcyI6W10sIlBvc3RhbENvZGVzIjpbXSwiQ2F0ZWdvcnlWYWx1ZXMiOltdLCJSYWRpdXMiOiIwIn0%3D"><p>Broker Directory</p></a>
             <a href="https://www.bonitaesterorealtors.com/simplyrets-listings/"><p>Property Search</p></a>
@@ -378,75 +834,493 @@
         <script type="text/javascript">
           var about = document.getElementById("about-hover");
           function aboutdrop() {
-            about.style.display="inline";
+            if (screen.width >= 769) {
+              about.style.display="inline";
+
+            }
+            else if (screen.width < 769) {
+            about.style.display="contents";
+          }
           }
           function removeabout() {
             about.style.display="none";
           }
         </script>
-        <div class="col-sm-2">
-          <h3  onmouseover="memdrop()" onmouseout="removemem()">Membership</h3>
+        <div class="col-sm">
+          <h3  onmouseover="memdrop()" onmouseout="removemem()" id="membership">Membership <i class="fa fa-caret-down" aria-hidden="true"></i></h3>
           <div id="membership-hover" onmouseover="memdrop()" onmouseout="removemem()">
             <a href="https://www.bonitaesterorealtors.com/join-bser/"><p>Join BER</p></a>
             <a href="https://bonitaspringsesterorealtorsfl.growthzoneapp.com/ap/Form/Fill/rJD9lS4P"><p>Join A Commitee</p></a>
+            <a href="https://bonitaspringsesterorealtorsfl.growthzoneapp.com/realtorstore/"><p>Store</p></a>
           </div>
         </div>
         <script type="text/javascript">
           var membership = document.getElementById("membership-hover");
           function memdrop() {
-            membership.style.display="inline";
+            if (screen.width >= 769) {
+              membership.style.display="inline";
+
+            }
+            else if (screen.width < 769) {
+            membership.style.display="contents";
+            }
           }
           function removemem() {
             membership.style.display="none";
           }
         </script>
-        <div class="col-sm-2">
-          <h3 onmouseover="newsdrop()" onmouseout="removenews()">News & Events</h3>
+        <div class="col-sm">
+          <h3 onmouseover="newsdrop()" onmouseout="removenews()" id="newsandevents">News & Events <i class="fa fa-caret-down" aria-hidden="true"></i></h3>
           <div onmouseover="newsdrop()" onmouseout="removenews()" id="news-hover">
             <a href="https://members.bonitaesterorealtors.com/bercalendar"><p>Event Calendar</p></a>
-            <a href="https://www.bonitaesterorealtors.com/ber-news/"><p>BER News</p></a>
+            <a href="https://www.bonitaesterorealtors.com/2022-realtor-review-page-q1/"><p>The Realtor Review Magazine</p></a>
+            <a href="https://www.bonitaesterorealtors.com/ber-news-home/"><p>BER News</p></a>
           </div>
         </div>
+
+        <div class="col-sm" id="logo-contain">
+            <a href="https://www.bonitaesterorealtors.com/"><img id="logo" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/BonitaSpringsEsteroRealtors_Logo_Vertical.png" alt=""></a>
+        </div>
+
         <script type="text/javascript">
           var news = document.getElementById("news-hover");
           function newsdrop() {
-            news.style.display="inline";
+            if (screen.width >= 769) {
+              news.style.display="inline";
+
+            }
+            else if (screen.width < 769) {
+            news.style.display="contents";
+            }
           }
           function removenews() {
             news.style.display="none";
           }
         </script>
-        <div class="col-sm-2">
-            <a href="https://www.bonitaesterorealtors.com/continuing-education-2/"><h3>Education</h3></a>
+        <div class="col-sm">
+            <a href="https://www.bonitaesterorealtors.com/continuing-education-2/"><h3 id="education">Education</h3></a>
         </div>
-        <div class="col-sm-2">
-            <h3 onmouseover="resourcesdrop()" onmouseout="removeresources()">Resources</h3>
+        <div class="col-sm">
+            <h3 onmouseover="resourcesdrop()" onmouseout="removeresources()" id="resources">Resources <i class="fa fa-caret-down" aria-hidden="true"></i></h3>
             <div onmouseover="resourcesdrop()" onmouseout="removeresources()" id="resources-hover">
               <a href="https://www.bonitaesterorealtors.com/mls-test-page/"><p>MLS Tips & Recordings</p></a>
-              <a href="https://www.bonitaesterorealtors.com/reminehelppage/"><p>Remine Pro Help</p></a>
               <a href="https://www.bonitaesterorealtors.com/rpac/"><p>RPAC</p></a>
-              <a href="https://www.bonitaesterorealtors.com/our-commitment-to-diversity/"><p>Diversity Page</p></a>
+              <a href="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/03/2024-Reciprocal-Listing-Form.pdf"><p>Reciprocal Listings</p></a>
+              <a href="https://www.bonitaesterorealtors.com/our-commitment-to-diversity/"><p>Bonita Springs-Estero REALTORS® Global Network</p></a>
+              <a href="https://www.bonitaesterorealtors.com/broker-manager/"><p>Broker/Manager Resources</p></a>
               <a href="https://www.bonitaesterorealtors.com/florida-realtors-2/"><p>Florida Realtors</p></a>
               <a href="https://www.bonitaesterorealtors.com/market-reports-2/"><p>Market Reports</p></a>
-              <a href="https://www.bonitaesterorealtors.com/wp-content/uploads/2021/04/2021-MLS-Rules-Regs.pdf"><p>MLS Rules & Regulations</p></a>
+              <a href="https://www.bonitaesterorealtors.com/important-links-and-contacts/"><p>Important Links & Resources</p></a>
+              <a href="https://www.bonitaesterorealtors.com/homebuyerssellers/"><p>Home Buyers & Sellers</p></a>
+              <a href="https://bonitaspringsesterorealtorsfl.growthzoneapp.com/ap/Form/Fill/r42XZSQP"><p>BER BOX Truck Rental</p></a>
+              <a href="https://bonitaspringsesterorealtorsfl.growthzoneapp.com/ap/Form/Fill/rOxknh2p"><p>Media Room Rental</p></a>
+              <a href="https://www.leegov.com/dhs/Documents/Housing/CDBG%20Application%2003.01.2023.pdf"><p>Lee County Homeownership Assistance</p></a>
+              <a href="https://www.flipsnack.com/759C5EAA9F7/nar-2024-member-guide/full-view.html"><p>2024 NAR Membership Guide</p></a>
             </div>
         </div>
+
+        <div class="col-sm">
+            <h3 onmouseover="toolssdrop()" onmouseout="removetools()" id="membership-tools">Membership Tools <i class="fa fa-caret-down" aria-hidden="true"></i></h3>
+            <div onmouseover="toolssdrop()" onmouseout="removetools()" id="membershiptools-hover">
+              <a href="https://www.bonitaesterorealtors.com/mls-membership-information/"><p>MLS</p></a>
+              <a href="https://www.bonitaesterorealtors.com/professional-standards/"><p>Professional Standards</p></a>
+              <a href="https://www.bonitaesterorealtors.com/wp-content/uploads/2022/10/2022-MLS-Model-Rules-and-Regs-1.pdf"><p>MLS Rules & Regulations</p></a>
+              <a href="https://www.bonitaesterorealtors.com/supra-information/"><p>Supra</p></a>
+              <a href="https://www.bonitaesterorealtors.com/document-library/"><p>Floor Plans</p></a>
+              <a href="https://www.bonitaesterorealtors.com/social-media-policy/"><p>Social Media Policy</p></a>
+              <a href="https://bonitasprings.wpengine.com/rpac/"><p>What is RPAC?</p></a>
+            </div>
+        </div>
+
         <script type="text/javascript">
           var resources = document.getElementById("resources-hover");
           function resourcesdrop() {
-            resources.style.display="inline";
-          }
+            if (screen.width >= 769) {
+              resources.style.display="inline";
+
+            }
+            else if (screen.width < 769) {
+            resources.style.display="contents";
+            }
+                    }
+
           function removeresources() {
             resources.style.display="none";
           }
-        </script>
-      </div>
-    </div>
 
+          var tools = document.getElementById("membershiptools-hover");
+          function toolssdrop() {
+            if (screen.width >= 769) {
+              tools.style.display="inline";
+            }
+            else if (screen.width < 769) {
+            tools.style.display="contents";
+            }
+          }
+          function removetools() {
+            tools.style.display="none";
+          }
+        </script>
+
+        </div>
+      </div>
+
+      <script type="text/javascript">
+
+      function scrollFunc() {
+        if (window.scrollY < 100) {
+          document.getElementById("head-background").style.opacity = "1";
+        }
+        else if (window.scrollY > 100) {
+          document.getElementById("head-background").style.opacity = ".8";
+        }
+      }
+      </script>
+  </div>
+
+  
 
     <!--Content Split-->
     <div class="media-container">
       <h1>News & Media</h1>
+
+      <!--Search Terms-->
+      <input type="text" id="newsSearch" placeholder="Search for news..." onkeyup="filterNews()">
+
+      <style>
+        #newsSearch {
+          margin: auto auto auto 60px;
+          display: block;
+          width: 400px;
+          height: 50px;
+        }
+      </style>
+
+
+      <!--Content-->
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://storage.googleapis.com/msgsndr/KM9vIlcOZRyxdtXkN7bV/media/684af32a5188d82610751046.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Spring 2025 Market Update: Bonita Springs-Estero, Naples & Fort Myers</h4>
+          <p class="italics">June 12th, 2025</p>
+          <p>Wondering where the Southwest Florida housing market is heading? Our latest update breaks down key trends across Bonita Springs-Estero, Naples, and Fort Myers — including price shifts, inventory growth, and what it all means for buyers and sellers. Discover why the market is stabilizing, how prices are adjusting, and where new opportunities are emerging.</p>
+          <a href="https://bonitaesterorealtors.com/spring-2025-market-update-bonita-springs-estero-naples-fort-myers/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://bonitaesterorealtors.com/wp-content/uploads/2025/06/96a942f5-6e66-4c98-8b2b-920783ffda3a.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Celebrating Homeownership Month: Benefits and Trends in Southwest Florida and Beyond</h4>
+          <p class="italics">June 5th, 2025</p>
+          <p>Own more, gain more! Our newest BER article shows how buying a home builds 40× the wealth of renting, locks in steady costs, and strengthens communities—plus why Southwest Florida’s 78-81 % homeownership rate beats Florida and the nation. Celebrate Homeownership Month and see how REALTORS® make the dream possible.</p>
+          <a href="https://bonitaesterorealtors.com/celebrating-homeownership-month-benefits-and-trends-in-southwest-florida-and-beyond/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://storage.googleapis.com/msgsndr/KM9vIlcOZRyxdtXkN7bV/media/6830890003c224b707aabf2c.webp" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Packing Up, Leveling Up: Starting a Home Business While Moving House</h4>
+          <p class="italics">May 22nd, 2025</p>
+          <p>Dreaming of launching a home-based business but knee-deep in moving boxes? “Packing Up, Leveling Up” breaks down how to pick a founder-friendly neighborhood, budget for both the move and the startup, keep operations running from a makeshift desk, and start marketing before the last box is unpacked. Read the article now and turn relocation chaos into your perfect business launchpad! </p>
+          <a href="https://bonitaesterorealtors.com/packing-up-leveling-up-starting-a-home-business-while-moving-house/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="	https://storage.googleapis.com/msgsndr/KM9vIlcOZRyxdtXkN7bV/media/681e39d76c402150d4e41c4f.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>2025 Legislative Wins: Key Real Estate Policy Changes for Bonita Springs-Estero Realtors</h4>
+          <p class="italics">May 8th, 2025</p>
+          <p>Our latest feature breaks down six new Florida laws— from extended condo‑buyer protections and streamlined post‑hurricane permitting to tougher anti‑squatter rules and modernized email notices—that will make transactions smoother, safeguard investments, and strengthen consumer confidence in our market. Get the quick‑read highlights, “why it matters” for Southwest Florida, and practical tips you can start sharing with buyers, sellers, landlords, and investors today. Read the full briefing and stay one step ahead of the policy curve! </p>
+          <a href="https://bonitaesterorealtors.com/2025-legislative-wins-key-real-estate-policy-changes-for-bonita-springs-estero-realtors/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://bonitaesterorealtors.com/wp-content/uploads/2025/05/Screenshot-2025-05-02-at-08-54-58-.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Southwest Florida Housing Market 2019–2024: A Tale of Two Counties</h4>
+          <p class="italics">April 30th, 2025</p>
+          <p>"Southwest Florida Housing Market 2019–2024: A Tale of Two Counties" from Bonita Springs-Estero REALTORS® offers a comparative analysis of the real estate trends in Lee and Collier counties over the past five years. It highlights how each county has navigated challenges such as inventory shortages, pricing fluctuations, and shifting buyer demographics. The piece provides valuable insights for agents and clients aiming to understand the evolving dynamics of Southwest Florida's housing market.​          </p>
+          <a href="https://bonitaesterorealtors.com/southwest-florida-housing-market-2019-2024-a-tale-of-two-counties/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://bonitaesterorealtors.com/wp-content/uploads/2025/04/2024-District-5-Bowling-Tournament10.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Optimizing Pricing: Price Reductions vs. Days on Market in SW Florida (Spring 2025)</h4>
+          <p class="italics">April 4th, 2025</p>
+          <p>Curious about the best way to price listings in Southwest Florida’s shifting real estate market? Our latest article dives into how few, larger price cuts vs. multiple small reductions can impact days on market (DOM) and final sale outcomes for single-family homes and condos. Backed by local MLS data and national trends, you’ll discover proven strategies for minimizing time on market and maximizing sale prices—even in a cooling market.</p>
+          <a href="https://bonitaesterorealtors.com/optimizing-pricing-price-reductions-vs-days-on-market-in-sw-florida/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://bonitaesterorealtors.com/wp-content/uploads/2025/03/2024-District-5-Bowling-Tournament8.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>International Real Estate Transactions in Southwest Florida (2020–2025)</h4>
+          <p class="italics">March 20th, 2025</p>
+          <p>Curious about what's driving international buyers in Southwest Florida’s real estate market from 2020 through 2025? Our latest analysis explores key trends, including why top global investors—from Canada to Latin America—are shifting their strategies in Bonita Springs and Estero. Discover how economic shifts, political policies, and local market dynamics are reshaping international buying patterns in your area.</p>
+          <a href="https://bonitaesterorealtors.com/international-real-estate-transactions-in-southwest-florida-2020-2025/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://bonitaesterorealtors.com/wp-content/uploads/2025/02/475577987_10170738163515582_3295231579808130389_n.jpg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>FR/BAR vs. NABOR: Which Contract Works Best for Your Florida Transactions?</h4>
+          <p class="italics">February 20th, 2025</p>
+          <p>Bonita Springs-Estero REALTORS® has once again secured the prestigious RPAC Triple Crown Award, reflecting their unwavering commitment to political advocacy. This accolade highlights their exceptional efforts in surpassing fundraising goals and achieving record-breaking member participation. Discover how their dedication is shaping the future of the real estate industry.</p>
+          <a href="https://bonitaesterorealtors.com/bonita-springs-estero-realtors-clinches-rpac-triple-crown-sets-new-participation-record/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://bonitaesterorealtors.com/wp-content/uploads/2025/01/Code-of-Ethics.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>FR/BAR vs. NABOR: Which Contract Works Best for Your Florida Transactions?</h4>
+          <p class="italics">January 31st, 2025</p>
+          <p>Choosing the right contract is crucial for a smooth transaction. Learn the key differences between FR/BAR and NABOR contracts—covering inspections, closing terms, deposit rules, and dispute resolution. This essential guide helps you navigate real estate deals with confidence and avoid costly mistakes.</p>
+          <a href="https://bonitaesterorealtors.com/comparing-fr-bar-and-nabor-contracts-what-you-need-to-know/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/12/Displaced-by-Hurricane-Ian-Find-Immediatly-Avaialbe-housing-Video1.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Elevate Your Real Estate Portfolio with the BRRRR Strategy</h4>
+          <p class="italics">December 20th, 2024</p>
+          <p>Discover the BRRRR strategy—Buy, Rehab, Rent, Refinance, Repeat—and learn how to streamline every step of your real estate investments. From leveraging tech tools and maximizing tax benefits to attracting quality tenants and boosting property value, this guide shows you how to optimize returns and build long-term wealth.</p>
+          <a href="https://www.bonitaesterorealtors.com/elevate-your-real-estate-portfolio-with-the-brrrr-strategy/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://res.cloudinary.com/micronetonline/image/upload/c_limit,w_2000,h_2000/v1733507846/tenants/6c24b0da-8a6e-4f2b-8547-26a8c1dc4581/fa7061e6b68e4034a894e1df5d279a6c/23.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>2024 Installation Banquet Recap</h4>
+          <p class="italics">December 6th, 2024</p>
+          <p>Discover the highlights of the Bonita Springs-Estero REALTORS® 2024 Installation Banquet, where new leadership was inducted and outstanding members were honored with "Of the Year" awards. The event featured distinguished guests, including Bonita Springs City Councilman Nigel Fullick, and celebrated the exceptional leadership of 2024 President Mark Ledbetter. Meet the 2025 Board of Directors and Committee Chairs, and join us in looking forward to a successful year under the guidance of 2025 President Adam Ruud. For a detailed recap and photos from the event, visit our website.</p>
+          <a href="https://www.bonitaesterorealtors.com/2024-installation-recap/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/11/Copy-of-Copy-of-Copy-of-Classes-Events-42.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Elevate Your Impact: Join a Bonita Springs-Estero REALTORS® Committee in 2025</h4>
+          <p class="italics">November 15th, 2024</p>
+          <p>Looking to make an impact in the real estate industry and grow your career? Join a Bonita Springs-Estero REALTORS® (BER) committee for 2025! With opportunities ranging from professional development to government affairs, you'll help shape the future of our association while building valuable connections and leadership skills. Make your voice heard and be part of the change.</p>
+          <a href="https://www.bonitaesterorealtors.com/elevate-your-impact-join-a-bonita-springs-estero-realtors-committee-in-2025/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/11/Screenshot_8-11-2024_94652_www.bonitaesterorealtors.com_.jpeg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Understanding Florida's Amendment 5: Implications for Homeowners</h4>
+          <p class="italics">November 8th, 2024</p>
+          <p>With the recent passing of Amendment 5, property tax exemptions will now adjust annually with inflation, promising potential savings for homeowners. Curious how this impacts you and your clients? Dive into our latest article to understand what this means for property taxes, local funding, and the real estate market. Don't miss out—stay informed and ahead of the curve!</p>
+          <a href="https://www.bonitaesterorealtors.com/understanding-floridas-amendment-5-implications-for-homeowners/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/11/Copy-of-Copy-of-Copy-of-Classes-Events-36.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Bonita Springs-Estero Realtors® Wins the NAR Platinum Global Achievement Award</h4>
+          <p class="italics">November 1st, 2024</p>
+          <p>Bonita Springs-Estero Realtors® has proudly won the prestigious NAR Platinum Global Achievement Award, recognizing their outstanding commitment to global real estate initiatives. As one of only 11 local associations to earn this honor, BER continues to empower its members with top-notch international opportunities, education, and tools. Their partnerships, like the one with the Jamaica Association of Realtors, demonstrate their dedication to fostering global business growth.</p>
+          <a href="https://www.bonitaesterorealtors.com/bonita-springs-estero-realtors-wins-the-nar-platinum-global-achievement-award/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/10/Affiliate-Spotlight-6-2-e1729099772639.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Use These Positive Habits To Get Through Life’s Transitional Phases</h4>
+          <p class="italics">October 16th, 2024</p>
+          <p>Facing a big life change? Our latest article shares simple habits to help you stay balanced and resilient. Discover tips for managing stress, connecting with others, and making positive changes. Click to read more and turn life's challenges into growth!</p>
+          <a href="https://www.bonitaesterorealtors.com/use-these-positive-habits-to-get-through-lifes-transitional-phases/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/10/Facebook-Posts-4.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Navigating Hurricanes and Their Impact on FR/BAR and NABOR Contracts in Southwest Florida</h4>
+          <p class="italics">October 4th, 2024</p>
+          <p>As Realtors in Southwest Florida, hurricane season isn't just a weather concern—it's a critical factor that can significantly impact real estate transactions. Understanding how hurricanes affect the Florida Realtors/Florida Bar (FR/BAR) and Naples Area Board of Realtors (NABOR) contracts is essential for protecting your clients' interests. This article explores the contractual implications of hurricanes, provides key points, and offers hypothetical examples to illustrate what you and your clients can expect, especially in light of recent events like Hurricane Helene.</p>
+          <a href="https://www.bonitaesterorealtors.com/navigating-hurricanes-and-their-impact-on-fr-bar-and-nabor-contracts-in-southwest-florida/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/09/Screenshot_27-9-2024_105646_www.canva_.com_-e1727450234462.jpeg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Realtor Safety in 2024: Essential Tips for Florida Real Estate Agents</h4>
+          <p class="italics">September 27th, 2024</p>
+          <p>Stay safe while conducting business with these essential tips for Realtors in Florida! From meeting clients in public first to using safety apps and personal defense tools, this article covers key strategies to ensure your safety in the field. Learn more about how to protect yourself and make safety a priority in 2024.</p>
+          <a href="https://www.bonitaesterorealtors.com/realtor-safety-in-2024-essential-tips-for-florida-real-estate-agents/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/09/Drivers-License-Q2-2024-Video.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Q2 2024 Market Insights: Collier & Lee Counties</h4>
+          <p class="italics">September 2024</p>
+          <p>The Q2 2024 Market Insights for Collier and Lee Counties highlight rising home prices driven by migration from states like New York and California. Both counties experienced strong demand, particularly for luxury properties. Realtors are advised to leverage local knowledge and technology to remain competitive in this fast-growing market.Click the link below for the full article:</p>
+          <a href="https://www.bonitaesterorealtors.com/q2-2024-market-insights-collier-lee-counties/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/08/Poker-Run-to-Power-1-1.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Consumer Guide to Written Buyer Agreements: What You Need to Know</h4>
+          <p class="italics">August 2024</p>
+          <p>Stay informed with our latest guide on Written Buyer Agreements. Starting August 17, 2024, REALTORS® will require these agreements to ensure transparency and trust between buyers and agents. Learn about the benefits, negotiable terms, and what this means for your home-buying process. Click the link below for the full article:</p>
+          <a href="https://www.bonitaesterorealtors.com/consumer-guide-to-written-buyer-agreements-what-you-need-to-know/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/08/Summer-2024.png" alt="">
+        </div>
+      <div class="col-sm-7">
+        <h4>Summer 2024 Magazine: A Look At What's Next</h4>
+        <p class="italics">Summer 2024</p>
+        <p>Dive into our Quarterly Magazine! Each quarter we get experts together to discuss the important topics facing our industry, wrap it into one neat package and send it to your doorstep. See the E-Magazine version by clicking the link below:</p>
+        <a href="https://www.bonitaesterorealtors.com/2022-realtor-review-page-q1/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+      </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2024/06/june10thart-e1718026209648_upscayl_4x_realesrgan-x4plus.jpg" alt="">
+        </div>
+      <div class="col-sm-7">
+        <h4>Unite and Conquer:Collaborative Efforts for Community Safety</h4>
+        <p class="italics">June 10th, 2024</p>
+        <p>Neighborhood safety is a shared responsibility that begins at home and extends throughout the community. By engaging in safety conversations with children, installing effective lighting and security systems, collaborating with neighbors, and staying vigilant, we can collectively create a secure and welcoming environment for everyone.</p>
+        <a href="https://www.bonitaesterorealtors.com/unite-and-conquer-collaborative-efforts-for-community-safety/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+      </div>
+    </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2023/10/Screenshot-2023-10-13-at-9.09.12 AM.png" alt="">
+        </div>
+      <div class="col-sm-7">
+        <h4>Summer 2023 Magazine: Realtor Safety</h4>
+        <p class="italics">October 13th, 2023</p>
+        <p>Dive into our Quarterly Magazine! Each quarter we get experts together to discuss the important topics facing our industry, wrap it into one neat package and send it to your doorstep.  See the E-Magazine version by clicking the link below:</p>
+        <a href="https://www.bonitaesterorealtors.com/2022-realtor-review-page-q1/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+      </div>
+    </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2023/09/White-Minimalist-Light-Professional-Meeting-Name-Zoom-Virtual-Background.png" alt="">
+        </div>
+      <div class="col-sm-7">
+        <h4>Ensuring Safety: A Realtor's Guide to Secure Operations in Real Estate</h4>
+        <p class="italics">September 22nd, 2023</p>
+        <p>"Ensuring Safety: A Realtor's Guide to Secure Operations in Real Estate" by Bonita Estero Realtors provides crucial safety strategies for realtors, emphasizing constant communication, the utilization of safety apps, initial public meetings with clients, personal information protection, heightened alertness, and the verification of client information. These precautions are pivotal for mitigating risks and fostering a secure and productive working environment in the real estate sector. </p>
+        <a href="https://www.bonitaesterorealtors.com/ensuring-safety-a-realtors-guide-to-secure-operations-in-real-estate/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+      </div>
+    </div>
+
+        <div class="row news-row">
+          <div class="col-sm-5" id="exception">
+            <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2023/08/spacephoto.jpg" alt="">
+          </div>
+        <div class="col-sm-7">
+          <h4>Space to Grow: Upsizing Your Home to Facilitate a Growing Business</h4>
+          <p class="italics">August 18th, 2023</p>
+          <p>Upsize your space, upgrade your success! 🏡👔 Explore "Space to Grow: Upsizing Your Home to Facilitate a Growing Business" by Candice Sigmon on At Home Helper. Learn expert tips from Bonita Springs-Estero Realtors on researching properties, enhancing your office, and adapting to new markets. Don't miss this guide to balancing business and personal growth. </p>
+          <a href="https://www.bonitaesterorealtors.com/space-to-grow-upsizing-your-home-to-facilitate-a-growing-business/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2023/07/asddsaadsa.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Out with the Old, In with the New: Starting Fresh in a New City</h4>
+          <p class="italics">July 21st, 2023</p>
+          <p>Embark on a transformative journey in a new city with these valuable tips. Research local homes, prioritize mental health, connect with resources, build a social network, and explore the city's attractions. Consider further education, stay positive, adopt a pet, or pursue entrepreneurial dreams. Embrace the change and create a brighter future! </p>
+          <a href="https://www.bonitaesterorealtors.com/out-with-the-old-in-with-the-new/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2023/07/Spring-2023-Magazine.png" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>5 Essential Steps for Home Buyers to Safeguard Their Real Estate Investments</h4>
+          <p class="italics">July 7th, 2023 (Spring 2023 Magazine)</p>
+          <p>Unlock the secrets to safeguarding your real estate investments with these 5 essential steps! Learn how a real estate attorney can be your invaluable guide through complex legal processes. Discover why home inspections are crucial and how they can save you from costly surprises. Find out how to effectively utilize contingencies to protect your interests. Uncover the benefits of prequalifying with a lender and securing competitive rates. Plus, let realtors pave the way to a smooth and satisfying home buying experience. Don't miss out on this must-read article! Click the link to get started.</p>
+          <a href="https://www.bonitaesterorealtors.com/5-essential-steps-for-home-buyers/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="row news-row">
+        <div class="col-sm-5" id="exception">
+          <img class="article-img" style="object-fit: contain; !important" src="https://www.bonitaesterorealtors.com/wp-content/uploads/2023/06/Web-capture_23-6-2023_91331_www.canva_.com_.jpeg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h4>Solar Panels: The Good, Bad & the Ugly</h4>
+          <p class="italics">June 23rd, 2023</p>
+          <p>Discover the world of solar panels in this insightful article from BER Magazine Fall 2023. Explore the barriers to entry, financial aspects, insurance challenges, and evolving technology associated with solar panel installation. Get a comprehensive breakdown of the benefits and potential drawbacks. Don't miss out on this must-read article for anyone considering solar panels. Read more in BER Magazine Fall 2023.</p>
+          <a href="https://www.bonitaesterorealtors.com/solarpanels-good-bad-ugly/" target="_blank"><button class="btn btn-primary" type="button" name="button">Read More</button></a>
+        </div>
+      </div>
 
       <div class="row news-row">
         <div class="col-sm-5" id="exception">
@@ -667,6 +1541,32 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function filterNews() {
+          var input, filter, newsRows, h4, i, txtValue;
+          input = document.getElementById('newsSearch');
+          filter = input.value.toLowerCase();
+          newsRows = document.getElementsByClassName('news-row');
+      
+          for (i = 0; i < newsRows.length; i++) {
+              h4 = newsRows[i].getElementsByTagName('h4')[0];
+              if (h4) {
+                  txtValue = h4.textContent || h4.innerText;
+                  if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                      newsRows[i].style.display = "";
+                  } else {
+                      newsRows[i].style.display = "none";
+                  }
+              }
+          }
+      }
+
+      
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+      </script>
 
     <h4 style="display: block; margin: auto; text-align: center;">More Coming Soon...</h4>
   </body>

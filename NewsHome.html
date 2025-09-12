@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BER News — Latest</title>
+  <meta name="description" content="Bonita Springs-Estero REALTORS® news hub. Market updates, features, reviews, and insights."/>
+
+  <!-- Fonts similar to TWIVG vibe: condensed display + clean sans body -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Updated to match BER logo palette */
+      --brand:#03AAE1;      /* aqua/teal primary */
+      --brand-ink:#0CA7A4;  /* deep teal for hover/accents */
+      --accent:#FBAE24;     /* sun yellow/orange */
+      --ink:#0b1220;        /* text */
+      --muted:#525a6a;      /* muted */
+      --bg:#ffffff;         /* page */
+      --line:#e5e7eb;       /* borders */
+      --chip:#EAF9FD;       /* category chip bg (aqua tint) */
+      --radius:8px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial; color:var(--ink); background:var(--bg)}
+
+    /* Header */
+    .site-header{position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--line)}
+    .wrap{max-width:1200px; margin:0 auto; padding:14px 16px}
+    .bar{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:44px}
+    .brand h1{font-family:'Bebas Neue',sans-serif; letter-spacing:.5px; font-size:30px; margin:0}
+    nav a{color:#1f2937; text-decoration:none; margin:0 10px; font-weight:700}
+    nav a:hover{color:var(--brand)}
+
+    /* Hero */
+    .hero{position:relative; margin:20px auto; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line)}
+    .hero .media{position:relative; padding-top:44%; background:#000}
+@media (max-width:1024px){ .hero .media{padding-top:56%} .hero h2{font-size:44px} }
+@media (max-width:640px){ .hero .media{padding-top:62%} .hero h2{font-size:32px} }
+    .hero .media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.08)}
+    .hero .shade{position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.5) 40%, rgba(0,0,0,.9))}
+    .hero .content{position:absolute; inset:auto 0 0 0; padding:22px}
+    .chip{display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-ink); background:var(--chip); border:1px solid #CBEFF7; border-radius:999px; padding:6px 10px}
+    .hero h2{font-family:'Bebas Neue',sans-serif; font-size:56px; line-height:1; margin:10px 0 6px; color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.45)}
+    .meta{color:#f3f4f6; font-size:14px}
+    .hero p{color:#e5e7eb; max-width:860px; margin-top:8px}
+    .cta{display:inline-flex; align-items:center; gap:10px; margin-top:14px; background:var(--brand); border:none; color:#fff; font-weight:800; padding:12px 16px; border-radius:999px; cursor:pointer; text-decoration:none}
+    .cta:hover{background:var(--brand-ink)}
+
+    /* Top picks under hero */
+    .top-picks{display:grid; gap:16px; grid-template-columns:repeat(3, 1fr); margin-top:16px}
+@media (max-width: 1024px){ .top-picks{grid-template-columns:repeat(2,1fr)} }
+@media (max-width: 640px){ .top-picks{grid-template-columns:1fr} }
+    .pick{border:1px solid var(--line); border-radius:14px; overflow:hidden}
+    .pick .thumb{aspect-ratio:16/9; background:#000}
+    .pick .thumb img{width:100%; height:100%; object-fit:cover}
+    .pick .body{padding:12px}
+    .pick .kicker{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-ink); font-weight:900}
+    .pick h3{font-family:'Bebas Neue',sans-serif; font-size:28px; line-height:1.05; margin:6px 0}
+    .pick .meta{color:#64748b}
+
+    /* Main grid */
+    .grid{display:grid; gap:20px; grid-template-columns:2fr 1fr; margin-top:24px}
+    @media (max-width: 960px){ .grid{grid-template-columns:1fr} .hero h2{font-size:40px} }
+
+    /* Latest list */
+    .section-title{font-family:'Bebas Neue',sans-serif; font-size:28px; display:flex; align-items:center; gap:10px; margin:8px 0}
+    .section-title::after{content:""; height:1px; background:linear-gradient(90deg,var(--accent),#ffd88a 60%, var(--line) 60%); flex:1}
+
+    .filters{display:flex; flex-wrap:wrap; gap:10px; margin:4px 0 12px}
+    .filters input[type="search"]{flex:1 1 260px; padding:12px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; color:#111}
+    .pill{display:inline-flex; align-items:center; padding:10px 14px; border-radius:999px; background:#fff; color:#111; border:1px solid var(--line); cursor:pointer; font-weight:700; min-height:44px}
+    .pill.is-active, .pill:hover{background:var(--brand); color:#fff; border-color:transparent}
+
+    .cards{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+@media (max-width: 1024px){ .cards{grid-template-columns:repeat(2,1fr)} }
+@media (max-width: 640px){ .cards{grid-template-columns:1fr} }
+.card{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
+.card .thumb{aspect-ratio:16/9; background:#000}
+.card .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+.card .body{padding:12px; display:flex; flex-direction:column; gap:6px}
+.card .kicker{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-ink); font-weight:900}
+.card h3{font-family:'Bebas Neue',sans-serif; font-size:28px; line-height:1.05; margin:4px 0}
+.card .excerpt{color:#3f4755; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.6em}
+.card .meta{color:#64748b; margin-top:2px}
+.card .readmore{display:inline-flex; gap:8px; align-items:center; margin-top:8px; padding:8px 10px; color:#fff; background:var(--brand); border-radius:8px; text-decoration:none; font-weight:800}
+.card .readmore:hover{background:var(--brand-ink)}
+
+    /* Sidebar */
+    .sidebar .panel{background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px;}
+    .sidebar h4{font-family:'Bebas Neue',sans-serif; font-size:24px; margin:0 0 10px}
+    .trend{display:grid; grid-template-columns:86px 1fr; gap:10px; padding:8px 0; border-bottom:1px dashed #e2e8f0}
+    .trend:last-child{border-bottom:none}
+    .trend img{width:86px; height:56px; object-fit:cover; border-radius:8px}
+    .trend a{color:#0f172a; text-decoration:none; font-weight:800}
+    .trend a:hover{color:var(--brand)}
+    .cats a{display:inline-block; margin:6px 8px 0 0; padding:7px 10px; border-radius:999px; border:1px solid var(--line); text-decoration:none; color:#111; font-weight:700}
+    .cats a:hover{background:var(--brand); color:#fff; border-color:transparent}
+
+    footer{margin:36px 0 48px}
+    .more-news{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; text-align:center}
+    .more-news a{display:inline-block; margin-top:6px; background:var(--brand); color:#fff; font-weight:800; padding:10px 14px; border-radius:999px; text-decoration:none}
+    .more-news a:hover{background:var(--brand-ink)}
+    /* Pagination */
+    .pager{display:inline-flex; gap:8px; flex-wrap:wrap; justify-content:center}
+    .page-btn{border:1px solid var(--line); background:#fff; padding:10px 14px; border-radius:8px; font-weight:800; cursor:pointer; min-width:44px; min-height:44px}
+    .page-btn.is-active{background:var(--brand); color:#fff; border-color:transparent}
+    .page-btn[disabled]{opacity:.5; cursor:not-allowed}
+  </style>
+</head>
+<body>
+  
+
+  <main class="wrap">
+    <!-- HERO (featured article) -->
+    <section id="hero" class="hero" aria-label="Featured article" hidden>
+      <div class="media"><img id="heroImg" alt="" src=""/></div>
+      <div class="shade"></div>
+      <div class="content">
+        <span class="chip" id="heroCat">Featured</span>
+        <h2 id="heroTitle"></h2>
+        <div class="meta" id="heroMeta"></div>
+        <p id="heroExcerpt"></p>
+        <a id="heroLink" class="cta" href="#" target="_blank" rel="noopener" aria-label="Read featured article">Read article →</a>
+      </div>
+    </section>
+
+    <!-- TOP PICKS under hero -->
+    <section class="top-picks" id="topPicks" aria-label="Top picks"></section>
+
+    <section class="grid">
+      <!-- MAIN LIST -->
+      <div>
+        <h3 id="latest" class="section-title">Latest</h3>
+        <div class="filters">
+          <input id="q" type="search" placeholder="Search articles…"/>
+          <button class="pill is-active" data-cat="all">All</button>
+          <button class="pill" data-cat="News">News</button>
+          <button class="pill" data-cat="Feature">Features</button>
+          <button class="pill" data-cat="Review">Reviews</button>
+          <button class="pill" data-cat="Education">Education</button>
+        </div>
+        <div id="cards" class="cards" aria-live="polite"></div>
+        <div id="pagerWrap" style="text-align:center; margin-top:12px"><nav class="pager" id="pager" aria-label="Pagination"></nav></div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Sidebar">
+        <div class="panel">
+          <h4>Trending</h4>
+          <div id="trending"></div>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h4>Categories</h4>
+          <div id="cats" class="cats"></div>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h4>Subscribe</h4>
+          <p class="muted">Get market updates & association news in your inbox.</p>
+          <form action="https://bonitaesterorealtors.com/" onsubmit="return false">
+            <input type="email" placeholder="you@example.com" aria-label="Email" style="width:100%; padding:12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:#111; margin:8px 0 10px">
+            <button class="cta" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    
+  </main>
+
+  <!-- EASY: paste/edit articles in this JSON block. Mark one as featured:true -->
+  <script id="articles-data" type="application/json">[
+    {"title":"SWFL Real Estate Snapshot – August 2025 Market Trends","url":"https://bonitaesterorealtors.com/swfl-real-estate-snapshot-august-2025-market-trends/","date":"2025-09-12","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/09/Compare.png","excerpt":"August 2025 shows a normalizing SWFL market—sales down but pending up, inventory and months’ supply rising, and prices largely flat regionwide with bigger drops in Naples and Estero.","category":"Market Update","featured":"true"},
+    {"title":"Public Policy Update: Florida Realtors’ Power Moves—Endorsements, Insurance & “Fun State” Win","url":"https://bonitaesterorealtors.com/public-policy-update-sept-2025/","date":"2025-09-05","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/09/District-52.png","excerpt":"From PAC endorsements (Ashley Moody, Lauren Melo) to new insurers and Citizens depopulation—plus NAR’s new consumer guides—here’s what impacts Florida homeowners and REALTORS® now.","category":"Public Policy"},
+    {"title":"Redrawing the Map: Why a Midlife Move Can Redefine Your Entire Life","url":"https://bonitaesterorealtors.com/redrawing-the-map-why-a-midlife-move-can-redefine-your-entire-life/","date":"2025-08-28","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/08/premium_photo-1661310050666-a1c0e23adb62-copy.png","excerpt":"A midlife move isn’t a crisis—it’s a clarity point. Align place and purpose, choose homes that age with you, and let neighborhood fit—not panic—drive the decision.","category":"Feature"},
+    {"title":"BrokerBay Arrives at BER: A New Era in Showing Management","url":"https://bonitaesterorealtors.com/brokerbay-arrives-at-ber-a-new-era-in-showing-management/","date":"2025-08-21","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/08/District-51.png","excerpt":"Starting Sept 2, BER members can use BrokerBay alongside ShowingTime for smarter scheduling, mobile access, and client‑ready dashboards.","category":"News"},
+    {"title":"SWFL July 2025: Inventory Rising Across Bonita‑Estero, Naples & Fort Myers","url":"https://bonitaesterorealtors.com/swfl-july-2025-inventory-trends-city-comparison/","date":"2025-08-14","image":"https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop","excerpt":"Active listings climbed across all three markets as the region moves to a more balanced, choice‑rich environment for buyers.","category":"Feature"},
+    {"title":"Latest FR/BAR Contract Updates: What Bonita Estero Realtors Need to Know","url":"https://bonitaesterorealtors.com/latest-fr-bar-contract-updates-what-bonita-estero-realtors-need-to-know/","date":"2025-07-25","image":"https://res.cloudinary.com/micronetonline/image/upload/c_limit,w_717,h_573/v1753449503/tenants/6c24b0da-8a6e-4f2b-8547-26a8c1dc4581/a9c79739c0524f6d9f5e04b3f245142f/Screenshot-25-7-2025-91815-bonitaesterorealtors-com.jpg","excerpt":"New riders, escrow updates, and disclosure rules you should know before your next contract.","category":"Review"},
+    {"title":"Bonita Springs‑Estero REALTORS® Refutes Misleading ‘Worst Housing Market’ Claims","url":"https://bonitaesterorealtors.com/bonita-springs-estero-realtors-refutes-misleading-worst-housing-market-claims/","date":"2025-07-14","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/07/District-5-2-copy.png","excerpt":"Why normalization ≠ collapse: prices, days‑on‑market, and absorption in context.","category":"News"},
+    {"title":"June 2025 Southwest Florida Real Estate Market Update","url":"https://bonitaesterorealtors.com/june-2025-southwest-florida-real-estate-market-update/","date":"2025-07-11","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/07/Screenshot_11-7-2025_9307_www.canva_.com_.jpeg","excerpt":"Sales hold while inventory expands: the latest signals for buyers and sellers across SWFL.","category":"Feature"},
+    {"title":"New Condominium Reforms in Florida 2025","url":"https://bonitaesterorealtors.com/new-condominium-reforms-in-florida-2025/","date":"2025-06-26","image":"https://assets.cdn.filesafe.space/KM9vIlcOZRyxdtXkN7bV/media/685d7da5c8b67614287c0686.png","excerpt":"HB 913 delivers deadline relief, clearer docs access, and buyer protections starting July 1.","category":"News"},
+    {"title":"Helping Your Parents Navigate Downsizing with Compassion and Clarity","url":"https://bonitaesterorealtors.com/helping-your-parents-navigate-downsizing-with-compassion-and-clarity/","date":"2025-06-18","image":"https://assets.cdn.filesafe.space/KM9vIlcOZRyxdtXkN7bV/media/6852d349d6bbb740cda1670c.png","excerpt":"A gentle, practical guide to help loved ones right‑size—emotionally and logistically.","category":"Education"},
+    {"title":"Spring 2025 Market Update: Bonita Springs‑Estero, Naples & Fort Myers","url":"https://bonitaesterorealtors.com/spring-2025-market-update-bonita-springs-estero-naples-fort-myers/","date":"2025-06-12","image":"https://storage.googleapis.com/msgsndr/KM9vIlcOZRyxdtXkN7bV/media/684af32a5188d82610751046.png","excerpt":"Price shifts and inventory growth across SWFL—what buyers and sellers should know.","category":"Feature"},
+    {"title":"Celebrating Homeownership Month: Benefits and Trends in Southwest Florida and Beyond","url":"https://bonitaesterorealtors.com/celebrating-homeownership-month-benefits-and-trends-in-southwest-florida-and-beyond/","date":"2025-06-05","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/06/96a942f5-6e66-4c98-8b2b-920783ffda3a.png","excerpt":"Why ownership builds wealth and stability—plus local homeownership rates that outpace state & nation.","category":"Feature"},
+    {"title":"Packing Up, Leveling Up: Starting a Home Business While Moving House","url":"https://bonitaesterorealtors.com/packing-up-leveling-up-starting-a-home-business-while-moving-house/","date":"2025-05-22","image":"https://storage.googleapis.com/msgsndr/KM9vIlcOZRyxdtXkN7bV/media/6830890003c224b707aabf2c.webp","excerpt":"Turn relocation chaos into a launchpad—budgeting, workspace hacks, and early marketing tips.","category":"Education"},
+    {"title":"2025 Legislative Wins: Key Real Estate Policy Changes for Bonita Springs‑Estero Realtors","url":"https://bonitaesterorealtors.com/2025-legislative-wins-key-real-estate-policy-changes-for-bonita-springs-estero-realtors/","date":"2025-05-08","image":"https://storage.googleapis.com/msgsndr/KM9vIlcOZRyxdtXkN7bV/media/681e39d76c402150d4e41c4f.png","excerpt":"Six new Florida laws to know—condo protections, anti‑squatter rules, permits, notices, and more.","category":"News"},
+    {"title":"Southwest Florida Housing Market 2019–2024: A Tale of Two Counties","url":"https://bonitaesterorealtors.com/southwest-florida-housing-market-2019-2024-a-tale-of-two-counties/","date":"2025-04-30","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/05/Screenshot-2025-05-02-at-08-54-58-.png","excerpt":"Lee vs. Collier: five‑year trends in inventory, pricing, and buyer mix.","category":"Feature"},
+    {"title":"Optimizing Pricing: Price Reductions vs. Days on Market in SW Florida (Spring 2025)","url":"https://bonitaesterorealtors.com/optimizing-pricing-price-reductions-vs-days-on-market-in-sw-florida/","date":"2025-04-04","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/04/2024-District-5-Bowling-Tournament10.png","excerpt":"Fewer, larger price cuts or many small ones? What our MLS data says about DOM & outcomes.","category":"Education"},
+    {"title":"International Real Estate Transactions in Southwest Florida (2020–2025)","url":"https://bonitaesterorealtors.com/international-real-estate-transactions-in-southwest-florida-2020-2025/","date":"2025-03-20","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/03/2024-District-5-Bowling-Tournament8.png","excerpt":"Shifts in global demand—from Canada to Latin America—and what it means locally.","category":"Feature"},
+    {"title":"FR/BAR vs. NABOR: Which Contract Works Best for Your Florida Transactions?","url":"https://bonitaesterorealtors.com/bonita-springs-estero-realtors-clinches-rpac-triple-crown-sets-new-participation-record/","date":"2025-02-20","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/02/475577987_10170738163515582_3295231579808130389_n.jpg","excerpt":"Key differences in inspections, deposits, and dispute resolution to keep deals smooth.","category":"Education"},
+    {"title":"FR/BAR vs. NABOR: Which Contract Works Best for Your Florida Transactions?","url":"https://bonitaesterorealtors.com/comparing-fr-bar-and-nabor-contracts-what-you-need-to-know/","date":"2025-01-31","image":"https://bonitaesterorealtors.com/wp-content/uploads/2025/01/Code-of-Ethics.png","excerpt":"A practical guide to choosing the right form for your next transaction.","category":"Education"},
+    {"title":"Elevate Your Real Estate Portfolio with the BRRRR Strategy","url":"https://www.bonitaesterorealtors.com/elevate-your-real-estate-portfolio-with-the-brrrr-strategy/","date":"2024-12-20","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/12/Displaced-by-Hurricane-Ian-Find-Immediatly-Avaialbe-housing-Video1.png","excerpt":"Buy, Rehab, Rent, Refinance, Repeat—streamline each step and maximize returns.","category":"Education"},
+    {"title":"2024 Installation Banquet Recap","url":"https://www.bonitaesterorealtors.com/2024-installation-recap/","date":"2024-12-06","image":"https://res.cloudinary.com/micronetonline/image/upload/c_limit,w_2000,h_2000/v1733507846/tenants/6c24b0da-8a6e-4f2b-8547-26a8c1dc4581/fa7061e6b68e4034a894e1df5d279a6c/23.png","excerpt":"Highlights, award winners, special guests, and your 2025 leadership team.","category":"News"},
+    {"title":"Elevate Your Impact: Join a Bonita Springs‑Estero REALTORS® Committee in 2025","url":"https://www.bonitaesterorealtors.com/elevate-your-impact-join-a-bonita-springs-estero-realtors-committee-in-2025/","date":"2024-11-15","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/11/Copy-of-Copy-of-Copy-of-Classes-Events-42.png","excerpt":"Grow your network, skills, and influence—committee opportunities for 2025.","category":"News"},
+    {"title":"Understanding Florida's Amendment 5: Implications for Homeowners","url":"https://www.bonitaesterorealtors.com/understanding-floridas-amendment-5-implications-for-homeowners/","date":"2024-11-08","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/11/Screenshot_8-11-2024_94652_www.bonitaesterorealtors.com_.jpeg","excerpt":"Property‑tax exemptions now adjust with inflation—what it means for owners & local funding.","category":"News"},
+    {"title":"Bonita Springs‑Estero Realtors® Wins the NAR Platinum Global Achievement Award","url":"https://www.bonitaesterorealtors.com/bonita-springs-estero-realtors-wins-the-nar-platinum-global-achievement-award/","date":"2024-11-01","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/10/Copy-of-Copy-of-Copy-of-Classes-Events-36.png","excerpt":"One of only 11 local associations nationwide to earn NAR’s top global honor.","category":"News"},
+    {"title":"Use These Positive Habits To Get Through Life’s Transitional Phases","url":"https://www.bonitaesterorealtors.com/use-these-positive-habits-to-get-through-lifes-transitional-phases/","date":"2024-10-16","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/10/Affiliate-Spotlight-6-2-e1729099772639.png","excerpt":"Stay balanced during big changes with simple, science‑backed habits.","category":"Education"},
+    {"title":"Navigating Hurricanes and Their Impact on FR/BAR and NABOR Contracts in Southwest Florida","url":"https://www.bonitaesterorealtors.com/navigating-hurricanes-and-their-impact-on-fr-bar-and-nabor-contracts-in-southwest-florida/","date":"2024-10-04","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/10/Facebook-Posts-4.png","excerpt":"Hurricane clauses, delays, extensions—what agents must watch in both contracts.","category":"Education"},
+    {"title":"Realtor Safety in 2024: Essential Tips for Florida Real Estate Agents","url":"https://www.bonitaesterorealtors.com/realtor-safety-in-2024-essential-tips-for-florida-real-estate-agents/","date":"2024-09-27","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/09/Screenshot_27-9-2024_105646_www.canva_.com_-e1727450234462.jpeg","excerpt":"Field safety basics—from first meetings to apps and personal info protection.","category":"Education"},
+    {"title":"Q2 2024 Market Insights: Collier & Lee Counties","url":"https://www.bonitaesterorealtors.com/q2-2024-market-insights-collier-lee-counties/","date":"2024-09-01","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/09/Drivers-License-Q2-2024-Video.png","excerpt":"Migration‑driven demand and a strong luxury segment—county‑by‑county signals.","category":"Feature"},
+    {"title":"Consumer Guide to Written Buyer Agreements: What You Need to Know","url":"https://www.bonitaesterorealtors.com/consumer-guide-to-written-buyer-agreements-what-you-need-to-know/","date":"2024-08-01","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/08/Poker-Run-to-Power-1-1.png","excerpt":"Starting Aug 17, written buyer agreements become standard—here’s what’s inside.","category":"Education"},
+    {"title":"Summer 2024 Magazine: A Look At What's Next","url":"https://www.bonitaesterorealtors.com/2022-realtor-review-page-q1/","date":"2024-06-15","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/08/Summer-2024.png","excerpt":"Quarterly expert round‑ups on what’s ahead—read the e‑magazine.","category":"Feature"},
+    {"title":"Unite and Conquer: Collaborative Efforts for Community Safety","url":"https://www.bonitaesterorealtors.com/unite-and-conquer-collaborative-efforts-for-community-safety/","date":"2024-06-10","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2024/06/june10thart-e1718026209648_upscayl_4x_realesrgan-x4plus.jpg","excerpt":"From lighting to neighbor networks—practical steps to safer communities.","category":"Education"},
+    {"title":"Summer 2023 Magazine: Realtor Safety","url":"https://www.bonitaesterorealtors.com/2022-realtor-review-page-q1/","date":"2023-10-13","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/10/Screenshot-2023-10-13-at-9.09.12 AM.png","excerpt":"Focus issue on safety—tools, tactics, and mindset for the field.","category":"Feature"},
+    {"title":"Ensuring Safety: A Realtor's Guide to Secure Operations in Real Estate","url":"https://www.bonitaesterorealtors.com/ensuring-safety-a-realtors-guide-to-secure-operations-in-real-estate/","date":"2023-09-22","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/09/White-Minimalist-Light-Professional-Meeting-Name-Zoom-Virtual-Background.png","excerpt":"Stay vigilant: meeting protocols, data privacy, verification, and apps.","category":"Education"},
+    {"title":"Space to Grow: Upsizing Your Home to Facilitate a Growing Business","url":"https://www.bonitaesterorealtors.com/space-to-grow-upsizing-your-home-to-facilitate-a-growing-business/","date":"2023-08-18","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/08/spacephoto.jpg","excerpt":"When a bigger home drives business growth—space planning & market strategy.","category":"Education"},
+    {"title":"Out with the Old, In with the New: Starting Fresh in a New City","url":"https://www.bonitaesterorealtors.com/out-with-the-old-in-with-the-new/","date":"2023-07-21","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/07/asddsaadsa.png","excerpt":"Research, resilience, and routines to thrive after a big move.","category":"Education"},
+    {"title":"5 Essential Steps for Home Buyers to Safeguard Their Real Estate Investments","url":"https://www.bonitaesterorealtors.com/5-essential-steps-for-home-buyers/","date":"2023-07-07","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/07/Spring-2023-Magazine.png","excerpt":"Inspections, contingencies, lender prep, and more—your safety‑first checklist.","category":"Education"},
+    {"title":"Solar Panels: The Good, Bad & the Ugly","url":"https://www.bonitaesterorealtors.com/solarpanels-good-bad-ugly/","date":"2023-06-23","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/06/Web-capture_23-6-2023_91331_www.canva_.com_.jpeg","excerpt":"Costs, insurance, and tech—what to weigh before you install.","category":"Education"},
+    {"title":"Enhancing Safety and Sleep Quality: Minimizing Blue Light Exposure","url":"https://www.bonitaesterorealtors.com/enhancingsafetyandsleepqualityminimizingbluelightexposure/","date":"2023-06-02","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/06/Bound.png","excerpt":"Protect your circadian rhythm to stay sharp and safe on the job.","category":"Education"},
+    {"title":"Five Ways for Realtors to Help Out-of-Town Buyers","url":"https://www.bonitaesterorealtors.com/five-ways-for-realtors-to-help-out-of-town-buyers/","date":"2023-05-12","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/05/April-2023-1-1.png","excerpt":"Virtual tours, local know‑how, and smart tech to serve remote clients.","category":"Education"},
+    {"title":"Real Estate Goes High‑Tech: Harnessing the Power of AI for Marketing Success","url":"https://www.bonitaesterorealtors.com/real-estate-goes-high-tech/","date":"2023-04-21","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/04/Bourbon-YouTube-Thumbnail-3.png","excerpt":"From ChatGPT to video tools—build a modern marketing stack.","category":"Education"},
+    {"title":"Condominium Changes","url":"https://www.bonitaesterorealtors.com/condominium-changes/","date":"2023-03-31","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/03/Untitled-design-9.png","excerpt":"SB 4D brings milestone inspections and roof rules—timelines agents must know.","category":"News"},
+    {"title":"How to Buy a House Contingent On Selling Yours First","url":"https://www.bonitaesterorealtors.com/how-to-buy-a-house-contingent-on-selling-yours-first/","date":"2023-03-03","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/03/March-3rd_upscayl_4x_realesrgan-x4plus-scaled-e1677782544904.jpg","excerpt":"Make a contingent offer work—timelines, staging, bridge loans, and more.","category":"Education"},
+    {"title":"Why Purchasing a Florida Vacation Home Could Be More Affordable Than It Sounds","url":"https://www.bonitaesterorealtors.com/why-purchasing-a-florida-vacation-home-could-be-more-affordable-than-it-sounds/","date":"2023-02-03","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/02/feb2nd-e1675364634806.png","excerpt":"Tax perks, rental demand, and how to protect your investment.","category":"Education"},
+    {"title":"Flipping Houses in Your Golden Years","url":"https://www.bonitaesterorealtors.com/flipping-houses-in-your-golden-years/","date":"2023-01-20","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/01/goldenyears-e1674161442648.png","excerpt":"A retiree‑friendly approach to sourcing, funding, and selling flips.","category":"Education"},
+    {"title":"How To Get the Perfect Home Warranty","url":"https://www.bonitaesterorealtors.com/how-to-get-the-perfect-home-warranty/","date":"2023-01-06","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2023/01/article-picture-1-23.jpg","excerpt":"What’s covered, what’s not, and how to pick the right policy.","category":"Education"},
+    {"title":"2023 Installation Banquet Recap","url":"https://www.bonitaesterorealtors.com/2023-installation-recap/","date":"2022-12-01","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/12/Copy-of-Copy-of-Copy-of-Classes-Events-5.png","excerpt":"A night to remember—new leaders and 'Of the Year' award winners.","category":"News"},
+    {"title":"Paper Less: Getting on Top of Home Buying/Selling Documentation","url":"https://www.bonitaesterorealtors.com/paper-less-gettingon-top-of-home-buying-selling/","date":"2022-10-20","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/11/paper-less.jpg","excerpt":"Digitize, organize, and streamline docs for stress‑free transactions.","category":"Education"},
+    {"title":"Post Hurricane Resources & News","url":"https://bonitaspringsesterorealtorsfl.growthzoneapp.com/ap/EmailViewer/Pe554ZVP","date":"2022-10-05","image":"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA12pw0C.img?w=768&h=439&m=6","excerpt":"Recovery resources, wellness check‑ins, and volunteer opportunities after Ian.","category":"News"},
+    {"title":"Tips and Resources for Making Your Move Easier","url":"https://www.bonitaesterorealtors.com/move-easier-ber-news/","date":"2022-09-16","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/09/Copy-of-Copy-of-Copy-of-Classes-Events-16.png","excerpt":"From research to checklists—how to smooth the path to your next city.","category":"Education"},
+    {"title":"BER Member Benefit Series: RentSpree","url":"https://www.bonitaesterorealtors.com/rentspree-introduction/","date":"2022-09-02","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/09/rentspree-logo.png","excerpt":"Screen tenants and simplify rental apps—how RentSpree helps.","category":"News"},
+    {"title":"REALTORS®: Too Busy to Learn Something New? Can't afford not to!","url":"https://www.bonitaesterorealtors.com/myundercoveragentintro/","date":"2022-08-19","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/mua-logo-1.png","excerpt":"Meet My Undercover Agent—hyperlocal search that saves hours.","category":"News"},
+    {"title":"Forewarn - A New Kind of Realtor Safety Tool","url":"https://www.bonitaesterorealtors.com/forewarn-article/","date":"2022-08-02","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/phone-e1593713701142-1.jpg","excerpt":"Know who you’re meeting—how the Forewarn app boosts safety.","category":"Education"},
+    {"title":"Hometown Heroes Program is Now LIVE!","url":"https://www.bonitaesterorealtors.com/ber-news-hometown-heros-july202022/","date":"2022-07-20","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/08/pexels-pixabay-70573.jpg","excerpt":"Down‑payment assistance for local workers—who qualifies and how to apply.","category":"News"},
+    {"title":"Understanding Interior Design","url":"https://www.bonitaesterorealtors.com/ber-news-interior-design/","date":"2022-07-04","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/06/Copy-of-Fishbowl-Friday-56ewqeqw.png","excerpt":"Staging tips to showcase listings as the market re‑balances.","category":"Education"},
+    {"title":"Court Rules: Licensee Emails Do Not Create a Contract","url":"https://www.bonitaesterorealtors.com/ber-news/","date":"2022-06-20","image":"https://www.bonitaesterorealtors.com/wp-content/uploads/2022/06/Untitled-design-1.png","excerpt":"A precedent clarifies when communications form an executable contract.","category":"News"},
+    {"title":"How to Prep a Listing for Maximum Impact","url":"https://bonitaesterorealtors.com/how-to-prep-a-listing-for-maximum-impact/","date":"2025-06-02","image":"https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop","excerpt":"A practical checklist for sellers and agents: staging, photography, and condition fixes that pay off.","category":"Education"}
+  ]</script>
+
+  <script>
+    // Auto-updating hero + top picks + latest when you add/edit items in #articles-data
+    const $ = (s, r=document)=>r.querySelector(s);
+    const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+
+    function parseData(){
+      try{ return JSON.parse($('#articles-data').textContent.trim()); }
+      catch(e){ console.error('Invalid JSON in #articles-data', e); return []; }
+    }
+    function fmtDate(iso){
+      const d = new Date(iso+'T12:00:00');
+      return d.toLocaleDateString(undefined,{year:'numeric', month:'long', day:'numeric'});
+    }
+    function uniq(arr){ return [...new Set(arr)]; }
+    const keyOf = (a)=> a.url || a.title || String(Math.random());
+
+    function setHero(article){
+      if(!article) return;
+      $('#heroImg').src = article.image || '';
+      $('#heroTitle').textContent = article.title;
+      $('#heroMeta').textContent = `${fmtDate(article.date)}`;
+      $('#heroExcerpt').textContent = article.excerpt || '';
+      $('#heroLink').href = article.url;
+      $('#heroCat').textContent = article.category || 'Featured';
+      $('#hero').hidden = false;
+    }
+
+    function computeTops(all){
+      const sorted = [...all].sort((a,b)=> new Date(b.date) - new Date(a.date));
+      const featuredList = sorted.filter(a=>a.featured);
+      const hero = featuredList[0] || sorted[0];
+      const picks = sorted.filter(a=>a!==hero).slice(0,3);
+      const topKeys = new Set([hero, ...picks].map(keyOf));
+      return {sorted, hero, picks, topKeys};
+    }
+
+    function renderTopPicks(items){
+      const html = items.map(a=>`
+        <article class="pick">
+          <a href="${a.url}" target="_blank" rel="noopener" style="display:block" aria-label="Read ${a.title}">
+            <div class="thumb">${a.image? `<img loading="lazy" src="${a.image}" alt="">` : ''}</div>
+          </a>
+          <div class="body">
+            <div class="kicker">${a.category || ''}</div>
+            <h3><a style="color:#0f172a; text-decoration:none" href="${a.url}" target="_blank" rel="noopener">${a.title}</a></h3>
+            <div class="meta">${fmtDate(a.date)}</div>
+          </div>
+        </article>`).join('');
+      $('#topPicks').innerHTML = html;
+    }
+
+    function cardHTML(a){
+      return `
+      <article class="card">
+        <a href="${a.url}" target="_blank" rel="noopener" class="thumb">${a.image? `<img loading="lazy" src="${a.image}" alt="">` : ''}</a>
+        <div class="body">
+          <div class="kicker">${a.category||''}</div>
+          <h3><a style="color:#0f172a; text-decoration:none" href="${a.url}" target="_blank" rel="noopener">${a.title}</a></h3>
+          <p class="excerpt">${a.excerpt||''}</p>
+          <div class="meta">${fmtDate(a.date)}</div>
+          <a class="readmore" href="${a.url}" target="_blank" rel="noopener" aria-label="Read ${a.title}">Read more →</a>
+        </div>
+      </article>`;
+    }
+
+    function renderList(data){
+      const container = $('#cards');
+      const pageSize = 9; // tiles per page (3x3)
+      let page = 1;
+      function draw(){
+        const total = data.length;
+        const totalPages = Math.max(1, Math.ceil(total / pageSize));
+        if(page > totalPages) page = totalPages;
+        const start = (page-1)*pageSize;
+        const slice = data.slice(start, start + pageSize);
+        container.innerHTML = slice.map(cardHTML).join('');
+        renderPager(totalPages);
+      }
+      function renderPager(totalPages){
+        const pager = $('#pager');
+        if(!pager) return;
+        if(totalPages <= 1){ pager.innerHTML=''; return; }
+        const parts = [];
+        parts.push(`<button class="page-btn prev" ${page===1?'disabled':''} data-nav="prev">← Prev</button>`);
+        for(let p=1;p<=totalPages;p++){
+          parts.push(`<button class="page-btn ${p===page?'is-active':''}" data-page="${p}">${p}</button>`);
+        }
+        parts.push(`<button class="page-btn next" ${page===totalPages?'disabled':''} data-nav="next">Next →</button>`);
+        pager.innerHTML = parts.join('');
+        pager.onclick = (e)=>{
+          const b = e.target.closest('button.page-btn');
+          if(!b) return;
+          if(b.dataset.page){ page = parseInt(b.dataset.page,10); }
+          else if(b.dataset.nav==='prev' && page>1){ page--; }
+          else if(b.dataset.nav==='next'){ const max = Math.ceil(data.length/pageSize); if(page<max) page++; }
+          draw();
+          window.scrollTo({top:$('#latest').offsetTop-10, behavior:'smooth'});
+        };
+      }
+      draw();
+    }
+
+    function renderTrending(data, topKeys){
+      const base = data.filter(a=>!topKeys.has(keyOf(a))).slice(0,5);
+      const t = base.map(a=>`
+        <div class="trend">
+          <img loading="lazy" src="${a.image}" alt="">
+          <div>
+            <a href="${a.url}" target="_blank" rel="noopener">${a.title}</a>
+            <div class="meta">${fmtDate(a.date)}</div>
+          </div>
+        </div>`).join('');
+      $('#trending').innerHTML = t;
+    }
+
+    function renderCats(data){
+      const cats = uniq(data.map(a=>a.category).filter(Boolean));
+      const html = ['All', ...cats].map(c=>`<a href="#" data-cat="${c}">${c}</a>`).join('');
+      $('#cats').innerHTML = html;
+      $('#cats').addEventListener('click', (e)=>{
+        const a = e.target.closest('a[data-cat]');
+        if(!a) return; e.preventDefault();
+        const cat = a.dataset.cat;
+        // Activate matching pill at top
+        $$('.pill').forEach(b=>{
+          if(b.dataset.cat.toLowerCase() === cat.toLowerCase() || (cat==='All' && b.dataset.cat==='all')) b.classList.add('is-active'); else b.classList.remove('is-active');
+        });
+        refresh();
+        window.scrollTo({top:$('#latest').offsetTop-20, behavior:'smooth'});
+      });
+    }
+
+    function applyFilters(list){
+      const q = $('#q').value.toLowerCase().trim();
+      const active = $('.pill.is-active')?.dataset.cat || 'all';
+      return list.filter(a=>{
+        const inCat = active==='all' || (a.category||'').toLowerCase()===active.toLowerCase();
+        if(!inCat) return false;
+        if(!q) return true;
+        const hay = `${a.title} ${a.excerpt} ${a.category}`.toLowerCase();
+        return hay.includes(q);
+      });
+    }
+
+    // GLOBAL-ish state (kept minimal)
+    let STATE = { all: [], hero: null, picks: [], topKeys: new Set(), baseLatest: [] };
+
+    function hydrate(){
+      const allRaw = parseData();
+      const all = allRaw.sort((a,b)=> new Date(b.date) - new Date(a.date));
+      const {sorted, hero, picks, topKeys} = computeTops(all);
+      STATE.all = sorted; STATE.hero = hero; STATE.picks = picks; STATE.topKeys = topKeys;
+      STATE.baseLatest = sorted.filter(a=> !topKeys.has(keyOf(a))); // exclude hero + top 3
+
+      setHero(hero);
+      renderTopPicks(picks);
+      renderTrending(sorted, topKeys);
+      renderCats(sorted);
+      refresh();
+    }
+
+    function refresh(){
+      const filtered = applyFilters(STATE.baseLatest);
+      renderList(filtered);
+    }
+
+    // pill filters
+    function wireFilters(){
+      $$('.pill').forEach(btn=>btn.addEventListener('click',()=>{
+        $$('.pill').forEach(b=>b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        refresh();
+      }));
+      $('#q').addEventListener('input', refresh);
+    }
+
+    // Kick off
+    wireFilters();
+    hydrate();
+
+    // Optional: live-update if the JSON block changes (e.g., via CMS injection)
+    const src = $('#articles-data');
+    if(src){
+      let t; const reb = ()=>{ clearTimeout(t); t=setTimeout(hydrate,150); };
+      new MutationObserver(reb).observe(src,{childList:true, characterData:true, subtree:true});
+    }
+    // Usage: just paste a new object into #articles-data. The top hero + 3 picks become the newest
+    // (or the newest with featured:true), and the Latest grid updates automatically without duplicates.
+  </script>
+</body>
+</html>

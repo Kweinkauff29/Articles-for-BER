@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Article → Webpage Builder</title>
-  
+
   <!-- Fonts to match your prior article style -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -43,6 +43,7 @@
     header.hero{min-height:360px; display:flex; align-items:flex-end; padding:24px; background:#111; background-position:center; background-size:cover}
     header.hero h1{background:rgba(255,255,255,.94); padding:12px 16px; border-radius:10px; font-family:var(--headlinefont); font-weight:700; max-width:1000px}
     main{padding:20px}
+    #main{margin-top:-16px;} /* added to mirror your finished posts */
     .byline{font-size:.95rem; color:#444}
     .lede{font-style:italic}
     .wrapper{max-width:1000px; margin: 0 auto}
@@ -63,15 +64,26 @@
     .video{position:relative; width:100%; padding-top:56.25%; background:#000; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.08)}
     .video iframe,.video video{position:absolute; inset:0; width:100%; height:100%; border:0}
 
+    /* Pull-quote + soft rule (borrowed from ArticleGen, styled for BER) */
+    .pullquote{margin:1rem 0; border-left:4px solid var(--secondary); padding:12px 16px; background:#f8fafc; border-radius:10px; text-align:left}
+    .pullquote blockquote{margin:0; font-size:1.15rem; line-height:1.4}
+    .pullquote figcaption{margin-top:.35rem; color:#64748b; font-weight:600}
+    .hr-soft{border:0; height:1px; background:var(--line); margin:16px 0}
+
     .footer-note{font-size:.9rem; color:#475569; border-top:1px solid var(--line); padding-top:12px; margin-top:14px}
     .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; font-size:.9rem}
+
+    /* "More Real Estate News" block (auto-appended) */
+    .more{max-width:1100px; margin:0 auto 40px; padding:0 20px}
+    .more h2{font-family:var(--headlinefont); font-weight:600; margin-top:1.25rem}
+    .more a{text-decoration:underline}
   </style>
 </head>
 <body>
   <div class="app">
     <div class="panel">
       <h1>Article → Webpage Builder</h1>
-      <p class="subtle">Paste your article text, add optional media, preview the formatted page, and export a production‑ready HTML file that matches your July 2025 market post style.</p>
+      <p class="subtle">Paste your article text, add optional media, preview the formatted page, and export a production-ready HTML file that matches your house style. The builder auto-adds a <em>More Real Estate News</em> section and applies <code>#main</code> margin for layout consistency.</p>
 
       <div class="grid cols-2" style="margin-top:12px">
         <div>
@@ -88,7 +100,7 @@
         </div>
         <div>
           <label>SEO description</label>
-          <input id="seo" type="text" placeholder="One‑sentence summary for search & social cards" />
+          <input id="seo" type="text" placeholder="One-sentence summary for search & social cards" />
         </div>
         <div>
           <label>Hero image URL (top banner)</label>
@@ -98,6 +110,58 @@
           <label>Social image URL (OpenGraph/Twitter)</label>
           <input id="social" type="text" placeholder="(optional) https://…/social-card.jpg" />
         </div>
+      </div>
+
+      <!-- Meta / LLM / SEO options -->
+      <h2 style="margin-top:18px">Meta / LLM / SEO options</h2>
+      <div class="grid cols-2">
+        <div>
+          <label>Site name (og:site_name)</label>
+          <input id="siteName" type="text" placeholder="Bonita Springs-Estero REALTORS®" />
+        </div>
+        <div>
+          <label>Canonical URL (optional)</label>
+          <input id="canonical" type="text" placeholder="https://bonitaesterorealtors.com/path-to-article/" />
+        </div>
+        <div>
+          <label>Robots</label>
+          <input id="robots" type="text" value="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+        </div>
+        <div>
+          <label>Twitter @handle (optional)</label>
+          <input id="twitterSite" type="text" placeholder="@BonitaEsteroREALTORS" />
+        </div>
+        <div>
+          <label>Tags / Keywords (comma separated)</label>
+          <input id="tags" type="text" placeholder="Bonita Springs, Estero, Naples, SWFL, market report" />
+        </div>
+        <div>
+          <label>Publisher (Organization) Name (JSON-LD)</label>
+          <input id="orgName" type="text" placeholder="Bonita Springs-Estero REALTORS®" />
+        </div>
+        <div>
+          <label>Publisher Logo URL (JSON-LD)</label>
+          <input id="orgLogo" type="text" placeholder="https://…/logo.png" />
+        </div>
+        <div class="row" style="align-items:flex-start">
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label><input id="optAutoSeo" type="checkbox" checked /> Auto-generate SEO description if empty</label>
+            <label><input id="optOrgLd" type="checkbox" checked /> Include Organization JSON-LD</label>
+            <label><input id="optBreadcrumbs" type="checkbox" /> Include BreadcrumbList JSON-LD</label>
+            <label><input id="optLlmBlock" type="checkbox" /> Insert “Summary” block at top (from LLM Summary)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:8px">
+        <button class="btn" id="btnSuggestSeo">Suggest SEO description</button>
+        <button class="btn" id="btnSuggestKeywords">Suggest keywords</button>
+        <button class="btn" id="btnLlmSummary">LLM summarize (3–5 sentences)</button>
+      </div>
+
+      <div style="margin-top:10px">
+        <label>LLM Summary (editable)</label>
+        <textarea id="llmSummary" placeholder="Click 'LLM summarize' to auto-generate a summary for AI assistants and the 'Summary' block (if enabled)."></textarea>
       </div>
 
       <h2 style="margin-top:18px">Media library</h2>
@@ -149,16 +213,22 @@ Intro paragraph here (italicize with *asterisks* if you want a lede).
 
 ## Section Heading
 Your content… Insert an image: [[image:bonita-snapshot]]
-Or direct Markdown: ![Alt text](https://…/image.jpg "Caption/description shown below")
+Or direct Markdown: ![Alt text](https://…/image.jpg &quot;Caption/description shown below&quot;)
 
 ## Video Example
 Embed YouTube: [[video:market-recap]]
-Or a raw MP4: [[video:promo-clip]]
+Or paste a raw link on its own line:
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+https://cdn.example.com/clip.mp4
 
-## More News
-[Click here](https://bonitaesterorealtors.com/ber-news-home/) to see more.
+> Blockquote pull-quote works too, or use:
+[[quote: &quot;Housing is local, and SWFL is normalizing.&quot; — BER Market Team]]
+
+[[h: Optional H2 via shortcode]]
+---
+(You no longer need to add a “More Real Estate News” section — it’s appended automatically.)
       "></textarea>
-      <div class="hint">Supported: <strong>[[image:slug]]</strong>, <strong>[[video:slug]]</strong>, Markdown images <code>![alt](url "caption")</code>, YouTube short‑code via a media item, headings (##, ###), lists (lines starting with <code>-</code>), and basic **bold**/*italic*.</div>
+      <div class="hint">Supported: <strong>[[image:slug]]</strong>, <strong>[[video:slug]]</strong>, Markdown images <code>![alt](url "caption")</code>, headings (##, ### or <code>[[h: Title]]</code>), lists (<code>-</code>), pull-quotes (<code>&gt; quote</code> or <code>[[quote: text — name]]</code>), horizontal rule (<code>---</code>), and inline video by pasting a YouTube/MP4 link on its own line.</div>
 
       <div class="row" style="margin-top:12px">
         <button class="btn" id="loadExample">Load the July 2025 example</button>
@@ -223,7 +293,6 @@ Or a raw MP4: [[video:promo-clip]]
         return;
       }
       upsertMedia(item);
-      // Clear quick‑add fields
       ['mSlug','mUrl','mPoster','mAlt','mCaption'].forEach(id=>{ $('#'+id).value=''; });
     });
 
@@ -232,12 +301,95 @@ Or a raw MP4: [[video:promo-clip]]
       if(btn){ removeMedia(btn.getAttribute('data-del')); }
     });
 
-    // === Markdown + shortcodes renderer ===
+    // === SEO / LLM helpers (client-side heuristics) ===
+    const STOP = new Set(('a,about,after,all,also,an,and,are,as,at,be,been,before,being,between,both,but,by,can,do,does,doing,during,each,for,from,further,had,has,have,having,he,her,hers,him,his,how,i,if,in,into,is,it,its,like,more,most,near,not,now,of,off,on,once,one,only,or,other,our,out,over,same,she,should,so,some,than,that,the,their,them,then,there,these,they,this,those,through,to,under,until,up,very,via,was,we,were,what,when,where,which,while,who,whom,why,with,you,your').split(','));
+
+    function textFromMarkdown(md){
+      return String(md)
+        .replace(/\[\[[^\]]+\]\]/g,' ')
+        .replace(/!\[[^\]]*\]\([^)]+\)/g,' ')
+        .replace(/\[(.*?)\]\([^)]+\)/g,'$1')
+        .replace(/^>\s?/gm,'')
+        .replace(/[#*_`>~-]/g,' ')
+        .replace(/\s+/g,' ')
+        .trim();
+    }
+
+    function suggestSeoFromBody(){
+      const body = $('#body').value;
+      const txt = textFromMarkdown(body);
+      if(!txt) return '';
+      // Prefer the first sentence; fallback to 180 chars
+      let s = txt.split(/(?<=\.)\s+/)[0] || txt.slice(0,180);
+      s = s.slice(0, 180);
+      return s.length > 160 ? s.slice(0,157) + '…' : s;
+    }
+
+    function keywordSuggest(n=8){
+      const body = $('#body').value;
+      const txt = textFromMarkdown(body).toLowerCase();
+      const words = txt.match(/[a-z0-9\-’']+/g)||[];
+      const freq = new Map();
+      for(const w of words){
+        const t = w.replace(/[’']/g,"'");
+        if(t.length<3 || STOP.has(t)) continue;
+        freq.set(t, (freq.get(t)||0)+1);
+      }
+      const ranked = [...freq.entries()].sort((a,b)=>b[1]-a[1]).slice(0, n).map(x=>x[0]);
+      return ranked.join(', ');
+    }
+
+    function llmSummarizeSentences(maxSents=5){
+      // simple extractive summary: score sentences by term frequency
+      const body = $('#body').value;
+      const raw = textFromMarkdown(body);
+      const sents = raw.split(/(?<=[.!?])\s+/).filter(Boolean);
+      if(!sents.length) return '';
+      const freq = new Map();
+      const allWords = raw.toLowerCase().match(/[a-z0-9\-’']+/g)||[];
+      for(const w of allWords){
+        const t = w.replace(/[’']/g,"'");
+        if(t.length<3 || STOP.has(t)) continue;
+        freq.set(t,(freq.get(t)||0)+1);
+      }
+      function score(sent){
+        const toks = (sent.toLowerCase().match(/[a-z0-9\-’']+/g)||[]).map(w=>w.replace(/[’']/g,"'"));
+        return toks.reduce((acc,w)=> acc + (STOP.has(w)||w.length<3?0:(freq.get(w)||0)), 0) / (toks.length||1);
+      }
+      const ranked = sents.map((s,i)=>({s,i,score:score(s)}))
+                          .sort((a,b)=> b.score - a.score || a.i - b.i)
+                          .slice(0, maxSents)
+                          .sort((a,b)=> a.i - b.i)
+                          .map(x=>x.s.trim());
+      return ranked.join(' ');
+    }
+
+    $('#btnSuggestSeo').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const s = suggestSeoFromBody();
+      if(s){ $('#seo').value = s; }
+    });
+
+    $('#btnSuggestKeywords').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const k = keywordSuggest();
+      if(k){ $('#tags').value = k; }
+    });
+
+    $('#btnLlmSummary').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const s = llmSummarizeSentences(5);
+      if(s){ $('#llmSummary').value = s; }
+    });
+
+    // === Markdown + shortcodes renderer (enhanced) ===
     function escapeHtml(s=''){ return s.replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
 
-    function renderMarkdown(md){
-      // Replace media placeholders first: [[image:slug]] / [[video:slug]]
-      md = md.replace(/\[\[(image|video):([a-z0-9\-_.]+)\]\]/gi, (_, kind, slug)=>{
+    function renderMarkdown(md=''){
+      md = String(md||'');
+
+      // Media library short-codes: [[image:slug]] / [[video:slug]]
+      md = md.replace(/\[\[\s*(image|video)\s*:\s*([a-z0-9\-_.]+)\s*\]\]/gi, (_, kind, slug)=>{
         const item = state.media.find(m=>m.slug===slug);
         if(!item) return `<em class="subtle">(Missing ${kind}:${slug})</em>`;
         if(kind.toLowerCase()==='image' || item.type==='image'){
@@ -249,8 +401,7 @@ Or a raw MP4: [[video:promo-clip]]
         const isYouTube = /youtu\.be|youtube\.com/.test(item.url);
         let embed='';
         if(isYouTube){
-          // Extract ID
-          const idMatch = item.url.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{6,})/);
+          const idMatch = item.url.match(/(?:[?&]v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{6,})/);
           const vid = idMatch? idMatch[1] : '';
           embed = `<div class="video"><iframe src="https://www.youtube.com/embed/${vid}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
         } else {
@@ -261,33 +412,72 @@ Or a raw MP4: [[video:promo-clip]]
         return `<figure>${embed}${cap}</figure>`;
       });
 
-      // Convert Markdown images: ![alt](url "caption") → <figure><img ...><figcaption>caption</figcaption></figure>
+      // Markdown images
       md = md.replace(/!\[(.*?)\]\((\S+?)(?:\s+"([^"]+)")?\)/g, (_, alt, url, cap)=>{
         const capHtml = cap? `<figcaption>${escapeHtml(cap)}</figcaption>`:'';
         return `<figure><img src="${url}" alt="${escapeHtml(alt)}">${capHtml}</figure>`;
       });
 
+      // Headings short-code [[h: Title]] → <h2>
+      md = md.replace(/^\s*\[\[\s*h\s*:\s*(.+?)\s*\]\]\s*$/gim, '<h2>$1</h2>');
+
       // Headings ## / ###
-      md = md.replace(/^###\s+(.+)$/gm, '<h3>$1<\/h3>');
-      md = md.replace(/^##\s+(.+)$/gm, '<h2>$1<\/h2>');
+      md = md.replace(/^###\s+(.+)$/gm, '<h3>$1</h3>');
+      md = md.replace(/^##\s+(.+)$/gm, '<h2>$1</h2>');
+
+      // Horizontal rule --- (single line)
+      md = md.replace(/^\s*---\s*$/gm, '<hr class="hr-soft">');
+
+      // Pull-quotes short-code [[quote: text — name]] (name optional)
+      md = md.replace(/\[\[\s*quote\s*:\s*([\s\S]+?)\s*\]\]/gi, (_, raw)=>{
+        let text = String(raw).trim();
+        let cite = '';
+        const m = text.match(/^(.*?)(?:\s*[—-]\s*(.+))?$/);
+        if (m){ text = (m[1]||'').trim(); cite = (m[2]||'').trim(); }
+        if ((text.startsWith('"') && text.endsWith('"')) || (text.startsWith('“') && text.endsWith('”'))) {
+          text = text.slice(1,-1);
+        }
+        return `<figure class="pullquote"><blockquote>${escapeHtml(text)}</blockquote>${cite?`<figcaption>— ${escapeHtml(cite)}</figcaption>`:''}</figure>`;
+      });
+
+      // Markdown blockquote lines starting with ">"
+      md = md.replace(/(^|\n)>([^\n]+(?:\n>[^\n]+)*)/g, (m, lead, block)=>{
+        const text = block.split(/\n/).map(l=>l.replace(/^>\s?/, '')).join(' ').trim();
+        return `${lead}<figure class="pullquote"><blockquote>${escapeHtml(text)}</blockquote></figure>`;
+      });
+
+      // Auto-embed raw video lines (YouTube or MP4/WebM/Ogg)
+      md = md.replace(/^(https?:\/\/\S+)\s*$/gm, (m, url)=>{
+        const s = String(url);
+        const you = s.match(/(?:[?&]v=|youtu\.be\/|youtube\.com\/watch\?v=|embed\/)([A-Za-z0-9_-]{6,})/i);
+        if (you){
+          const vid = you[1];
+          return `<figure><div class="video"><iframe src="https://www.youtube.com/embed/${vid}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></figure>`;
+        }
+        if (/\.(mp4|webm|ogg)(\?|#|$)/i.test(s)){
+          return `<figure><div class="video"><video controls src="${s}"></video></div></figure>`;
+        }
+        return m;
+      });
 
       // Simple lists: lines starting with '- '
       md = md.replace(/(^|\n)(-\s.+(?:\n-\s.+)*)/g, (m, lead, block)=>{
-        const items = block.split(/\n/).map(l=>l.replace(/^-\s+/, '').trim()).map(t=>`<li>${t}<\/li>`).join('');
-        return `${lead}<ul>${items}<\/ul>`;
+        const items = block.split(/\n/).map(l=>l.replace(/^-\s+/, '').trim()).map(t=>`<li>${t}</li>`).join('');
+        return `${lead}<ul>${items}</ul>`;
       });
 
       // Paragraphs: split on blank lines; avoid wrapping existing block elements
       const blocks = md.split(/\n\s*\n/).map(chunk=>{
         const trimmed = chunk.trim();
         if(!trimmed) return '';
-        if(/^<\/?(h2|h3|figure|ul|ol|blockquote|div|table|iframe|video)/i.test(trimmed)) return trimmed;
-        return `<p>${trimmed}<\/p>`;
+        if(/^<\/?(h2|h3|figure|ul|ol|blockquote|div|table|iframe|video|hr)/i.test(trimmed)) return trimmed;
+        return `<p>${trimmed}</p>`;
       });
       let html = blocks.join('\n');
 
-      // Inline bold/italic
-      html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1<\/strong>').replace(/\*(.+?)\*/g, '<em>$1<\/em>');
+      // Inline bold/italic (order: bold then italic)
+      html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                 .replace(/\*(.+?)\*/g, '<em>$1</em>');
 
       return html;
     }
@@ -297,15 +487,76 @@ Or a raw MP4: [[video:promo-clip]]
       return words.filter(Boolean).length;
     }
 
+    function buildMeta(){
+      if($('#optAutoSeo').checked && !$('#seo').value.trim()){
+        const s = suggestSeoFromBody();
+        if(s) $('#seo').value = s;
+      }
+      return {
+        title: $('#title').value.trim(),
+        author: $('#author').value.trim(),
+        date: $('#date').value,
+        seo: $('#seo').value.trim(),
+        hero: $('#hero').value.trim(),
+        social: $('#social').value.trim(),
+        siteName: $('#siteName').value.trim(),
+        canonical: $('#canonical').value.trim(),
+        robots: $('#robots').value.trim(),
+        twitterSite: $('#twitterSite').value.trim(),
+        tags: $('#tags').value.split(',').map(s=>s.trim()).filter(Boolean),
+        orgName: $('#orgName').value.trim(),
+        orgLogo: $('#orgLogo').value.trim(),
+        includeOrg: $('#optOrgLd').checked,
+        includeCrumbs: $('#optBreadcrumbs').checked
+      };
+    }
+
     function templateArticleHTML(meta, bodyHTML){
       const ogImg = meta.social || meta.hero || '';
       const wordCount = computeWordCount(bodyHTML.replace(/<[^>]+>/g,' '));
-      const jsonLd = {
-        '@context':'https://schema.org', '@type':'Article',
-        headline: meta.title, author: meta.author, datePublished: meta.date,
-        image: ogImg, wordCount: String(wordCount)
+      const articleLd = {
+        '@context':'https://schema.org',
+        '@type':'Article',
+        headline: meta.title,
+        author: meta.author || undefined,
+        datePublished: meta.date || undefined,
+        image: ogImg || undefined,
+        wordCount: String(wordCount)
       };
-      const ld = JSON.stringify(jsonLd).replace(/<\//g,'<\\/');
+      if(meta.includeOrg && meta.orgName){
+        articleLd.publisher = {
+          '@type':'Organization',
+          name: meta.orgName,
+          logo: meta.orgLogo ? {'@type':'ImageObject', url: meta.orgLogo} : undefined
+        };
+      }
+
+      const ldGraph = [articleLd];
+      if(meta.includeOrg && meta.orgName){
+        ldGraph.push({
+          '@context':'https://schema.org',
+          '@type':'Organization',
+          name: meta.orgName,
+          logo: meta.orgLogo || undefined
+        });
+      }
+      if(meta.includeCrumbs){
+        ldGraph.push({
+          '@context':'https://schema.org',
+          '@type':'BreadcrumbList',
+          itemListElement: [
+            { '@type':'ListItem', position:1, name:'Home', item:'https://bonitaesterorealtors.com/' },
+            { '@type':'ListItem', position:2, name:'BER News', item:'https://www.bonitaesterorealtors.com/ber-news-home/' },
+            { '@type':'ListItem', position:3, name:meta.title, item: meta.canonical || undefined }
+          ]
+        });
+      }
+      const ld = JSON.stringify(ldGraph).replace(/<\//g,'<\\/');
+
+      const tagMeta = (meta.tags||[]).map(t=>`<meta property="article:tag" content="${escapeHtml(t)}" />`).join('\n  ');
+
+      // Pre-compute hero CSS to avoid nested template strings
+      const heroBg = meta.hero ? "url('"+meta.hero+"') center/cover no-repeat" : '#111';
 
       return `<!DOCTYPE html>
 <html lang="en">
@@ -318,24 +569,30 @@ Or a raw MP4: [[video:promo-clip]]
   <meta name="title" content="${escapeHtml(meta.title)}" />
   <meta name="description" content="${escapeHtml(meta.seo||'')}" />
   <meta name="author" content="${escapeHtml(meta.author||'')}" />
+  <meta name="robots" content="${escapeHtml(meta.robots||'index,follow')}" />
+  ${meta.canonical? `<link rel="canonical" href="${meta.canonical}" />` : ''}
   <meta property="og:title" content="${escapeHtml(meta.title)}" />
   <meta property="og:description" content="${escapeHtml(meta.seo||'')}" />
   <meta property="og:type" content="article" />
-  ${ogImg? `<meta property=\"og:image\" content=\"${ogImg}\" />`: ''}
-  <meta property="og:author" content="${escapeHtml(meta.author||'')}" />
+  ${ogImg? `<meta property="og:image" content="${ogImg}" />`: ''}
+  ${meta.siteName? `<meta property="og:site_name" content="${escapeHtml(meta.siteName)}" />` : ''}
+  ${meta.date? `<meta property="article:published_time" content="${escapeHtml(meta.date)}" />` : ''}
+  ${tagMeta}
+  ${meta.twitterSite? `<meta name="twitter:site" content="${escapeHtml(meta.twitterSite)}" />` : ''}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(meta.title)}" />
   <meta name="twitter:description" content="${escapeHtml(meta.seo||'')}" />
-  ${ogImg? `<meta name=\"twitter:image\" content=\"${ogImg}\" />`: ''}
+  ${ogImg? `<meta name="twitter:image" content="${ogImg}" />`: ''}
   <script type="application/ld+json">${ld}<\/script>
   <style>
     :root{ --line:#e5e7eb; --ink:#0f172a; --muted:#475569; --secondary:#188bf6 }
     html,body{margin:0;padding:0}
     body{font-family:'Lato',sans-serif; color:var(--ink); line-height:1.55}
     a{color:var(--secondary); text-decoration:none} a:hover{text-decoration:underline}
-    header.hero{background:${meta.hero? `url('${meta.hero}') center/cover no-repeat` : '#111'}; min-height:360px; display:flex; align-items:flex-end; padding:24px}
+    header.hero{background:${heroBg}; min-height:360px; display:flex; align-items:flex-end; padding:24px}
     header.hero h1{background:rgba(255,255,255,.94); padding:12px 16px; border-radius:10px; font-family:'Montserrat',sans-serif; font-weight:700; max-width:1100px}
     main{padding:20px}
+    #main{margin-top:-16px;} /* keep consistent with live site tweak */
     .wrapper{max-width:1100px; margin:auto}
     .byline{font-size:.95rem; color:#444}
     h2,h3{font-family:'Montserrat',sans-serif; font-weight:600; margin-top:1.5rem}
@@ -345,6 +602,13 @@ Or a raw MP4: [[video:promo-clip]]
     figcaption{font-size:.9rem; color:#444; margin-top:.4rem}
     .video{position:relative; width:100%; padding-top:56.25%; background:#000; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.08)}
     .video iframe,.video video{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .pullquote{margin:1rem 0; border-left:4px solid var(--secondary); padding:12px 16px; background:#f8fafc; border-radius:10px; text-align:left}
+    .pullquote blockquote{margin:0; font-size:1.15rem; line-height:1.4}
+    .pullquote figcaption{margin-top:.35rem; color:#64748b; font-weight:600}
+    .hr-soft{border:0; height:1px; background:var(--line); margin:16px 0}
+    .more{max-width:1100px; margin:0 auto 40px; padding:0 20px}
+    .more h2{font-family:'Montserrat',sans-serif; font-weight:600; margin-top:1.25rem}
+    .more a{text-decoration:underline}
   </style>
 </head>
 <body>
@@ -352,43 +616,51 @@ Or a raw MP4: [[video:promo-clip]]
     <header class="hero">
       <h1>${escapeHtml(meta.title)}</h1>
     </header>
-    <main>
+    <main id="main">
       <p class="byline"><em>Author: ${escapeHtml(meta.author||'')} • Published ${escapeHtml(meta.date||'')}</em></p>
       ${bodyHTML}
     </main>
+  </div>
+
+  <div class="more">
+    <hr>
+    <h2>More Real Estate News</h2>
+    <a href="https://www.bonitaesterorealtors.com/ber-news-home/">Click Here</a>
   </div>
 </body>
 </html>`;
     }
 
-    function buildMeta(){
-      return {
-        title: $('#title').value.trim(),
-        author: $('#author').value.trim(),
-        date: $('#date').value,
-        seo: $('#seo').value.trim(),
-        hero: $('#hero').value.trim(),
-        social: $('#social').value.trim(),
-      };
-    }
-
     function renderPreview(){
       const meta = buildMeta();
-      const bodyHTML = renderMarkdown($('#body').value);
-      const heroStyle = meta.hero ? `style=\"background-image:url('${meta.hero}')\"` : '';
-      const html = `
+      let bodySrc = $('#body').value;
+      const llmText = $('#llmSummary').value.trim();
+      if($('#optLlmBlock').checked && llmText){
+        bodySrc = `## Summary\n${llmText}\n\n` + bodySrc;
+      }
+
+      const bodyHTML = renderMarkdown(bodySrc);
+      const heroStyle = meta.hero ? 'style="background-image:url(\''+meta.hero+'\')"' : '';
+      const article = `
         <article class="article">
           <header class="hero" ${heroStyle}>
             <h1>${escapeHtml(meta.title||'Untitled')}</h1>
           </header>
-          <main class="wrapper">
+          <main id="main" class="wrapper">
             <p class="byline"><em>Author: ${escapeHtml(meta.author||'')} • Published ${escapeHtml(meta.date||'')}</em></p>
             ${bodyHTML}
             <p class="footer-note">Generated with the Article → Webpage Builder. Publish this as a standalone HTML page.</p>
           </main>
         </article>
       `;
-      $('#preview').innerHTML = html;
+      const moreBlock = `
+        <div class="more">
+          <hr>
+          <h2>More Real Estate News</h2>
+          <a href="https://www.bonitaesterorealtors.com/ber-news-home/">Click Here</a>
+        </div>
+      `;
+      $('#preview').innerHTML = article + moreBlock;
       window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});
     }
 
@@ -402,7 +674,13 @@ Or a raw MP4: [[video:promo-clip]]
 
     function exportHtml(){
       const meta = buildMeta();
-      const bodyHTML = renderMarkdown($('#body').value);
+      let bodySrc = $('#body').value;
+      const llmText = $('#llmSummary').value.trim();
+      if($('#optLlmBlock').checked && llmText){
+        bodySrc = `## Summary\n${llmText}\n\n` + bodySrc;
+      }
+
+      const bodyHTML = renderMarkdown(bodySrc);
       const full = templateArticleHTML(meta, bodyHTML);
       const fname = slugify(meta.title||'article') + '.html';
       downloadFile(fname, full);
@@ -411,7 +689,7 @@ Or a raw MP4: [[video:promo-clip]]
     $('#previewBtn').addEventListener('click', (e)=>{ e.preventDefault(); renderPreview(); });
     $('#downloadBtn').addEventListener('click', (e)=>{ e.preventDefault(); exportHtml(); });
 
-    // === Example loader for your provided July 2025 article ===
+    // === Example loader
     $('#loadExample').addEventListener('click', (e)=>{
       e.preventDefault();
       $('#title').value = 'July 2025 SWFL Housing Market: Bonita-Estero vs Naples vs Fort Myers';
@@ -420,8 +698,13 @@ Or a raw MP4: [[video:promo-clip]]
       $('#seo').value = 'Compare July 2025 trends across Bonita Springs-Estero, Naples, and Fort Myers. Inventory is up, prices level off, and buyers gain options across SW Florida.';
       $('#hero').value = 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop';
       $('#social').value = 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop';
+      $('#siteName').value = 'Bonita Springs-Estero REALTORS®';
+      $('#canonical').value = 'https://bonitaesterorealtors.com/example/july-2025-market/';
+      $('#twitterSite').value = '@BonitaEsteroREALTORS';
+      $('#tags').value = 'Bonita Springs, Estero, Naples, SWFL, housing market, inventory, median price';
+      $('#orgName').value = 'Bonita Springs-Estero REALTORS®';
+      $('#orgLogo').value = 'https://bonitaesterorealtors.com/wp-content/uploads/BER-logo.png';
 
-      // Preload media matching your live page examples
       state.media = [
         { slug:'bonita-snapshot', type:'image', url:'https://bonitaesterorealtors.com/wp-content/uploads/2025/08/46.png', alt:'Bonita Springs-Estero July 2025 market snapshot', caption:'Bonita Springs-Estero: Closed sales +18%, pending +36.5%, median $495K (-11.6%), inventory +21.4%.' },
         { slug:'naples-snapshot', type:'image', url:'https://bonitaesterorealtors.com/wp-content/uploads/2025/08/45.png', alt:'Naples July 2025 market snapshot', caption:'Naples: Median $570K (0% YoY), pending +23.9%, inventory +12.8%, closed sales +0.2%.' },
@@ -465,10 +748,9 @@ In **Fort Myers**, higher rates weighed more on pricing, pushing the median down
 
 *Overall, July 2025 marks a return to normalcy across Bonita Springs-Estero, Naples, and Fort Myers. Inventory is higher, prices are steady to slightly lower, and both sides of the table have workable paths to success.*
 
-**Sources:** Bonita Springs-Estero REALTORS® July 2025 Market Report; Naples Area & Fort Myers market snapshots; internal MLS trend estimates used for charts.
-
-## More Real Estate News
-[Click here](https://bonitaesterorealtors.com/ber-news-home/)`;
+**Sources:** Bonita Springs-Estero REALTORS® July 2025 Market Report; Naples Area & Fort Myers market snapshots; internal MLS trend estimates used for charts.`;
+      renderMediaTable();
+      $('#llmSummary').value = llmSummarizeSentences(4);
       renderPreview();
     });
   </script>

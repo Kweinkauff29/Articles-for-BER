@@ -1,131 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BER News — Latest</title>
-  <meta name="description" content="Bonita Springs-Estero REALTORS® news hub. Market updates, features, reviews, and insights."/>
+  <meta name="description"
+    content="Bonita Springs-Estero REALTORS® news hub. Market updates, features, reviews, and insights." />
 
   <!-- Fonts similar to TWIVG vibe: condensed display + clean sans body -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       /* Updated to match BER logo palette */
-      --brand:#03AAE1;      /* aqua/teal primary */
-      --brand-ink:#0CA7A4;  /* deep teal for hover/accents */
-      --accent:#FBAE24;     /* sun yellow/orange */
-      --ink:#0b1220;        /* text */
-      --muted:#525a6a;      /* muted */
-      --bg:#ffffff;         /* page */
-      --line:#e5e7eb;       /* borders */
-      --chip:#EAF9FD;       /* category chip bg (aqua tint) */
-      --radius:8px;
+      --brand: #03AAE1;
+      /* aqua/teal primary */
+      --brand-ink: #0CA7A4;
+      /* deep teal for hover/accents */
+      --accent: #FBAE24;
+      /* sun yellow/orange */
+      --ink: #0b1220;
+      /* text */
+      --muted: #525a6a;
+      /* muted */
+      --bg: #ffffff;
+      /* page */
+      --line: #e5e7eb;
+      /* borders */
+      --chip: #EAF9FD;
+      /* category chip bg (aqua tint) */
+      --radius: 8px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial; color:var(--ink); background:var(--bg)}
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Inter', system-ui, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--ink);
+      background: var(--bg)
+    }
 
     /* Header */
-    .site-header{position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--line)}
-    .wrap{max-width:1200px; margin:0 auto; padding:14px 16px}
-    .bar{display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand img{height:44px}
-    .brand h1{font-family:'Bebas Neue',sans-serif; letter-spacing:.5px; font-size:30px; margin:0}
-    nav a{color:#1f2937; text-decoration:none; margin:0 10px; font-weight:700}
-    nav a:hover{color:var(--brand)}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 16px
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .brand img {
+      height: 44px
+    }
+
+    .brand h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: .5px;
+      font-size: 30px;
+      margin: 0
+    }
+
+    nav a {
+      color: #1f2937;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 700
+    }
+
+    nav a:hover {
+      color: var(--brand)
+    }
 
     /* Hero */
-    .hero{position:relative; margin:20px auto; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line)}
-    .hero .media{position:relative; padding-top:44%; background:#000}
-@media (max-width:1024px){ .hero .media{padding-top:56%} .hero h2{font-size:44px} }
-@media (max-width:640px){ .hero .media{padding-top:62%} .hero h2{font-size:32px} }
-    .hero .media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.08)}
-    .hero .shade{position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.5) 40%, rgba(0,0,0,.9))}
-    .hero .content{position:absolute; inset:auto 0 0 0; padding:22px}
-    .chip{display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-ink); background:var(--chip); border:1px solid #CBEFF7; border-radius:999px; padding:6px 10px}
-    .hero h2{font-family:'Bebas Neue',sans-serif; font-size:56px; line-height:1; margin:10px 0 6px; color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.45)}
-    .meta{color:#f3f4f6; font-size:14px}
-    .hero p{color:#e5e7eb; max-width:860px; margin-top:8px}
-    .cta{display:inline-flex; align-items:center; gap:10px; margin-top:14px; background:var(--brand); border:none; color:#fff; font-weight:800; padding:12px 16px; border-radius:999px; cursor:pointer; text-decoration:none}
-    .cta:hover{background:var(--brand-ink)}
+    .hero {
+      position: relative;
+      margin: 20px auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line)
+    }
+
+    .hero .media {
+      position: relative;
+      padding-top: 44%;
+      background: #000
+    }
+
+    @media (max-width:1024px) {
+      .hero .media {
+        padding-top: 56%
+      }
+
+      .hero h2 {
+        font-size: 44px
+      }
+    }
+
+    @media (max-width:640px) {
+      .hero .media {
+        padding-top: 62%
+      }
+
+      .hero h2 {
+        font-size: 32px
+      }
+    }
+
+    .hero .media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.08)
+    }
+
+    .hero .shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, .9))
+    }
+
+    .hero .content {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 22px
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--brand-ink);
+      background: var(--chip);
+      border: 1px solid #CBEFF7;
+      border-radius: 999px;
+      padding: 6px 10px
+    }
+
+    .hero h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      line-height: 1;
+      margin: 10px 0 6px;
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .45)
+    }
+
+    .meta {
+      color: #f3f4f6;
+      font-size: 14px
+    }
+
+    .hero p {
+      color: #e5e7eb;
+      max-width: 860px;
+      margin-top: 8px
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      background: var(--brand);
+      border: none;
+      color: #fff;
+      font-weight: 800;
+      padding: 12px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none
+    }
+
+    .cta:hover {
+      background: var(--brand-ink)
+    }
 
     /* Top picks under hero */
-    .top-picks{display:grid; gap:16px; grid-template-columns:repeat(3, 1fr); margin-top:16px}
-@media (max-width: 1024px){ .top-picks{grid-template-columns:repeat(2,1fr)} }
-@media (max-width: 640px){ .top-picks{grid-template-columns:1fr} }
-    .pick{border:1px solid var(--line); border-radius:14px; overflow:hidden}
-    .pick .thumb{aspect-ratio:16/9; background:#000}
-    .pick .thumb img{width:100%; height:100%; object-fit:cover}
-    .pick .body{padding:12px}
-    .pick .kicker{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-ink); font-weight:900}
-    .pick h3{font-family:'Bebas Neue',sans-serif; font-size:28px; line-height:1.05; margin:6px 0}
-    .pick .meta{color:#64748b}
+    .top-picks {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 16px
+    }
+
+    @media (max-width: 1024px) {
+      .top-picks {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-picks {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .pick {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    .pick .thumb {
+      aspect-ratio: 16/9;
+      background: #000
+    }
+
+    .pick .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .pick .body {
+      padding: 12px
+    }
+
+    .pick .kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--brand-ink);
+      font-weight: 900
+    }
+
+    .pick h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      line-height: 1.05;
+      margin: 6px 0
+    }
+
+    .pick .meta {
+      color: #64748b
+    }
 
     /* Main grid */
-    .grid{display:grid; gap:20px; grid-template-columns:2fr 1fr; margin-top:24px}
-    @media (max-width: 960px){ .grid{grid-template-columns:1fr} .hero h2{font-size:40px} }
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 2fr 1fr;
+      margin-top: 24px
+    }
+
+    @media (max-width: 960px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero h2 {
+        font-size: 40px
+      }
+    }
 
     /* Latest list */
-    .section-title{font-family:'Bebas Neue',sans-serif; font-size:28px; display:flex; align-items:center; gap:10px; margin:8px 0}
-    .section-title::after{content:""; height:1px; background:linear-gradient(90deg,var(--accent),#ffd88a 60%, var(--line) 60%); flex:1}
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0
+    }
 
-    .filters{display:flex; flex-wrap:wrap; gap:10px; margin:4px 0 12px}
-    .filters input[type="search"]{flex:1 1 260px; padding:12px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; color:#111}
-    .pill{display:inline-flex; align-items:center; padding:10px 14px; border-radius:999px; background:#fff; color:#111; border:1px solid var(--line); cursor:pointer; font-weight:700; min-height:44px}
-    .pill.is-active, .pill:hover{background:var(--brand); color:#fff; border-color:transparent}
+    .section-title::after {
+      content: "";
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), #ffd88a 60%, var(--line) 60%);
+      flex: 1
+    }
 
-    .cards{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
-@media (max-width: 1024px){ .cards{grid-template-columns:repeat(2,1fr)} }
-@media (max-width: 640px){ .cards{grid-template-columns:1fr} }
-.card{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
-.card .thumb{aspect-ratio:16/9; background:#000}
-.card .thumb img{width:100%; height:100%; object-fit:cover; display:block}
-.card .body{padding:12px; display:flex; flex-direction:column; gap:6px}
-.card .kicker{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-ink); font-weight:900}
-.card h3{font-family:'Bebas Neue',sans-serif; font-size:28px; line-height:1.05; margin:4px 0}
-.card .excerpt{color:#3f4755; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.6em}
-.card .meta{color:#64748b; margin-top:2px}
-.card .readmore{display:inline-flex; gap:8px; align-items:center; margin-top:8px; padding:8px 10px; color:#fff; background:var(--brand); border-radius:8px; text-decoration:none; font-weight:800}
-.card .readmore:hover{background:var(--brand-ink)}
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 4px 0 12px
+    }
+
+    .filters input[type="search"] {
+      flex: 1 1 260px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #111
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      color: #111;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      font-weight: 700;
+      min-height: 44px
+    }
+
+    .pill.is-active,
+    .pill:hover {
+      background: var(--brand);
+      color: #fff;
+      border-color: transparent
+    }
+
+    .cards {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    @media (max-width: 1024px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden
+    }
+
+    .card .thumb {
+      aspect-ratio: 16/9;
+      background: #000
+    }
+
+    .card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .card .body {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .card .kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--brand-ink);
+      font-weight: 900
+    }
+
+    .card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      line-height: 1.05;
+      margin: 4px 0
+    }
+
+    .card .excerpt {
+      color: #3f4755;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.6em
+    }
+
+    .card .meta {
+      color: #64748b;
+      margin-top: 2px
+    }
+
+    .card .readmore {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 8px;
+      padding: 8px 10px;
+      color: #fff;
+      background: var(--brand);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800
+    }
+
+    .card .readmore:hover {
+      background: var(--brand-ink)
+    }
 
     /* Sidebar */
-    .sidebar .panel{background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px;}
-    .sidebar h4{font-family:'Bebas Neue',sans-serif; font-size:24px; margin:0 0 10px}
-    .trend{display:grid; grid-template-columns:86px 1fr; gap:10px; padding:8px 0; border-bottom:1px dashed #e2e8f0}
-    .trend:last-child{border-bottom:none}
-    .trend img{width:86px; height:56px; object-fit:cover; border-radius:8px}
-    .trend a{color:#0f172a; text-decoration:none; font-weight:800}
-    .trend a:hover{color:var(--brand)}
-    .cats a{display:inline-block; margin:6px 8px 0 0; padding:7px 10px; border-radius:999px; border:1px solid var(--line); text-decoration:none; color:#111; font-weight:700}
-    .cats a:hover{background:var(--brand); color:#fff; border-color:transparent}
+    .sidebar .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
 
-    footer{margin:36px 0 48px}
-    .more-news{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; text-align:center}
-    .more-news a{display:inline-block; margin-top:6px; background:var(--brand); color:#fff; font-weight:800; padding:10px 14px; border-radius:999px; text-decoration:none}
-    .more-news a:hover{background:var(--brand-ink)}
+    .sidebar h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      margin: 0 0 10px
+    }
+
+    .trend {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e2e8f0
+    }
+
+    .trend:last-child {
+      border-bottom: none
+    }
+
+    .trend img {
+      width: 86px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px
+    }
+
+    .trend a {
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 800
+    }
+
+    .trend a:hover {
+      color: var(--brand)
+    }
+
+    .cats a {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      color: #111;
+      font-weight: 700
+    }
+
+    .cats a:hover {
+      background: var(--brand);
+      color: #fff;
+      border-color: transparent
+    }
+
+    footer {
+      margin: 36px 0 48px
+    }
+
+    .more-news {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center
+    }
+
+    .more-news a {
+      display: inline-block;
+      margin-top: 6px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none
+    }
+
+    .more-news a:hover {
+      background: var(--brand-ink)
+    }
+
     /* Pagination */
-    .pager{display:inline-flex; gap:8px; flex-wrap:wrap; justify-content:center}
-    .page-btn{border:1px solid var(--line); background:#fff; padding:10px 14px; border-radius:8px; font-weight:800; cursor:pointer; min-width:44px; min-height:44px}
-    .page-btn.is-active{background:var(--brand); color:#fff; border-color:transparent}
-    .page-btn[disabled]{opacity:.5; cursor:not-allowed}
+    .pager {
+      display: inline-flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .page-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px
+    }
+
+    .page-btn.is-active {
+      background: var(--brand);
+      color: #fff;
+      border-color: transparent
+    }
+
+    .page-btn[disabled] {
+      opacity: .5;
+      cursor: not-allowed
+    }
   </style>
 </head>
+
 <body>
-  
+
 
   <main class="wrap">
     <!-- HERO (featured article) -->
     <section id="hero" class="hero" aria-label="Featured article" hidden>
-      <div class="media"><img id="heroImg" alt="" src=""/></div>
+      <div class="media"><img id="heroImg" alt="" src="" /></div>
       <div class="shade"></div>
       <div class="content">
         <span class="chip" id="heroCat">Featured</span>
         <h2 id="heroTitle"></h2>
         <div class="meta" id="heroMeta"></div>
         <p id="heroExcerpt"></p>
-        <a id="heroLink" class="cta" href="#" target="_blank" rel="noopener" aria-label="Read featured article">Read article →</a>
+        <a id="heroLink" class="cta" href="#" target="_blank" rel="noopener" aria-label="Read featured article">Read
+          article →</a>
       </div>
     </section>
 
@@ -137,7 +577,7 @@
       <div>
         <h3 id="latest" class="section-title">Latest</h3>
         <div class="filters">
-          <input id="q" type="search" placeholder="Search articles…"/>
+          <input id="q" type="search" placeholder="Search articles…" />
           <button class="pill is-active" data-cat="all">All</button>
           <button class="pill" data-cat="News">News</button>
           <button class="pill" data-cat="Feature">Features</button>
@@ -145,7 +585,9 @@
           <button class="pill" data-cat="Education">Education</button>
         </div>
         <div id="cards" class="cards" aria-live="polite"></div>
-        <div id="pagerWrap" style="text-align:center; margin-top:12px"><nav class="pager" id="pager" aria-label="Pagination"></nav></div>
+        <div id="pagerWrap" style="text-align:center; margin-top:12px">
+          <nav class="pager" id="pager" aria-label="Pagination"></nav>
+        </div>
       </div>
 
       <!-- SIDEBAR -->
@@ -162,18 +604,87 @@
           <h4>Subscribe</h4>
           <p class="muted">Get market updates & association news in your inbox.</p>
           <form action="https://bonitaesterorealtors.com/" onsubmit="return false">
-            <input type="email" placeholder="you@example.com" aria-label="Email" style="width:100%; padding:12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:#111; margin:8px 0 10px">
+            <input type="email" placeholder="you@example.com" aria-label="Email"
+              style="width:100%; padding:12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:#111; margin:8px 0 10px">
             <button class="cta" type="submit">Subscribe</button>
           </form>
         </div>
       </aside>
     </section>
 
-    
+
   </main>
 
   <!-- EASY: paste/edit articles in this JSON block. Mark one as featured:true -->
   <script id="articles-data" type="application/json">[
+
+    {
+      "title": "The Coconut Plantations of Bonita Springs & Estero — The Story Behind “Coconut Coast”",
+      "url": "https://bonitaesterorealtors.com/the-coconut-plantations-of-bonita-springs-estero-the-story-behind-coconut-coast/",
+      "date": "2025-12-18",
+      "image": "https://images.unsplash.com/photo-1452784444945-3f422708fe5e?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "From Bonita’s historic “Survey” coconut plantation to Estero Bay’s Coconut community, explore the roots of our region’s identity — and why we’re proposing Coconut Coast Organization of REALTORS®.",
+      "category": "Feature"
+    },
+
+    {
+      "title": "Introducing a New Perk for Top Producers – RPAC Major Investor",
+      "url": "https://bonitaesterorealtors.com/introducing-a-new-perk-for-top-producers-rpac-major-investor-bonita-springs-estero-realtors/",
+      "date": "2025-12-16",
+      "image": "https://bonitaesterorealtors.com/wp-content/uploads/2025/12/504881271_1284675620332712_2132634684181802333_n.jpg",
+      "excerpt": "A new BER Top Producers perk is here for RPAC Major Investors. Florida-first 2025 wins, national wins, plus Sales Excellence Awards application details.",
+      "category": "News"
+    },
+
+
+    
+
+    {
+      "title": "Southwest Florida Real Estate Market Update – November 2025 Trends & Outlook",
+      "url": "https://bonitaesterorealtors.com/southwest-florida-real-estate-market-update-november-2025-trends-outlook/",
+      "date": "2025-12-11",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      "excerpt": "Southwest Florida’s housing market evolved in November 2025—pending and closed sales outpacing last year, prices easing across Bonita/Estero, Naples and Fort Myers, inventory remaining high, and Fed rate cuts beginning to influence mortgage rates and buyer demand.",
+      "category": "Market Reports",
+      "featured": "true"
+    },
+
+    {
+      "title": "Southwest Florida Housing Market Recalibrates — December 2025 Economic Update",
+      "url": "https://bonitaesterorealtors.com/southwest-florida-housing-market-recalibrates-december-2025-economic-update/",
+      "date": "2025-12-02",
+      "image": "https://bonitaesterorealtors.com/wp-content/uploads/2025/12/FGCU-December.png",
+      "excerpt": "Using FGCU’s December 2025 Regional Economic Indicators, Bonita Springs-Estero REALTORS® explain how Southwest Florida’s housing market is shifting from recovery to recalibration—home prices leveling, inventory improving, and affordability pressures shaping buyer and seller decisions.",
+      "category": "Market Reports"
+    },
+
+    {
+      "title": "2026 Installation & Awards Banquet Recap — Bonita Springs-Estero REALTORS®",
+      "url": "https://bonitaesterorealtors.com/2026-installation-awards-banquet-recap/",
+      "date": "2025-11-26",
+      "image": "https://bonitaesterorealtors.com/wp-content/uploads/2025/10/BER-Invitation-5-x-10-in-scaled.png",
+      "excerpt": "Bonita Springs-Estero REALTORS® celebrated the 2026 Installation & Awards Banquet with the theme 'Give Back, Grow Forward.' View the 2025 'Of the Year' winners, meet the 2026 Board of Directors, and browse event highlights.",
+      "category": "Events & News"
+    },
+
+    {
+      "title": "Southwest Florida Real Estate Market Update – October 2025 Trends & Outlook",
+      "url": "https://bonitaesterorealtors.com/southwest-florida-real-estate-market-update-october-2025-trends-outlook/",
+      "date": "2025-11-20",
+      "image": "https://images.pexels.com/photos/1171545/pexels-photo-1171545.jpeg",
+      "excerpt": "Southwest Florida’s October 2025 housing snapshot shows closed and pending sales outpacing 2024, inventory building heading into high season, and recent Fed rate cuts supporting affordability and a positive 2026 outlook for buyers and sellers.",
+      "category": "Market & Economy"
+    },
+    
+
+    {
+      "title": "Is Southwest Florida’s Housing Market Heating Up? What FGCU’s November 2025 Data Really Reveals for Buyers & Sellers",
+      "url": "https://bonitaesterorealtors.com/is-southwest-floridas-housing-market-heating-up-what-fgcus-november-2025-data-really-reveals-for-buyers-sellers/",
+      "date": "2025-11-04",
+      "image": "https://bonitaesterorealtors.com/wp-content/uploads/2025/11/photo-1580611393703-51cd229abc46.avif",
+      "excerpt": "FGCU’s latest regional data shows Southwest Florida at a crossroads: tourism and airport traffic are up, but taxable sales and permits are slipping. Home sales are rising even as prices level off and inventory grows, giving buyers more options and sellers new competition.",
+      "category": "Market & Economy"
+    },
 
     {
       "title": "Florida’s #15 Global Ranking, NAR’s Fix List, and the Everglades Megaproject",
@@ -192,7 +703,7 @@
       "image": "https://images.pexels.com/photos/28914932/pexels-photo-28914932.jpeg",
       "excerpt": "FinCEN postponed its residential real estate reporting rule to March 1, 2026, giving the industry time to prepare. The rule targets all-cash home sales when the buyer is a business or trust. REALTORS® and homebuyers should plan ahead and stay informed.",
       "category": "Policy & Compliance",
-      "featured": "false"
+      "featured": "true"
     },
 
     {
@@ -294,22 +805,22 @@
 
   <script>
     // Auto-updating hero + top picks + latest when you add/edit items in #articles-data
-    const $ = (s, r=document)=>r.querySelector(s);
-    const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-    function parseData(){
-      try{ return JSON.parse($('#articles-data').textContent.trim()); }
-      catch(e){ console.error('Invalid JSON in #articles-data', e); return []; }
+    function parseData() {
+      try { return JSON.parse($('#articles-data').textContent.trim()); }
+      catch (e) { console.error('Invalid JSON in #articles-data', e); return []; }
     }
-    function fmtDate(iso){
-      const d = new Date(iso+'T12:00:00');
-      return d.toLocaleDateString(undefined,{year:'numeric', month:'long', day:'numeric'});
+    function fmtDate(iso) {
+      const d = new Date(iso + 'T12:00:00');
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
     }
-    function uniq(arr){ return [...new Set(arr)]; }
-    const keyOf = (a)=> a.url || a.title || String(Math.random());
+    function uniq(arr) { return [...new Set(arr)]; }
+    const keyOf = (a) => a.url || a.title || String(Math.random());
 
-    function setHero(article){
-      if(!article) return;
+    function setHero(article) {
+      if (!article) return;
       $('#heroImg').src = article.image || '';
       $('#heroTitle').textContent = article.title;
       $('#heroMeta').textContent = `${fmtDate(article.date)}`;
@@ -319,20 +830,20 @@
       $('#hero').hidden = false;
     }
 
-    function computeTops(all){
-      const sorted = [...all].sort((a,b)=> new Date(b.date) - new Date(a.date));
-      const featuredList = sorted.filter(a=>a.featured);
+    function computeTops(all) {
+      const sorted = [...all].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const featuredList = sorted.filter(a => a.featured);
       const hero = featuredList[0] || sorted[0];
-      const picks = sorted.filter(a=>a!==hero).slice(0,3);
+      const picks = sorted.filter(a => a !== hero).slice(0, 3);
       const topKeys = new Set([hero, ...picks].map(keyOf));
-      return {sorted, hero, picks, topKeys};
+      return { sorted, hero, picks, topKeys };
     }
 
-    function renderTopPicks(items){
-      const html = items.map(a=>`
+    function renderTopPicks(items) {
+      const html = items.map(a => `
         <article class="pick">
           <a href="${a.url}" target="_blank" rel="noopener" style="display:block" aria-label="Read ${a.title}">
-            <div class="thumb">${a.image? `<img loading="lazy" src="${a.image}" alt="">` : ''}</div>
+            <div class="thumb">${a.image ? `<img loading="lazy" src="${a.image}" alt="">` : ''}</div>
           </a>
           <div class="body">
             <div class="kicker">${a.category || ''}</div>
@@ -343,60 +854,60 @@
       $('#topPicks').innerHTML = html;
     }
 
-    function cardHTML(a){
+    function cardHTML(a) {
       return `
       <article class="card">
-        <a href="${a.url}" target="_blank" rel="noopener" class="thumb">${a.image? `<img loading="lazy" src="${a.image}" alt="">` : ''}</a>
+        <a href="${a.url}" target="_blank" rel="noopener" class="thumb">${a.image ? `<img loading="lazy" src="${a.image}" alt="">` : ''}</a>
         <div class="body">
-          <div class="kicker">${a.category||''}</div>
+          <div class="kicker">${a.category || ''}</div>
           <h3><a style="color:#0f172a; text-decoration:none" href="${a.url}" target="_blank" rel="noopener">${a.title}</a></h3>
-          <p class="excerpt">${a.excerpt||''}</p>
+          <p class="excerpt">${a.excerpt || ''}</p>
           <div class="meta">${fmtDate(a.date)}</div>
           <a class="readmore" href="${a.url}" target="_blank" rel="noopener" aria-label="Read ${a.title}">Read more →</a>
         </div>
       </article>`;
     }
 
-    function renderList(data){
+    function renderList(data) {
       const container = $('#cards');
       const pageSize = 9; // tiles per page (3x3)
       let page = 1;
-      function draw(){
+      function draw() {
         const total = data.length;
         const totalPages = Math.max(1, Math.ceil(total / pageSize));
-        if(page > totalPages) page = totalPages;
-        const start = (page-1)*pageSize;
+        if (page > totalPages) page = totalPages;
+        const start = (page - 1) * pageSize;
         const slice = data.slice(start, start + pageSize);
         container.innerHTML = slice.map(cardHTML).join('');
         renderPager(totalPages);
       }
-      function renderPager(totalPages){
+      function renderPager(totalPages) {
         const pager = $('#pager');
-        if(!pager) return;
-        if(totalPages <= 1){ pager.innerHTML=''; return; }
+        if (!pager) return;
+        if (totalPages <= 1) { pager.innerHTML = ''; return; }
         const parts = [];
-        parts.push(`<button class="page-btn prev" ${page===1?'disabled':''} data-nav="prev">← Prev</button>`);
-        for(let p=1;p<=totalPages;p++){
-          parts.push(`<button class="page-btn ${p===page?'is-active':''}" data-page="${p}">${p}</button>`);
+        parts.push(`<button class="page-btn prev" ${page === 1 ? 'disabled' : ''} data-nav="prev">← Prev</button>`);
+        for (let p = 1; p <= totalPages; p++) {
+          parts.push(`<button class="page-btn ${p === page ? 'is-active' : ''}" data-page="${p}">${p}</button>`);
         }
-        parts.push(`<button class="page-btn next" ${page===totalPages?'disabled':''} data-nav="next">Next →</button>`);
+        parts.push(`<button class="page-btn next" ${page === totalPages ? 'disabled' : ''} data-nav="next">Next →</button>`);
         pager.innerHTML = parts.join('');
-        pager.onclick = (e)=>{
+        pager.onclick = (e) => {
           const b = e.target.closest('button.page-btn');
-          if(!b) return;
-          if(b.dataset.page){ page = parseInt(b.dataset.page,10); }
-          else if(b.dataset.nav==='prev' && page>1){ page--; }
-          else if(b.dataset.nav==='next'){ const max = Math.ceil(data.length/pageSize); if(page<max) page++; }
+          if (!b) return;
+          if (b.dataset.page) { page = parseInt(b.dataset.page, 10); }
+          else if (b.dataset.nav === 'prev' && page > 1) { page--; }
+          else if (b.dataset.nav === 'next') { const max = Math.ceil(data.length / pageSize); if (page < max) page++; }
           draw();
-          window.scrollTo({top:$('#latest').offsetTop-10, behavior:'smooth'});
+          window.scrollTo({ top: $('#latest').offsetTop - 10, behavior: 'smooth' });
         };
       }
       draw();
     }
 
-    function renderTrending(data, topKeys){
-      const base = data.filter(a=>!topKeys.has(keyOf(a))).slice(0,5);
-      const t = base.map(a=>`
+    function renderTrending(data, topKeys) {
+      const base = data.filter(a => !topKeys.has(keyOf(a))).slice(0, 5);
+      const t = base.map(a => `
         <div class="trend">
           <img loading="lazy" src="${a.image}" alt="">
           <div>
@@ -407,30 +918,30 @@
       $('#trending').innerHTML = t;
     }
 
-    function renderCats(data){
-      const cats = uniq(data.map(a=>a.category).filter(Boolean));
-      const html = ['All', ...cats].map(c=>`<a href="#" data-cat="${c}">${c}</a>`).join('');
+    function renderCats(data) {
+      const cats = uniq(data.map(a => a.category).filter(Boolean));
+      const html = ['All', ...cats].map(c => `<a href="#" data-cat="${c}">${c}</a>`).join('');
       $('#cats').innerHTML = html;
-      $('#cats').addEventListener('click', (e)=>{
+      $('#cats').addEventListener('click', (e) => {
         const a = e.target.closest('a[data-cat]');
-        if(!a) return; e.preventDefault();
+        if (!a) return; e.preventDefault();
         const cat = a.dataset.cat;
         // Activate matching pill at top
-        $$('.pill').forEach(b=>{
-          if(b.dataset.cat.toLowerCase() === cat.toLowerCase() || (cat==='All' && b.dataset.cat==='all')) b.classList.add('is-active'); else b.classList.remove('is-active');
+        $$('.pill').forEach(b => {
+          if (b.dataset.cat.toLowerCase() === cat.toLowerCase() || (cat === 'All' && b.dataset.cat === 'all')) b.classList.add('is-active'); else b.classList.remove('is-active');
         });
         refresh();
-        window.scrollTo({top:$('#latest').offsetTop-20, behavior:'smooth'});
+        window.scrollTo({ top: $('#latest').offsetTop - 20, behavior: 'smooth' });
       });
     }
 
-    function applyFilters(list){
+    function applyFilters(list) {
       const q = $('#q').value.toLowerCase().trim();
       const active = $('.pill.is-active')?.dataset.cat || 'all';
-      return list.filter(a=>{
-        const inCat = active==='all' || (a.category||'').toLowerCase()===active.toLowerCase();
-        if(!inCat) return false;
-        if(!q) return true;
+      return list.filter(a => {
+        const inCat = active === 'all' || (a.category || '').toLowerCase() === active.toLowerCase();
+        if (!inCat) return false;
+        if (!q) return true;
         const hay = `${a.title} ${a.excerpt} ${a.category}`.toLowerCase();
         return hay.includes(q);
       });
@@ -439,12 +950,12 @@
     // GLOBAL-ish state (kept minimal)
     let STATE = { all: [], hero: null, picks: [], topKeys: new Set(), baseLatest: [] };
 
-    function hydrate(){
+    function hydrate() {
       const allRaw = parseData();
-      const all = allRaw.sort((a,b)=> new Date(b.date) - new Date(a.date));
-      const {sorted, hero, picks, topKeys} = computeTops(all);
+      const all = allRaw.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const { sorted, hero, picks, topKeys } = computeTops(all);
       STATE.all = sorted; STATE.hero = hero; STATE.picks = picks; STATE.topKeys = topKeys;
-      STATE.baseLatest = sorted.filter(a=> !topKeys.has(keyOf(a))); // exclude hero + top 3
+      STATE.baseLatest = sorted.filter(a => !topKeys.has(keyOf(a))); // exclude hero + top 3
 
       setHero(hero);
       renderTopPicks(picks);
@@ -453,15 +964,15 @@
       refresh();
     }
 
-    function refresh(){
+    function refresh() {
       const filtered = applyFilters(STATE.baseLatest);
       renderList(filtered);
     }
 
     // pill filters
-    function wireFilters(){
-      $$('.pill').forEach(btn=>btn.addEventListener('click',()=>{
-        $$('.pill').forEach(b=>b.classList.remove('is-active'));
+    function wireFilters() {
+      $$('.pill').forEach(btn => btn.addEventListener('click', () => {
+        $$('.pill').forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
         refresh();
       }));
@@ -474,12 +985,13 @@
 
     // Optional: live-update if the JSON block changes (e.g., via CMS injection)
     const src = $('#articles-data');
-    if(src){
-      let t; const reb = ()=>{ clearTimeout(t); t=setTimeout(hydrate,150); };
-      new MutationObserver(reb).observe(src,{childList:true, characterData:true, subtree:true});
+    if (src) {
+      let t; const reb = () => { clearTimeout(t); t = setTimeout(hydrate, 150); };
+      new MutationObserver(reb).observe(src, { childList: true, characterData: true, subtree: true });
     }
     // Usage: just paste a new object into #articles-data. The top hero + 3 picks become the newest
     // (or the newest with featured:true), and the Latest grid updates automatically without duplicates.
   </script>
 </body>
+
 </html>

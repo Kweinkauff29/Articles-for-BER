@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyberpunk Zombie Horde FPS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #020008;
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    #game {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background: #020008;
+    }
+
+    #overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: radial-gradient(circle at top, #ff00ff33, #020008 60%);
+      color: #f5f5f5;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    #overlay span {
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      opacity: 0.8;
+      margin-top: 0.75rem;
+    }
+
+    #hint {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .small-ui {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    CYBER HORDE
+    <span>CLICK TO ENTER THE NEON GRID</span>
+  </div>
+  <canvas id="game"></canvas>
+  <div id="hint">
+    WASD to move · Mouse/Arrows to look · Click to shoot · R to restart
+  </div>
+
+  <script>
+    (function () {
+      const canvas = document.getElementById("game");
+      const ctx = canvas.getContext("2d");
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      const overlay = document.getElementById("overlay");
+
+      let pointerLocked = false;
+
+      document.addEventListener("pointerlockchange", () => {
+        pointerLocked = document.pointerLockElement === canvas;
+      });
+
+      overlay.addEventListener("click", () => {
+        overlay.style.display = "none";
+        if (canvas.requestPointerLock) {
+          canvas.requestPointerLock();
+        }
+        // Start game loop if not started yet
+        if (!loopStarted) {
+          loopStarted = true;
+          lastTime = performance.now();
+          requestAnimationFrame(loop);
+        }
+      });
+
+      // GAME STATE
+      const player = {
+        x: 0,
+        y: 0,
+        angle: 0,
+        health: 100,
+      };
+
+      let zombies = [];
+      let wave = 0;
+      let zombiesPerWave = 5;
+      let score = 0;
+      let gameOver = false;
+      let damageFlash = 0;
+      let shootCooldown = 0;
+      let loopStarted = false;
+      let lastTime = performance.now();
+
+      const keys = {};
+
+      document.addEventListener("keydown", (e) => {
+        keys[e.code] = true;
+        if (e.code === "KeyR" && gameOver) {
+          resetGame();
+        }
+      });
+
+      document.addEventListener("keyup", (e) => {
+        keys[e.code] = false;
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (pointerLocked && !gameOver) {
+          const sensitivity = 0.0025;
+          player.angle += e.movementX * sensitivity;
+        }
+      });
+
+      document.addEventListener("mousedown", (e) => {
+        if (e.button === 0) {
+          shoot();
+        }
+      });
+
+      function resetGame() {
+        player.x = 0;
+        player.y = 0;
+        player.angle = 0;
+        player.health = 100;
+        score = 0;
+        wave = 0;
+        zombiesPerWave = 5;
+        zombies = [];
+        damageFlash = 0;
+        shootCooldown = 0;
+        gameOver = false;
+        startNextWave();
+      }
+
+      function startNextWave() {
+        wave += 1;
+        for (let i = 0; i < zombiesPerWave; i++) {
+          spawnZombie();
+        }
+        zombiesPerWave += 2;
+      }
+
+      function spawnZombie() {
+        const angle = Math.random() * Math.PI * 2;
+        const radius = 30 + Math.random() * 40;
+        const zx = player.x + Math.cos(angle) * radius;
+        const zy = player.y + Math.sin(angle) * radius;
+        const baseSpeed = 3 + Math.random() * 2 + wave * 0.15;
+        zombies.push({
+          x: zx,
+          y: zy,
+          health: 100,
+          maxHealth: 100,
+          attackTimer: 1,
+          speed: baseSpeed,
+        });
+      }
+
+      function shoot() {
+        if (gameOver) return;
+        if (shootCooldown > 0) return;
+        shootCooldown = 0.2; // seconds
+        const FOV_SHOOT = 0.12; // radians (narrow cone)
+        let bestIndex = -1;
+        let bestDist = Infinity;
+
+        for (let i = 0; i < zombies.length; i++) {
+          const z = zombies[i];
+          const dx = z.x - player.x;
+          const dy = z.y - player.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist > 60) continue;
+
+          const angleTo = Math.atan2(dy, dx);
+          let rel = angleTo - player.angle;
+          while (rel > Math.PI) rel -= Math.PI * 2;
+          while (rel < -Math.PI) rel += Math.PI * 2;
+
+          if (Math.abs(rel) < FOV_SHOOT) {
+            if (dist < bestDist) {
+              bestDist = dist;
+              bestIndex = i;
+            }
+          }
+        }
+
+        if (bestIndex >= 0) {
+          const z = zombies[bestIndex];
+          z.health -= 50; // damage per shot
+          score += 10;
+          if (z.health <= 0) {
+            zombies.splice(bestIndex, 1);
+            score += 90; // bonus for kill
+          }
+        }
+      }
+
+      function update(dt) {
+        if (!gameOver) {
+          // Movement
+          const moveSpeed = 15;
+          let moveX = 0;
+          let moveY = 0;
+
+          if (keys["KeyW"] || keys["ArrowUp"]) {
+            moveX += Math.cos(player.angle) * moveSpeed * dt;
+            moveY += Math.sin(player.angle) * moveSpeed * dt;
+          }
+          if (keys["KeyS"] || keys["ArrowDown"]) {
+            moveX -= Math.cos(player.angle) * moveSpeed * dt;
+            moveY -= Math.sin(player.angle) * moveSpeed * dt;
+          }
+          if (keys["KeyA"]) {
+            moveX += Math.cos(player.angle - Math.PI / 2) * moveSpeed * dt;
+            moveY += Math.sin(player.angle - Math.PI / 2) * moveSpeed * dt;
+          }
+          if (keys["KeyD"]) {
+            moveX += Math.cos(player.angle + Math.PI / 2) * moveSpeed * dt;
+            moveY += Math.sin(player.angle + Math.PI / 2) * moveSpeed * dt;
+          }
+
+          player.x += moveX;
+          player.y += moveY;
+
+          // Arrow keys also turn
+          const turnSpeed = 1.5;
+          if (keys["ArrowLeft"]) player.angle -= turnSpeed * dt;
+          if (keys["ArrowRight"]) player.angle += turnSpeed * dt;
+
+          // Cooldowns
+          if (shootCooldown > 0) shootCooldown -= dt;
+          if (shootCooldown < 0) shootCooldown = 0;
+          if (damageFlash > 0) damageFlash -= dt;
+          if (damageFlash < 0) damageFlash = 0;
+
+          // Waves
+          if (zombies.length === 0) {
+            startNextWave();
+          }
+
+          // Update zombies
+          const attackRange = 1.6;
+          const damagePerHit = 10;
+
+          zombies.forEach((z) => {
+            const dx = player.x - z.x;
+            const dy = player.y - z.y;
+            const dist = Math.hypot(dx, dy);
+
+            // Move toward player
+            if (dist > 0.001) {
+              const dirX = dx / dist;
+              const dirY = dy / dist;
+              z.x += dirX * z.speed * dt;
+              z.y += dirY * z.speed * dt;
+            }
+
+            // Attack
+            z.attackTimer -= dt;
+            if (dist < attackRange && z.attackTimer <= 0) {
+              player.health -= damagePerHit;
+              if (player.health < 0) player.health = 0;
+              z.attackTimer = 1.0;
+              damageFlash = 0.2;
+              if (player.health <= 0) {
+                gameOver = true;
+              }
+            }
+          });
+        }
+      }
+
+      function render() {
+        const w = canvas.width;
+        const h = canvas.height;
+        const horizonY = h * 0.6;
+        const FOV = Math.PI / 2; // 90 degrees
+
+        // Background: neon cyberpunk sky
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, "#050014");
+        grad.addColorStop(0.3, "#240047");
+        grad.addColorStop(0.6, "#02020d");
+        grad.addColorStop(1, "#000308");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Neon skyline blocks
+        for (let i = 0; i < 16; i++) {
+          const bw = w / 16;
+          const bx = i * bw;
+          const bh = (Math.sin(i * 1.3) * 0.2 + 0.7) * (h * 0.25);
+          ctx.fillStyle = i % 2 === 0 ? "#0ff2" : "#f0f2";
+          ctx.fillRect(bx, horizonY - bh, bw * 0.9, bh);
+        }
+
+        // Ground grid (perspective-ish)
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(0, horizonY, w, h - horizonY);
+        ctx.clip();
+
+        // Horizontal grid lines
+        ctx.strokeStyle = "#0ff3";
+        ctx.lineWidth = 1;
+        for (let i = 1; i <= 18; i++) {
+          const t = i / 18;
+          const y = horizonY + (t * t) * (h - horizonY);
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
+
+        // Vertical grid lines
+        for (let i = -10; i <= 10; i++) {
+          const x = w / 2 + (i / 10) * w;
+          ctx.beginPath();
+          ctx.moveTo(x, horizonY);
+          ctx.lineTo(w / 2, h);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+
+        // Project zombies into "first-person" view
+        const visible = [];
+        for (let i = 0; i < zombies.length; i++) {
+          const z = zombies[i];
+          const dx = z.x - player.x;
+          const dy = z.y - player.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 0.5) continue; // too close / behind camera fudge
+
+          const angleTo = Math.atan2(dy, dx);
+          let rel = angleTo - player.angle;
+          while (rel > Math.PI) rel -= Math.PI * 2;
+          while (rel < -Math.PI) rel += Math.PI * 2;
+
+          if (Math.abs(rel) > FOV / 2) continue; // outside FOV
+
+          visible.push({
+            zombie: z,
+            dist,
+            rel,
+          });
+        }
+
+        // Draw farthest first
+        visible.sort((a, b) => b.dist - a.dist);
+
+        visible.forEach((obj) => {
+          const z = obj.zombie;
+          const dist = obj.dist;
+          const rel = obj.rel;
+
+          const baseSize = h * 0.9;
+          let spriteH = baseSize / dist;
+          spriteH = Math.min(spriteH, h * 2);
+          const spriteW = spriteH * 0.4;
+
+          const screenX =
+            w / 2 + (rel / (FOV / 2)) * (w / 2 - spriteW * 0.5);
+          const screenY = horizonY - spriteH;
+
+          // Body
+          const alpha = Math.max(0.2, Math.min(1, 6 / dist));
+          ctx.fillStyle = `rgba(0, 255, 140, ${alpha})`;
+          ctx.fillRect(screenX, screenY, spriteW, spriteH);
+
+          // Head band / visor
+          const headH = spriteH * 0.18;
+          ctx.fillStyle = `rgba(255, 0, 120, ${alpha})`;
+          ctx.fillRect(
+            screenX + spriteW * 0.15,
+            screenY + spriteH * 0.15,
+            spriteW * 0.7,
+            headH
+          );
+
+          // Simple health bar
+          const barW = spriteW;
+          const barH = 5;
+          const healthPct = z.health / z.maxHealth;
+          ctx.fillStyle = "#000";
+          ctx.fillRect(
+            screenX,
+            screenY - barH - 3,
+            barW,
+            barH
+          );
+          ctx.fillStyle = healthPct > 0.5 ? "#0f0" : "#f00";
+          ctx.fillRect(
+            screenX,
+            screenY - barH - 3,
+            barW * Math.max(0, healthPct),
+            barH
+          );
+        });
+
+        // Crosshair
+        const cx = w / 2;
+        const cy = h / 2;
+        ctx.strokeStyle = "#f0f";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(cx - 14, cy);
+        ctx.lineTo(cx - 4, cy);
+        ctx.moveTo(cx + 4, cy);
+        ctx.lineTo(cx + 14, cy);
+        ctx.moveTo(cx, cy - 14);
+        ctx.lineTo(cx, cy - 4);
+        ctx.moveTo(cx, cy + 4);
+        ctx.lineTo(cx, cy + 14);
+        ctx.stroke();
+
+        // HUD
+        ctx.font = "14px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#fff";
+        ctx.fillText(`HEALTH`, 20, 20);
+
+        // Health bar HUD
+        const hudBarW = 200;
+        const hudBarH = 12;
+        const healthPct = player.health / 100;
+        ctx.fillStyle = "#222";
+        ctx.fillRect(20, 40, hudBarW, hudBarH);
+        ctx.fillStyle = healthPct > 0.5 ? "#3fdf6f" : "#ff3366";
+        ctx.fillRect(20, 40, hudBarW * Math.max(0, healthPct), hudBarH);
+
+        ctx.fillStyle = "#0ff";
+        ctx.fillText(`SCORE: ${score}`, 20, 70);
+        ctx.fillText(`WAVE: ${wave}`, 20, 90);
+        ctx.fillText(
+          `ZOMBIES: ${zombies.length}`,
+          20,
+          110
+        );
+
+        if (damageFlash > 0) {
+          ctx.fillStyle = `rgba(255, 0, 80, ${damageFlash * 0.7})`;
+          ctx.fillRect(0, 0, w, h);
+        }
+
+        if (gameOver) {
+          ctx.fillStyle = "rgba(0,0,0,0.65)";
+          ctx.fillRect(0, 0, w, h);
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#ff2f7f";
+          ctx.font = "bold 48px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+          ctx.fillText("YOU FLATLINED", w / 2, h / 2 - 40);
+          ctx.font = "18px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+          ctx.fillStyle = "#ddd";
+          ctx.fillText(
+            `Wave ${wave} · Score ${score}`,
+            w / 2,
+            h / 2 + 4
+          );
+          ctx.fillText(
+            "Press R to respawn",
+            w / 2,
+            h / 2 + 32
+          );
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+        }
+      }
+
+      function loop(timestamp) {
+        const dt = (timestamp - lastTime) / 1000;
+        lastTime = timestamp;
+
+        update(dt);
+        render();
+
+        requestAnimationFrame(loop);
+      }
+
+      // Initialize state (but don't start loop until click)
+      resetGame();
+    })();
+  </script>
+</body>
+</html>

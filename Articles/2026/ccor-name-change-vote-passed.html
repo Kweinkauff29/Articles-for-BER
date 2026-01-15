@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>It's Official! Membership Approves Name Change to Coconut Coast Organization of REALTORS® (CCOR)</title>
+
+    <!-- Primary SEO meta -->
+    <meta name="description"
+        content="Bonita Springs-Estero REALTORS® membership has voted to approve the name change to Coconut Coast Organization of REALTORS® (CCOR). View the full vote results, timeline of next steps with NAR, and the vision for the future." />
+    <meta name="keywords"
+        content="CCOR, Coconut Coast Organization of REALTORS, Bonita Springs-Estero REALTORS name change, BER name change, vote results, real estate association rebranding, Southwest Florida realtors" />
+    <meta name="author" content="Bonita Springs-Estero REALTORS®" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <link rel="canonical" href="https://bonitaesterorealtors.com/ber-news-home/ccor-vote-results-official/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="It's Official! Membership Approves CCOR Name Change" />
+    <meta property="og:description"
+        content="With a clear majority, the membership has voted to move forward as the Coconut Coast Organization of REALTORS®." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1596131499998-29431e779a1d?auto=format&fit=crop&w=1600&q=80" />
+    <meta property="og:url" content="https://bonitaesterorealtors.com/ber-news-home/ccor-vote-results-official/" />
+    <meta property="og:site_name" content="Bonita Springs-Estero REALTORS®" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:published_time" content="2026-01-15" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <style>
+        :root {
+            --line: #e5e7eb;
+            --ink: #0f172a;
+            --muted: #475569;
+            --secondary: #188bf6;
+            --bg-soft: #f8fafc;
+
+            /* CCOR Brand Colors */
+            --ccor-teal: #00A7B5;
+            --ccor-teal-light: #33c4cf;
+            --ccor-blue: #1F4E79;
+            --ccor-blue-dark: #163a5c;
+            --ccor-gray: #6B7280;
+            --ccor-coconut: #D4A373;
+            --yes-color: var(--ccor-teal);
+            --no-color: #E63946;
+            --border-color: #E2E8F0;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            background: #ffffff;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        /* Generic Hero for Article */
+        header.hero {
+            background: linear-gradient(135deg, var(--ccor-blue) 0%, var(--ccor-teal) 100%);
+            min-height: 300px;
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+            position: relative;
+        }
+
+        header.hero h1 {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            max-width: 1100px;
+            font-size: 2.2rem;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 20px
+        }
+
+        #main {
+            margin-top: -16px;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            margin: auto
+        }
+
+        .byline {
+            font-size: .95rem;
+            color: #444
+        }
+
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-top: 2rem;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--ccor-teal);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        p {
+            margin: .95rem 0
+        }
+
+        ul {
+            margin: .75rem 0;
+            padding-left: 1.5rem
+        }
+
+        li {
+            margin: .4rem 0
+        }
+
+        /* --- VOTE RESULT STYLES PULLED FROM SOURCE --- */
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1px;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .result-block {
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+        }
+
+        .result-block.main {
+            background: var(--ccor-teal);
+            color: #fff;
+        }
+
+        .result-block.main .result-label {
+            opacity: 0.9;
+            color: #fff;
+        }
+
+        .result-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .result-block.yes .result-value {
+            color: var(--ccor-teal);
+        }
+
+        .result-block.no .result-value {
+            color: var(--no-color);
+        }
+
+        .result-block.main .result-value {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-pct {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Timeline Chart Styles */
+        .chart-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin: 2rem 0;
+        }
+
+        .timeline-chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.yes {
+            background: var(--ccor-teal);
+        }
+
+        .legend-dot.no {
+            background: var(--no-color);
+        }
+
+        .legend-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--muted);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .majority-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .majority-badge {
+            background: var(--ccor-teal);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .timeline-box {
+            background: #f0f9fa;
+            border-left: 4px solid var(--ccor-teal);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .timeline-box h3 {
+            margin-top: 0;
+            color: var(--ccor-blue);
+        }
+
+        .vote-bar-container {
+            margin: 2rem 0;
+        }
+
+        .vote-bar {
+            display: flex;
+            height: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .vote-bar-yes {
+            background: var(--ccor-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .vote-bar-no {
+            background: var(--no-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        @media (max-width: 700px) {
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-block {
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            header.hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .more {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .more h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            border: none;
+        }
+
+        .hr-soft {
+            border: 0;
+            height: 1px;
+            background: var(--line);
+            margin: 16px 0;
+        }
+
+        /* Stylized Vertical Timeline */
+        .v-timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 20px;
+        }
+
+        .v-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 6px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .v-timeline-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 2rem;
+        }
+
+        .v-timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .v-timeline-dot {
+            position: absolute;
+            left: -1px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--ccor-teal);
+            z-index: 1;
+        }
+
+        .v-timeline-dot.blue {
+            border-color: var(--ccor-blue);
+        }
+
+        .v-timeline-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--ccor-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .v-timeline-title {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--ink);
+        }
+
+        .v-timeline-desc {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Benefits Box */
+        .benefits-box {
+            background: linear-gradient(to right, #f0f9fa, #fff);
+            border: 1px solid var(--ccor-teal-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefits-box h3 {
+            margin-top: 0;
+            color: var(--ccor-teal);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-icon {
+            color: var(--ccor-teal);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="hero">
+            <h1>It's Official! Membership Approves Name Change to "Coconut Coast Organization of REALTORS®"</h1>
+        </header>
+
+        <main id="main">
+            <p class="byline"><em>Published January 15, 2026 • Official Announcement</em></p>
+
+            <p class="lead" style="font-size: 1.1em; color: var(--muted);">
+                Voting has closed, and the results are in. The membership of Bonita Springs-Estero REALTORS® has voted
+                decisively to approve the name change proposal, marking the beginning of a new chapter as the
+                <strong>Coconut Coast Organization of REALTORS® (CCOR)</strong>.
+            </p>
+
+            <h2>Official Vote Results</h2>
+            <p>The vote concluded on January 15th at 12:00 PM, combining online ballots with in-person voting at the
+                final meeting. The proposal passed with a strong majority exceeding the required threshold.</p>
+
+            <p><strong>Total Ballots Cast: 147 (110 YES / 37 NO).</strong> Thank you to every member who
+                participated—whether you supported the proposal or not. Your engagement is what makes this association
+                member-driven.</p>
+
+            <div class="result-grid">
+                <div class="result-block yes">
+                    <div class="result-label">Yes Votes</div>
+                    <div id="yesCount" class="result-value">110</div>
+                    <div id="yesPct" class="result-pct">74.8%</div>
+                </div>
+                <div class="result-block main">
+                    <div class="result-label">Final Outcome</div>
+                    <div id="resultValue" class="result-value">PASSED</div>
+                    <div class="result-pct">Decision Confirmed</div>
+                </div>
+                <div class="result-block no">
+                    <div class="result-label">No Votes</div>
+                    <div id="noCount" class="result-value">37</div>
+                    <div id="noPct" class="result-pct">25.2%</div>
+                </div>
+            </div>
+
+            <div class="vote-bar-container">
+                <div class="vote-bar">
+                    <div style="width: 74.8%;" class="vote-bar-yes">74.8%</div>
+                    <div style="width: 25.2%;" class="vote-bar-no">25.2%</div>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.9em; color: var(--muted);">
+                    <span><strong>YES:</strong> 110 Votes</span>
+                    <span><strong>NO:</strong> 37 Votes</span>
+                </div>
+            </div>
+
+            <h3>Voting Timeline</h3>
+            <p>Participation was strong throughout the voting window, with a surge of support in the final hours.</p>
+
+            <div class="chart-card">
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot yes"></div>
+                        <span class="legend-label">Yes Votes</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot no"></div>
+                        <span class="legend-label">No Votes</span>
+                    </div>
+                </div>
+                <div class="timeline-chart-container">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+                <div class="majority-indicator">
+                    <span style="color: var(--muted); font-size: 0.85rem;">Majority Achieved</span>
+                    <div class="majority-badge">50%+ YES</div>
+                </div>
+            </div>
+
+
+
+            <div class="benefits-box">
+                <h3>✨ Benefits of the Name Change</h3>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✔</div>
+                    <div>
+                        <strong>No Longer Geographically Bound</strong><br>
+                        <span style="color: var(--muted); font-size: 0.95em;">We can finally reflect who we actually
+                            serve, which is <strong>ALL of Southwest Florida</strong> (Bonita Springs, Estero, Naples,
+                            Fort Myers, Cape Coral, Marco Island, Sanibel & Captiva, Lehigh Acres, Babcock Ranch, Punta
+                            Gorda, and more).</span>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✔</div>
+                    <div>
+                        <strong>Clearing Confusion for Clients</strong><br>
+                        <span style="color: var(--muted); font-size: 0.95em;">Many times in the past, members have
+                            heard: <em>"You're a BER agent. You can't list my Naples or Fort Myers property."</em> This
+                            name helps consumers understand that your expertise and access extend far beyond city
+                            limits.</span>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✔</div>
+                    <div>
+                        <strong>Inclusive Growth</strong><br>
+                        <span style="color: var(--muted); font-size: 0.95em;">By removing artificial boundaries, we
+                            invite collaboration and membership from the broader region, strengthening our advocacy and
+                            voice.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="v-timeline">
+                <h3 style="margin-top:0; margin-bottom: 1.5rem; padding-left: 6px;">📜 How We Got Here</h3>
+
+                <div class="v-timeline-item">
+                    <div class="v-timeline-dot blue"></div>
+                    <div class="v-timeline-date">Early 2025</div>
+                    <div class="v-timeline-title">Board Vote</div>
+                    <div class="v-timeline-desc">The Board of Directors voted to pursue a name change based on feedback
+                        from the strategic planning process.</div>
+                </div>
+
+                <div class="v-timeline-item">
+                    <div class="v-timeline-dot blue"></div>
+                    <div class="v-timeline-date">Spring 2025</div>
+                    <div class="v-timeline-title">Marketing Partner Engaged</div>
+                    <div class="v-timeline-desc">Partnered with Priority Marketing for comprehensive research, naming,
+                        and design development.</div>
+                </div>
+
+                <div class="v-timeline-item">
+                    <div class="v-timeline-dot blue"></div>
+                    <div class="v-timeline-date">Early Summer 2025</div>
+                    <div class="v-timeline-title">Name Selection</div>
+                    <div class="v-timeline-desc">After 12 rounds of development, the Board selected "Coconut Coast
+                        Organization of REALTORS®" and presented it to members.</div>
+                </div>
+
+                <div class="v-timeline-item">
+                    <div class="v-timeline-dot blue"></div>
+                    <div class="v-timeline-date">Mid-Summer 2025</div>
+                    <div class="v-timeline-title">Tagline Finalized</div>
+                    <div class="v-timeline-desc">"The CORE of Real Estate Connections" was chosen after 5 rounds of
+                        refinement.</div>
+                </div>
+
+                <div class="v-timeline-item">
+                    <div class="v-timeline-dot blue"></div>
+                    <div class="v-timeline-date">December 2025</div>
+                    <div class="v-timeline-title">Brand Identity</div>
+                    <div class="v-timeline-desc">Finalized the new logo and visual identity system (after 12 rounds of
+                        design).</div>
+                </div>
+
+                <div class="v-timeline-item">
+                    <div class="v-timeline-dot"></div> <!-- Teal default -->
+                    <div class="v-timeline-date" style="color: var(--ccor-teal);">January 2026</div>
+                    <div class="v-timeline-title">Member Vote</div>
+                    <div class="v-timeline-desc">Membership approves the change with a decisive majority (74.8%).</div>
+                </div>
+            </div>
+
+            <h2>Why "Coconut Coast"?</h2>
+            <p>This change is about more than just a name; it's about accurate representation.</p>
+
+            <p><strong>Reflecting Our Region's Identity</strong><br>
+                Coconuts were introduced to our area in the late 1800s and historically included coconut and pineapple
+                farming. While no longer a commercial crop, the coconut remains a recognizable symbol of our local
+                lifestyle—influencing landmarks like Coconut Point and Coconut Road that connect us.</p>
+
+            <p><strong>Eliminating Confusion</strong><br>
+                Our market has expanded beyond the strict municipal boundaries of "Bonita Springs" and "Estero." By
+                adopting a regional identity, we remove geographic limitations that can create confusion for consumers
+                and barriers for members, while avoiding conflicts with neighboring associations who have their own
+                defined jurisdictions.</p>
+
+            <div class="quote-box"
+                style="background: #eef2f6; padding: 20px; border-radius: 8px; margin: 20px 0; font-style: italic; color: var(--ccor-blue);">
+                "This proposal is part of long-term strategic planning built from member input... designed to honor our
+                60-year history while positioning the association for the next 60 years."
+            </div>
+
+            <hr class="hr-soft">
+
+            <h3>What Doesn't Change</h3>
+            <p>Members love clarity more than celebration. Here is what remains the same:</p>
+            <ul>
+                <li>Your membership benefits, services, and staff support</li>
+                <li>Our commitment to education, advocacy, professionalism, and community</li>
+                <li>Our local roots in Bonita Springs and Estero</li>
+                <li>Your dues and your day-to-day member experience (no immediate changes tied to the name itself)</li>
+            </ul>
+
+            <div class="timeline-box">
+                <h3>📅 What Happens Next (NAR Process)</h3>
+                <ul>
+                    <li><strong>Submit the official name change application to NAR (immediate).</strong><br>
+                        Our association executive will complete NAR’s online application and upload the documentation
+                        required for review.</li>
+                    <li><strong>Upload required documents (immediate).</strong><br>
+                        This includes:
+                        <ul>
+                            <li>Minutes from the meeting authorizing the name change</li>
+                            <li>The <em>Agreement to Use the Term REALTOR®</em>, signed by our President and Secretary
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>NAR notice + review period (timing varies).</strong><br>
+                        NAR’s published procedure includes a notice process and a formal pathway for objections and
+                        dispute resolution if any are raised.</li>
+                    <li><strong>Approval + execution of the REALTOR® name agreement.</strong><br>
+                        If approved, NAR executes the REALTOR® name agreement and returns a copy for our official
+                        records.</li>
+                    <li><strong>Brand rollout & member-facing launch (after approval).</strong><br>
+                        Once NAR approval is in place, we’ll roll out updated branding—website, communications, signage,
+                        and materials—along with clear guidance for members.</li>
+                </ul>
+            </div>
+
+            <h3>How to refer to the new name right now</h3>
+            <p>Until NAR approval is finalized, we will continue operating as Bonita Springs-Estero REALTORS®. During
+                the transition, you may see references such as <em>“Coconut Coast Organization of REALTORS® (CCOR) —
+                    pending NAR approval”</em> in our communications so members and partners are not confused.</p>
+
+            <h3>What to Expect Next</h3>
+            <ul>
+                <li>Updates as the NAR application moves through review</li>
+                <li>A clear “go-live” date once approval is confirmed</li>
+                <li>New logo/brand standards for consistent use</li>
+                <li>Website and email updates (with redirects so nothing breaks)</li>
+                <li>A member toolkit (graphics, wording, FAQs) so everyone can communicate clearly</li>
+            </ul>
+
+            <h3>Common Questions & Answers</h3>
+            <p><strong>Are we abandoning Bonita Springs and Estero?</strong><br>
+                Absolutely not. They remain the heart of our association. Our office location, community involvement,
+                and commitment to these cities remain unchanged. We are simply celebrating the broader region they
+                anchor.</p>
+
+            <p><strong>Why is this change necessary?</strong><br>
+                We aren't changing who we are—we are accurately reflecting who we have become. Many members serve
+                clients in areas like Estero Lakes, West Bay Club, and Coconut Point that don't identify as strictly
+                "Bonita Springs" or "Estero." A regional name removes artificial barriers to membership and influence.
+            </p>
+
+            <p><strong>Does this affect our history?</strong><br>
+                Tradition matters. That is why we waited until our 60th anniversary—a milestone that honors our history
+                while embracing the future. We are not erasing 60 years of success; we are building on that foundation.
+            </p>
+
+            <p><strong>Will dues increase because of this?</strong><br>
+                No. The rebrand budget was carefully planned and approved as an investment in our infrastructure. It
+                does not reduce our commitment to education, technology, or member services.</p>
+
+            <h3>Thank You</h3>
+            <p>Thank you to the members who attended Q&A sessions, provided feedback, and took the time to vote. We also
+                want to recognize the volunteer leaders and staff who helped guide this proposal from discussion to
+                decision. Special thanks to Past President Adam Ruud for his dedication throughout this process.</p>
+
+            <hr class="hr-soft">
+            <p><em>Questions about the transition? Contact the association office at <a
+                        href="mailto:Info@bonitaspringsrealtors.com">Info@bonitaspringsrealtors.com</a>.</em></p>
+
+        </main>
+    </div>
+
+    <div class="more">
+        <hr class="hr-soft">
+        <h2>More Real Estate News</h2>
+        <a href="https://www.bonitaesterorealtors.com/ber-news-home/">Click Here</a>
+    </div>
+
+    <script>
+        // Timeline data (cumulative votes over time) - EST timezone, duplicates removed
+        const timelineData = [
+            { date: "2026-01-14 14:27", yes: 1, no: 0 },
+            { date: "2026-01-14 15:57", yes: 2, no: 2 },
+            { date: "2026-01-14 15:59", yes: 5, no: 2 },
+            { date: "2026-01-14 16:00", yes: 6, no: 4 },
+            { date: "2026-01-14 16:01", yes: 8, no: 5 },
+            { date: "2026-01-14 16:03", yes: 10, no: 6 },
+            { date: "2026-01-14 16:05", yes: 12, no: 7 },
+            { date: "2026-01-14 16:06", yes: 14, no: 8 },
+            { date: "2026-01-14 16:09", yes: 16, no: 9 },
+            { date: "2026-01-14 16:12", yes: 18, no: 10 },
+            { date: "2026-01-14 16:18", yes: 19, no: 12 },
+            { date: "2026-01-14 16:18", yes: 21, no: 13 },
+            { date: "2026-01-14 16:21", yes: 24, no: 13 },
+            { date: "2026-01-14 16:26", yes: 26, no: 14 },
+            { date: "2026-01-14 16:28", yes: 28, no: 15 },
+            { date: "2026-01-14 16:32", yes: 30, no: 16 },
+            { date: "2026-01-14 16:38", yes: 32, no: 17 },
+            { date: "2026-01-14 16:43", yes: 34, no: 18 },
+            { date: "2026-01-14 16:46", yes: 36, no: 19 },
+            { date: "2026-01-14 16:52", yes: 39, no: 19 },
+            { date: "2026-01-14 16:55", yes: 42, no: 19 },
+            { date: "2026-01-14 17:00", yes: 44, no: 20 },
+            { date: "2026-01-14 17:02", yes: 47, no: 20 },
+            { date: "2026-01-14 17:05", yes: 50, no: 20 },
+            { date: "2026-01-14 17:19", yes: 52, no: 21 },
+            { date: "2026-01-14 17:24", yes: 55, no: 21 },
+            { date: "2026-01-14 17:41", yes: 56, no: 23 },
+            { date: "2026-01-14 17:56", yes: 59, no: 23 },
+            { date: "2026-01-14 18:01", yes: 61, no: 24 },
+            { date: "2026-01-14 18:08", yes: 64, no: 24 },
+            { date: "2026-01-14 18:29", yes: 65, no: 26 },
+            { date: "2026-01-14 19:17", yes: 67, no: 27 },
+            { date: "2026-01-14 20:26", yes: 70, no: 27 },
+            { date: "2026-01-14 20:31", yes: 72, no: 28 },
+            { date: "2026-01-14 21:02", yes: 74, no: 29 },
+            { date: "2026-01-14 23:00", yes: 76, no: 30 },
+            { date: "2026-01-15 07:16", yes: 78, no: 31 },
+            { date: "2026-01-15 08:16", yes: 79, no: 33 },
+            { date: "2026-01-15 08:45", yes: 82, no: 33 },
+            { date: "2026-01-15 09:12", yes: 85, no: 33 },
+            { date: "2026-01-15 09:37", yes: 87, no: 34 },
+            { date: "2026-01-15 09:50", yes: 89, no: 35 },
+            { date: "2026-01-15 10:08", yes: 91, no: 36 },
+            { date: "2026-01-15 10:15", yes: 94, no: 36 },
+            { date: "2026-01-15 10:18", yes: 97, no: 36 },
+            { date: "2026-01-15 10:19", yes: 97, no: 37 },
+            { date: "2026-01-15 10:30", yes: 97, no: 37, marker: "ONLINE_CLOSE" },
+            { date: "2026-01-15 12:00", yes: 110, no: 37, marker: "IN_PERSON" }
+        ];
+
+        const onlineCloseIndex = timelineData.findIndex(d => d.marker === "ONLINE_CLOSE");
+        const inPersonIndex = timelineData.findIndex(d => d.marker === "IN_PERSON");
+
+        function createTimelineChart() {
+            const ctx = document.getElementById('timelineChart').getContext('2d');
+            const labels = timelineData.map(d => d.date);
+            const yesData = timelineData.map(d => d.yes);
+            const noData = timelineData.map(d => d.no);
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Yes Votes',
+                            data: yesData,
+                            borderColor: '#00A7B5',
+                            backgroundColor: 'rgba(0, 167, 181, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: '#00A7B5'
+                        },
+                        {
+                            label: 'No Votes',
+                            data: noData,
+                            borderColor: '#E63946',
+                            backgroundColor: 'rgba(230, 57, 70, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: '#E63946'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1F4E79',
+                            titleFont: { family: "'Inter', sans-serif", size: 12, weight: 600 },
+                            bodyFont: { family: "'Inter', sans-serif", size: 13 },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: true,
+                            callbacks: {
+                                title: function (context) {
+                                    const date = new Date(context[0].label);
+                                    if (isNaN(date.getTime())) return context[0].label;
+                                    return date.toLocaleString('en-US', {
+                                        month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+                                    });
+                                }
+                            }
+                        },
+                        annotation: {
+                            annotations: {
+                                onlineCloseLine: {
+                                    type: 'line',
+                                    xMin: onlineCloseIndex,
+                                    xMax: onlineCloseIndex,
+                                    borderColor: '#1F4E79',
+                                    borderWidth: 2,
+                                    borderDash: [6, 4],
+                                    label: {
+                                        display: true,
+                                        content: 'Online Close',
+                                        position: 'start',
+                                        backgroundColor: '#1F4E79',
+                                        color: '#fff',
+                                        font: { size: 10 }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            grid: { display: false },
+                            ticks: {
+                                maxTicksLimit: 6,
+                                callback: function (value) {
+                                    const date = new Date(this.getLabelForValue(value));
+                                    if (isNaN(date.getTime())) return "";
+                                    return date.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric' });
+                                }
+                            }
+                        },
+                        y: {
+                            display: true,
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', createTimelineChart);
+    </script>
+</body>
+
+</html>

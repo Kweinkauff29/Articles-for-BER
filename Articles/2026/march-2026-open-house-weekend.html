@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BER Open House Weekend Returns March 27–29</title>
+
+    <meta name="description"
+        content="BER’s Open House Weekend returns March 27–29 with a public-facing website, print advertising, digital display ads, and direct consumer access to local open houses." />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --line: #e2e8f0;
+            --ink: #334155;
+            /* charcoal body text */
+            --muted: #64748b;
+            --primary: #0f172a;
+            /* dark navy headings */
+            --accent: #f43f5e;
+            /* coral/red accent */
+            --accent-hover: #e11d48;
+            --bg-soft: #f0f9ff;
+            /* light blue background block */
+            --font-mono: 'Share Tech Mono', monospace;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--ink);
+            line-height: 1.8;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Typography specifics */
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .deck {
+            font-size: 1.25rem;
+            color: var(--muted);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header.hero {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 100%),
+                url('https://res.cloudinary.com/micronetonline/image/upload/q_auto,f_auto,c_limit,w_1919,h_1069/v1773408537/tenants/6c24b0da-8a6e-4f2b-8547-26a8c1dc4581/e22b1b65260b4d8b844172bafe2e8f91/Fort-Myers.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            color: #fff;
+            width: 100%;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin: 0 0 1rem 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            line-height: 1.2;
+        }
+
+        .hero-meta {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-top: 1rem;
+        }
+
+        /* Containers */
+        .wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .wrapper-wide {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Snapshot Band */
+        .snapshot-band {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: -40px auto 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .snap-card {
+            background: #fafafa;
+            border: 1px solid var(--primary);
+            padding: 24px 20px;
+            text-align: center;
+            font-family: var(--font-mono);
+            color: var(--primary);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .snap-card::before, .snap-card::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--primary);
+        }
+
+        .snap-card::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+        .snap-card::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+        /* Primary CTA Row */
+        .cta-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 2.5rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff !important;
+            padding: 14px 28px;
+            font-family: var(--font-mono);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s;
+            text-align: center;
+            border: 1px solid var(--primary);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary) !important;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff !important;
+        }
+
+        /* Ad Gallery Grid */
+        .ad-gallery {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .ad-gallery h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+        }
+
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-card img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--line);
+        }
+
+        .ad-label {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Standout Feature Section */
+        .feature-section {
+            background: #fafafa;
+            padding: 5rem 20px;
+            margin: 4rem 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .feature-section h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px 24px;
+            text-decoration: none !important;
+            border: 1px solid var(--line);
+            transition: border-color 0.2s;
+            display: block;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h4 {
+            margin: 0 0 12px 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--ink);
+            font-weight: 400;
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        /* Quote Block */
+        .quote-block {
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-align: center;
+            padding: 2.5rem 0;
+            margin: 4rem auto;
+            border-top: 1px dashed var(--line);
+            border-bottom: 1px dashed var(--line);
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        /* Bottom Banner */
+        .bottom-banner {
+            background: var(--accent);
+            color: white;
+            padding: 4rem 20px;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .bottom-banner h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin: 0 0 2rem 0;
+        }
+
+        .bottom-banner .btn {
+            background: #fff;
+            color: var(--accent) !important;
+            margin: 0 10px;
+        }
+
+        .bottom-banner .btn:hover {
+            background: #f8fafc;
+        }
+
+        .bottom-banner .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff !important;
+        }
+
+        .bottom-banner .btn-outline:hover {
+            background: #fff;
+            color: var(--accent) !important;
+        }
+
+        /* Related Links */
+        .related-links {
+            background: #f8fafc;
+            padding: 2.5rem 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+        }
+
+        .related-links span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-right: 15px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .related-links a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        .related-links a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header.hero h1 {
+                font-size: 2rem;
+            }
+
+            .bottom-banner .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+
+            .cta-row {
+                justify-content: flex-start;
+            }
+
+            .quote-block {
+                font-size: 1.3rem;
+                padding: 2rem 0;
+            }
+        }
+
+        /* Mobile Embed Device Mockup */
+        .mobile-mockup-wrapper {
+            margin: 4rem auto;
+            display: flex;
+            justify-content: center;
+            clear: both;
+        }
+
+        .device-mockup {
+            border: 12px solid var(--primary);
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            background: #fff;
+            width: 375px;
+            height: 750px;
+        }
+
+        .device-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 28px;
+            background: var(--primary);
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            z-index: 10;
+        }
+
+        .device-mockup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding-top: 25px;
+            /* notch space */
+        }
+
+        /* Inline Ads */
+        .ad-banner-full {
+            margin: 3rem 0;
+            text-align: center;
+            clear: both;
+        }
+
+        .ad-banner-full img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--line);
+        }
+
+        .ad-banner-tall {
+            margin: 3rem auto;
+            text-align: center;
+            clear: both;
+        }
+
+        .ad-banner-tall img {
+            max-height: 550px;
+            width: auto;
+            max-width: 100%;
+            border: 1px solid var(--line);
+        }
+
+        .ad-float-right {
+            float: right;
+            margin: 0 0 2rem 2rem;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .ad-float-right img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--line);
+        }
+
+        .ad-caption {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .ad-float-right {
+                float: none;
+                margin: 2rem auto;
+            }
+
+            .device-mockup {
+                width: 320px;
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">BER Member Benefit • March 27–29, 2026</div>
+            <h1>BER Open House Weekend Returns March 27–29 With Free Consumer Advertising for Members</h1>
+            <div class="hero-meta">Presented by State Insurance USA • Part of BER’s 2026 “Give Back, Grow Forward”
+                Initiative</div>
+        </div>
+    </header>
+
+    <div class="wrapper-wide">
+        <div class="snapshot-band">
+            <div class="snap-card">Free Member Benefit</div>
+            <div class="snap-card">Consumer-Facing Promotion</div>
+            <div class="snap-card">70,000 Estimated Online Impressions</div>
+            <div class="snap-card">Six More Open House Weekends Planned</div>
+        </div>
+    </div>
+
+    <main class="wrapper">
+        <p class="deck">Presented by State Insurance USA, our March Open House Weekend is more than an event — it’s a
+            free consumer-facing marketing opportunity designed to drive visibility for our members, connect the public
+            with local REALTORS®, and showcase the ongoing value of your membership.</p>
+
+        <div class="ad-banner-full">
+            <img src="https://bonitaesterorealtors.com/wp-content/uploads/2026/03/728-x-90-NDN-Ad-20261.png"
+                alt="Display Ad 728x90" />
+            <div class="ad-caption">Digital Display Campaign Leaderboard</div>
+        </div>
+
+        <p>Our Open House Weekend returns March 27–29 with a public-facing website, print advertising, digital display
+            ads, and direct consumer access to local open houses. As part of our 2026 “Give Back, Grow Forward”
+            initiative, this campaign reflects a broader effort to modernize member value, strengthen community
+            visibility, and create better tools for both you and the public.</p>
+
+        <p>This year’s campaign represents exactly the kind of value-driven visibility we are working to deliver for you
+            in 2026.</p>
+
+        <div class="ad-float-right">
+            <img src="https://bonitaesterorealtors.com/wp-content/uploads/2026/03/300-x-250-NDN-Ad-2026.png"
+                alt="Display Ad 300x250" />
+            <div class="ad-caption">Digital Display • 300x250</div>
+        </div>
+
+        <p>Presented by State Insurance USA, the March Open House Weekend is a free member benefit built to do two
+            things at once: help our agents promote their listings to real consumers, and make it easier for the public
+            to discover open houses, connect with REALTORS®, and explore communities across Southwest Florida. The
+            public landing page is already live and built around that experience, with search tools, home browsing, and
+            direct paths to both the property search and REALTOR® connections.</p>
+
+        <div class="cta-row">
+            <a href="https://coconutcoastopenhouses.com/open-house/" class="btn" target="_blank">Browse the Open House
+                Weekend Page</a>
+            <a href="https://bonitaesterorealtors.com/realtor-directory/" class="btn btn-outline" target="_blank">Find a
+                REALTOR®</a>
+            <a href="https://bonitaspringsesterolifestyles.com" class="btn btn-outline" target="_blank">Explore
+                Communities</a>
+        </div>
+
+        <p>This is not just another internal member promotion. It is a true consumer-facing campaign designed to put our
+            members in front of active local traffic through coordinated advertising, a dedicated Open House Weekend
+            page, and clear next-step pathways for buyers and sellers. That matters, because one of the biggest
+            questions you ask us is simple: How does this help me grow my business? This campaign is one of our answers.
+        </p>
+
+        <p>For the public, the experience is straightforward and useful. Consumers can visit the Open House Weekend
+            page, browse available properties, filter by price, beds, baths, city, and time of day, and even build an
+            optimized route. They can also click through to search more homes or find a REALTOR® directly from the page.
+            In other words, the campaign is not just about impressions — it is about creating a cleaner bridge between
+            local consumers and our professionals.</p>
+
+        <div class="mobile-mockup-wrapper" style="flex-direction: column; align-items: center; text-align: center;">
+            <div class="device-mockup">
+                <iframe src="https://coconutcoastopenhouses.com/open-house/"
+                    title="Open House Weekend Mobile View"></iframe>
+            </div>
+            <div style="margin-top: 2rem;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://coconutcoastopenhouses.com/open-house/"
+                    alt="Scan to view on your device"
+                    style="border-radius: 8px; border: 1px solid var(--line); padding: 10px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" />
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 10px; max-width: 300px;">
+                    <em>Scan to preview the mobile experience on your device. <br />Note: The form formatting on this
+                        article page may look different than it will to the public.</em>
+                </p>
+            </div>
+        </div>
+
+        <p>That local connection is a big part of why this matters. In real estate, visibility is valuable — but
+            qualified, local visibility is even better. Our Open House Weekend campaign is built to deliver exposure in
+            the markets you actually serve while also giving the public a centralized place to start their search. It
+            creates a stronger, more useful experience than scattered social posts or isolated open house announcements,
+            because it ties everything together under one destination.</p>
+
+        <div class="ad-banner-tall">
+            <img src="https://bonitaesterorealtors.com/wp-content/uploads/2026/03/4.91-x-20-NDN-Ad-2026--scaled.png"
+                alt="Print Ad Layout" />
+            <div class="ad-caption">Print Ad • Bonita Banner</div>
+        </div>
+
+        <p>The March campaign also includes real advertising support behind it. In addition to the live Open House
+            Weekend page, the promotion is backed by a half-page vertical color print ad in the Bonita Banner and a
+            digital display campaign with clickable banner ads that direct viewers straight to the open house website. A
+            QR code in the print ad will do the same. Altogether, this is expected to generate meaningful consumer
+            visibility and deliver the kind of promotion many agents would otherwise have to fund on their own.</p>
+
+        <p>That is what makes this effort so important: it is a free member benefit with real market-facing value.</p>
+
+        <div style="clear: both;"></div>
+
+        <div class="ad-banner-tall">
+            <img src="https://bonitaesterorealtors.com/wp-content/uploads/2026/03/300-x-600-NDN-Ad-2026.png"
+                alt="Display Ad 300x600" />
+            <div class="ad-caption">Digital Display • 300x600</div>
+        </div>
+
+        <p>For our members, this creates another layer of exposure around the work you are already doing. If you are
+            hosting an open house, we are helping amplify that effort with a larger association-led campaign that
+            extends beyond the single listing, the single brokerage, or your personal audience. It gives you the chance
+            to benefit from a broader promotional engine while still directing consumers back to local professionals and
+            their properties.</p>
+
+        <p>And even beyond the print graphics deadline, the campaign remains flexible. Open houses can continue to be
+            added to the live Open House Weekend page, including during the event window itself, which means the website
+            remains a living tool rather than a static promotion. That flexibility is important for you, and it is just
+            as important for consumers who want the most current information possible.</p>
+
+        <p>This March weekend is also part of something bigger. We are not treating Open House Weekend as a one-off
+            promotion. It is part of a broader 2026 strategy to strengthen member offerings, modernize public-facing
+            tools, and create more meaningful visibility for REALTORS®, affiliates, and the communities we serve. That
+            broader theme has already been established by us this year under the banner of “Give Back, Grow Forward.”
+        </p>
+
+        <p>That initiative can already be seen across several recent upgrades and launches.</p>
+    </main>
+
+    <section class="feature-section">
+        <div class="wrapper-wide">
+            <h2>More Ways We Are Growing Member Value in 2026</h2>
+            <div class="feature-grid">
+                <a href="https://bonitaesterorealtors.com/realtor-directory/" target="_blank" class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h4>Realtor Directory</h4>
+                    <p>A modernized, public-facing search portal giving consumers a dedicated place to find trusted
+                        local REALTORS®.</p>
+                </a>
+                <a href="https://bonitaesterorealtors.com/realtor-com-plus-launches-bonita-springs-estero-mls-among-first-markets/"
+                    target="_blank" class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h4>Realtor.com+</h4>
+                    <p>A collaborative, branded space to search, message, and share listings tightly with clients in one
+                        unified platform.</p>
+                </a>
+                <a href="https://bonitaspringsesterolifestyles.com" target="_blank" class="feature-card">
+                    <div class="feature-icon">🌴</div>
+                    <h4>Community Website</h4>
+                    <p>Building discovery pathways for buyers through lifestyle guides and rich neighborhood insights
+                        beyond standard home searches.</p>
+                </a>
+                <a href="https://shop.esterochamber.org/" target="_blank" class="feature-card">
+                    <div class="feature-icon">🎪</div>
+                    <h4>EsteroFest Presence</h4>
+                    <p>Meeting the public directly by supporting local businesses and nonprofits to keep us visible in
+                        the broader community.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="wrapper">
+        <p>Taken together, these efforts point to a clear direction: we are working to operate with the kind of modern,
+            layered value you increasingly expect from us. That means more than classes and compliance support. It means
+            stronger public tools. Better visibility. More useful technology. Better consumer pathways back to members.
+            And more visible proof that membership can support business growth in practical ways.</p>
+
+        <p>That is why Open House Weekend matters.</p>
+
+        <p>For you, it is an opportunity to gain additional exposure at no added advertising cost. For consumers, it is
+            a simpler, more convenient way to explore homes and connect with local experts. For us, it is another
+            example of how we are working to align member benefits with the realities of today’s market.</p>
+
+        <p>And March is only the beginning.</p>
+
+        <div class="ad-banner-full">
+            <img src="https://bonitaesterorealtors.com/wp-content/uploads/2026/03/970x250-NDN-Ad1.png"
+                alt="Display Ad 970x250" />
+            <div class="ad-caption">Digital Display Billboard</div>
+        </div>
+
+        <div class="quote-block">
+            “This is what modern member value looks like: better tools, stronger visibility, and clearer consumer
+            pathways back to local professionals.”
+        </div>
+
+        <p>We have additional Open House Weekends planned throughout the rest of the year, creating more chances to gain
+            visibility, more opportunities for the public to engage with the local market, and more ways for us to keep
+            building momentum around this program. Rather than a single campaign, Open House Weekend is becoming part of
+            a larger year-round framework for member promotion and public engagement.</p>
+
+        <p>As we continue to evolve in 2026, that is the bigger story: creating value-driven success for you and the
+            communities we serve by pairing better tools with better visibility.</p>
+
+        <p>Open House Weekend is one more way we are doing exactly that.</p>
+
+        <p><strong>To explore the public Open House Weekend page, visit the campaign site and browse homes, cities, and
+                open house times. Consumers can also connect directly with a local professional through our REALTOR®
+                Directory, while you can continue taking advantage of the growing set of tools and benefits being rolled
+                out in 2026.</strong></p>
+    </main>
+
+    <section class="bottom-banner">
+        <h2>Open House Weekend Returns March 27–29</h2>
+        <a href="https://coconutcoastopenhouses.com/open-house/" class="btn" target="_blank">Visit the Open House
+            Page</a>
+        <a href="https://bonitaesterorealtors.com/realtor-directory/" class="btn btn-outline" target="_blank">View the
+            REALTOR® Directory</a>
+    </section>
+
+    <div class="related-links">
+        <span>Related Links:</span>
+        <a href="https://coconutcoastopenhouses.com/open-house/" target="_blank">Open House Weekend</a>
+        <a href="https://bonitaesterorealtors.com/realtor-directory/" target="_blank">REALTOR® Directory</a>
+        <a href="https://bonitaspringsesterolifestyles.com" target="_blank">BonitaSpringsEsteroLifestyles.com</a>
+        <a href="https://bonitaesterorealtors.com/realtor-com-plus-launches-bonita-springs-estero-mls-among-first-markets/"
+            target="_blank">Realtor.com+ Launch</a>
+    </div>
+
+    <div class="wrapper" style="margin: 40px auto; text-align: center;">
+        <hr style="border: 0; height: 1px; background: var(--line); margin: 32px 0;">
+        <h2 style="margin-top: 0;">More Real Estate News</h2>
+        <a href="https://www.bonitaesterorealtors.com/ber-news-home/"
+            style="font-size: 1.15rem; display: inline-block; padding: 10px 20px; border: 2px solid var(--primary); color: var(--primary); border-radius: 6px; font-weight: 700; transition: all 0.2s;">Return
+            to BER News Home</a>
+    </div>
+
+</body>
+
+</html>

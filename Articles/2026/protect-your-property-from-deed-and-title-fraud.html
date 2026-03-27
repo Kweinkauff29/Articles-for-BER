@@ -1,0 +1,691 @@
+<style>
+#ber-article-container {
+    --line: #e2e8f0;
+    --ink: #334155;
+    --muted: #64748b;
+    --primary: #0f172a;
+    --accent: #f43f5e;
+    --accent-hover: #e11d48;
+    --bg-soft: #f8fafc;
+    --font-mono: 'Share Tech Mono', monospace;
+
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    line-height: 1.8;
+    background: transparent;
+    font-size: 1.1rem;
+}
+
+#ber-article-container h1, 
+#ber-article-container h2, 
+#ber-article-container h3, 
+#ber-article-container h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+#ber-article-container a.ber-link {
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+#ber-article-container a.ber-link:hover {
+    text-decoration: none;
+}
+
+#ber-article-container p {
+    margin-bottom: 1.5rem;
+}
+
+#ber-article-container .deck {
+    font-size: 1.25rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+#ber-article-container .hero-img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid var(--primary);
+}
+
+#ber-article-container header.hero {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#ber-article-container .hero-title-band {
+    background: var(--primary);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#ber-article-container .hero-title-band h1 {
+    color: white;
+    font-size: 2.4rem;
+    margin: 0 auto 10px auto;
+    max-width: 900px;
+}
+
+#ber-article-container .hero-meta {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+#ber-article-container .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#ber-article-container .wrapper-wide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#ber-article-container .tech-panel {
+    background: #fafafa;
+    border: 1px solid var(--primary);
+    padding: 24px 20px;
+    position: relative;
+    margin: 2rem 0;
+}
+
+#ber-article-container .tech-panel::before, 
+#ber-article-container .tech-panel::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--primary);
+}
+#ber-article-container .tech-panel::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+#ber-article-container .tech-panel::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+#ber-article-container .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 3rem 0;
+}
+
+#ber-article-container .feature-card {
+    background: #fff;
+    padding: 24px;
+    text-align: center;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--primary);
+    transition: border-color 0.2s;
+}
+
+#ber-article-container .feature-card h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+#ber-article-container .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#ber-article-container .footer-note {
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    color: var(--muted);
+    margin-top: -15px;
+    margin-bottom: 3rem;
+}
+
+#ber-article-container .mobile-mockup-wrapper {
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ber-article-container .device-mockup {
+    border: 12px solid var(--primary);
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: #000;
+    width: 340px;
+    height: 680px;
+}
+
+#ber-article-container .device-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 28px;
+    background: var(--primary);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 10;
+}
+
+#ber-article-container .device-mockup iframe,
+#ber-article-container .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+#ber-article-container .device-mockup iframe {
+    padding-top: 25px;
+}
+
+#ber-article-container .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 3rem 0;
+    border: 1px solid var(--primary);
+}
+#ber-article-container .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ber-article-container .checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+#ber-article-container .checklist li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+}
+
+#ber-article-container .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+}
+
+#ber-article-container .data-section {
+    background: var(--primary);
+    color: white;
+    padding: 4rem 20px;
+    margin: 4rem 0;
+}
+
+#ber-article-container .data-section h2, 
+#ber-article-container .data-section h3 {
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+#ber-article-container .data-section p {
+    color: #cbd5e1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+#ber-article-container .chart-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border: 2px solid var(--accent);
+}
+
+#ber-article-container .chart-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 250px;
+    margin-top: 20px;
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 10px;
+}
+
+#ber-article-container .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+#ber-article-container .bar {
+    width: 100%;
+    background: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#ber-article-container .bar:hover {
+    background: var(--accent-hover);
+}
+
+#ber-article-container .bar-text {
+    writing-mode: horizontal-tb;
+    margin-bottom: 10px;
+}
+
+#ber-article-container .chart-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-family: var(--font-mono);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+#ber-article-container .chart-legend {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 20px;
+}
+
+#ber-article-container .complaint-line {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+#ber-article-container .share-tile {
+    background: var(--bg-soft);
+    border: 2px solid var(--primary);
+    padding: 3rem 20px;
+    text-align: center;
+    margin: 4rem auto;
+    max-width: 600px;
+}
+
+#ber-article-container .share-tile h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+#ber-article-container .share-tags {
+    font-family: var(--font-mono);
+    font-weight: bold;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#ber-article-container .share-tags a {
+    background: var(--primary);
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+#ber-article-container .share-tags a:hover {
+    background: var(--accent);
+}
+
+#ber-article-container .disclaimer {
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-top: 1px dashed var(--line);
+    padding-top: 2rem;
+    margin-top: 4rem;
+}
+
+#ber-article-container .florida-map-container {
+    background: var(--bg-soft);
+    border: 1px solid var(--primary);
+    padding: 3rem;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+#ber-article-container .florida-map-container h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+#ber-article-container .map-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+#ber-article-container .map-stat {
+    background: #fff;
+    padding: 15px 25px;
+    border: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0px var(--primary);
+}
+
+/* Custom Call To Action Button */
+#ber-article-container .action-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff !important;
+    padding: 14px 28px;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+    text-align: center;
+    border: 1px solid var(--primary);
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+#ber-article-container .action-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+}
+</style>
+
+<!-- Import Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<div id="ber-article-container">
+
+    <header class="hero">
+        <img src="https://bonitaesterorealtors.com/wp-content/uploads/2026/03/hero_property_fraud.jpg" alt="Smartphone displaying Official Records Alert" class="hero-img">
+        <div class="hero-title-band">
+            <h1>Protect Your Property from Deed and Title Fraud</h1>
+            <div class="hero-meta">Free Property Fraud Alerts in Lee County and Across Florida</div>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <h2>Quick takeaways for REALTORS® and property owners</h2>
+        <p class="deck">Property fraud (often called deed fraud or title theft) typically starts when a bad actor records a fraudulent document in a county’s Official Records. That’s why early awareness matters—and why Florida’s Clerk & Comptroller offices offer free alert services to help property owners spot suspicious activity faster.</p>
+
+        <div class="tech-panel">
+            <strong>Here’s the headline:</strong> <a href="https://www.leeclerk.org/services/property-fraud" target="_blank" class="ber-link">Lee Clerk’s Property Fraud Alert</a> is free and can email notifications within 24 hours when certain land records—like a deed or mortgage—are recorded in Lee County using a registered name or parcel ID.
+        </div>
+
+        <div class="mobile-mockup-wrapper">
+            <div class="device-mockup">
+                <iframe src="https://www.youtube.com/embed/gET4GdC9rMI" title="Property Fraud Alert Shorts Video"></iframe>
+            </div>
+            <div class="mockup-caption">Watch: Property Fraud Alert explained in 60 seconds.</div>
+        </div>
+
+        <h2>What Lee Clerk’s Property Fraud Alert does (and does not do)</h2>
+        <p>Lee Clerk describes Property Fraud Alert as a free service designed to alert property owners of possible fraud by emailing notifications within 24 hours when a deed, mortgage, or other land record with the subscriber’s registered name or parcel ID is recorded into Lee County’s Official Records.</p>
+
+        <p>Lee Clerk also highlights an important limitation that every REALTOR® should repeat to clients:</p>
+
+        <ul class="checklist">
+            <li><strong>It does not prevent fraud.</strong> It’s an early-warning tool so owners can respond more quickly if something suspicious appears in the public record.</li>
+            <li><strong>It does not apply to court-filed documents.</strong> The alert system is tied to land documents recorded in Official Records, not filings made in court proceedings.</li>
+        </ul>
+
+        <p><strong>Why does this matter in real life?</strong> Lee Clerk notes that a recorded deed can even change the property owner’s mailing address in property appraiser and tax collector systems—meaning TRIM notices or tax bills may be sent to a different address, and unpaid taxes can eventually lead to a tax deed auction.</p>
+        
+        <p>That “mailing address change” risk is one reason this is such a high-value, low-friction consumer protection tip to share with: <em>absentee owners, snowbirds, landlords, investors, heirs, owners of vacant land, and anyone holding title in an LLC or trust.</em></p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h4>Deed</h4>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏦</div>
+                <h4>Mortgage</h4>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h4>Lien / Record</h4>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h4>Parcel ID</h4>
+            </div>
+        </div>
+        <div class="footer-note">What Property Fraud Alert monitors: Recorded Official Records documents (not court filings).</div>
+
+        <h2>How to sign up in Lee County (and how to set it up correctly)</h2>
+        <p>Lee Clerk’s program allows you to register personal names, business names, trusts, and individual parcels, and you can repeat the registration process to add as many names/parcels as you need.</p>
+
+        <p><strong>A practical, REALTOR®-friendly onboarding checklist you can share with clients:</strong></p>
+        
+        <ul class="checklist">
+            <li>Register the owner name(s) as they appear in public records (and consider multiple variations if the name could be indexed differently). Lee Clerk explicitly recommends reviewing their <a href="https://www.leeclerk.org/i-want-to/ask/frequently-asked-questions/property-fraud-alert-2" target="_blank" class="ber-link">registration tips/FAQs</a> because naming conventions can improve results.</li>
+            <li>If available for the county program, register the parcel ID as well. Lee Clerk notes alerts can be tied to parcel registrations.</li>
+            <li>Add business/trust names when applicable (for LLC-owned property or trust-held property). Lee Clerk confirms registering business names and trusts is supported.</li>
+            <li>If a client owns properties in multiple counties, they should sign up in each county where they own property (see statewide section below).</li>
+        </ul>
+
+        <div class="tech-panel" style="text-align: center;">
+            <div style="font-family: var(--font-mono); color: var(--primary); text-transform: uppercase; font-weight: bold; margin-bottom: 5px; font-size: 1.2rem;">Lee Clerk Registration Overview</div>
+            <p style="margin-top: 5px; font-size: 0.95rem; color: var(--muted);">A free service • Emails within 24 hours • Register by Name or Parcel ID</p>
+            <a href="https://www.leeclerk.org/services/property-fraud" target="_blank" class="action-btn">Official Lee Clerk Identity & Property Alert</a>
+        </div>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/WRcARaPXxao" title="How To - Property Fraud Alert walkthrough" allowfullscreen></iframe>
+        </div>
+
+        <h2>Florida-wide resources: free property alert services in all 67 counties</h2>
+        <p>If your client owns property outside Lee County—or owns multiple Florida properties—this is the part worth bookmarking.</p>
+
+        <p><a href="https://www.floridabar.org/the-florida-bar-news/clerks-say-free-property-alerts-now-available-in-all-67-counties/" target="_blank" class="ber-link">The Florida Bar reported</a> that all 67 Clerks of the Circuit Court and Comptrollers statewide now offer free property alert services, and explained these programs alert subscribers when a deed, mortgage, or other official record is recorded in their name in a county’s Official Records.</p>
+
+        <p>That same Florida Bar report notes that alert types vary by county (email, SMS, or phone call), and it points residents to the <a href="https://www.flclerks.com/page/PropertyAlertServices" target="_blank" class="ber-link">Florida Clerks & Comptrollers statewide page</a> that lists alert services by county.</p>
+
+        <p>Florida lawmakers also enacted HB 1419 (Real Property Fraud), which includes requirements for clerks to create and operate an opt-in recording notification service and includes other fraud-related provisions.</p>
+
+    </main>
+
+    <div class="wrapper-wide">
+        <div class="florida-map-container">
+            <h3>Florida Coverage: All 67 Counties Now Active</h3>
+            <p style="color: var(--muted); max-width: 600px; margin: 0 auto;">Free Property Alert Services Available Statewide</p>
+            <div class="map-stats">
+                <div class="map-stat">Official Records monitoring</div>
+                <div class="map-stat">Alerts vary (Email/SMS/Phone)</div>
+                <div class="map-stat">100% Opt-in Service</div>
+                <div class="map-stat">Sign up by individual county</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="wrapper">
+        <h3>SWFL quick links (highly relevant to our market):</h3>
+        <p>Below are examples of county-level programs that REALTORS® commonly reference with clients (always confirm your client registers in the correct county where they own property):</p>
+
+        <ul class="checklist">
+            <li><strong>Lee County:</strong> <a href="https://www.leeclerk.org/services/property-fraud" target="_blank" class="ber-link">Lee Clerk Property Fraud Alert</a> (emails within 24 hours; registers names + parcel ID; does not prevent fraud).</li>
+            <li><strong>Collier County:</strong> <a href="https://app.collierclerk.com/CORPublicAccess/RecordingActivity/Login" target="_blank" class="ber-link">“Risk Alert Notification”</a> (free email alerts for deeds, liens, mortgages, other records; includes disclaimers and notes that it doesn’t prevent fraud).</li>
+            <li><strong>Charlotte County:</strong> <a href="https://fraudalert.charlotteclerk.com/" target="_blank" class="ber-link">Property Fraud Alert service</a> (free alerts within 24 hours; monitor recorded Official Records; county FAQ includes trust-name tips and notes that common names may generate unrelated alerts).</li>
+        </ul>
+
+        <h3>Other major Florida examples (useful if you serve clients statewide):</h3>
+        <ul class="checklist">
+            <li><strong>Miami-Dade County:</strong> <a href="https://www.miamidadeclerk.gov/clerk/property-fraud.page" target="_blank" class="ber-link">Property Fraud Alert</a> (free; within 24 hours; includes guidance to review the document and seek legal advice).</li>
+            <li><strong>St. Lucie County:</strong> <a href="https://stlucieclerk.gov/services/property-fraud-alert" target="_blank" class="ber-link">Property Fraud Alert</a> (free; email/text within 24 hours; includes “if you receive an alert” steps).</li>
+        </ul>
+    </main>
+
+    <section class="data-section">
+        <div class="wrapper-wide">
+            <h2>Why it matters: what the data says about fraud trends</h2>
+            <p>It helps to separate two related—but different—risk categories: <strong>Recorded-document property fraud</strong> (deed/title theft, fraudulent liens, fake quitclaim deeds) and <strong>Internet-enabled real estate fraud</strong> (real estate investment scams, rental scams, timeshare scams, wire-related deception).</p>
+            
+            <p>Your article can responsibly talk about “how much fraud is happening” by using authoritative national data on real estate-related cybercrime while clearly labeling what that data does—and does not—capture.</p>
+
+            <div class="chart-container">
+                <h3 style="color: var(--primary);">IC3 Real Estate Fraud Data (2022-2024)</h3>
+                
+                <div class="chart-wrapper">
+                    <!-- 2022 -->
+                    <div class="bar-group">
+                        <div class="complaint-line">11,727 complaints</div>
+                        <div class="bar" style="height: 100%;" title="$396,932,821">
+                            <span class="bar-text">$396M</span>
+                        </div>
+                    </div>
+                    <!-- 2023 -->
+                    <div class="bar-group">
+                        <div class="complaint-line">9,521 complaints</div>
+                        <div class="bar" style="height: 36%;" title="$145,243,348">
+                            <span class="bar-text">$145M</span>
+                        </div>
+                    </div>
+                    <!-- 2024 -->
+                    <div class="bar-group">
+                        <div class="complaint-line">9,359 complaints</div>
+                        <div class="bar" style="height: 43%;" title="$173,586,820">
+                            <span class="bar-text">$173M</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-labels">
+                    <div>2022</div>
+                    <div>2023</div>
+                    <div>2024</div>
+                </div>
+                <div class="chart-legend">
+                    Bars = Losses | Top Labels = Complaints<br>
+                    *IC3 “Real Estate” includes internet-related investment/rental/timeshare fraud; not limited to deed theft.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="wrapper">
+        <h3>What the FBI says about deed/title schemes</h3>
+        <p><a href="https://www.ic3.gov/" target="_blank" class="ber-link">The FBI has warned</a> that quit claim deed fraud / home title theft involves criminals forging documents to record a phony transfer of ownership, then attempting to sell the property, take out a mortgage on it, or rent it out—forcing the rightful owner into a costly fight to reclaim title.</p>
+
+        <p>That pattern aligns with why county-level alert tools focus on recorded documents: they’re designed to give owners faster visibility into suspicious recordings.</p>
+
+        <h3>Florida context: high overall IC3 complaint volume</h3>
+        <p>The same IC3 report shows Florida ranked among the top states by total IC3 complaints (Florida listed with 52,191 complaints in the report’s overall state statistics table).</p>
+
+        <p>This is not “property fraud only,” but it supports a reasonable takeaway: Florida property owners are operating in a high-volume fraud environment, which makes low-effort monitoring tools worth sharing.</p>
+
+        <h2>What to do if you receive an alert</h2>
+        <p>A fraud alert does not automatically mean fraud—but it does mean, “a recorded document matched what you’re monitoring.” It’s the prompt to verify.</p>
+
+        <p>Lee Clerk’s FAQ notes that the alert includes instructions on how to view the recorded document and how to proceed if you feel the activity is fraudulent.</p>
+
+        <p>Most Florida clerk programs give similar guidance: review the document, and if suspicious, contact law enforcement and seek legal counsel. Miami-Dade’s materials specifically recommend notification of law enforcement and seeking attorney guidance if a recorded deed or other document is fraudulent.</p>
+
+        <div class="tech-panel">
+            <h4 style="margin-top: 0; color: var(--primary);">A practical “client-safe” action list:</h4>
+            <ol style="padding-left: 20px; margin-bottom: 0;">
+                <li style="margin-bottom: 10px;"><strong>Open the alert</strong> and view the recorded document in Official Records using the document number/link provided.</li>
+                <li style="margin-bottom: 10px;"><strong>If you recognize the transaction</strong>, document it and move on.</li>
+                <li style="margin-bottom: 10px;"><strong>If you do not recognize it</strong>, treat it as time-sensitive and contact:
+                    <ul>
+                        <li>Your local law enforcement agency (Sheriff/Police)</li>
+                        <li>An attorney (title/real estate litigation as appropriate)</li>
+                        <li>Your Property Appraiser (when ownership records are affected)</li>
+                    </ul>
+                </li>
+                <li><strong>Preserve evidence:</strong> save the email alert, document number, screenshots, and any related communications.</li>
+            </ol>
+        </div>
+
+        <h2>REALTOR® talking points: how to share this with clients without creating liability</h2>
+        <p>This is the language tone that keeps your client informed and keeps you in a safe lane:</p>
+
+        <ul class="checklist">
+            <li>“This is a free monitoring tool offered by the Clerk’s office. It doesn’t prevent fraud, but it can alert you quickly if something gets recorded that matches your name or parcel.”</li>
+            <li>“If you get an alert, review the document right away. If it looks wrong, contact law enforcement and an attorney.”</li>
+            <li>“If you own property in more than one Florida county, sign up in each county—Florida Clerks notes these services are available statewide.”</li>
+        </ul>
+
+        <p><strong>Suggested placement in your client workflow:</strong></p>
+        <div class="feature-grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px;">
+            <div class="feature-card" style="padding: 15px;">
+                <div style="font-size: 1.5rem; margin-bottom: 5px;">📧</div>
+                <div style="font-size: 0.9rem; font-weight: bold;">Buyer Close-Out Email</div>
+            </div>
+            <div class="feature-card" style="padding: 15px;">
+                <div style="font-size: 1.5rem; margin-bottom: 5px;">📋</div>
+                <div style="font-size: 0.9rem; font-weight: bold;">Listing Consult Checklist</div>
+            </div>
+            <div class="feature-card" style="padding: 15px;">
+                <div style="font-size: 1.5rem; margin-bottom: 5px;">🍂</div>
+                <div style="font-size: 0.9rem; font-weight: bold;">Seasonal Homeowner Tips</div>
+            </div>
+        </div>
+
+        <div class="share-tile">
+            <h3>Share this with your clients</h3>
+            <p>Help protect your clients by sharing this valuable free resource.</p>
+            <div class="share-tags">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://bonitaesterorealtors.com/protect-your-property-from-deed-and-title-fraud/" target="_blank">Share on Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://bonitaesterorealtors.com/protect-your-property-from-deed-and-title-fraud/&text=Protect+Your+Property+from+Deed+and+Title+Fraud" target="_blank">Share on X</a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://bonitaesterorealtors.com/protect-your-property-from-deed-and-title-fraud/" target="_blank">Share on LinkedIn</a>
+                <a href="mailto:?subject=Protect Your Property from Deed and Title Fraud&body=Free Property Fraud Alerts are now available in all 67 Florida counties. Check out this article to learn more: https://bonitaesterorealtors.com/protect-your-property-from-deed-and-title-fraud/" target="_blank">Share via Email</a>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p><strong>Article Disclaimer:</strong><br>This article is for general information only and is not legal advice. If you believe you may be a victim of property fraud, contact local law enforcement and consult an attorney. Clerk alert services may vary by county, and alerts are intended as notification tools—not fraud prevention.</p>
+        </div>
+
+    </main>
+
+    <div class="wrapper" style="margin: 40px auto; text-align: center;">
+        <hr style="border: 0; height: 1px; background: var(--line); margin: 32px 0;">
+        <a href="https://www.bonitaesterorealtors.com/ber-news-home/"
+            class="action-btn" style="background: transparent; color: var(--primary) !important;">Return
+            to BER News Home</a>
+    </div>
+
+</div>

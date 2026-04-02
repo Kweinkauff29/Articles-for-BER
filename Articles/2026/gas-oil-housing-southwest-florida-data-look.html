@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gas, Oil, and Housing: A Data-Led Look at Southwest Florida, Florida, and the U.S. | Bonita Springs-Estero
+        REALTORS®</title>
+    <meta name="description"
+        content="A curiosity-driven look at how energy prices (oil and gasoline) have moved over time and how they align with housing prices and activity in Southwest Florida." />
+    <meta name="author" content="Bonita Springs-Estero REALTORS®" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <meta property="og:title" content="Gas, Oil, and Housing: A Data-Led Look at Southwest Florida" />
+    <meta property="og:description"
+        content="Explore the relationship between energy prices and the real estate market with regional and national data." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80" />
+    <meta property="article:published_time" content="2026-04-02" />
+    <meta property="article:tag" content="Market Research" />
+    <meta property="article:tag" content="Energy Prices" />
+    <meta property="article:tag" content="Southwest Florida Real Estate" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Gas, Oil, and Housing: A Data-Led Look at Southwest Florida, Florida, and the U.S.",
+      "description": "A curiosity-driven, non-political look at energy cycles and housing cycles.",
+      "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80",
+      "author": {
+        "@type": "Organization",
+        "name": "Bonita Springs-Estero REALTORS®"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bonita Springs-Estero REALTORS®"
+      },
+      "datePublished": "2026-04-02"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .ber-article-container {
+            --bg: #ffffff;
+            --ink: #111827;
+            --muted: #6b7280;
+            --line: #e5e7eb;
+            --signal-cyan: #0284c7;
+            --signal-yellow: #ca8a04;
+            --brand-dark: #0CA7A4;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'Share Tech Mono', monospace;
+
+            font-family: var(--font-main);
+            color: var(--ink);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .ber-article-container .hero-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .ber-article-container header {
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
+        }
+
+        .ber-article-container .header-index {
+            font-family: var(--font-mono);
+            font-size: 6rem;
+            line-height: 0.8;
+            color: var(--bg);
+            -webkit-text-stroke: 1px var(--ink);
+            text-shadow: 2px 2px 0px rgba(2, 132, 199, 0.2);
+            margin: 0;
+        }
+
+        .ber-article-container h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: var(--ink);
+            line-height: 1.1;
+        }
+
+        .ber-article-container .subheading {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ber-article-container .disclaimer-line {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin: 15px 0 30px;
+            border-left: 3px solid var(--line);
+            padding-left: 15px;
+        }
+
+        .ber-article-container .tech-panel {
+            border: 1px solid var(--ink);
+            padding: 30px;
+            position: relative;
+            background: #fafafa;
+            margin: 40px 0;
+        }
+
+        .ber-article-container .tech-panel::before,
+        .ber-article-container .tech-panel::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--ink);
+        }
+
+        .ber-article-container .tech-panel::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .ber-article-container .tech-panel::after {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .ber-article-container h2 {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            color: var(--signal-cyan);
+            border-bottom: 1px dashed var(--line);
+            padding-bottom: 10px;
+            margin-top: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ber-article-container h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-top: 2.5rem;
+            border-left: 4px solid var(--signal-cyan);
+            padding-left: 10px;
+        }
+
+        .ber-article-container p {
+            font-size: 1.05rem;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .ber-article-container ul {
+            font-size: 1.05rem;
+            color: #374151;
+            margin-bottom: 1.8rem;
+        }
+
+        .ber-article-container li {
+            margin-bottom: 10px;
+        }
+
+        .ber-article-container .chart-block {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            margin: 40px 0;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .ber-article-container .chart-block {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ber-article-container .chart-container {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid var(--ink);
+            position: relative;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+            height: 480px;
+            /* Expanded to include meta text inside box */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ber-article-container .chart-container canvas {
+            flex: 1;
+            min-height: 0;
+        }
+
+        .ber-article-container .chart-meta {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-top: 15px;
+            line-height: 1.3;
+            border-top: 1px dashed var(--line);
+            padding-top: 10px;
+        }
+
+        .ber-article-container .info-card {
+            background: #f0f9ff;
+            border-left: 4px solid var(--signal-cyan);
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .ber-article-container .info-card h4 {
+            margin-top: 0;
+            font-family: var(--font-mono);
+            color: var(--ink);
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .ber-article-container .data-download {
+            display: none;
+            /* Removed as per user request */
+        }
+
+        .ber-article-container .toc {
+            background: #f9fafb;
+            padding: 20px;
+            border: 1px solid var(--line);
+            margin-bottom: 40px;
+        }
+
+        .ber-article-container .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .ber-article-container .toc a {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--signal-cyan);
+            text-decoration: none;
+        }
+
+        .ber-article-container .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .ber-article-container .btn-back {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 24px;
+            border: 1px solid var(--ink);
+            font-family: var(--font-mono);
+            text-decoration: none;
+            color: var(--ink);
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .ber-article-container .btn-back:hover {
+            background: var(--ink);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ber-article-container">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80"
+            alt="Gas prices and housing market visual" class="hero-img">
+
+        <header>
+            <div>
+                <h1>Gas, Oil, and Housing: A Data-Led Look</h1>
+                <p class="subheading">A curiosity-driven, look at energy cycles and housing cycles</p>
+            </div>
+            <div class="header-index">03</div>
+        </header>
+
+
+        <nav class="toc">
+            <ul>
+                <li><a href="#intro">Why we looked at this</a></li>
+                <li><a href="#sources">Data Sources</a></li>
+                <li><a href="#charts">The Data Pack</a></li>
+                <li><a href="#outcomes">What it means</a></li>
+            </ul>
+        </nav>
+
+        <section id="intro">
+            <h2>Why we looked at this and what this article is not</h2>
+            <p>This article is written from the perspective of Bonita Springs-Estero REALTORS® as a community-facing
+                research note: a curiosity-driven look at how energy prices (oil and gasoline) have moved over time, and
+                how those movements appear to line up with housing prices and housing activity. It is not a political
+                statement, not a forecast, and not a commentary on current events.</p>
+            <p>The starting point is simple: gasoline can rise quickly, and that can feel like “everything is getting
+                more expensive at once.” In the most recent data available, the monthly U.S. regular gasoline price rose
+                from $2.908/gal (Feb 2026) to $3.638/gal (Mar 2026)—an increase of about +25% in one month.</p>
+
+            <div class="tech-panel">
+                <p style="margin-bottom: 10px; font-weight: bold;">Questions clients often ask during energy spikes:</p>
+                <ul style="margin-bottom: 0;">
+                    <li>“Does a spike in gas mean home prices will fall?”</li>
+                    <li>“Should I delay buying or selling if energy costs jump?”</li>
+                    <li>“Is housing still a good investment when daily living costs are volatile?”</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sources">
+            <h2>Data Sources & Methodology</h2>
+            <p>To ensure transparency, we used publicly available datasets from the U.S. Energy Information
+                Administration (EIA), Federal Housing Finance Agency (FHFA), and Realtor.com, all sourced via FRED.</p>
+            <ul>
+                <li><strong>Energy:</strong> U.S. Regular All Formulations Gas Price and West Texas Intermediate (WTI)
+                    Crude Oil. level correlation between monthly WTI and U.S. gasoline is ~0.93.</li>
+                <li><strong>Housing Prices:</strong> FHFA All-Transactions House Price Index (HPI) for U.S., Florida,
+                    Cape Coral-Fort Myers, and Naples-Marco Island.</li>
+                <li><strong>Market Sentiment:</strong> National Median Listing Price (Realtor.com).</li>
+                <li><strong>Activity Proxy:</strong> Pending Listing Count for Naples-Immokalee-Marco Island CBSA.</li>
+            </ul>
+        </section>
+
+        <section id="charts">
+            <h2>What the numbers say</h2>
+
+            <!-- CHART 1: ENERGY REGIMES -->
+            <div class="chart-block">
+                <div>
+                    <h3>Energy prices move in "regimes"</h3>
+                    <p>U.S. gasoline ranged from $1.764/gal in early 2016 to nearly $5.00/gal in mid-2022. We treat
+                        energy prices as a macro variable that can affect consumer budgets, but they are not a direct
+                        one-to-one signal for housing fundamentals. Oil and gas move together strongly (~0.93
+                        correlation), but the impact on housing depends on the broader economic cycle.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chartEnergy"></canvas>
+                    <div class="chart-meta">Source: EIA via FRED (GASREGM, MCOILWTICO). Monthly averages 2014-2026. *Oil
+                        and gasoline prices tend to move together because gas is refined from crude.*</div>
+                </div>
+            </div>
+
+            <!-- CHART 2: HPI COMPARISON -->
+            <div class="chart-block">
+                <div class="chart-container">
+                    <canvas id="chartHPI"></canvas>
+                    <div class="chart-meta">Source: FHFA via FRED. Quarterly index values. *Note: Q4 2024 to Q4 2025
+                        performance shows U.S. at +3.37% while Southwest Florida markets recalibrated (-4% to -5% YoY).*
+                    </div>
+                </div>
+                <div>
+                    <h3>Regional Housing Divergence</h3>
+                    <p>Florida and Southwest Florida did not simply mirror national energy trends. While U.S. HPI rose
+                        ~107% since 2014, Florida HPI grew ~155%. Crucially, the most recent year of data (Q4 2024–Q4
+                        2025) highlights a clear divergence:</p>
+                    <ul>
+                        <li>U.S. HPI: <strong>+3.37%</strong> YoY</li>
+                        <li>Florida HPI: <strong>+0.03%</strong> YoY (Flat)</li>
+                        <li>Cape Coral-Fort Myers: <strong>-4.67%</strong> YoY</li>
+                        <li>Naples-Marco Island: <strong>-3.90%</strong> YoY</li>
+                    </ul>
+                    <p>This remind us: national headlines rarely equal local reality.</p>
+                </div>
+            </div>
+
+            <!-- CHART 3: GAS VS LISTING PRICE -->
+            <div class="chart-block">
+                <div>
+                    <h3>Cycle Correlations</h3>
+                    <p>Does gas "predict" housing? The data suggests it depends entirely on the economic regime. We
+                        analyzed the correlation between YoY changes across three distinct windows:</p>
+                    <ul>
+                        <li><strong>2014–2019:</strong> Weak or negative correlation (-0.15 to -0.43 in SWFL). Fuel
+                            costs rose while prices stabilized.</li>
+                        <li><strong>2020–2022:</strong> Extremely high correlation (+0.84 to +0.90). Pandemic-era shocks
+                            moved all prices up simultaneously.</li>
+                        <li><strong>2023–2025:</strong> The link broke again. HPI slowed/fell in SWFL despite volatile
+                            fuel swings.</li>
+                    </ul>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chartCorrelation"></canvas>
+                    <div class="chart-meta">Source: Realtor.com/EIA via FRED. *Methodology Note: Listing activity is far
+                        more sensitive to financing conditions and inventory than to a single commodity price.*</div>
+                </div>
+            </div>
+
+            <!-- CHART 4: NAPLES PENDINGS -->
+            <div class="chart-block">
+                <div class="chart-container">
+                    <canvas id="chartLocal"></canvas>
+                    <div class="chart-meta">Source: Realtor.com via FRED (PENLISCOU34940). *Pending counts lead closings
+                        but follow seasonal "high season" high-points, regardless of gas spikes.*</div>
+                </div>
+                <div>
+                    <h3>Local Activity Lens</h3>
+                    <p>In Naples, pending listings typically peak in the spring (March 2024 saw 1,682 pendings) and dip
+                        in late fall (October 2024 saw 846). During these same months, gas prices fluctuated
+                        significantly—but pendings followed the seasonal "lifestyles" cycle rather than the pump price.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="stock">
+            <h2>Stock Market Context: A Cautionary Anchor</h2>
+            <p>The S&P 500 is often cited as a "wealth effect" proxy for high-end or second-home markets like ours. In
+                the data used for this study, the S&P 500 Close rose from 2,584 (Mar 2020) to 6,575 (Apr 2026).</p>
+            <div class="tech-panel">
+                <p style="font-weight: bold; margin-bottom: 5px;">Why we treat the S&P 500 as context, not a driver:</p>
+                <ul style="margin-bottom: 0;">
+                    <li>The series is a price index and excludes dividends.</li>
+                    <li>FRED distribution limits the daily history to a 10-year window.</li>
+                    <li>Correlation with housing is often lagged by 6–12 months as paper gains are realized into
+                        physical assets.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="outcomes">
+            <h2>What this means for buyers, sellers, and investors</h2>
+
+            <div class="info-card">
+                <h4>Does a spike in gas mean home prices will fall?</h4>
+                <p>Not automatically. The "gas ↔ housing" relationship changes by regime. Housing prices are slow-moving
+                    outputs determined by credit, supply, and local inventory, often reacting with significant lags.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Is housing a good "inflation hedge" when energy costs are volatile?</h4>
+                <p>Housing can be a long-horizon hedge against some forms of inflation, but it is not a "monthly hedge"
+                    against everyday cost spikes like gasoline. Short-run affordability is almost always dominated by
+                    financing costs and inventory levels rather than oil prices alone.</p>
+            </div>
+
+            <h3>A neutral, helpful script for clients</h3>
+            <ul>
+                <li>"Gas prices are a real household expense, and they can move fast. However, historically, the housing
+                    market doesn’t react in a single consistent way to short-term energy moves."</li>
+                <li>"The bigger drivers to watch are mortgage rates, inventory, and local demand."</li>
+                <li>"We ran the numbers so you can see when these series moved together (and when they didn’t)."</li>
+            </ul>
+        </section>
+
+        <!-- Data Download section removed as per user request -->
+
+        <div style="text-align: center;">
+            <a href="https://bonitaesterorealtors.com/ber-news-home/" class="btn-back">Return to BER News Home</a>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Chart Defaults
+                Chart.defaults.color = '#6b7280';
+                Chart.defaults.font.family = "'Inter', sans-serif";
+
+                const commonOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { boxWidth: 12, usePointStyle: true } } },
+                    scales: {
+                        x: { grid: { color: '#f3f4f6' } },
+                        y: { grid: { color: '#f3f4f6' } }
+                    }
+                };
+
+                // 1. ENERGY: GAS VS WTI OIL (Monthly 2014-2026 Snapshot)
+                const labelsEnergy = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "Mar '26"];
+                const dataGas = [3.31, 2.11, 1.94, 2.34, 2.55, 2.24, 2.54, 2.33, 3.31, 3.33, 3.07, 3.07, 3.63];
+                const dataOil = [94.62, 47.22, 31.68, 52.50, 63.70, 51.38, 57.52, 52.00, 83.22, 78.12, 74.15, 75.74, 90.84];
+
+                new Chart(document.getElementById('chartEnergy'), {
+                    type: 'line',
+                    data: {
+                        labels: labelsEnergy,
+                        datasets: [
+                            { label: 'U.S. Gas ($/gal)', data: dataGas, borderColor: '#0284c7', backgroundColor: '#0284c7', yAxisID: 'y' },
+                            { label: 'WTI Oil ($/bbl)', data: dataOil, borderColor: '#ca8a04', backgroundColor: '#ca8a04', yAxisID: 'y1', borderDash: [5, 5] }
+                        ]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: { type: 'linear', display: true, position: 'left', title: { display: true, text: 'Gas ($/gal)' } },
+                            y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Oil ($/bbl)' } }
+                        }
+                    }
+                });
+
+                // 2. HPI: US, FL, SWFL (Quarterly 2014-2025)
+                const labelsHPI = ["2014 Q3", "2016 Q3", "2018 Q3", "2020 Q3", "2022 Q3", "2024 Q3", "2025 Q4"];
+                new Chart(document.getElementById('chartHPI'), {
+                    type: 'line',
+                    data: {
+                        labels: labelsHPI,
+                        datasets: [
+                            { label: 'U.S.', data: [342, 379, 420, 461, 623, 682, 709], borderColor: '#111827', borderWidth: 2 },
+                            { label: 'Florida', data: [322, 385, 448, 501, 761, 815, 823], borderColor: '#0284c7', borderWidth: 2 },
+                            { label: 'Cape Coral-FM', data: [186, 223, 250, 271, 443, 437, 416], borderColor: '#ca8a04', borderWidth: 2 },
+                            { label: 'Naples-Marco', data: [NaN, 290, 305, 330, 519, 566, 557], borderColor: '#10b981', borderWidth: 2 }
+                        ]
+                    },
+                    options: { ...commonOptions, interaction: { mode: 'index', intersect: false } }
+                });
+
+                // 3. GAS VS LISTING PRICE (2016-2026 Index)
+                const labelsCorr = ["2016", "2018", "2020", "2022", "2024", "2026"];
+                const gasIndexed = [100, 131, 131, 170, 158, 187]; // Approx index values from data
+                const houseIndexed = [100, 115, 115, 154, 158, 155];
+
+                new Chart(document.getElementById('chartCorrelation'), {
+                    type: 'line',
+                    data: {
+                        labels: labelsCorr,
+                        datasets: [
+                            { label: 'Gas Price Index', data: gasIndexed, borderColor: '#0284c7', fill: true, backgroundColor: 'rgba(2, 132, 199, 0.1)' },
+                            { label: 'Listing Price Index', data: houseIndexed, borderColor: '#111827', borderWidth: 2 }
+                        ]
+                    },
+                    options: commonOptions
+                });
+
+                // 4. LOCAL: NAPLES PENDINGS VS GAS (2023-2026)
+                const labelsLocal = ["Jun '23", "Oct", "Jan '24", "Jun", "Oct", "Jan '25", "Jun", "Oct", "Jan '26"];
+                const pendings = [1509, 1126, 1011, 1218, 846, 929, 1160, 940, 1031];
+                const gasLocal = [3.57, 3.61, 3.07, 3.45, 3.13, 3.07, 3.15, 3.06, 2.80];
+
+                new Chart(document.getElementById('chartLocal'), {
+                    type: 'bar',
+                    data: {
+                        labels: labelsLocal,
+                        datasets: [
+                            { label: 'Pending Listings', data: pendings, backgroundColor: '#0284c7', yAxisID: 'y' },
+                            { label: 'Gas Price ($)', data: gasLocal, type: 'line', borderColor: '#ca8a04', yAxisID: 'y1' }
+                        ]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: { title: { display: true, text: 'Pending Listings' } },
+                            y1: { position: 'right', display: true, grid: { drawOnChartArea: false }, title: { display: true, text: 'Gas ($)' } }
+                        }
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

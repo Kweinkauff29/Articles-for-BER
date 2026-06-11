@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>May 2026 Market Stats & Regional Indicators: Housing Stayed Active While the Broader Economy Sent Mixed Signals</title>
+    <meta name="description" content="May 2026 Southwest Florida market stats show strong pending sales, tighter inventory, selective pricing, and mixed regional economic indicators across housing, tourism, spending, labor, and consumer sentiment." />
+    <meta name="author" content="Coconut Coast Organization of Realtors" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean: #004B7A;
+            --teal: #007F7A;
+            --aqua: #D9F2F0;
+            --sand: #F5EDE0;
+            --white: #FFFFFF;
+            --charcoal: #1A1A1A;
+            --coral: #D6453D;
+            --green: #00875A;
+            --line: #e5e7eb;
+            --muted: #475569;
+            --bg-main: #fafafa;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--bg-main);
+            line-height: 1.6;
+        }
+
+        a { color: var(--teal); text-decoration: none; font-weight: 600; }
+        a:hover { color: var(--ocean); text-decoration: underline; }
+
+        /* Section 1: Hero Graphic */
+        header.hero {
+            background: linear-gradient(135deg, rgba(0, 75, 122, 0.85) 0%, rgba(0, 127, 122, 0.85) 100%), url('https://coconutcoastrealtors.org/wp-content/uploads/2026/06/May-2026-Market-Stats.png') center/cover no-repeat;
+            color: var(--white);
+            padding: 80px 40px 100px;
+            text-align: center;
+        }
+
+        header.hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            max-width: 950px;
+            margin: 0 auto 20px;
+            line-height: 1.2;
+        }
+
+        header.hero p.subhead {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--aqua);
+            font-weight: 400;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .hero-stat-card {
+            background: var(--white);
+            color: var(--charcoal);
+            padding: 20px 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .hero-stat-card .val {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .hero-stat-card .val.up { color: var(--green); }
+        .hero-stat-card .val.down { color: var(--coral); }
+        .hero-stat-card .val.neutral { color: var(--ocean); }
+
+        .hero-stat-card .lbl {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        main {
+            background: var(--white);
+            max-width: 1000px;
+            margin: -50px auto 60px;
+            padding: 50px 50px;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Typography & Spacing */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--ocean);
+            border-bottom: 3px solid var(--teal);
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .byline {
+            font-size: 0.95rem;
+            color: var(--muted);
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Section 2: Data Timing Strip */
+        .timing-strip {
+            background: var(--sand);
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin: 20px 0 40px;
+            border: 1px solid #e0d5c1;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .timing-icon {
+            font-size: 2rem;
+        }
+
+        .timing-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0 0 5px 0;
+            color: var(--ocean);
+            font-size: 1.2rem;
+        }
+
+        .timing-content p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--charcoal);
+        }
+
+        /* Pull Quotes */
+        .pull-quote {
+            background: var(--aqua);
+            border-left: 6px solid var(--teal);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .pull-quote p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--ocean);
+            margin: 0;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Dashboards & Info Panels */
+        .info-panel {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 35px;
+            margin: 3.5rem 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .info-panel-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--ocean);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .info-caption {
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--line);
+        }
+
+        /* Section 3: Regional Fast Stats Split */
+        .dashboard-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .dashboard-side h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            background: var(--ocean);
+            padding: 15px;
+            margin: 0;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        .dashboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--line);
+            border-top: none;
+        }
+
+        .dashboard-table th, .dashboard-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--line);
+            font-size: 1.05rem;
+        }
+
+        .dashboard-table th {
+            background: var(--bg-main);
+            font-weight: 600;
+            color: var(--muted);
+            text-align: left;
+            width: 50%;
+        }
+
+        .dashboard-table td {
+            font-weight: 700;
+            color: var(--charcoal);
+            text-align: right;
+        }
+
+        .dashboard-table tr:nth-child(even) td {
+            background: var(--bg-main);
+        }
+
+        .val-up { color: var(--green); }
+        .val-down { color: var(--coral); }
+        .val-neutral { color: var(--ocean); }
+
+        /* Section 4: Local Market Comparison */
+        .local-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .local-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .local-header {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--white);
+        }
+
+        .local-header.bonita { background: var(--teal); }
+        .local-header.naples { background: var(--ocean); }
+
+        .local-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--line);
+            font-size: 1.05rem;
+        }
+
+        .local-row:nth-child(even) { background: var(--bg-main); }
+        .local-lbl { color: var(--muted); font-weight: 600; }
+        .local-val { font-weight: 700; color: var(--charcoal); }
+        .local-val.up { color: var(--green); }
+        .local-val.down { color: var(--coral); }
+
+        .supply-flow {
+            background: var(--sand);
+            padding: 15px;
+            text-align: center;
+            border-top: 2px solid var(--line);
+        }
+
+        .supply-flow-val {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--ocean);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .supply-flow-lbl {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            font-style: italic;
+        }
+
+        /* Section 5: Regional Economic Indicators Icon Rail */
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .eco-card {
+            background: var(--bg-main);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .eco-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            color: var(--ocean);
+        }
+
+        .eco-card h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            margin: 0 0 10px 0;
+            color: var(--muted);
+        }
+
+        .eco-val {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .eco-trend {
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .eco-trend.good { background: #d1fae5; color: var(--green); }
+        .eco-trend.bad { background: #fee2e2; color: var(--coral); }
+        .eco-trend.neutral { background: #e0f2fe; color: var(--ocean); }
+
+        .eco-date {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: auto;
+            font-style: italic;
+        }
+
+        /* Section 6: County Price Mini-Chart */
+        .price-panel {
+            text-align: center;
+        }
+
+        .price-panel h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--ocean);
+            margin: 0 0 20px 0;
+        }
+
+        .price-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 280px;
+            background: var(--bg-main);
+            padding: 40px 20px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            margin-bottom: 1rem;
+        }
+
+        .p-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 28%;
+        }
+
+        .p-bar {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 15px;
+        }
+
+        .p-bar.collier { background: var(--ocean); height: 220px; }
+        .p-bar.lee { background: var(--muted); height: 100px; }
+        .p-bar.charlotte { background: var(--teal); height: 95px; }
+
+        .p-val {
+            color: var(--white);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .p-trend {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .p-lbl {
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Section 7: Prediction Check Scorecard */
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .score-card {
+            background: var(--white);
+            border: 2px solid var(--line);
+            border-radius: 12px;
+            padding: 30px 20px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .score-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border: 2px solid var(--white);
+        }
+
+        .score-badge.confirmed { background: var(--green); }
+        .score-badge.mixed { background: #f59e0b; }
+
+        .score-card h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            color: var(--ocean);
+            margin: 15px 0 10px;
+        }
+
+        .score-card p {
+            font-size: 1rem;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .score-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Visual Media Embedding */
+        .cms-asset-view {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+
+        .cms-asset-view img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--line);
+        }
+
+        /* Download Blocks */
+        .download-block {
+            background: #f8fafc;
+            border: 2px solid var(--line);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 3rem 0;
+            gap: 20px;
+        }
+
+        .download-info h4 {
+            margin: 0 0 8px 0;
+            font-size: 1.25rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+        }
+
+        .download-info p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--muted);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--ocean);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: var(--teal);
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 127, 122, 0.25);
+        }
+
+        @media (max-width: 850px) {
+            .dashboard-split, .local-grid { grid-template-columns: 1fr; }
+            .eco-grid, .score-grid { grid-template-columns: 1fr; }
+            header.hero h1 { font-size: 2.2rem; }
+            main { padding: 40px 30px; }
+            .download-block { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>May 2026 Market Stats</h1>
+        <p class="subhead">Housing Stayed Active. The Economy Sent Mixed Signals. Contracts stayed strong and inventory tightened, but consumer spending, labor, and sentiment showed softer regional conditions.</p>
+        
+        <div class="hero-stats">
+            <div class="hero-stat-card">
+                <div class="val up">+36.1%</div>
+                <div class="lbl">Regional SF Pending Sales</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="val up">+56.3%</div>
+                <div class="lbl">Regional Condo Pending Sales</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="val down">-28%</div>
+                <div class="lbl">Bonita/Estero Homes for Sale</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="val down">-20%</div>
+                <div class="lbl">Naples Homes for Sale</div>
+            </div>
+            <div class="hero-stat-card">
+                <div class="val neutral">5.8%</div>
+                <div class="lbl">SWFL Unemployment Rate</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <p class="byline"><em>Published June 2026 • By Coconut Coast Organization of Realtors</em></p>
+
+        <!-- Section 2: Data Timing Strip -->
+        <div class="timing-strip">
+            <div class="timing-icon">📅</div>
+            <div class="timing-content">
+                <h4>Data Timing Note</h4>
+                <p><strong>May 2026:</strong> Housing stats, active listings, consumer sentiment<br>
+                <strong>April 2026:</strong> Airport passengers, unemployment, permits, coastal home sales<br>
+                <strong>March 2026:</strong> Tourist tax revenues, taxable sales<br>
+                <em>Housing stats reflect May 2026. FGCU regional indicators use the latest available month by category.</em></p>
+            </div>
+        </div>
+
+        <p>May 2026 did not reverse the Southwest Florida market story. It sharpened it.</p>
+        <p>Across the region, demand continued to show up in the contract data, supply remained tighter than it was a year ago, and several local housing indicators pointed to a market that is still moving when properties are positioned correctly. At the same time, the latest regional economic indicators from FGCU show a broader economy sending more mixed signals, with softer taxable sales, higher unemployment, weaker consumer sentiment, and reduced building permit activity.</p>
+        
+        <div class="pull-quote">
+            <p>“The right read for May is not back to frenzy, and it is not market weakness.”</p>
+        </div>
+        
+        <p>It is a selective housing market operating inside a softer regional economic backdrop.</p>
+
+        <h2>Contracts Stayed Strong While Supply Tightened</h2>
+        <p>The clearest housing signal in May was still contract activity.</p>
+        <p>In the regional single-family market, pending sales rose 36.1% year over year, while new listings fell 12.4%. Inventory was down 21.4%, and months of supply fell to 5.7. That is not the shape of a passive market. Buyers were still writing contracts, and available supply was lower than it was a year ago.</p>
+
+        <div class="download-block">
+            <div class="download-info">
+                <h4>CCOR Fast Stats: May 2026</h4>
+                <p>The market’s demand-and-supply dashboard for single-family and condos.</p>
+            </div>
+            <a href="https://coconutcoastrealtors.org/wp-content/uploads/2026/06/BER_Fast_Stats-May-2026.pdf" class="btn" target="_blank">Download PDF</a>
+        </div>
+
+        <!-- Section 3: Regional Fast Stats Split -->
+        <div class="info-panel">
+            <div class="info-panel-title">May 2026 Regional Fast Stats</div>
+            <div class="dashboard-split">
+                <div class="dashboard-side">
+                    <h4>Single-Family Homes</h4>
+                    <table class="dashboard-table">
+                        <tr><th>New Listings</th><td class="val-down">2,512 (-12.4%)</td></tr>
+                        <tr><th>Pending Sales</th><td class="val-up">2,958 (+36.1%)</td></tr>
+                        <tr><th>Closed Sales</th><td class="val-down">1,856 (-5.9%)</td></tr>
+                        <tr><th>Median Sale Price</th><td class="val-up">$440,000 (+4.8%)</td></tr>
+                        <tr><th>Inventory</th><td class="val-down">10,588 (-21.4%)</td></tr>
+                        <tr><th>Months of Supply</th><td class="val-neutral">5.7 Mo</td></tr>
+                    </table>
+                </div>
+                <div class="dashboard-side">
+                    <h4>Condos / Townhomes</h4>
+                    <table class="dashboard-table">
+                        <tr><th>New Listings</th><td class="val-down">1,139 (-1.8%)</td></tr>
+                        <tr><th>Pending Sales</th><td class="val-up">1,419 (+56.3%)</td></tr>
+                        <tr><th>Closed Sales</th><td class="val-up">1,024 (+14.3%)</td></tr>
+                        <tr><th>Median Sale Price</th><td class="val-down">$357,600 (-2.0%)</td></tr>
+                        <tr><th>Inventory</th><td class="val-down">6,838 (-19.2%)</td></tr>
+                        <tr><th>Months of Supply</th><td class="val-neutral">6.7 Mo</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="info-caption">Contracts were the strongest signal in May. Pricing remained selective.</div>
+        </div>
+
+        <p>At the same time, May was not a simple across-the-board acceleration. Single-family closed sales were down 5.9% year over year, even as the median sale price rose 4.8% to $440,000. That combination points to a market where demand is present but still disciplined.</p>
+        <p>Condos and townhomes showed even stronger transactional momentum. Pending sales rose 56.3%, closed sales rose 14.3%, inventory fell 19.2%, and months of supply dropped to 6.7. However, the median condo sale price slipped 2.0% to $357,600. That makes condos one of the more active segments by volume, but still price-sensitive.</p>
+
+        <h2>Bonita Springs–Estero & Naples: Local Market Nuance</h2>
+        <p>Bonita Springs–Estero remained one of the clearest examples of tightening local inventory in the supplied May data. Closed sales rose 16% year over year, pending sales rose 37%, and homes for sale were down 28%. The market added 314 new listings in May but sold 357 listings, meaning sales outpaced new supply during the month. That helps explain why available inventory continued to tighten compared to last year.</p>
+
+        <div class="pull-quote">
+            <p>“Bonita/Estero looked tighter. Naples looked active with better replenishment.”</p>
+        </div>
+
+        <p>Naples also showed strong May demand, but with a slightly different shape. Closed sales rose 10%, pending sales rose 46%, and homes for sale were down 20% year over year. Median sale price increased 3% to $624,000, and median days on market came in at 63. The difference was supply flow. Naples added 970 new listings in May and sold 825 listings. That means Naples had strong demand, but it also had more new supply coming into the market than Bonita Springs–Estero. In practical terms, Naples looked active and healthier than last year, but slightly better replenished in real time.</p>
+
+        <div class="cms-asset-view">
+            <img src="https://coconutcoastrealtors.org/wp-content/uploads/2026/06/Bonita-May-2026.png" alt="Bonita Springs–Estero May 2026 Real Estate Infographic" />
+        </div>
+        <div class="cms-asset-view">
+            <img src="https://coconutcoastrealtors.org/wp-content/uploads/2026/06/Naples-May-2026.png" alt="Naples May 2026 Real Estate Infographic" />
+        </div>
+
+        <!-- Section 4: Local Market Comparison -->
+        <div class="info-panel">
+            <div class="info-panel-title">Local Market Comparison</div>
+            <div class="local-grid">
+                <div class="local-card">
+                    <div class="local-header bonita">Bonita Springs–Estero</div>
+                    <div class="local-row"><span class="local-lbl">Closed Sales</span><span class="local-val up">+16%</span></div>
+                    <div class="local-row"><span class="local-lbl">Pending Sales</span><span class="local-val up">+37%</span></div>
+                    <div class="local-row"><span class="local-lbl">New Listings</span><span class="local-val down">-4%</span></div>
+                    <div class="local-row"><span class="local-lbl">Median DOM</span><span class="local-val">65</span></div>
+                    <div class="local-row"><span class="local-lbl">Median Price</span><span class="local-val">$524,725 (-1%)</span></div>
+                    <div class="local-row"><span class="local-lbl">Homes for Sale</span><span class="local-val down">-28%</span></div>
+                    <div class="supply-flow">
+                        <div class="supply-flow-val">314 new listings vs. 357 sold</div>
+                        <div class="supply-flow-lbl">Sold more than it added</div>
+                    </div>
+                </div>
+                <div class="local-card">
+                    <div class="local-header naples">Naples</div>
+                    <div class="local-row"><span class="local-lbl">Closed Sales</span><span class="local-val up">+10%</span></div>
+                    <div class="local-row"><span class="local-lbl">Pending Sales</span><span class="local-val up">+46%</span></div>
+                    <div class="local-row"><span class="local-lbl">New Listings</span><span class="local-val up">+4%</span></div>
+                    <div class="local-row"><span class="local-lbl">Median DOM</span><span class="local-val">63</span></div>
+                    <div class="local-row"><span class="local-lbl">Median Price</span><span class="local-val">$624,000 (+3%)</span></div>
+                    <div class="local-row"><span class="local-lbl">Homes for Sale</span><span class="local-val down">-20%</span></div>
+                    <div class="supply-flow">
+                        <div class="supply-flow-val">970 new listings vs. 825 sold</div>
+                        <div class="supply-flow-lbl">Strong demand with more replenishment</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-caption">Bonita/Estero looked tighter. Naples looked active with better replenishment.</div>
+        </div>
+
+        <h2>Regional Indicators Show a Mixed Economy</h2>
+        <p>The broader regional picture helps explain why pricing remains selective. Airport passenger activity for the region was down roughly 2% year over year in April, showing some cooling in travel volume. But tourist tax revenues improved roughly 9% in March, suggesting that lodging and visitor-related activity remained relatively resilient.</p>
+        <p>Taxable sales told a weaker story. Real taxable sales in the five-county region fell 13% year over year in March. That is one of the clearer signs that consumer spending has softened, even as housing demand has remained active.</p>
+
+        <div class="download-block">
+            <div class="download-info">
+                <h4>Regional Economic Indicators: May 2026</h4>
+                <p>Review the comprehensive FGCU Regional Economic Indicators dashboard and report.</p>
+                <p style="margin-top: 10px;">
+                    <a href="https://www.fgcu.edu/cob/reri/dashboard/" target="_blank">View FGCU RERI Dashboard</a>
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-direction: column;">
+                <a href="https://coconutcoastrealtors.org/wp-content/uploads/2026/06/May-2026-Indicators.pdf" class="btn" target="_blank" style="text-align: center;">Indicators Summary PDF</a>
+                <a href="https://www.fgcu.edu/cob/reri/files/rei/indicators202606.pdf" class="btn" target="_blank" style="text-align: center; background: var(--teal);">Full FGCU Report</a>
+            </div>
+        </div>
+
+        <!-- Section 5: Regional Economic Indicators Icon Rail -->
+        <div class="info-panel">
+            <div class="info-panel-title">FGCU Regional Economic Indicators</div>
+            <div class="eco-grid">
+                <div class="eco-card">
+                    <div class="eco-icon">✈️</div>
+                    <h5>Airport Passengers</h5>
+                    <div class="eco-val">1,489,390</div>
+                    <div class="eco-trend bad">Down 2.3% YoY</div>
+                    <div class="eco-date">April 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">💼</div>
+                    <h5>Tourist Tax Revenues</h5>
+                    <div class="eco-val">$8.6M</div>
+                    <div class="eco-trend good">Up 8.9% YoY</div>
+                    <div class="eco-date">March 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">🏪</div>
+                    <h5>Taxable Sales</h5>
+                    <div class="eco-val">$2.659B</div>
+                    <div class="eco-trend bad">Down 13.0% YoY</div>
+                    <div class="eco-date">March 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">👥</div>
+                    <h5>Unemployment Rate</h5>
+                    <div class="eco-val">5.8%</div>
+                    <div class="eco-trend bad">Up 0.4 pts</div>
+                    <div class="eco-date">April 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">🏢</div>
+                    <h5>Coastal Employment</h5>
+                    <div class="eco-val">548,700 jobs</div>
+                    <div class="eco-trend neutral">Down 6,200 YoY</div>
+                    <div class="eco-date">April 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">🏗️</div>
+                    <h5>SF Building Permits</h5>
+                    <div class="eco-val">1,209</div>
+                    <div class="eco-trend bad">Down 20.1% YoY</div>
+                    <div class="eco-date">April 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">🏡</div>
+                    <h5>Coastal SF Sales</h5>
+                    <div class="eco-val">2,678</div>
+                    <div class="eco-trend good">Up 10.8% YoY</div>
+                    <div class="eco-date">April 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">📋</div>
+                    <h5>Res. Active Listings</h5>
+                    <div class="eco-val">21,290</div>
+                    <div class="eco-trend neutral">Down 19.3% YoY</div>
+                    <div class="eco-date">May 2026</div>
+                </div>
+                <div class="eco-card">
+                    <div class="eco-icon">📉</div>
+                    <h5>Consumer Sentiment</h5>
+                    <div class="eco-val">72.7</div>
+                    <div class="eco-trend bad">Down 1.4 pts</div>
+                    <div class="eco-date">May 2026</div>
+                </div>
+            </div>
+            <div class="info-caption">Housing fundamentals look firmer than the broader consumer economy.</div>
+        </div>
+
+        <p>The labor market also weakened. Southwest Florida’s unemployment rate rose to 5.8% in April, up 0.4 percentage points from March and up 1.6 percentage points from April 2025. Coastal-county employment was down 6,200 jobs year over year, with only a few sectors adding jobs.</p>
+        <p>Together, those indicators suggest that the region is not weak across the board, but it is uneven. Tourism is still showing resilience, housing contracts are still active, but consumer spending and employment conditions are more cautious.</p>
+
+        <h2>Housing Fundamentals Look Firmer Than the Broader Economy</h2>
+        <p>FGCU’s housing-side indicators were more constructive than several of the broader economic measures. Single-family home sales across the coastal counties increased 10.8% year over year in April, reaching 2,678 sales. At the same time, single-family building permits fell 20.1% year over year to 1,209. Active listings averaged 21,290 on a typical day in May, down 19.3% from May 2025.</p>
+        
+        <div class="pull-quote">
+            <p>“Housing looked firmer than the broader consumer economy.”</p>
+        </div>
+
+        <p>That gives us a clearer picture of where the market stands. Resale activity improved, active listings declined from last year, and future new-construction supply softened. But pricing still varied significantly by county and property type.</p>
+
+        <!-- Section 6: County Price Mini-Chart -->
+        <div class="info-panel price-panel">
+            <h4>Pricing Stayed Local</h4>
+            <div class="price-bars">
+                <div class="p-bar-wrapper">
+                    <div class="p-bar lee">
+                        <div class="p-val">$390K</div>
+                        <div class="p-trend">Flat</div>
+                    </div>
+                    <div class="p-lbl">Lee County</div>
+                </div>
+                <div class="p-bar-wrapper">
+                    <div class="p-bar collier">
+                        <div class="p-val">$900K</div>
+                        <div class="p-trend">+10.1%</div>
+                    </div>
+                    <div class="p-lbl">Collier County</div>
+                </div>
+                <div class="p-bar-wrapper">
+                    <div class="p-bar charlotte">
+                        <div class="p-val">$357K</div>
+                        <div class="p-trend">+2.0%</div>
+                    </div>
+                    <div class="p-lbl">Charlotte County</div>
+                </div>
+            </div>
+            <div class="info-caption">Single-Family median price movement by county in April 2026.</div>
+        </div>
+
+        <h2>Prediction Check: The 2026 Framework Still Holds</h2>
+        <p>Earlier 2026 updates emphasized that Southwest Florida was becoming an active but selective market. The key recommendation was to watch pending sales against new listings, because that relationship would tell us more about future closings and inventory pressure than price headlines alone.</p>
+        <p>May largely supported that framework. Pending sales remained strong across the regional single-family market, the condo market, Bonita Springs–Estero, and Naples. Inventory was down year over year across major housing categories.</p>
+
+        <!-- Section 7: Prediction Check Scorecard -->
+        <div class="info-panel">
+            <div class="info-panel-title">Prediction Check Scorecard</div>
+            <div class="score-grid">
+                <div class="score-card">
+                    <div class="score-badge confirmed">Confirmed</div>
+                    <h5>Active but selective market</h5>
+                    <p>Contracts stayed strong, but pricing was still disciplined.</p>
+                </div>
+                <div class="score-card">
+                    <div class="score-badge confirmed">Confirmed</div>
+                    <h5>Pendings vs. New Listings Lead</h5>
+                    <p>Pending sales outpaced new-listing flow in key segments.</p>
+                </div>
+                <div class="score-card">
+                    <div class="score-badge mixed">Mixed</div>
+                    <h5>Strong Pendings Lift Closings</h5>
+                    <p>Condos and local city graphics improved, but regional single-family closings were down.</p>
+                </div>
+            </div>
+            <div class="score-note">Land market not scored: May land data was not included in the provided source set.</div>
+        </div>
+
+        <p>The one area that deserves nuance is closed sales. The earlier expectation that strong pending sales would support closings held up for condos regionally and for the local Bonita Springs–Estero and Naples graphics. However, regional single-family closed sales were still down 5.9% year over year in May. So the demand thesis held, but it did not show up evenly across every segment at the same time.</p>
+
+        <h2>What This Means for Buyers and Sellers</h2>
+        <p>For buyers, May showed that opportunity still exists, but it is not evenly distributed. Inventory is lower than it was a year ago, and strong pending activity means well-positioned homes are still getting attention. But the broader economic backdrop gives buyers reason to stay disciplined.</p>
+        
+        <div class="pull-quote">
+            <p>“The homes that make sense relative to the market are still moving.”</p>
+        </div>
+
+        <p>For sellers, the message is still pricing accuracy over ambition. Demand is there. Contracts are happening. But the market is not strong enough to reward every listing regardless of price, condition, or competition. The homes that make sense relative to the market are still moving. The listings that overshoot the market are still likely to sit.</p>
+
+        <h2>Bottom Line</h2>
+        <p>May 2026 showed a housing market that kept absorbing inventory faster than the broader economy regained momentum. Contracts stayed strong, local demand remained active, and inventory continued to tighten from last year’s levels.</p>
+        <p>But the broader regional indicators remind us that this is not a runaway market. Consumer spending softened, unemployment rose, sentiment slipped, and building permits declined.</p>
+        <p>That is why the most accurate description remains the same: Southwest Florida is active, selective, and increasingly data-driven.</p>
+
+    </main>
+
+</body>
+</html>

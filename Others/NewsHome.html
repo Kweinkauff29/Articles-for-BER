@@ -476,6 +476,13 @@
       color: var(--brand)
     }
 
+    .trend .meta {
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 600;
+      opacity: .85
+    }
+
     .cats a {
       display: inline-block;
       margin: 6px 8px 0 0;
@@ -1111,7 +1118,9 @@
     }
 
     function renderTrending(data, topKeys) {
-      const base = data.filter(a => !topKeys.has(keyOf(a))).slice(0, 5);
+      const rest = data.filter(a => !topKeys.has(keyOf(a)));
+      const feat = rest.filter(a => a.featured);
+      const base = (feat.length >= 5 ? feat : rest).slice(0, 5);
       const t = base.map(a => `
         <div class="trend">
           <img loading="lazy" src="${a.image}" alt="">

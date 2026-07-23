@@ -16,7 +16,18 @@
 - `Articles/2026/images/greater-estero-mobility/06-traffic-safety-systems.svg`
 - `Articles/2026/images/greater-estero-mobility/07-real-estate-mobility-test.svg`
 
-The repository article references the standalone SVG files with relative paths so the artwork stays reusable and editable. The separate delivery package also includes a self-contained WordPress version with the infographic SVGs embedded directly, plus PNG exports for sites that strip SVG markup.
+The final repository article now uses the hosted WordPress PNGs directly. The original SVG files remain in the repository as editable source artwork.
+
+## Final hosted artwork
+
+1. Hero background: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/059e76dd-076e-400c-b6d6-314dbda7ac65.png
+2. Growth and commute dashboard: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/942a8697-3717-4ae8-858a-b7688f2ab424.png
+3. Greater Estero corridor schematic: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/5e13f9d5-f82a-4612-a544-0c08a97f6030.png
+4. Smart-signal workflow: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/82d7e73a-6950-48be-be0b-ebbbe266d987.png
+5. TRP versus Edaptive: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/4aa45295-610f-4f47-ba2c-2c86859f7c8e.png
+6. Coordination recovery: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/3ac7aad3-93d1-45ff-945f-65294a680f82.png
+7. Safety and emergency priority: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/ac86e3c6-e5bb-4b42-ac63-3c38647950e1.png
+8. Real-estate mobility test: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/d07cefd2-ed5b-4898-80a6-badb2eadc27c.png
 
 ## Claim matrix
 
@@ -47,16 +58,13 @@ The repository article references the standalone SVG files with relative paths s
 
 ## WordPress publication checklist
 
-1. Upload the hero and seven infographic files to the WordPress media library. PNG exports are included in the delivery package and are the safest default for WordPress.
-2. Replace each relative `images/greater-estero-mobility/...` path in the repository HTML with its uploaded WordPress URL, or use the self-contained HTML version from the delivery package if inline SVG is allowed.
-3. Use the 1600×900 hero PNG as the featured image.
-4. Add the uploaded hero URL to the Open Graph and Twitter image meta fields.
-5. Publish at the canonical slug shown above.
-6. Replace the placeholder image URL in the news-home entry snippet.
-7. Add the final entry to `Others/NewsHome.html` only after the public article and hero URLs resolve.
-8. Test the article at desktop, tablet and phone widths.
-9. Test every source link.
-10. Confirm CCOR branding and the July 23, 2026 publication date.
+1. The hero and seven infographic images are uploaded and referenced by absolute WordPress URLs in the article HTML.
+2. Use the hosted hero image as the WordPress featured image.
+3. Publish at the canonical slug shown above.
+4. Test the article at desktop, tablet and phone widths.
+5. Test every source link.
+6. Confirm CCOR branding and the July 23, 2026 publication date.
+7. Add the prepared entry to `Others/NewsHome.html` after the public article URL resolves.
 
 ## News-home entry template
 
@@ -65,7 +73,7 @@ The repository article references the standalone SVG files with relative paths s
   "title": "Greater Estero Is Growing—and Mobility Is Part of the Housing Conversation",
   "url": "https://coconutcoastrealtors.org/greater-estero-is-growing-and-mobility-is-part-of-the-housing-conversation/",
   "date": "2026-07-23",
-  "image": "REPLACE_WITH_UPLOADED_WORDPRESS_HERO_URL",
+  "image": "https://coconutcoastrealtors.org/wp-content/uploads/2026/07/059e76dd-076e-400c-b6d6-314dbda7ac65.png",
   "excerpt": "How smart signals, route reliability and Greater Estero's growth affect home searches, showing schedules and real-estate decisions for consumers and REALTORS®.",
   "category": "Consumer Guide",
   "featured": "true"

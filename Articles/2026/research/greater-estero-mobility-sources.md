@@ -16,7 +16,7 @@
 - `Articles/2026/images/greater-estero-mobility/06-traffic-safety-systems.svg`
 - `Articles/2026/images/greater-estero-mobility/07-real-estate-mobility-test.svg`
 
-The article embeds the graphics directly as responsive SVG/HTML so it remains self-contained when pasted into WordPress. The standalone SVG files are reusable source artwork for social posts, eblasts, Canva conversion, or PNG exports.
+The repository article references the standalone SVG files with relative paths so the artwork stays reusable and editable. The separate delivery package also includes a self-contained WordPress version with the infographic SVGs embedded directly, plus PNG exports for sites that strip SVG markup.
 
 ## Claim matrix
 
@@ -47,9 +47,9 @@ The article embeds the graphics directly as responsive SVG/HTML so it remains se
 
 ## WordPress publication checklist
 
-1. Paste the complete article HTML into the appropriate custom HTML/code view.
-2. Confirm that WordPress does not strip inline SVG. If it does, export the standalone SVGs to PNG and replace each embedded visual with the uploaded PNG.
-3. Export `greater-estero-mobility-hero.svg` to a 1600×900 PNG and upload it to WordPress.
+1. Upload the hero and seven infographic files to the WordPress media library. PNG exports are included in the delivery package and are the safest default for WordPress.
+2. Replace each relative `images/greater-estero-mobility/...` path in the repository HTML with its uploaded WordPress URL, or use the self-contained HTML version from the delivery package if inline SVG is allowed.
+3. Use the 1600×900 hero PNG as the featured image.
 4. Add the uploaded hero URL to the Open Graph and Twitter image meta fields.
 5. Publish at the canonical slug shown above.
 6. Replace the placeholder image URL in the news-home entry snippet.

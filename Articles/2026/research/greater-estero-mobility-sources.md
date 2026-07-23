@@ -1,0 +1,98 @@
+# Greater Estero Mobility Article — Research and Publication Notes
+
+**Article:** Greater Estero Is Growing—and Mobility Is Part of the Housing Conversation  
+**Research date:** July 23, 2026  
+**Canonical slug:** `greater-estero-is-growing-and-mobility-is-part-of-the-housing-conversation`
+
+## Repository files
+
+- `Articles/2026/greater-estero-is-growing-and-mobility-is-part-of-the-housing-conversation.html`
+- `Articles/2026/images/greater-estero-mobility/greater-estero-mobility-hero.svg`
+- `Articles/2026/images/greater-estero-mobility/01-growth-mobility-dashboard.svg`
+- `Articles/2026/images/greater-estero-mobility/02-greater-estero-corridor-schematic.svg`
+- `Articles/2026/images/greater-estero-mobility/03-smart-signal-flow.svg`
+- `Articles/2026/images/greater-estero-mobility/04-trp-versus-edaptive.svg`
+- `Articles/2026/images/greater-estero-mobility/05-coordination-recovery.svg`
+- `Articles/2026/images/greater-estero-mobility/06-traffic-safety-systems.svg`
+- `Articles/2026/images/greater-estero-mobility/07-real-estate-mobility-test.svg`
+
+The final repository article now uses the hosted WordPress PNGs directly. The original SVG files remain in the repository as editable source artwork.
+
+## Final hosted artwork
+
+1. Hero background: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/059e76dd-076e-400c-b6d6-314dbda7ac65.png
+2. Growth and commute dashboard: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/942a8697-3717-4ae8-858a-b7688f2ab424.png
+3. Greater Estero corridor schematic: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/5e13f9d5-f82a-4612-a544-0c08a97f6030.png
+4. Smart-signal workflow: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/82d7e73a-6950-48be-be0b-ebbbe266d987.png
+5. TRP versus Edaptive: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/4aa45295-610f-4f47-ba2c-2c86859f7c8e.png
+6. Coordination recovery: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/3ac7aad3-93d1-45ff-945f-65294a680f82.png
+7. Safety and emergency priority: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/ac86e3c6-e5bb-4b42-ac63-3c38647950e1.png
+8. Real-estate mobility test: https://coconutcoastrealtors.org/wp-content/uploads/2026/07/d07cefd2-ed5b-4898-80a6-badb2eadc27c.png
+
+## Claim matrix
+
+| Claim | Value / wording | Source | Publication treatment |
+|---|---|---|---|
+| Estero population | 38,365 in 2025; +3.9% since 2020 base | U.S. Census QuickFacts | Direct primary-source claim |
+| Lee County population | 875,607 in 2025; +15.1% since 2020 base | U.S. Census QuickFacts | Direct primary-source claim |
+| Mean commute | Estero 26.0 minutes; Lee County 29.4 minutes, 2020–2024 | U.S. Census QuickFacts | Label as mean, not current trip time |
+| Major-road responsibility | Corkscrew, Three Oaks, Ben Hill Griffin and Estero Parkway Extension remain under Lee County; I-75 and U.S. 41 are FDOT | Village of Estero / 2017 study | Direct agency statement; verify if article is republished later |
+| TOC capabilities | Monitors signals, travel times, volumes and disruptions; can inspect cameras and adjust signals; county cameras not recorded | Lee County Traffic Operations Center | Direct primary-source claim |
+| Corkscrew TRP | 24/7; data every 15 minutes; reported cycles 110–170 seconds | Lee County DOT answers published by Engage Estero, July 9, 2026 | Attribute explicitly to published Q&A |
+| Coordination recovery | Pedestrian main-road crossing: about 2–3 cycles; manual police control: about 1–2 cycles | Lee County DOT answers published by Engage Estero | Attribute and date-stamp |
+| Edaptive | Optimizes cycle, offset and splits in real time; county deployment reported on Cypress Lake Drive | Econolite + Engage Estero | Do not imply current Estero deployment |
+| Signal cost | Approximately $1.2–$1.5 million | Engage Estero / Lee County DOT discussion | Illustrative, attributed, not universal bid price |
+| Wrong-way workflow | Detect, warn driver, notify traffic/public-safety centers, potentially warn motorists | FDOT District 1 ITS Architecture | Direct primary-source system description |
+| Emergency priority | Dispatch/vehicle data can support targeted signal priority | Engage Estero + Econolite | Describe as developing/local capability, not universal deployment |
+| REALTOR® guidance | Article 10 prohibits discrimination and steering | NAR 2026 Code of Ethics | Direct professional-standard reference |
+
+## Editorial guardrails
+
+1. Do not claim that signal technology raises property values.
+2. Do not guarantee commute times or signal performance.
+3. Do not imply Edaptive is deployed in Greater Estero unless Lee County confirms a specific corridor.
+4. Distinguish current infrastructure from proposed or funded projects.
+5. Keep Lee County-specific operational details attributed to the July 2026 Engage Estero Q&A.
+6. Use objective sources consistently and avoid subjective neighborhood labels.
+7. Recheck Census estimates, signal operations and project status before any later republication.
+
+## WordPress publication checklist
+
+1. The hero and seven infographic images are uploaded and referenced by absolute WordPress URLs in the article HTML.
+2. Use the hosted hero image as the WordPress featured image.
+3. Publish at the canonical slug shown above.
+4. Test the article at desktop, tablet and phone widths.
+5. Test every source link.
+6. Confirm CCOR branding and the July 23, 2026 publication date.
+7. Add the prepared entry to `Others/NewsHome.html` after the public article URL resolves.
+
+## News-home entry template
+
+```json
+{
+  "title": "Greater Estero Is Growing—and Mobility Is Part of the Housing Conversation",
+  "url": "https://coconutcoastrealtors.org/greater-estero-is-growing-and-mobility-is-part-of-the-housing-conversation/",
+  "date": "2026-07-23",
+  "image": "https://coconutcoastrealtors.org/wp-content/uploads/2026/07/059e76dd-076e-400c-b6d6-314dbda7ac65.png",
+  "excerpt": "How smart signals, route reliability and Greater Estero's growth affect home searches, showing schedules and real-estate decisions for consumers and REALTORS®.",
+  "category": "Consumer Guide",
+  "featured": "true"
+}
+```
+
+## Primary sources
+
+- U.S. Census QuickFacts — Estero village: https://www.census.gov/quickfacts/fact/table/esterovillageflorida/EDU685223
+- U.S. Census QuickFacts — Lee County: https://www.census.gov/quickfacts/fact/chart/leecountyflorida/PST045222
+- Lee County Traffic Operations Center: https://www.leegov.com/dot/traffic/traffic-operations-center
+- Lee County Traffic Overview: https://www.leegov.com/dot/traffic/overview
+- Village of Estero Public Works: https://estero-fl.gov/public-works/
+- Village Traffic/Roads: https://estero-fl.gov/for-residents/trafficroads/
+- Village traffic-study update action: https://estero-fl.gov/village-wide-traffic-study-and-code-enforcement-among-items-addressed-by-council-on-january-3-2024/
+- Engage Estero source article: https://esterotoday.com/how-technology-improves-traffic-in-greater-estero/
+- Econolite Centracs: https://www.econolite.com/products/traffic-control-software/
+- FHWA Traffic Signal Timing Manual, Chapter 9: https://ops.fhwa.dot.gov/publications/fhwahop08024/chapter9.htm
+- FHWA ASCT Measures of Effectiveness: https://ops.fhwa.dot.gov/publications/fhwahop13031/index.htm
+- FDOT District 1 Wrong-Way Detection: https://teo.fdot.gov/architecture/architectures/d1/html/servicepackages/tm25-10492.html
+- NAR 2026 Code of Ethics: https://www.nar.realtor/about-nar/governing-documents/code-of-ethics/2026-code-of-ethics-standards-of-practice
+- NAR steering guidance: https://www.nar.realtor/articles/steering-schools-and-equal-professional-service

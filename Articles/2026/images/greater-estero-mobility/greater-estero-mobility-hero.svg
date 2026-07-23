@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Greater Estero mobility and housing</title>
+  <desc id="desc">Flat illustration of a home, smart traffic signal, data waves, and vehicles representing the link between transportation and housing in Greater Estero.</desc>
+  <rect width="1200" height="675" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1200" height="675" fill="#002850"/>
+  <path d="M0 470 H1200" stroke="#03AAE1" stroke-width="8"/>
+  <path d="M0 540 H1200" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="28 22" opacity=".75"/>
+  <path d="M760 0 V675" stroke="#00A0A0" stroke-width="130" opacity=".20"/>
+  <path d="M880 0 V675" stroke="#FBAE24" stroke-width="18" opacity=".95"/>
+  <g transform="translate(95 110)">
+    <rect x="0" y="160" width="250" height="170" fill="#FFFFFF"/>
+    <path d="M-20 165 L125 55 L270 165 Z" fill="#03AAE1"/>
+    <rect x="38" y="225" width="62" height="105" fill="#002850"/>
+    <rect x="140" y="215" width="70" height="58" fill="#EEF8FB" stroke="#002850" stroke-width="8"/>
+    <path d="M95 160 V330 M155 160 V330" stroke="#D7E4EA" stroke-width="4"/>
+  </g>
+  <g transform="translate(565 92)">
+    <rect x="0" y="0" width="95" height="245" rx="18" fill="#111827"/>
+    <circle cx="47.5" cy="50" r="27" fill="#D64545"/>
+    <circle cx="47.5" cy="122" r="27" fill="#FBAE24"/>
+    <circle cx="47.5" cy="194" r="27" fill="#168B6A"/>
+    <rect x="39" y="245" width="17" height="145" fill="#111827"/>
+  </g>
+  <g fill="none" stroke="#03AAE1" stroke-width="5">
+    <circle cx="892" cy="160" r="32"/><circle cx="892" cy="160" r="72" opacity=".72"/><circle cx="892" cy="160" r="112" opacity=".42"/>
+  </g>
+  <g fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif">
+    <text x="790" y="365" font-size="28" font-weight="700">DATA</text>
+    <text x="930" y="365" font-size="28" font-weight="700">SIGNALS</text>
+    <text x="790" y="410" font-size="28" font-weight="700">ROUTES</text>
+    <text x="930" y="410" font-size="28" font-weight="700">HOMES</text>
+  </g>
+  <g transform="translate(680 495)">
+    <rect x="0" y="0" width="150" height="54" fill="#03AAE1"/>
+    <circle cx="33" cy="60" r="19" fill="#111827"/><circle cx="116" cy="60" r="19" fill="#111827"/>
+    <path d="M35 0 L62 -35 H122 L145 0" fill="#00A0A0"/>
+    <rect x="66" y="-27" width="45" height="23" fill="#EEF8FB"/>
+  </g>
+  <g transform="translate(970 505)">
+    <rect x="0" y="0" width="145" height="48" fill="#FBAE24"/>
+    <circle cx="30" cy="55" r="18" fill="#111827"/><circle cx="112" cy="55" r="18" fill="#111827"/>
+    <path d="M28 0 L52 -30 H113 L137 0" fill="#FFFFFF"/>
+  </g>
+  <text x="70" y="625" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="2">GREATER ESTERO • MOBILITY • HOUSING</text>
+</svg>

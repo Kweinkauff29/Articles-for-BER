@@ -293,6 +293,12 @@
             overflow: hidden;
             background: #fff;
             box-shadow: 0 4px 14px rgba(4, 45, 68, .07);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ccor-install27 .gallery figure:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(4, 45, 68, .12);
         }
 
         .ccor-install27 .gallery a {
@@ -319,44 +325,116 @@
         }
 
         /* Leadership lists */
-        .ccor-install27 .people-grid,
-        .ccor-install27 .committee-grid {
+        .ccor-install27 .subsection-label {
+            font: 700 13px/1.2 'Montserrat', sans-serif;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin: 28px 0 12px;
+        }
+
+        .ccor-install27 .officers-grid {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 14px 0 28px;
+            padding: 0;
+        }
+
+        .ccor-install27 .people-grid {
             list-style: none;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
-            margin: 26px 0;
+            margin: 14px 0 26px;
             padding: 0;
         }
 
         .ccor-install27 .committee-grid {
+            list-style: none;
+            display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 26px 0;
+            padding: 0;
         }
 
+        .ccor-install27 .officers-grid li,
         .ccor-install27 .people-grid li,
         .ccor-install27 .committee-grid li {
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
             border: 1px solid var(--line);
             border-top: 4px solid var(--teal);
-            padding: 18px 20px;
+            border-radius: 10px;
+            padding: 16px 18px;
             background: var(--light);
             overflow-wrap: anywhere;
         }
 
+        .ccor-install27 .officers-grid li {
+            border-top-color: var(--navy);
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(4, 45, 68, .06);
+        }
+
+        .ccor-install27 .person-photo {
+            width: 68px;
+            height: 68px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(4, 45, 68, .15);
+            background: #DCE8ED;
+        }
+
+        .ccor-install27 .officers-grid .person-photo {
+            width: 78px;
+            height: 78px;
+        }
+
+        .ccor-install27 .person-info {
+            min-width: 0;
+        }
+
         .ccor-install27 .person-name {
             display: block;
-            font: 700 17px/1.35 'Montserrat', sans-serif;
+            font: 700 17px/1.3 'Montserrat', sans-serif;
             color: var(--navy);
         }
 
         .ccor-install27 .person-role {
             display: block;
-            font-size: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--teal);
+            margin-top: 2px;
+        }
+
+        .ccor-install27 .person-office {
+            display: block;
+            font-size: 14px;
             color: var(--muted);
+            margin-top: 2px;
         }
 
         .ccor-install27 .committee-grid .person-role {
-            margin-top: 6px;
+            font-weight: 400;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .ccor-install27 .committee-grid .person-chair {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ocean);
+            margin-top: 2px;
         }
 
         .ccor-install27 .accomplishments {
@@ -471,11 +549,94 @@
             background: var(--sand);
             border-left: 5px solid #C89B60;
             padding: 26px;
-            margin: 30px 0;
+            margin: 24px 0 30px;
         }
 
         .ccor-install27 .sponsor-box p:last-child {
             margin-bottom: 0;
+        }
+
+        .ccor-install27 .sponsor-tiers {
+            display: grid;
+            gap: 26px;
+            margin: 26px 0 10px;
+        }
+
+        .ccor-install27 .sponsor-tier-title {
+            font: 700 13px/1.2 'Montserrat', sans-serif;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin: 0 0 12px;
+        }
+
+        .ccor-install27 .sponsor-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .ccor-install27 .sponsor-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            padding: 18px 16px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #fff;
+            text-decoration: none;
+            color: var(--navy);
+            box-shadow: 0 3px 10px rgba(4, 45, 68, .05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .ccor-install27 .sponsor-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--teal);
+            box-shadow: 0 8px 20px rgba(4, 45, 68, .1);
+            text-decoration: none;
+        }
+
+        .ccor-install27 .sponsor-logo-wrap {
+            width: 100%;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+        }
+
+        .ccor-install27 .sponsor-logo-wrap img {
+            max-width: 100%;
+            max-height: 68px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .ccor-install27 .sponsor-name {
+            font: 700 15px/1.35 'Montserrat', sans-serif;
+            color: var(--navy);
+        }
+
+        .ccor-install27 .sponsor-visit {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        @media(max-width:780px) {
+            .ccor-install27 .sponsor-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media(max-width:520px) {
+            .ccor-install27 .sponsor-cards {
+                grid-template-columns: minmax(0, 1fr);
+            }
         }
 
         .ccor-install27 .button-row {
@@ -554,6 +715,7 @@
                 gap: 12px;
             }
 
+            .ccor-install27 .officers-grid,
             .ccor-install27 .committee-grid {
                 grid-template-columns: minmax(0, 1fr);
             }
@@ -653,24 +815,25 @@
 
         <!-- (a) RECAP INTRODUCTION -->
         <p class="lead">
-            <strong>Every installation is a handoff.</strong>
+            <strong>Every installation is a handoff—and a celebration of the people who step up to serve.</strong>
             At the 2027 CCOR Installation Breakfast, outgoing 2026 President Jeanne Drath
-            passed leadership to 2027 President Wade Abed, and a new Board of Directors
-            stepped forward to serve.
+            passed the gavel to 2027 President Wade Abed, and a new Board of Directors
+            and slate of committee leaders took the oath to guide the Coconut Coast Organization of REALTORS® into 2027.
         </p>
 
         <p>
-            The breakfast was held on Thursday, November 19, 2026, at Spanish Wells Golf &amp; Country Club
-            in Bonita Springs. The program carried the theme <strong>Collaborate. Educate. Elevate.</strong>
-            Nigel Fullick was listed as emcee and Angie Parker as Installing Officer. Jennifer Henry was the
-            featured speaker, with a talk titled The Importance of Connection, and the BSHS Jazz Band was
-            scheduled to provide the music.
+            Held on Thursday, November 19, 2026, at Spanish Wells Golf &amp; Country Club
+            in Bonita Springs, the morning centered on the theme <strong>Collaborate. Educate. Elevate.</strong>
+            Sam Saad opened the program, Nigel Fullick served as Master of Ceremonies, and Angie Parker
+            administered the installation oath as Installing Officer. Featured speaker Jennifer Henry
+            shared remarks on <em>The Importance of Connection</em>, while the Bonita Springs High School
+            Jazz Band filled the room with live music.
         </p>
 
         <p>
-            To Jeanne and everyone who served in 2026, thank you. To Wade and the incoming leadership team,
-            congratulations. Below you will find photos from the morning, the people leading CCOR in 2027,
-            a few things we accomplished in 2026, and the full program.
+            To Jeanne and everyone who gave their time in 2026, thank you. To Wade and the incoming 2027
+            leadership team, congratulations. Below are photos from the morning, the directors and committee
+            chairs leading CCOR in 2027, highlights from our 2026 milestones, and the full interactive program.
         </p>
 
         <div class="glance">
@@ -696,18 +859,17 @@
                     <dd>Angie Parker</dd>
                 </div>
                 <div>
-                    <dt>Featured speaker</dt>
-                    <dd>Jennifer Henry, The Importance of Connection</dd>
+                    <dt>Featured Speaker</dt>
+                    <dd>Jennifer Henry, <em>The Importance of Connection</em></dd>
                 </div>
                 <div>
                     <dt>Music</dt>
-                    <dd>BSHS Jazz Band</dd>
+                    <dd>Bonita Springs High School Jazz Band</dd>
                 </div>
             </dl>
         </div>
 
         <!-- (b) PHOTO GALLERY -->
-        <!-- Replace each PHOTO_IMG_ token with its hosted URL. Each gallery token appears twice: link and image. -->
         <h2>Photos from the Morning</h2>
         <div class="rule"></div>
 
@@ -719,7 +881,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/cacd36ce-e862-4e14-bca9-62cad57cdacd.jpg" width="1200" height="800"
                         alt="Group photo of the 2027 CCOR Board of Directors">
                 </a>
-                <figcaption>The 2027 Board of Directors</figcaption>
             </figure>
 
             <figure>
@@ -727,7 +888,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/65d18247-5579-4d5a-a43d-89820e3d38b7.jpg" width="1200" height="800"
                         alt="The emcee addressing the room at the installation breakfast">
                 </a>
-                <figcaption>Our emcee for the morning</figcaption>
             </figure>
 
             <figure>
@@ -735,7 +895,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/4d53b418-3932-4cc1-b51f-d5848382a39b.jpg" width="1200" height="800"
                         alt="The installing officer during the installation">
                 </a>
-                <figcaption>The installing officer</figcaption>
             </figure>
 
             <figure>
@@ -743,7 +902,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/e347f8da-5de6-42f2-b1a0-9bd92532e2bc.jpg" width="1200" height="800"
                         alt="The new CCOR president being sworn in">
                 </a>
-                <figcaption>The new president is sworn in</figcaption>
             </figure>
 
             <figure>
@@ -751,7 +909,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/88c82887-c1dc-40d8-afa3-1bb3ec2a9f26.jpg" width="1200" height="800"
                         alt="The gavel being handed from one president to the next">
                 </a>
-                <figcaption>Passing the gavel</figcaption>
             </figure>
 
             <figure>
@@ -759,7 +916,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/ab0e2cd4-0b91-47be-9651-dacd86efa5e8.jpg" width="1200" height="800"
                         alt="A gift exchange at the installation breakfast">
                 </a>
-                <figcaption>A gift exchange</figcaption>
             </figure>
 
             <figure>
@@ -767,7 +923,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/3e5c6529-3c32-4db7-9986-b2469ecbd325.jpg" width="1200" height="800"
                         alt="The president giving remarks at the installation breakfast">
                 </a>
-                <figcaption>The president's remarks</figcaption>
             </figure>
 
             <figure>
@@ -775,7 +930,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/bd5535a2-e637-4dd9-ab2c-7c0377d275b5.jpg" width="1200" height="800"
                         alt="Members of the CCOR board celebrating together">
                 </a>
-                <figcaption>The board celebrates</figcaption>
             </figure>
 
             <figure>
@@ -783,7 +937,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/9e45f7dd-afbd-4b31-9f8f-c7683e91f299.jpg" width="1200" height="800"
                         alt="The CCOR board with the audience at the installation breakfast">
                 </a>
-                <figcaption>The board with the audience</figcaption>
             </figure>
 
             <figure>
@@ -791,7 +944,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/52c3f985-0335-42d6-ac34-075da1b7a395.jpg" width="1200" height="800"
                         alt="A hug during an award moment at the installation breakfast">
                 </a>
-                <figcaption>A warm award moment</figcaption>
             </figure>
 
             <figure>
@@ -799,7 +951,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/457df5db-749c-473c-9074-9d8451afcf4b.jpg" width="1200" height="800"
                         alt="A puzzle activity at the installation breakfast">
                 </a>
-                <figcaption>A puzzle activity</figcaption>
             </figure>
 
             <figure>
@@ -807,7 +958,6 @@
                     <img loading="lazy" src="https://ccor-content-studio.bonitaspringsrealtors.workers.dev/media/262ba538-3256-4db0-9032-4d42a8d41b61.jpg" width="1200" height="800"
                         alt="Guests applauding at the installation breakfast">
                 </a>
-                <figcaption>Applause around the room</figcaption>
             </figure>
         </div>
 
@@ -816,30 +966,111 @@
         <div class="rule"></div>
 
         <p>
-            Congratulations to the members who will lead CCOR in 2027, and thank you for
-            giving your time to the association.
+            Congratulations to the officers and directors who will lead CCOR in 2027, and thank you for
+            giving your time and leadership to the association.
         </p>
 
+        <p class="subsection-label">Executive Committee</p>
+        <ul class="officers-grid">
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/wade.jpg" width="156" height="156" alt="Wade Abed">
+                <div class="person-info">
+                    <span class="person-name">Wade Abed</span>
+                    <span class="person-role">President</span>
+                    <span class="person-office">Royal Shell Real Estate</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/gina.jpg" width="156" height="156" alt="Gina Lamouth">
+                <div class="person-info">
+                    <span class="person-name">Gina Lamouth</span>
+                    <span class="person-role">Vice President</span>
+                    <span class="person-office">Local Real Estate</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/doug.jpg" width="156" height="156" alt="Doug Purcell">
+                <div class="person-info">
+                    <span class="person-name">Doug Purcell</span>
+                    <span class="person-role">Treasurer</span>
+                    <span class="person-office">Orchid Realty International</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/erin.jpg" width="156" height="156" alt="Erin McDonald">
+                <div class="person-info">
+                    <span class="person-name">Erin McDonald</span>
+                    <span class="person-role">Secretary</span>
+                    <span class="person-office">Premier Sotheby’s International Realty</span>
+                </div>
+            </li>
+        </ul>
+
+        <p class="subsection-label">Directors</p>
         <ul class="people-grid">
             <li>
-                <span class="person-name">Wade Abed</span>
-                <span class="person-role">2027 President</span>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/todd-golnick.jpg" width="136" height="136" alt="Todd Golnick">
+                <div class="person-info">
+                    <span class="person-name">Todd Golnick</span>
+                    <span class="person-role">Director</span>
+                </div>
             </li>
-            <!-- Replace the next item with one item per remaining director, in the program's order,
-                 with each name and title exactly as the program shows it. Copy the item above. -->
-            <li><li><span class="person-name">Wade Abed</span><span class="person-role">President</span></li>
-                <li><span class="person-name">Gina Lamouth</span><span class="person-role">Vice President</span></li>
-                <li><span class="person-name">Doug Purcell</span><span class="person-role">Treasurer</span></li>
-                <li><span class="person-name">Erin McDonald</span><span class="person-role">Secretary</span></li>
-                <li><span class="person-name">Darlene Williams</span><span class="person-role">Ex-Officio</span></li>
-                <li><span class="person-name">Todd Golnick</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Dena Wilcoxen</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Alice Schwer</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Ally Miller</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Josie Mendiola</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Andy Brinkoetter</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Suzanne McGuire</span><span class="person-role">Director</span></li>
-                <li><span class="person-name">Kris Boyle</span><span class="person-role">Director</span></li></li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/dena-wilcoxen.jpg" width="136" height="136" alt="Dena Wilcoxen">
+                <div class="person-info">
+                    <span class="person-name">Dena Wilcoxen</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/alice-schwer.jpg" width="136" height="136" alt="Alice Schwer">
+                <div class="person-info">
+                    <span class="person-name">Alice Schwer</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/ally-miller.jpg" width="136" height="136" alt="Ally Miller">
+                <div class="person-info">
+                    <span class="person-name">Ally Miller</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/josie-mendiola.jpg" width="136" height="136" alt="Josie Mendiola">
+                <div class="person-info">
+                    <span class="person-name">Josie Mendiola</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/andy-brinkoetter.jpg" width="136" height="136" alt="Andy Brinkoetter">
+                <div class="person-info">
+                    <span class="person-name">Andy Brinkoetter</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/suzanne-mcguire.jpg" width="136" height="136" alt="Suzanne McGuire">
+                <div class="person-info">
+                    <span class="person-name">Suzanne McGuire</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/kris-boyle.jpg" width="136" height="136" alt="Kris Boyle">
+                <div class="person-info">
+                    <span class="person-name">Kris Boyle</span>
+                    <span class="person-role">Director</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/darlene-williams.jpg" width="136" height="136" alt="Darlene Williams">
+                <div class="person-info">
+                    <span class="person-name">Darlene Williams</span>
+                    <span class="person-role">Ex-Officio Director</span>
+                </div>
+            </li>
         </ul>
 
         <!-- (d) 2027 COMMITTEE LEADERS -->
@@ -847,23 +1078,82 @@
         <div class="rule"></div>
 
         <p>
-            Much of CCOR's work happens in committees. These are the people who have agreed to lead them in 2027.
+            Much of CCOR's work happens in committees. These are the members stepping up to chair them in 2027.
         </p>
 
         <ul class="committee-grid">
-            <!-- Replace the next item with one item per committee, using the program's exact names
-                 and its own role labels. Pattern, repeating the two spans for each person:
-                 <li><h3>Committee</h3><span class="person-role">Role</span><span class="person-name">Name</span></li> -->
-            <li><li><span class="person-name">Commercial</span><span class="person-role">Chair: James Hunter · Co-Chair: Keaton West</span></li>
-                <li><span class="person-name">Events and Education</span><span class="person-role">Chair: Mark True</span></li>
-                <li><span class="person-name">Young Professionals Network</span><span class="person-role">Chair: Jadyn Henderson</span></li>
-                <li><span class="person-name">MLS</span><span class="person-role">Chair: Lisa Khorey</span></li>
-                <li><span class="person-name">Grievance</span><span class="person-role">Chair: Patrick McGuire</span></li>
-                <li><span class="person-name">Government Affairs and RPAC</span><span class="person-role">Chair: Yuniel Garcia</span></li>
-                <li><span class="person-name">Broker Media</span><span class="person-role">Chair: Peter West</span></li>
-                <li><span class="person-name">Global Diversity</span><span class="person-role">Chair: Que Raphael · Co-Chair: Sandy Wilder</span></li>
-                <li><span class="person-name">Leadership Development</span><span class="person-role">Chair: Jeanne Drath</span></li>
-                <li><span class="person-name">Advisory Council</span><span class="person-role">Chair: Philip Maiorca</span></li></li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/james-hunter.webp" width="136" height="136" alt="James Hunter">
+                <div class="person-info">
+                    <span class="person-name">Commercial</span>
+                    <span class="person-chair">Chair: James Hunter</span>
+                    <span class="person-role">Co / Vice Chair: Keaton West</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/mark-true.jpg" width="136" height="136" alt="Mark True">
+                <div class="person-info">
+                    <span class="person-name">Events &amp; Education</span>
+                    <span class="person-chair">Chair: Mark True</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/jadyn-henderson.jpg" width="136" height="136" alt="Jadyn Henderson">
+                <div class="person-info">
+                    <span class="person-name">Young Professionals Network</span>
+                    <span class="person-chair">Chair: Jadyn Henderson</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/lisa-khorey.jpg" width="136" height="136" alt="Lisa Khorey">
+                <div class="person-info">
+                    <span class="person-name">MLS</span>
+                    <span class="person-chair">Chair: Lisa Khorey</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/patrick-mcguire.webp" width="136" height="136" alt="Patrick McGuire">
+                <div class="person-info">
+                    <span class="person-name">Grievance</span>
+                    <span class="person-chair">Chair: Patrick McGuire</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/yuniel-garcia.webp" width="136" height="136" alt="Yuniel Garcia">
+                <div class="person-info">
+                    <span class="person-name">Government Affairs / RPAC</span>
+                    <span class="person-chair">Chair: Yuniel Garcia</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/peter-west-2027.jpg" width="136" height="136" alt="Peter West">
+                <div class="person-info">
+                    <span class="person-name">Broker Media</span>
+                    <span class="person-chair">Chair: Peter West</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/que-raphael-2027.jpg" width="136" height="136" alt="Que Raphael">
+                <div class="person-info">
+                    <span class="person-name">Global Diversity</span>
+                    <span class="person-chair">Chair: Que Raphael</span>
+                    <span class="person-role">Co / Vice Chair: Sandy Wilder</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/jeanne-drath.jpg" width="136" height="136" alt="Jeanne Drath">
+                <div class="person-info">
+                    <span class="person-name">Leadership Development</span>
+                    <span class="person-chair">Chair: Jeanne Drath</span>
+                </div>
+            </li>
+            <li>
+                <img class="person-photo" loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/phillip-maiorca.jpg" width="136" height="136" alt="Philip Maiorca">
+                <div class="person-info">
+                    <span class="person-name">Advisory Council</span>
+                    <span class="person-chair">Chair: Philip Maiorca</span>
+                </div>
+            </li>
         </ul>
 
         <!-- (e) 2026 ACCOMPLISHMENTS -->
@@ -871,11 +1161,10 @@
         <div class="rule"></div>
 
         <p>
-            Before turning the page, here are a few of the 2026 accomplishments recognized in the program.
+            Before turning the page, here are a few of the 2026 milestones recognized in the program.
         </p>
 
         <ul class="accomplishments">
-            <!-- Replace the next item with three to five accomplishments, worded and numbered as the program shows them. -->
             <li><strong>A new name for our 60th year (January–August 2026):</strong> Members voted in January to adopt the Coconut Coast name. After NAR approved the change, CCOR celebrated its new identity with members and partners at the August 13 kickoff.</li>
             <li><strong>Helping homeowners spot property fraud (2026 homeowner outreach):</strong> CCOR partnered with the Lee County Clerk of Courts to promote free property fraud alerts through the Protect Our Homes campaign.</li>
             <li><strong>MLS collaboration tools reached members early (January–June 2026):</strong> Bonita Springs–Estero was among the first MLS markets in the Realtor.com+ rollout, and in June CCOR introduced OneHomeowner through Matrix.</li>
@@ -932,13 +1221,154 @@
         <div class="sponsor-box">
             <p>
                 To the sponsors of the 2027 Installation Breakfast, thank you for being part of the morning and
-                for supporting CCOR.
+                for supporting CCOR throughout the year. Select any sponsor below to visit their website.
             </p>
-            <p>
-                Our sponsors are recognized in the sponsor section of the
-                <a href="https://ber-events-photos.pages.dev/installation-2026/" target="_blank"
-                    rel="noopener">installation program</a>. Please take a moment to see who they are.
-            </p>
+        </div>
+
+        <div class="sponsor-tiers">
+            <div>
+                <h3 class="sponsor-tier-title">Diamond Year Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://saadlegal.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/saad.png" alt="Law Office of Sam Saad III logo"></span>
+                        <span class="sponsor-name">Law Office of Sam Saad III</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://stateinsuranceusa.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/state.png" alt="State Insurance USA logo"></span>
+                        <span class="sponsor-name">State Insurance USA</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Diamond Sponsorship</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://saadlegal.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/saad.png" alt="Law Office of Sam Saad III logo"></span>
+                        <span class="sponsor-name">Law Office of Sam Saad III</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Platinum Year Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://www.cigflorida.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/chapman.png" alt="Chapman Insurance Group logo"></span>
+                        <span class="sponsor-name">Chapman Insurance Group</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://cottrelltitle.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/cottrell.png" alt="Cottrell Title logo"></span>
+                        <span class="sponsor-name">Cottrell Title</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://www.lawfirmnaples.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-wwmr.webp" alt="Woods, Weidenmiller, Michetti &amp; Rudnick, LLP logo"></span>
+                        <span class="sponsor-name">Woods, Weidenmiller, Michetti &amp; Rudnick, LLP</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Gold Year Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://hiltonmovers.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/hilton.png" alt="Hilton Moving &amp; Storage LLC logo"></span>
+                        <span class="sponsor-name">Hilton Moving &amp; Storage LLC</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://www.laneinsurancegroup.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/lane.png" alt="Lane Insurance Group logo"></span>
+                        <span class="sponsor-name">Lane Insurance Group</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://www.premiummortgage.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/premium.png" alt="Premium Mortgage Corporation logo"></span>
+                        <span class="sponsor-name">Premium Mortgage Corporation</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Gold Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://www.lower.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-lower.webp" alt="Lower Mortgage, LLC logo"></span>
+                        <span class="sponsor-name">Lower Mortgage, LLC</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://www.premiummortgage.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/premium.png" alt="Premium Mortgage Corporation logo"></span>
+                        <span class="sponsor-name">Premium Mortgage Corporation</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Silver Year Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://www.frameandformstudio.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-frame-form.webp" alt="Frame &amp; Form Studio logo"></span>
+                        <span class="sponsor-name">Frame &amp; Form Studio</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://housemaster.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-housemaster.webp" alt="House Master logo"></span>
+                        <span class="sponsor-name">House Master</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://www.revolutionmortgage.com/rbeckman" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-revolution.webp" alt="Revolution Mortgage logo"></span>
+                        <span class="sponsor-name">Revolution Mortgage</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Silver Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://bonitatitle.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-bonita-title.webp" alt="Bonita Title logo"></span>
+                        <span class="sponsor-name">Bonita Title</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                    <a class="sponsor-card" href="https://www.thecolonygolfcc.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-colony.webp" alt="The Colony Golf &amp; Country Club logo"></span>
+                        <span class="sponsor-name">The Colony Golf &amp; Country Club</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Music Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://paradisecoasttitle.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-paradise-coast.webp" alt="Paradise Coast Title &amp; Escrow LLC logo"></span>
+                        <span class="sponsor-name">Paradise Coast Title &amp; Escrow LLC</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sponsor-tier-title">Giveaway Sponsor</h3>
+                <div class="sponsor-cards">
+                    <a class="sponsor-card" href="https://www.realtor.com/" target="_blank" rel="noopener">
+                        <span class="sponsor-logo-wrap"><img loading="lazy" src="https://ber-events-photos.pages.dev/installation-2026/program-2026-assets/sponsor-realtor-plus.png" alt="Realtor.com+ logo"></span>
+                        <span class="sponsor-name">Realtor.com+</span>
+                        <span class="sponsor-visit">Visit website ↗</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- CTA SECTION -->
